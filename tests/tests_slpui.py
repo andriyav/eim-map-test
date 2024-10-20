@@ -20,19 +20,18 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).metadata_main_select()
         Mapping(self.driver).mapping()
         SLPMain(self.driver).scroll_top()
-        time.sleep(10)
         SLPMain(self.driver).select_photo_tub()
         SLPMain(self.driver).select_list_tub()
         SLPMain(self.driver).metadata_main_select()
         SLPMain(self.driver).impl_wait_metadata()
-        self.driver.implicitly_wait(20)
+        time.sleep(10)
         ListComponent(self.driver).get_map_filed(IS_SHORT_SALE)
         text_field = ListComponent(self.driver).get_map_filed(IS_SHORT_SALE).text
         self.assertEqual(
             'is_short_sale\n'
             '+\n'
             '[add]\n'
-            'ValueProvider(json_path=SpecialListingConditions,skip_values=[])ValueProvider(json_path=SpecialListingConditions,skip_values=[])\n'
+            'ValueProvider(json_path=SpecialListingConditions,skip_values=[])\n'
             '[add]\n'
             '[add]\n'
             'Is_Short_Sale()\n'

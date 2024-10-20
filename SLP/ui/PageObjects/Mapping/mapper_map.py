@@ -21,6 +21,5 @@ class MapperMap:
         MappersComponents(self.driver).set_json_path_value()
         time.sleep(1)
         MappersComponents(self.driver).click_button_create()
-        SLPMain(self.driver).click_save_button_()
-        SLPMain(self.driver).click_OK_button_()
+
 

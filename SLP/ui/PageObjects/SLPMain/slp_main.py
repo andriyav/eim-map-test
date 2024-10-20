@@ -1,7 +1,8 @@
 import time
 import pyautogui
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-
+from selenium import webdriver
 from SLP.ui.Elements.button import Button
 from SLP.ui.Elements.tab import Tub
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
@@ -18,6 +19,7 @@ IMPLIS_WAIT_MAP = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
 
 class SLPMain:
     def __init__(self, driver):
+        self.webdriver = None
         self.get_text = None
         self.driver = driver
         self._photo_tub = None
@@ -78,6 +80,12 @@ class SLPMain:
 
     def impl_wait_metadata(self):
         ListComponent(self.driver).get_map_filed(IMPLIS_WAIT_MAP)
+
+
+    def zoom_window(self):
+        webdriver.ActionChains(self.driver).key_down(Keys.CONTROL).send_keys(Keys.ADD).key_up(Keys.CONTROL).perform()
+        # self.driver.execute_script("document.body.style.zoom='60%'")
+
 
 
 

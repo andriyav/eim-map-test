@@ -2,7 +2,7 @@ import time
 import unittest
 from selenium import webdriver
 
-from SLP.ui.PageObjects.Mapping.mapping import Mapping
+from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from tests.value_provider import ValueProvider
@@ -19,7 +19,6 @@ class BaseTestRunner(unittest.TestCase):
         self._init_driver()
         self._login()
 
-
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
         self.driver = webdriver.Chrome(options=chrome_options)
@@ -35,9 +34,6 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
         time.sleep(5)
-
-    # def _mapping(self):
-    #     Mapping(self.driver).mapping()
 
     def tearDown(self):
         self.driver.quit()

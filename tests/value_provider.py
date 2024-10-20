@@ -30,7 +30,7 @@ class ValueProvider:
             "field": "is_short_sale",
             "MappersProvider": 6,
             "Metadata": "SpecialListingConditions",
-            "Rules": 411,
+            "Rules": 413,
             "Enhancers": 33,
             "Const": "False"
         }

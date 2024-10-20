@@ -52,4 +52,5 @@ class MappersComponents(BaseComponent):
         return self.node.find_element(*MAPPER_CREATE_BTN)
 
     def click_button_create(self):
+        time.sleep(1)
         return self.get_button_create().click()
