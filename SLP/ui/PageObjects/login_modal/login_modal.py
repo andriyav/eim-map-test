@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-
 from SLP.ui.Elements.button import Button
 from SLP.ui.Elements.input import Input
 from SLP.ui.PageObjects.base_components import BaseComponent
@@ -52,3 +51,5 @@ class LoginModal(BaseComponent):
 
     def click_next_button_second(self):
         self.get_next_button_second().click_button()
+
+

@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
@@ -9,7 +7,7 @@ LOGIN_WITH_GOOGLE = (By.XPATH,'//*[@id="nav-home"]/div/table/tbody/tr[2]/td/div/
 
 
 class LoginComponent(BaseComponent):
-    def __init__(self, node: WebElement):
+    def __init__(self, node):
         super().__init__(node)
 
     def get_authorisation_btn(self) -> WebElement:
