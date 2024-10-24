@@ -15,6 +15,7 @@ IMPLIS_WAIT_MAP = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
 class SLPPageTestCase(BaseTestRunner):
 
     def test_map_validation(self):
+        """ Mapping Test"""
         self.driver.implicitly_wait(20)
         SLPMain(self.driver).source_select()
         SLPMain(self.driver).metadata_main_select()
@@ -24,7 +25,6 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).select_list_tub()
         SLPMain(self.driver).metadata_main_select()
         SLPMain(self.driver).impl_wait_metadata()
-        time.sleep(10)
         ListComponent(self.driver).get_map_filed(IS_SHORT_SALE)
         text_field = ListComponent(self.driver).get_map_filed(IS_SHORT_SALE).text
         self.assertEqual(

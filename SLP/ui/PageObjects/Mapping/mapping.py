@@ -1,3 +1,4 @@
+import time
 from SLP.ui.PageObjects.Mapping.mapper_map import MapperMap
 from SLP.ui.PageObjects.Mapping.rule_map import RuleMap
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
@@ -17,4 +18,5 @@ class Mapping:
             RuleMap(self.driver).rule_map(rule_provider)
         SLPMain(self.driver).click_save_button_()
         SLPMain(self.driver).click_OK_button_()
+        time.sleep(10)
 
