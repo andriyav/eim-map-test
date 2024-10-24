@@ -1,10 +1,7 @@
 import time
-
 from selenium.webdriver.common.by import By
-
 from SLP.ui.Elements.input import Input
 from SLP.ui.Elements.select import Select
-from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.base_components import BaseComponent
 from tests.value_provider import ValueProvider
 
