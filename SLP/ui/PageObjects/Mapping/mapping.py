@@ -18,5 +18,7 @@ class Mapping:
             RuleMap(self.driver).rule_map(rule_provider)
         SLPMain(self.driver).click_save_button_()
         SLPMain(self.driver).click_OK_button_()
-        time.sleep(10)
+        time.sleep(6)
+
+
 

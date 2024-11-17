@@ -2,6 +2,7 @@ import time
 import unittest
 from selenium import webdriver
 
+from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
@@ -33,7 +34,7 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
-        time.sleep(5)
+
 
     def tearDown(self):
         self.driver.quit()
