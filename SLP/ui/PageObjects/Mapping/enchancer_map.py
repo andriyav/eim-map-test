@@ -16,6 +16,5 @@ class EnhancerMap:
         SLPMain(self.driver).impl_wait_metadata()
         EnhancerComponents(self.driver).enhancer_selector_click()
         EnhancerComponents(self.driver).select_enhancer_provider(enhancer_provider)
-        time.sleep(1)
         RuleComponents(self.driver).click_button_create()
 

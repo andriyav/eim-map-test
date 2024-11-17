@@ -19,6 +19,5 @@ class RuleMap:
         SLPMain(self.driver).impl_wait_metadata()
         RuleComponents(self.driver).rule_selector_click()
         RuleComponents(self.driver).select_rule_provider(mapper_provider)
-        time.sleep(1)
         RuleComponents(self.driver).click_button_create()
 

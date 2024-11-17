@@ -9,7 +9,6 @@ ELEMENT_MAPPER = (By.CSS_SELECTOR, "#foo")
 MAPPER_JSON_PATH = (By.CSS_SELECTOR, "#jsonform-3-elt-json_path")
 MAPPER_CREATE_BTN = (By.CSS_SELECTOR, "#addForm > div > input")
 
-
 class MappersComponents(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
@@ -49,5 +48,4 @@ class MappersComponents(BaseComponent):
         return self.node.find_element(*MAPPER_CREATE_BTN)
 
     def click_button_create(self):
-        time.sleep(1)
         return self.get_button_create().click()

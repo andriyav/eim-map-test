@@ -9,6 +9,7 @@ from tests.value_provider import ValueProvider
 METADATA_SELECT = (By.XPATH, '//*[@id="metadataSelect"]')
 
 
+
 class ListComponent(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
@@ -20,7 +21,11 @@ class ListComponent(BaseComponent):
         self._source_selected = Select(node)
         return self._source_selected
 
-    def list_metadata_select(self, metadata=1):
+    def get_metadata_number(self):
+        elements = self.get_list_metadata_select().get_options()
+        return len(elements)
+
+    def list_metadata_select(self, metadata):
         return self.get_list_metadata_select().set_select_by_index(metadata)
 
     def get_map_filed(self, xpath):
