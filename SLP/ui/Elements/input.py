@@ -15,5 +15,5 @@ class Input(BaseElement):
             self._input = self.node.find_element(*INPUT)
         return self._input
 
-    def set_text(self, text):
+    def set_text_in(self, text):
         self.get_input().send_keys(text)
