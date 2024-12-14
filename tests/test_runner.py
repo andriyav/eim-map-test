@@ -7,6 +7,7 @@ from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from tests.value_provider import ValueProvider
+
 CHROME_USER_DIR = "C:/Users/aandrusy/AppData/Local/Google/Chrome/UserData/aandrusy"
 IMPLICITLY_WAIT = 10
 
@@ -21,16 +22,12 @@ class BaseTestRunner(unittest.TestCase):
         self._login()
 
     def _init_driver(self):
-
-
-
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
-
 
     def _login(self):
         self.driver.implicitly_wait(10)
