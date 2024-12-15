@@ -1,8 +1,7 @@
-import time
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from SLP.test_data import sources
+from data.test_data import sources
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain

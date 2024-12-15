@@ -1,8 +1,7 @@
-import time
 from selenium.webdriver.common.by import By
 from SLP.ui.Elements.select import Select
 from SLP.ui.PageObjects.base_components import BaseComponent
-from tests.value_provider import ValueProvider
+from data.value_provider import ValueProvider
 
 ELEMENT_ENHANCER = (By.CSS_SELECTOR, "#foo")
 ENHANCER_CREATE_BTN = (By.CSS_SELECTOR, '#addForm > div > input')

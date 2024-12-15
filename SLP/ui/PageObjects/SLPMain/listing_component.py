@@ -1,13 +1,10 @@
-import time
-
 from selenium.webdriver.common.by import By
 
 from SLP.ui.Elements.select import Select
 from SLP.ui.PageObjects.base_components import BaseComponent
-from tests.value_provider import ValueProvider
 
 METADATA_SELECT = (By.XPATH, '//*[@id="metadataSelect"]')
-
+COUNTRY = (By.XPATH,'/html/body/section/div/div/div/div[1]/div/form/div[6]/div/div/table/tbody/tr[83]')
 
 
 class ListComponent(BaseComponent):
@@ -30,6 +27,12 @@ class ListComponent(BaseComponent):
 
     def get_map_filed(self, xpath):
         return self.node.find_element(*xpath)
+
+    def get_list_address_country(self):
+        return self.node.find_element(*COUNTRY)
+
+    def get_txt_list_address_country(self):
+        return self.get_list_address_country().text
 
 
 
