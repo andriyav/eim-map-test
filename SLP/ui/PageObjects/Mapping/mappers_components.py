@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from SLP.ui.Elements.input import Input
 from SLP.ui.Elements.select import Select
 from SLP.ui.PageObjects.base_components import BaseComponent
-from tests.value_provider import ValueProvider
+from data.value_provider import ValueProvider
 
 ELEMENT_MAPPER = (By.CSS_SELECTOR, "#foo")
 MAPPER_JSON_PATH = (By.CSS_SELECTOR, "#jsonform-3-elt-json_path")

@@ -3,7 +3,7 @@ import unittest
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
-from tests.value_provider import ValueProvider
+from data.value_provider import ValueProvider
 
 CHROME_USER_DIR = "C:/Users/aandrusy/AppData/Local/Google/Chrome/UserData/aandrusy"
 IMPLICITLY_WAIT = 10

@@ -1,9 +1,7 @@
-import time
-
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from SLP.test_data import sources
+from data.test_data import sources
 from SLP.ui.PageObjects.Mapping.mapping import Mapping
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
@@ -33,7 +31,6 @@ class SLPPageTestCase(BaseTestRunner):
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
-        print(metadata_numbers)
         for metadata in range(1, metadata_numbers):
             with self.subTest(metadata=metadata):
                 SLPMain(self.driver).metadata_main_select(metadata)
