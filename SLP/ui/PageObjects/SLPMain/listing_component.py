@@ -5,7 +5,10 @@ from SLP.ui.PageObjects.base_components import BaseComponent
 
 METADATA_SELECT = (By.XPATH, '//*[@id="metadataSelect"]')
 COUNTRY = (By.XPATH,'/html/body/section/div/div/div/div[1]/div/form/div[6]/div/div/table/tbody/tr[83]')
-OFFICE_PHONE = (By.XPATH, '/html/body/section/div/div/div/div[1]/div/form/div[6]/div/div/table/tbody/tr[266]')
+CO_LIST_OFFICE_PHONE = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.co_list_agent_office-properties-co_list_agent_office_phone')
+CO_LIST_PREFERRED_PHONE = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.co_list_agent_office-properties-co_list_agent_preferred_phone')
+LIST_OFFICE_PHONE = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.list_agent_office-properties-list_agent_office_phone')
+LIST_PREFERRED_PHONE = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.list_agent_office-properties-list_agent_preferred_phone')
 
 
 class ListComponent(BaseComponent):
@@ -35,11 +38,32 @@ class ListComponent(BaseComponent):
     def get_txt_list_address_country(self):
         return self.get_list_address_country().text
 
+    def get_co_list_agent_office_phone(self):
+        return self.node.find_element(*CO_LIST_OFFICE_PHONE)
+
+    def get_txt_co_list_agent_office_phone(self):
+        return self.get_co_list_agent_office_phone().text
+
+
+    def get_co_list_agent_preferred_phone(self):
+        return self.node.find_element(*CO_LIST_PREFERRED_PHONE)
+
+    def get_txt_co_list_agent_preferred_phone(self):
+        return self.get_co_list_agent_preferred_phone().text
+
+
+
     def get_list_agent_office_phone(self):
-        return self.node.find_element(*OFFICE_PHONE)
+        return self.node.find_element(*LIST_OFFICE_PHONE)
 
     def get_txt_list_agent_office_phone(self):
         return self.get_list_agent_office_phone().text
+
+    def get_list_agent_preferred_phone(self):
+        return self.node.find_element(*LIST_PREFERRED_PHONE)
+
+    def get_txt_list_agent_preferred_phone(self):
+        return self.get_list_agent_preferred_phone().text
 
 
 
