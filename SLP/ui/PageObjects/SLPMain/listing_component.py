@@ -5,6 +5,7 @@ from SLP.ui.PageObjects.base_components import BaseComponent
 
 METADATA_SELECT = (By.XPATH, '//*[@id="metadataSelect"]')
 COUNTRY = (By.XPATH,'/html/body/section/div/div/div/div[1]/div/form/div[6]/div/div/table/tbody/tr[83]')
+OFFICE_PHONE = (By.XPATH, '/html/body/section/div/div/div/div[1]/div/form/div[6]/div/div/table/tbody/tr[266]')
 
 
 class ListComponent(BaseComponent):
@@ -33,6 +34,12 @@ class ListComponent(BaseComponent):
 
     def get_txt_list_address_country(self):
         return self.get_list_address_country().text
+
+    def get_list_agent_office_phone(self):
+        return self.node.find_element(*OFFICE_PHONE)
+
+    def get_txt_list_agent_office_phone(self):
+        return self.get_list_agent_office_phone().text
 
 
 
