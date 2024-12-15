@@ -11,7 +11,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 SOURCE_ID = (By.XPATH, '//*[@id="sources"]')
 COUNTRY = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
-OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+CO_PREFERRED_PHONE = "co_list_agent_office.properties.co_list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+OFFICE_PHONE = "list_agent_office.properties.list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+PREFERRED_PHONE = "list_agent_office.properties.list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
 
 
 class TestPromotionChecklist(BaseTestRunner):
@@ -31,7 +34,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 self.assertEqual(COUNTRY, actual)
 
     @parameterized.expand(sources)
-    def test_list_agent_office_phone(self, source):
+    def test_co_list_agent_office_phone(self, source):
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -39,9 +42,23 @@ class TestPromotionChecklist(BaseTestRunner):
             with self.subTest(metadata=metadata):
                 SLPMain(self.driver).metadata_main_select(metadata)
                 SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_list_agent_office_phone()
-                actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
-                self.assertEqual(OFFICE_PHONE, actual)
+                ListComponent(self.driver).get_co_list_agent_office_phone()
+                actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
+                self.assertEqual(CO_OFFICE_PHONE, actual)
+
+
+    @parameterized.expand(sources)
+    def test_co_list_agent_preferred_phone(self, source):
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            with self.subTest(metadata=metadata):
+                SLPMain(self.driver).metadata_main_select(metadata)
+                SLPMain(self.driver).impl_wait_metadata()
+                ListComponent(self.driver).get_co_list_agent_preferred_phone()
+                actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
+                self.assertEqual(CO_PREFERRED_PHONE, actual)
 
     @parameterized.expand(sources)
     def test_list_agent_office_phone(self, source):
@@ -55,3 +72,16 @@ class TestPromotionChecklist(BaseTestRunner):
                 ListComponent(self.driver).get_list_agent_office_phone()
                 actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
                 self.assertEqual(OFFICE_PHONE, actual)
+
+    @parameterized.expand(sources)
+    def test_list_agent_preferred_phone(self, source):
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            with self.subTest(metadata=metadata):
+                SLPMain(self.driver).metadata_main_select(metadata)
+                SLPMain(self.driver).impl_wait_metadata()
+                ListComponent(self.driver).get_list_agent_preferred_phone()
+                actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
+                self.assertEqual(PREFERRED_PHONE, actual)
