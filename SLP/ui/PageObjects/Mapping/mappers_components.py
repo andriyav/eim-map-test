@@ -9,6 +9,7 @@ ELEMENT_MAPPER = (By.CSS_SELECTOR, "#foo")
 MAPPER_JSON_PATH = (By.CSS_SELECTOR, "#jsonform-3-elt-json_path")
 MAPPER_CREATE_BTN = (By.CSS_SELECTOR, "#addForm > div > input")
 
+
 class MappersComponents(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
@@ -42,10 +43,11 @@ class MappersComponents(BaseComponent):
     def set_json_path_value(self):
         json_path_value = ValueProvider.get_mapping_configuration()
         mapper = json_path_value["Metadata"]
-        return self.get_mapper_json_path().set_text(mapper)
+        return self.get_mapper_json_path().set_text_in(mapper)
 
     def get_button_create(self):
         return self.node.find_element(*MAPPER_CREATE_BTN)
 
-    def click_button_create(self):
+    def click_button_create_map(self):
+        time.sleep(1)
         return self.get_button_create().click()
