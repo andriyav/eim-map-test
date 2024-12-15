@@ -21,10 +21,9 @@ class MapperMap:
         MappersComponents(self.driver).mapper_selector_click()
         MappersComponents(self.driver).select_map_provider(mapper_provider)
         MappersComponents(self.driver).set_json_path_value()
-        # time.sleep(1)
-        MappersComponents(self.driver).click_button_create()
-        # SourceSelectComponent(self.driver).get_select_wait().until(
-        #     EC. invisibility_of_element_located(IMPLIS_WAIT))
+        MappersComponents(self.driver).click_button_create_map()
+        SourceSelectComponent(self.driver).get_select_wait().until(
+            EC. invisibility_of_element_located(IMPLIS_WAIT))
 
 
 

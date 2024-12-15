@@ -1,3 +1,5 @@
+import time
+
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -31,23 +33,20 @@ class SLPPageTestCase(BaseTestRunner):
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        print(metadata_numbers)
         for metadata in range(1, metadata_numbers):
             with self.subTest(metadata=metadata):
                 SLPMain(self.driver).metadata_main_select(metadata)
                 Mapping(self.driver).mapping()
-
                 SLPMain(self.driver).scroll_top()
-                SourceSelectComponent(self.driver).get_select_wait().until(
-                EC.visibility_of_element_located(PHOTO_TAB))
+                SourceSelectComponent(self.driver).get_select_wait().until(EC.visibility_of_element_located(PHOTO_TAB))
                 SLPMain(self.driver).select_photo_tub()
                 SLPMain(self.driver).select_list_tub()
-
                 SLPMain(self.driver).metadata_main_select(metadata)
                 SLPMain(self.driver).impl_wait_metadata()
                 ListComponent(self.driver).get_map_filed(IS_SHORT_SALE)
                 actual = ListComponent(self.driver).get_map_filed(IS_SHORT_SALE).text
-
-                ''' Map restart to reset locator'''
+                # Map restart to reset locator
                 SourceSelectComponent(self.driver).click_source_button()
                 SourceSelectComponent(self.driver).click_in_source_button()
                 SourceSelectComponent(self.driver).get_select_wait().until(EC.visibility_of_element_located(SOURCE_ID))
