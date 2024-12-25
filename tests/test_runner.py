@@ -18,28 +18,28 @@ class BaseTestRunner(unittest.TestCase):
         self._init_driver()
         self._login()
 
+    # def _init_driver(self):
+    #     chrome_options = webdriver.ChromeOptions()
+    #     chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+    #     chrome_options.add_argument("profile-directory=Default")
+    #     self.driver = webdriver.Chrome(options=chrome_options)
+    #     self.driver.implicitly_wait(IMPLICITLY_WAIT)
+    #     self.driver.get(ValueProvider.get_base_url())
+
+    # def _login(self):
+    #     self.driver.implicitly_wait(10)
+    #     LoginComponent(self.driver).click_authorisation_btn()
+    #     self.driver.maximize_window()
+
+    """Login with username and password"""
+
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
-        chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
-        self.driver.implicitly_wait(10)
-        LoginComponent(self.driver).click_authorisation_btn()
-        self.driver.maximize_window()
-
-    # Login with username and password
-
-    def _init_driver_google_login(self):
-        chrome_options = webdriver.ChromeOptions()
-        self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.implicitly_wait(IMPLICITLY_WAIT)
-        self.driver.get(ValueProvider.get_base_url())
-
-    def _login_google_login(self):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
         LoginModal(self.driver).set_email(ValueProvider.get_email())
