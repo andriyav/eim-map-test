@@ -1,0 +1,4 @@
+2024/12/25-23:48:59.797 8284 Reusing MANIFEST C:\Users\aandrusy\AppData\Local\Google\Chrome\UserData\aandrusy\Default\Local Storage\leveldb/MANIFEST-000001
+2024/12/25-23:48:59.805 8284 Recovering log #1147
+2024/12/25-23:48:59.805 8284 (ignoring error) C:\Users\aandrusy\AppData\Local\Google\Chrome\UserData\aandrusy\Default\Local Storage\leveldb/001147.log: dropping 11154 bytes; Corruption: checksum mismatch
+2024/12/25-23:48:59.821 8284 Reusing old log C:\Users\aandrusy\AppData\Local\Google\Chrome\UserData\aandrusy\Default\Local Storage\leveldb/001147.log 
