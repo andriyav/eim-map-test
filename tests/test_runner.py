@@ -18,7 +18,14 @@ if os.environ.get("CI"):  # Check if running in CI
 else:
     import pyautogui
 
+import os
+import unittest
 
+class MyTest(unittest.TestCase):
+    @unittest.skipUnless(os.getenv("DISPLAY"), "Requires a graphical display")
+    def test_gui_functionality(self):
+        # GUI-dependent test
+        pass
 
 class BaseTestRunner(unittest.TestCase):
 
