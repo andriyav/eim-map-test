@@ -1,12 +1,9 @@
 import time
-
 from selenium.webdriver.common.by import By
-
 from SLP.ui.Elements.input import Input
 from SLP.ui.Elements.select import Select
-from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.base_components import BaseComponent
-from tests.value_provider import ValueProvider
+from data.value_provider import ValueProvider
 
 ELEMENT_MAPPER = (By.CSS_SELECTOR, "#foo")
 MAPPER_JSON_PATH = (By.CSS_SELECTOR, "#jsonform-3-elt-json_path")
@@ -46,11 +43,11 @@ class MappersComponents(BaseComponent):
     def set_json_path_value(self):
         json_path_value = ValueProvider.get_mapping_configuration()
         mapper = json_path_value["Metadata"]
-        return self.get_mapper_json_path().set_text(mapper)
+        return self.get_mapper_json_path().set_text_in(mapper)
 
     def get_button_create(self):
         return self.node.find_element(*MAPPER_CREATE_BTN)
 
-    def click_button_create(self):
+    def click_button_create_map(self):
         time.sleep(1)
         return self.get_button_create().click()
