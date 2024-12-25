@@ -1,100 +1,42 @@
-name: Run Selenium Tests with Chrome Setup
+name: Run Selenium Tests
 
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 jobs:
   selenium-tests:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-      # Step 2: Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.10
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
 
-      # Step 3: Install Chrome
-      - name: Install Google Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          google-chrome --version
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-      # Step 4: Install dependencies
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: Download Chrome Driver
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y unzip xvfb
+        CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
+        DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+        wget -q "https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip"
+        unzip chromedriver_linux64.zip
+        sudo mv chromedriver /usr/local/bin/
 
-      # Step 5: Prepare directories for artifacts
-      - name: Prepare directories for artifacts
-        run: mkdir -p selenium_user_data test-results logs
-
-      # Step 6: Run Selenium tests
-      - name: Run Selenium tests
-        env:
-          CHROME_USER_DIR: ./selenium_user_data
-          IMPLICITLY_WAIT: 10
-        run: |
-          python -m unittest tests/test_checklist.py
-
-      # Step 7: Upload user-data-dir
-      - name: Upload user-data-dir
-        uses: actions/upload-artifact@v3
-        with:
-          name: user-data-dir
-          path: ./selenium_user_data
-
-      # Step 8: Upload test results
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: ./logs/test_output.log
-
-      # Step 9: Upload logs
-      - name: Upload logs
-        uses: actions/upload-artifact@v3
-        with:
-          name: logs
-          path: ./logs
-
-  download-artifacts:
-    runs-on: ubuntu-latest
-    needs: selenium-tests
-
-    steps:
-      # Step 1: Download repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Step 2: Download Chrome user-data-dir artifact
-      - name: Download user-data-dir
-        uses: actions/download-artifact@v3
-        with:
-          name: user-data-dir
-          path: ./downloaded_user_data
-
-      # Step 3: Download test results
-      - name: Download test results
-        uses: actions/download-artifact@v3
-        with:
-          name: test-results
-          path: ./downloaded_results
-
-      # Step 4: Download logs
-      - name: Download logs
-        uses: actions/download-artifact@v3
-        with:
-          name: logs
-          path: ./downloaded_logs
+    - name: Run Tests
+      env:
+        CHROME_USER_DIR: ./data/cash1
+      run: |
+        mkdir -p $CHROME_USER_DIR
+        python -m unittest test_checklist.py
