@@ -5,8 +5,8 @@ from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-# CHROME_USER_DIR = "C:/Users/aandrusy/AppData/Local/Google/Chrome/UserData/aandrusy"
-CHROME_USER_DIR = "/data/cash"
+CHROME_USER_DIR = "C:/Users/aandrusy/ssh_repos/private/SLPUI/data/cash1"
+
 IMPLICITLY_WAIT = 10
 
 
@@ -21,14 +21,14 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument('--headless')
-        # chrome_options.add_argument('--disable-gpu')
-        # chrome_options.add_argument("--no-sandbox")
-        # chrome_options.add_argument("--disable-dev-shm-usage")
-        # chrome_options.add_argument("--disable-popup-blocking")
-        # chrome_options.add_argument('--disable-web-security')
-        # chrome_options.add_argument('--disable-extensions')
-        # chrome_options.add_argument('--window-size=1920x1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-popup-blocking")
+        chrome_options.add_argument('--disable-web-security')
+        chrome_options.add_argument('--disable-extensions')
+        chrome_options.add_argument('--window-size=1920x1080')
         chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
@@ -39,6 +39,9 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
         self.driver.maximize_window()
+
+    def tearDown(self):
+        self.driver.quit()
 
     '''Login with username and password'''
 
@@ -67,5 +70,3 @@ class BaseTestRunner(unittest.TestCase):
     #     self.driver.maximize_window()
     #     time.sleep(5)
 
-    def tearDown(self):
-        self.driver.quit()

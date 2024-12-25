@@ -1,4 +1,0 @@
-2024/12/25-23:48:53.144 88f8 Reusing MANIFEST C:\Users\aandrusy\AppData\Local\Google\Chrome\UserData\aandrusy\Default\Local Storage\leveldb/MANIFEST-000001
-2024/12/25-23:48:53.151 88f8 Recovering log #1147
-2024/12/25-23:48:53.151 88f8 (ignoring error) C:\Users\aandrusy\AppData\Local\Google\Chrome\UserData\aandrusy\Default\Local Storage\leveldb/001147.log: dropping 11154 bytes; Corruption: checksum mismatch
-2024/12/25-23:48:53.166 88f8 Reusing old log C:\Users\aandrusy\AppData\Local\Google\Chrome\UserData\aandrusy\Default\Local Storage\leveldb/001147.log 
