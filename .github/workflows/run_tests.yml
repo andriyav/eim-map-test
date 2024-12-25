@@ -29,4 +29,4 @@ jobs:
         CHROME_USER_DIR: ./data/cash1
       run: |
         mkdir -p $CHROME_USER_DIR
-        python -m unittest test/test_checklist.py
+        python -m unittest tests/test_checklist.py
