@@ -4,6 +4,7 @@ from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
+from selenium.webdriver.chrome.options import Options
 
 CHROME_USER_DIR = "C:/Users/aandrusy/AppData/Local/Google/Chrome/UserData/aandrusy"
 IMPLICITLY_WAIT = 10
@@ -35,8 +36,17 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-popup-blocking")
+        chrome_options.add_argument('--disable-web-security')
+        chrome_options.add_argument('--disable-extensions')
+        chrome_options.add_argument('--window-size=1920x1080')
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
+        self.driver.maximize_window()
         self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
