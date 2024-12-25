@@ -33,12 +33,6 @@ jobs:
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
-    # Step 5: Start Xvfb
-    - name: Start virtual display
-      run: |
-        Xvfb :99 -screen 0 1920x1080x16 &
-        export DISPLAY=:99
-
     # Step 6: Run the specific unit test
     - name: Run test_checklist.py
       run: |
