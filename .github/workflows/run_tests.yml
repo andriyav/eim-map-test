@@ -24,16 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Download Chrome Driver
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y unzip xvfb
-        CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
-        DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        wget -q "https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip"
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/
-
     - name: Run Tests
       env:
         CHROME_USER_DIR: ./data/cash1
