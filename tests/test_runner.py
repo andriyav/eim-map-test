@@ -1,3 +1,4 @@
+import os
 import time
 import unittest
 from selenium import webdriver
@@ -8,6 +9,15 @@ from selenium.webdriver.chrome.options import Options
 
 CHROME_USER_DIR = "C:/Users/aandrusy/AppData/Local/Google/Chrome/UserData/aandrusy"
 IMPLICITLY_WAIT = 10
+from pyvirtualdisplay import Display
+# Start a virtual display if not already running (useful for CI environments)
+if os.environ.get("CI"):  # Check if running in CI
+    display = Display(visible=False, size=(1920, 1080))
+    display.start()
+    import pyautogui
+else:
+    import pyautogui
+
 
 
 class BaseTestRunner(unittest.TestCase):
@@ -36,14 +46,6 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument('--headless')
-        # chrome_options.add_argument('--disable-gpu')
-        # chrome_options.add_argument("--no-sandbox")
-        # chrome_options.add_argument("--disable-dev-shm-usage")
-        # chrome_options.add_argument("--disable-popup-blocking")
-        # chrome_options.add_argument('--disable-web-security')
-        # chrome_options.add_argument('--disable-extensions')
-        # chrome_options.add_argument('--window-size=1920x1080')
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
@@ -64,3 +66,4 @@ class BaseTestRunner(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit()
+
