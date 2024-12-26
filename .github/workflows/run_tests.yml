@@ -25,4 +25,4 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Tests
-      run: python -m unittest test_checklist.py
+      run: python -m unittest tests/test_checklist.py
