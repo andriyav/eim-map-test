@@ -7,10 +7,13 @@ from data.value_provider import ValueProvider
 from tests.test_runner import BaseTestRunner
 
 
+def _take_screenshot(self, filename='screenshot.png'):
+    os.makedirs('./artifacts/screenshots', exist_ok=True)
+    self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
+
 class TestPromotionChecklist(BaseTestRunner):
-    def _take_screenshot(self, filename='screenshot.png'):
-        os.makedirs('./artifacts/screenshots', exist_ok=True)
-        self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
+
+
 
     def test_screen(self):
         self.driver.get(ValueProvider.get_base_url())
@@ -23,5 +26,7 @@ class TestPromotionChecklist(BaseTestRunner):
         time.sleep(5)
         self._take_screenshot('button_interaction_failed.png')
         time.sleep(5)
+
+
 
 

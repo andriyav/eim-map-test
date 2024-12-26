@@ -39,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: screenshot
-        path: button_interaction_failed.png
+        path: ./artifacts/screenshots/button_interaction_failed.png
 
     - name: Run Tests with Virtual Display 2
       run: xvfb-run -a python -m unittest tests/test_checklist.py
