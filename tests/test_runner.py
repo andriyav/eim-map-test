@@ -36,6 +36,7 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(CHROME_USER_DIR)}")
+        print(f"Resolved CHROME_USER_DIR path: {os.path.abspath('~/.config/google-chrome/Default')}")
 
 
     def _login(self):
