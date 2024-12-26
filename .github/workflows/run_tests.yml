@@ -31,6 +31,7 @@ jobs:
       run: xvfb-run -a python -m unittest tests/test_checklist.py
 
     - name: Upload Screenshots
+      if: failure()  # Only upload if the test fails
       uses: actions/upload-artifact@v3
       with:
         name: screenshots
