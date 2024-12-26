@@ -53,8 +53,8 @@ class BaseTestRunner(unittest.TestCase):
 
 
     def _login(self):
-        self.driver.implicitly_wait(10)
-        LoginComponent(self.driver).click_authorisation_btn()
+        # self.driver.implicitly_wait(10)
+        # LoginComponent(self.driver).click_authorisation_btn()
         self.driver.maximize_window()
 
 

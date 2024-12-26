@@ -48,6 +48,8 @@ class TestPromotionChecklist(BaseTestRunner):
         os.makedirs('./artifacts/screenshots', exist_ok=True)
         self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
 
+
+
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
 
