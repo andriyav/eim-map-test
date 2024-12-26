@@ -39,12 +39,7 @@ class BaseTestRunner(unittest.TestCase):
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
-        LoginComponent(self.driver).click_authorisation_btn()
-        LoginModal(self.driver).set_email(ValueProvider.get_email())
-        LoginModal(self.driver).click_next_button_first()
-        LoginModal(self.driver).set_password(ValueProvider.get_password())
-        LoginModal(self.driver).click_next_button_second()
-        self.driver.maximize_window()
+
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(CHROME_USER_DIR)}")
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath('~/.config/google-chrome/Default')}")
 
