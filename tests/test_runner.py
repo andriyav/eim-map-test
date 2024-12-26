@@ -56,7 +56,6 @@ class BaseTestRunner(unittest.TestCase):
     def _login(self):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
-        LoginComponent(self.driver).click_authorisation_btn()
         LoginModal(self.driver).set_email(ValueProvider.get_email())
         LoginModal(self.driver).click_next_button_first()
         LoginModal(self.driver).set_password(ValueProvider.get_password())
