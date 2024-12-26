@@ -16,6 +16,10 @@ IMPLICITLY_WAIT = 10
 
 class BaseTestRunner(unittest.TestCase):
 
+    def _take_screenshot(self, filename='screenshot.png'):
+        os.makedirs('./artifacts/screenshots', exist_ok=True)
+        self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
+
     def __init__(self, methodName: str = ...):
         super().__init__(methodName)
 
@@ -41,7 +45,8 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
-        time.sleep(5)
+        self._take_screenshot('button_interaction_failed.png')
+        time.sleep(60)
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(CHROME_USER_DIR)}")
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath('~/.config/google-chrome/Default')}")
 
