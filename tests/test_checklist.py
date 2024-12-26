@@ -1,17 +1,11 @@
-import time
-
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-import re
 import os
-from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard
-from data.mls_id_data import mls_id_dict
-from data.test_data import sources
-from SLP.ui.PageObjects.Mapping.mapping import Mapping
+
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
-from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
+from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -46,15 +40,11 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 class TestPromotionChecklist(BaseTestRunner):
 
-    def _take_screenshot(self, filename='screenshot.png'):
-        os.makedirs('./artifacts/screenshots', exist_ok=True)
-        self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
-
-
 
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
-        time.sleep(61)
+        self.assertTrue(True)
+        '''No elements of list_address are nullified or set constant (except country)'''
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
