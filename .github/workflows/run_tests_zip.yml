@@ -24,20 +24,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Unzip Chrome Cache to Default Directory
-      run: |
-        mkdir -p ~/.config/google-chrome/Default
-        tar -xzvf ./SLPUI/data/cash1.tar.gz -C ~/.config/google-chrome/Default
-
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
     - name: Run Tests with Virtual Display
       run: xvfb-run -a python -m unittest tests/test_checklist.py
 
-    - name: Upload Screenshots
-      if: failure()  # Only upload if the test fails
+    - name: Archive Folder as Artifact
+      if: always() # Ensures artifacts are saved even if the tests fail
       uses: actions/upload-artifact@v3
       with:
-        name: screenshots
-        path: artifacts/screenshots
+        name: slpui-cash-folder
+        path: /home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash
