@@ -12,7 +12,7 @@ from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectCompo
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
-SOURCE_ID = (By.XPATH, '//*[@id="sources"]')
+SOURCE_ID = (By.CSS_SELECTOR,' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
@@ -48,7 +48,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
         self.assertTrue(True)
         '''No elements of list_address are nullified or set constant (except country)'''
-        # WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
