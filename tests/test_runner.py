@@ -7,8 +7,9 @@ from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
 # CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/SLPUI/data/cash1"
-CHROME_USER_DIR = os.path.abspath("./SLPUI/data/cash2")
-ZIP = 'C:/Users/aandrusy/ssh_repos/private/SLPUI/data/cash1.tar.gz'
+# CHROME_USER_DIR = os.path.abspath("./SLPUI/data/cash2")
+# ZIP = 'C:/Users/aandrusy/ssh_repos/private/SLPUI/data/cash1.tar.gz'
+CHROME_USER_DIR = "/home/runner/.config/google-chrome"
 
 IMPLICITLY_WAIT = 10
 
