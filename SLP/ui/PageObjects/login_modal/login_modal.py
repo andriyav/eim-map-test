@@ -5,7 +5,7 @@ from SLP.ui.PageObjects.base_components import BaseComponent
 
 GOOGLE_USER = (By.XPATH, '//*[@id="identifierId"]')
 NEXT_BTN_FIRST = (By.XPATH, '//*[@id="identifierNext"]/div/button')
-NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button')
+NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button1')
 PASSWORD_INPUT = (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
 
 
