@@ -27,5 +27,12 @@ jobs:
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
-    - name: Run Tests with Virtual Display 2
+    - name: Run Tests with Virtual Display
       run: xvfb-run -a python -m unittest tests/test_checklist.py
+
+    - name: Archive Folder as Artifact
+      if: always() # Ensures artifacts are saved even if the tests fail
+      uses: actions/upload-artifact@v3
+      with:
+        name: slpui-cash-folder
+        path: /home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash

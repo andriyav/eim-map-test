@@ -6,7 +6,7 @@ from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = "C:/home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash"
+CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash"
 # CHROME_USER_DIR = os.path.abspath("./SLPUI/data/cash2")
 
 IMPLICITLY_WAIT = 10
@@ -46,11 +46,8 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
-        chrome_options.add_argument('--disable-popup-blocking')
-        chrome_options.add_argument('--window-size=1920x1080')
+        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+        chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.maximize_window()
