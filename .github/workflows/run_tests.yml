@@ -32,11 +32,14 @@ jobs:
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
-    - name: Run Tests with Virtual Display
-      run: xvfb-run -a python -m unittest tests/test_checklist.py
+    - name: Run Tests with Virtual Display 1
+      run: xvfb-run -a python -m unittest tests/test_screen.py
 
-    - name: Upload Screenshots
+    - name: Upload Screenshot
       uses: actions/upload-artifact@v3
       with:
-        name: screenshots
-        path: artifacts/screenshots
+        name: screenshot
+        path: button_interaction_failed.png
+
+    - name: Run Tests with Virtual Display 2
+      run: xvfb-run -a python -m unittest tests/test_checklist.py

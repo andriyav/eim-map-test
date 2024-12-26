@@ -39,22 +39,22 @@ class BaseTestRunner(unittest.TestCase):
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
-        LoginComponent(self.driver).click_authorisation_btn()
-        LoginModal(self.driver).set_email(ValueProvider.get_email())
-        LoginModal(self.driver).click_next_button_first()
-        LoginModal(self.driver).set_password(ValueProvider.get_password())
-        LoginModal(self.driver).click_next_button_second()
+        # LoginComponent(self.driver).click_authorisation_btn()
+        # LoginModal(self.driver).set_email(ValueProvider.get_email())
+        # LoginModal(self.driver).click_next_button_first()
+        # LoginModal(self.driver).set_password(ValueProvider.get_password())
+        # LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
-        time.sleep(5)
+        # time.sleep(5)
         self._take_screenshot('button_interaction_failed.png')
-        time.sleep(60)
+        # time.sleep(60)
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(CHROME_USER_DIR)}")
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath('~/.config/google-chrome/Default')}")
 
 
     def _login(self):
-        # self.driver.implicitly_wait(10)
-        # LoginComponent(self.driver).click_authorisation_btn()
+        self.driver.implicitly_wait(10)
+        LoginComponent(self.driver).click_authorisation_btn()
         self.driver.maximize_window()
 
 
