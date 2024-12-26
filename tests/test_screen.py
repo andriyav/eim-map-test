@@ -9,7 +9,7 @@ from tests.test_runner import BaseTestRunner
 
 def _take_screenshot(self, filename='screenshot.png'):
     os.makedirs('./artifacts/screenshots', exist_ok=True)
-    self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
+    self.driver.save_screenshot(filename)
 
 class TestPromotionChecklist(BaseTestRunner):
 
@@ -24,7 +24,7 @@ class TestPromotionChecklist(BaseTestRunner):
         LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
         time.sleep(5)
-        self._take_screenshot('button_interaction_failed.png')
+        self._take_screenshot("public/screenshot.png")
         time.sleep(5)
 
 

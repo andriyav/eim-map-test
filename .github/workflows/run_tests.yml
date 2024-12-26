@@ -24,6 +24,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Start HTTP Server
+      run: |
+        python -m http.server 8080 --directory public &
+      env:
+        PUBLIC_SERVER_URL: "http://localhost:8080/screenshot.png"
+
+
     - name: Unzip Chrome Cache to Default Directory
       run: |
         mkdir -p /home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash
@@ -35,11 +42,8 @@ jobs:
     - name: Run Tests with Virtual Display 1
       run: xvfb-run -a python -m unittest tests/test_screen.py
 
-    - name: Upload Screenshot
-      uses: actions/upload-artifact@v3
-      with:
-        name: screenshot
-        path: ./artifacts/screenshots/button_interaction_failed.png
+    - name: Display Screenshot URL
+      run: echo "Screenshot available at http://localhost:8080/screenshot.png"
 
     - name: Run Tests with Virtual Display 2
       run: xvfb-run -a python -m unittest tests/test_checklist.py
