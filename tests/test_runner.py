@@ -6,7 +6,7 @@ from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash"
+CHROME_USER_DIR = '~/.config/google-chrome/'
 # CHROME_USER_DIR = os.path.abspath("./SLPUI/data/cash2")
 
 IMPLICITLY_WAIT = 10
@@ -56,10 +56,10 @@ class BaseTestRunner(unittest.TestCase):
     def _login(self):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
-        LoginModal(self.driver).set_email(ValueProvider.get_email())
-        LoginModal(self.driver).click_next_button_first()
-        LoginModal(self.driver).set_password(ValueProvider.get_password())
-        LoginModal(self.driver).click_next_button_second()
+        # LoginModal(self.driver).set_email(ValueProvider.get_email())
+        # LoginModal(self.driver).click_next_button_first()
+        # LoginModal(self.driver).set_password(ValueProvider.get_password())
+        # LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
         time.sleep(5)
 
