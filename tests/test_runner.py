@@ -6,7 +6,7 @@ from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = "C:/Users/aandrusy/ssh_repos/private/SLPUI/data/cash1"
+CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/SLPUI/data/cash1"
 
 IMPLICITLY_WAIT = 10
 
