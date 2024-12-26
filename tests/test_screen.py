@@ -15,6 +15,7 @@ class TestPromotionChecklist(BaseTestRunner):
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
-        time.sleep(60)
+        time.sleep(5)
         self._take_screenshot('button_interaction_failed.png')
+        time.sleep(61)
 
