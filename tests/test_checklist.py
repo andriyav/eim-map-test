@@ -53,8 +53,6 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
 
-        '''No elements of list_address are nullified or set constant (except country)'''
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
