@@ -1,3 +1,4 @@
+import os
 import time
 import unittest
 from selenium import webdriver
@@ -5,7 +6,7 @@ from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = "./data/cash11"
+CHROME_USER_DIR = "C:/Users/aandrusy/ssh_repos/private/SLPUI/data/cash1"
 
 IMPLICITLY_WAIT = 10
 
@@ -31,6 +32,7 @@ class BaseTestRunner(unittest.TestCase):
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
+        print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(CHROME_USER_DIR)}")
 
     def _login(self):
         self.driver.implicitly_wait(10)
