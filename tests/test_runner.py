@@ -9,7 +9,7 @@ from data.value_provider import ValueProvider
 # CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/SLPUI/data/cash1"
 # CHROME_USER_DIR = os.path.abspath("./SLPUI/data/cash2")
 
-CHROME_USER_DIR = "/home/runner/.config/google-chrome"
+CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash"
 
 IMPLICITLY_WAIT = 10
 
