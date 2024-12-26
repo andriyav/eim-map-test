@@ -2,6 +2,7 @@ from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import re
+import os
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard
 from data.mls_id_data import mls_id_dict
 from data.test_data import sources
@@ -43,12 +44,17 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 class TestPromotionChecklist(BaseTestRunner):
 
+    def _take_screenshot(self, filename='screenshot.png'):
+        os.makedirs('./artifacts/screenshots', exist_ok=True)
+        self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
+
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
 
         self.assertTrue(True)
         '''No elements of list_address are nullified or set constant (except country)'''
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        self._take_screenshot('button_interaction_failed.png')
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):

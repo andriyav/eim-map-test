@@ -29,3 +29,9 @@ jobs:
 
     - name: Run Tests with Virtual Display
       run: xvfb-run -a python -m unittest tests/test_checklist.py
+
+    - name: Upload Screenshots
+      uses: actions/upload-artifact@v3
+      with:
+        name: screenshots
+        path: artifacts/screenshots
