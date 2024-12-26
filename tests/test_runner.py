@@ -8,6 +8,7 @@ from data.value_provider import ValueProvider
 
 # CHROME_USER_DIR = "/home/runner/work/SLPUI/SLPUI/SLPUI/data/cash1"
 CHROME_USER_DIR = os.path.abspath("./SLPUI/data/cash2")
+ZIP = 'C:/Users/aandrusy/ssh_repos/private/SLPUI/data/cash1.tar.gz'
 
 IMPLICITLY_WAIT = 10
 
@@ -34,6 +35,7 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
         print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(CHROME_USER_DIR)}")
+        print(f"Resolved CHROME_USER_DIR path: {os.path.abspath(ZIP)}")
 
     def _login(self):
         self.driver.implicitly_wait(10)
