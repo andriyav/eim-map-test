@@ -47,7 +47,7 @@ class TestPromotionChecklist(BaseTestRunner):
         try:
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         except:
-            self.driver.save_screenshot('artifacts/screenshots')
+            self.driver.save_screenshot('artifacts/screenshots/screen.png')
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
