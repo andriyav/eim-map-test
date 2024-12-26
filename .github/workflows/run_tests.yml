@@ -27,7 +27,8 @@ jobs:
     - name: Unzip Chrome Cache to Default Directory
       run: |
         mkdir -p ~/.config/google-chrome/
-        tar -xvzf /home/runner/work/SLPUI/SLPUI/data/cash.tar.gz -C ~/.config/google-chrome/
+        unzip /home/runner/work/SLPUI/SLPUI/data/cash.zip -d ~/.config/google-chrome/
+      
 
 
     - name: Install Xvfb
