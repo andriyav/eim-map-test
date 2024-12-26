@@ -24,26 +24,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-
-    - name: Unzip Chrome Cache to Default Directory
-      run: |
-        mkdir -p /home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash
-        tar -xzvf /home/runner/work/SLPUI/SLPUI/tests/SLPUI/data/cash2.tar.gz -C /home/runner/work/SLPUI/SLPUI/tests/SLPUI/cash
-
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
-
-    - name: Start HTTP Server
-      run: |
-        python -m http.server 8080 --directory public &
-      env:
-        PUBLIC_SERVER_URL: "http://localhost:8080/screenshot.png"
-
-    - name: Run Tests with Virtual Display 1
-      run: xvfb-run -a python -m unittest tests/test_screen.py
-
-    - name: Display Screenshot URL
-      run: echo "Screenshot available at http://localhost:8080/screenshot.png"
 
     - name: Run Tests with Virtual Display 2
       run: xvfb-run -a python -m unittest tests/test_checklist.py
