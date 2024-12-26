@@ -1,3 +1,4 @@
+import os
 import time
 
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
@@ -7,6 +8,10 @@ from tests.test_runner import BaseTestRunner
 
 
 class TestPromotionChecklist(BaseTestRunner):
+    def _take_screenshot(self, filename='screenshot.png'):
+        os.makedirs('./artifacts/screenshots', exist_ok=True)
+        self.driver.save_screenshot(f'./artifacts/screenshots/{filename}')
+
     def test_screen(self):
         self.driver.get(ValueProvider.get_base_url())
         LoginComponent(self.driver).click_authorisation_btn()
@@ -17,5 +22,6 @@ class TestPromotionChecklist(BaseTestRunner):
         self.driver.maximize_window()
         time.sleep(5)
         self._take_screenshot('button_interaction_failed.png')
+        time.sleep(5)
 
 
