@@ -28,7 +28,7 @@ jobs:
       run: |
         mkdir -p ~/.config/google-chrome/Default
         unzip /home/runner/work/SLPUI/SLPUI/data/cash.zip -d ~/.config/google-chrome
-#        /home/runner/work/SLPUI/SLPUI/test/SLPUI/data/cash1
+
 
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
