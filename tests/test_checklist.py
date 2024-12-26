@@ -1,3 +1,5 @@
+import time
+
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -52,7 +54,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
-
+        time.sleep(61)
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):

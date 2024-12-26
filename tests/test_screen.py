@@ -17,5 +17,5 @@ class TestPromotionChecklist(BaseTestRunner):
         self.driver.maximize_window()
         time.sleep(5)
         self._take_screenshot('button_interaction_failed.png')
-        time.sleep(61)
+
 
