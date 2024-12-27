@@ -31,10 +31,10 @@
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
-      - name: Unzip Chrome Cache to Default Directory
-        run: |
-          mkdir -p ~/.config/google-chrome/Default
-          unzip /home/runner/work/SLPUI/SLPUI/data/cash.zip -d ~/.config/google-chrome/Default
+#      - name: Unzip Chrome Cache to Default Directory
+#        run: |
+#          mkdir -p ~/.config/google-chrome/Default
+#          unzip /home/runner/work/SLPUI/SLPUI/data/cash.zip -d ~/.config/google-chrome/Default
   
 
       - name: Install Xvfb
@@ -56,4 +56,9 @@
           name: chrome-cache
           path: cache_archive.zip
 
-
+#      - name: Upload Screenshots
+#        if: failure()  # Only upload if the test fails
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: screenshots
+#          path: artifacts/screenshots
