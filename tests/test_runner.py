@@ -61,6 +61,9 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.refresh()
 
         self.driver.get(ValueProvider.get_google_url())
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
 
     def _login(self):
         self.driver.implicitly_wait(10)
