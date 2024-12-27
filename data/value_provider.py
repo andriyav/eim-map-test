@@ -18,6 +18,10 @@ class ValueProvider:
         return os.getenv("BASE_URL")
 
     @classmethod
+    def get_google_url(cls):
+        return os.getenv("GOOGLE_URL")
+
+    @classmethod
     def get_mls_id(cls):
         sources = [
             "19"

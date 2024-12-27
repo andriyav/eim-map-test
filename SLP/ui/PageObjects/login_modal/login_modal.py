@@ -7,11 +7,13 @@ GOOGLE_USER = (By.XPATH, '//*[@id="identifierId"]')
 NEXT_BTN_FIRST = (By.XPATH, '//*[@id="identifierNext"]/div/button')
 NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button')
 PASSWORD_INPUT = (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
+GOOGLE_BUTTON = (By.CSS_SELECTOR, '#gb > div > div.gb_Re > a')
 
 
 class LoginModal(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
+        self._google_account_btn = None
         self._email_input = None
         self._password_input = None
         self._login_button_first = None
@@ -51,5 +53,14 @@ class LoginModal(BaseComponent):
 
     def click_next_button_second(self):
         self.get_next_button_second().click_button()
+
+    def google_account_btn(self):
+        node = self.node.find_element(*GOOGLE_BUTTON)
+        self._google_account_btn = Button(node)
+        return self._google_account_btn
+
+    def google_account_btn_click(self):
+        self.google_account_btn().click_button()
+
 
 

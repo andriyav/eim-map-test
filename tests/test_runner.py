@@ -46,16 +46,16 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
-        chrome_options.add_argument("profile-directory=Default")
+        # chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+        # chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.maximize_window()
-        self.driver.get(ValueProvider.get_base_url())
+        self.driver.get(ValueProvider.get_google_url())
 
     def _login(self):
         self.driver.implicitly_wait(10)
-        LoginComponent(self.driver).click_authorisation_btn()
+        LoginModal(self.driver).google_account_btn_click()
         LoginModal(self.driver).set_email(ValueProvider.get_email())
         LoginModal(self.driver).click_next_button_first()
         LoginModal(self.driver).set_password(ValueProvider.get_password())
@@ -64,6 +64,8 @@ class BaseTestRunner(unittest.TestCase):
         time.sleep(5)
         with open("page_source.html", "w", encoding="utf-8") as f:
             f.write(self.driver.page_source)
+        self.driver.get(ValueProvider.get_base_url())
+        LoginComponent(self.driver).click_authorisation_btn()
 
     def tearDown(self):
         self.driver.quit()
