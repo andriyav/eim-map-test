@@ -33,7 +33,7 @@
 
       - name: Unzip Chrome Cache to Default Directory
         run: |
-          mkdir -p ~/.cache/google-chrome/Cache/Cache_Data
+          mkdir -p ~/.cache/google-chrome/Default/Cache/Cache_Data
           unzip /home/runner/work/SLPUI/SLPUI/data/Cache_Data.zip -d ~/.cache/google-chrome/Default/Cache/Cache_Data
   
 
