@@ -33,8 +33,8 @@
 
       - name: Unzip Chrome Cache to Default Directory
         run: |
-          mkdir -p ~/.config/google-chrome/Default
-          unzip /home/runner/work/SLPUI/SLPUI/data/cash.zip -d ~/.config/google-chrome/Default
+          mkdir -p ~/.cache/google-chrome/Default
+          unzip /home/runner/work/SLPUI/SLPUI/data/Cache_Data.zip -d ~/.cache/google-chrome/Default
   
 
       - name: Install Xvfb
