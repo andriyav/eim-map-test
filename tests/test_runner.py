@@ -55,11 +55,11 @@ class BaseTestRunner(unittest.TestCase):
 
     def _login(self):
         self.driver.implicitly_wait(10)
-        LoginModal(self.driver).google_account_btn_click()
-        LoginModal(self.driver).set_email(ValueProvider.get_email())
-        LoginModal(self.driver).click_next_button_first()
-        LoginModal(self.driver).set_password(ValueProvider.get_password())
-        LoginModal(self.driver).click_next_button_second()
+        # LoginModal(self.driver).google_account_btn_click()
+        # LoginModal(self.driver).set_email(ValueProvider.get_email())
+        # LoginModal(self.driver).click_next_button_first()
+        # LoginModal(self.driver).set_password(ValueProvider.get_password())
+        # LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
         time.sleep(5)
         with open("page_source.html", "w", encoding="utf-8") as f:
