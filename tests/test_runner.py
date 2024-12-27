@@ -56,7 +56,7 @@ class BaseTestRunner(unittest.TestCase):
     def _login(self):
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
-        # LoginModal(self.driver).google_account_btn_click()
+        LoginModal(self.driver).google_account_btn_click()
         #
         # LoginModal(self.driver).set_email(ValueProvider.get_email())
         #
