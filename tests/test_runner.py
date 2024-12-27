@@ -68,9 +68,7 @@ class BaseTestRunner(unittest.TestCase):
 
     def _login(self):
         self.driver.implicitly_wait(10)
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
+
         self.driver.maximize_window()
         LoginComponent(self.driver).click_authorisation_btn()
         LoginModal(self.driver).set_email(ValueProvider.get_email())
