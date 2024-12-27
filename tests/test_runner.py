@@ -49,8 +49,8 @@ class BaseTestRunner(unittest.TestCase):
         with open("/home/runner/work/SLPUI/SLPUI/tests/cookies.pkl", "rb") as cookie_file:
             cookies = pickle.load(cookie_file)
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
-        # chrome_options.add_argument("profile-directory=Default")
+        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+        chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.maximize_window()
