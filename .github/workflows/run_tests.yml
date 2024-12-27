@@ -29,13 +29,7 @@
           sudo apt-get update
           sudo apt-get install -y wget
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install -y ./google-chrome-stable_current_amd64.deb
-
-      - name: Unzip Chrome Cache to Default Directory
-        run: |
-          mkdir -p ~/.cache/google-chrome/Default/Cache/Cache_Data
-          unzip /home/runner/work/SLPUI/SLPUI/data/cache.zip -d ~/.cache/google-chrome/
-  
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb  
 
       - name: Install Xvfb
         run: sudo apt-get install -y xvfb
