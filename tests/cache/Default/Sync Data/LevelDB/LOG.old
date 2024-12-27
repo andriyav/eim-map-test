@@ -1,2 +1,3 @@
-2024/12/28-01:29:26.732 a6a3 Creating DB /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Sync Data/LevelDB since it was missing.
-2024/12/28-01:29:28.643 a6a3 Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/12/28-01:44:08.725 bd1a Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/12/28-01:44:08.726 bd1a Recovering log #3
+2024/12/28-01:44:08.726 bd1a Reusing old log /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Sync Data/LevelDB/000003.log 

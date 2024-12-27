@@ -1,2 +1,3 @@
-2024/12/28-01:29:26.741 a6b0 Creating DB /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Site Characteristics Database since it was missing.
-2024/12/28-01:29:28.648 a6b0 Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Site Characteristics Database/MANIFEST-000001
+2024/12/28-01:44:08.748 bd1b Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Site Characteristics Database/MANIFEST-000001
+2024/12/28-01:44:08.748 bd1b Recovering log #3
+2024/12/28-01:44:08.748 bd1b Reusing old log /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Site Characteristics Database/000003.log 

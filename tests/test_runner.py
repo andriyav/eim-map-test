@@ -61,7 +61,7 @@ class BaseTestRunner(unittest.TestCase):
         # LoginModal(self.driver).set_password(ValueProvider.get_password())
         # LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
-        time.sleep(4)
+        time.sleep(60)
         with open("page_source.html", "w", encoding="utf-8") as f:
             f.write(self.driver.page_source)
 

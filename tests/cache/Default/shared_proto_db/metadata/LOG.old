@@ -1,2 +1,3 @@
-2024/12/28-01:29:26.843 a6c6 Creating DB /home/andry/PycharmProjects/SLPUI/tests/cache/Default/shared_proto_db/metadata since it was missing.
-2024/12/28-01:29:28.648 a6c6 Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/shared_proto_db/metadata/MANIFEST-000001
+2024/12/28-01:44:08.932 bd1a Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/shared_proto_db/metadata/MANIFEST-000001
+2024/12/28-01:44:08.932 bd1a Recovering log #3
+2024/12/28-01:44:08.932 bd1a Reusing old log /home/andry/PycharmProjects/SLPUI/tests/cache/Default/shared_proto_db/metadata/000003.log 
