@@ -62,10 +62,12 @@ class BaseTestRunner(unittest.TestCase):
 
         LoginModal(self.driver).click_next_button_first()
         LoginModal(self.driver).set_password(ValueProvider.get_password())
+
+        LoginModal(self.driver).click_next_button_second()
+        time.sleep(3)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
         self.driver.save_screenshot(screenshot_path)
-        LoginModal(self.driver).click_next_button_second()
         # self.driver.maximize_window()
         time.sleep(5)
         with open("page_source.html", "w", encoding="utf-8") as f:
