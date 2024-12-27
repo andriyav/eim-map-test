@@ -60,6 +60,10 @@ class BaseTestRunner(unittest.TestCase):
             self.driver.add_cookie(cookie)
         self.driver.refresh()
         self.driver.get(ValueProvider.get_google_url())
+        time.sleep(5)
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
         self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
@@ -78,9 +82,7 @@ class BaseTestRunner(unittest.TestCase):
         # with open("cookies.pkl", "wb") as cookie_file:
         #     pickle.dump(cookies, cookie_file)
         time.sleep(3)
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
+
         self.driver.maximize_window()
         self.driver.get(ValueProvider.get_base_url())
         time.sleep(5)
