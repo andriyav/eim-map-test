@@ -46,7 +46,7 @@ class BaseTestRunner(unittest.TestCase):
     '''Login with username and password'''
 
     def _init_driver(self):
-        with open("cookies.pkl", "rb") as cookie_file:
+        with open("/home/runner/work/SLPUI/SLPUI/data/cookies.pkl", "rb") as cookie_file:
             cookies = pickle.load(cookie_file)
         chrome_options = webdriver.ChromeOptions()
         # chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
