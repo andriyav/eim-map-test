@@ -56,9 +56,9 @@
           name: chrome-cache
           path: cache_archive.zip
 
-#      - name: Upload Screenshots
-#        if: failure()  # Only upload if the test fails
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: screenshots
-#          path: artifacts/screenshots
+      - name: Upload Screenshots
+        if: failure()  # Only upload if the test fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: artifacts/screenshots
