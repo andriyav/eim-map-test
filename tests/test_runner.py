@@ -46,7 +46,7 @@ class BaseTestRunner(unittest.TestCase):
     '''Login with username and password'''
 
     def _init_driver(self):
-        with open("/home/runner/work/SLPUI/SLPUI/data/cookies.pkl", "rb") as cookie_file:
+        with open("cookies.pkl", "rb") as cookie_file:
             cookies = pickle.load(cookie_file)
         chrome_options = webdriver.ChromeOptions()
         # chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
@@ -59,37 +59,35 @@ class BaseTestRunner(unittest.TestCase):
         for cookie in cookies:
             self.driver.add_cookie(cookie)
         self.driver.refresh()
-
         self.driver.get(ValueProvider.get_google_url())
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
+        self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
-        # LoginModal(self.driver).google_account_btn_click()
-        # LoginModal(self.driver).set_email(ValueProvider.get_email())
-        # LoginModal(self.driver).click_next_button_first()
-        # LoginModal(self.driver).set_password(ValueProvider.get_password())
-        # LoginModal(self.driver).click_next_button_second()
+        LoginComponent(self.driver).click_authorisation_btn()
+        LoginModal(self.driver).set_email(ValueProvider.get_email())
+        LoginModal(self.driver).click_next_button_first()
+        LoginModal(self.driver).set_password(ValueProvider.get_password())
+        LoginModal(self.driver).click_next_button_second()
         self.driver.implicitly_wait(10)
         time.sleep(10)
-        self.driver.get(ValueProvider.get_google_url())
+
         time.sleep(10)
         # cookies = self.driver.get_cookies()
         # with open("cookies.pkl", "wb") as cookie_file:
         #     pickle.dump(cookies, cookie_file)
         time.sleep(3)
-        # screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        # os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        # self.driver.save_screenshot(screenshot_path)
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
         self.driver.maximize_window()
+        self.driver.get(ValueProvider.get_base_url())
         time.sleep(5)
         # with open("page_source.html", "w", encoding="utf-8") as f:
         #     f.write(self.driver.page_source)
-        self.driver.get(ValueProvider.get_base_url())
-        LoginComponent(self.driver).click_authorisation_btn()
+        # self.driver.get(ValueProvider.get_base_url())
+        # LoginComponent(self.driver).click_authorisation_btn()
 
     def tearDown(self):
         self.driver.quit()
