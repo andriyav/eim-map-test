@@ -1,3 +1,8 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import unittest
+import HtmlTestRunner
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -40,6 +45,9 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
                'list_address-properties-street_direction']
 
 
+class TestExample:
+    pass
+
 
 class TestPromotionChecklist(BaseTestRunner):
 
@@ -67,7 +75,14 @@ class TestPromotionChecklist(BaseTestRunner):
                         print(f'{address_field} = ', field_actual)
                 result = dict(zip(LIST_FIELDS, actual))
                 self.assertTrue(all(actual), result)
-#
+
+    # if __name__ == "__main__":
+    #     unittest.main()
+
+    if __name__ == "__main__":
+        print('ldllddddd')
+        unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='Reports'))
+#s
 #     @parameterized.expand(sources)
 #     def test_list_address_properties_country(self, source):
 #         '''list_address.country is SetConstant to country code (US or CA)'''

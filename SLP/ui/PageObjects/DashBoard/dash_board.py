@@ -95,8 +95,8 @@ class DashBoard(BaseComponent):
         self._view_data_btn_single = Button(node)
         return self._view_data_btn_single
 
-    def click_view_data_btn_single(self):
-        self.get_view_data_btn_single().click_button()
+        def click_view_data_btn_single(self):
+            self.get_view_data_btn_single().click_button()
 
-    def get_kw_id_txt(self):
-        return self.node.find_element(*KW_ID).text
+        def get_kw_id_txt(self):
+            return self.node.find_element(*KW_ID).text
