@@ -1,2 +1,3 @@
-2024/12/28-01:45:21.809 bd28 Creating DB /home/andry/PycharmProjects/SLPUI/tests/cache/Default/GCM Store since it was missing.
-2024/12/28-01:45:22.252 bd28 Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/GCM Store/MANIFEST-000001
+2024/12/28-01:47:11.293 c0f0 Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/GCM Store/MANIFEST-000001
+2024/12/28-01:47:11.293 c0f0 Recovering log #3
+2024/12/28-01:47:11.293 c0f0 Reusing old log /home/andry/PycharmProjects/SLPUI/tests/cache/Default/GCM Store/000003.log 

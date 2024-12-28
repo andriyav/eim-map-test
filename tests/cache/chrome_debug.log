@@ -1,0 +1,11 @@
+[172143:172143:1228/120211.728008:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.71 (not a warning)
+[172143:172143:1228/120211.960224:INFO:policy_logger.cc(144)] :components/enterprise/browser/controller/chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
+[172143:172143:1228/120211.960274:INFO:policy_logger.cc(144)] :components/enterprise/browser/controller/chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
+[172143:172143:1228/120212.094715:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
+[172186:172186:1228/120213.842539:WARNING:sandbox_linux.cc(400)] InitializeSandbox() called with multiple threads in process gpu-process.
+[172143:172171:1228/120219.929388:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+[172143:172171:1228/120247.266440:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+[172187:172203:1228/120330.355808:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:246 to client_task_runner_.
+[172187:172203:1228/120330.355912:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:246 to client_task_runner_.
+[172187:172199:1228/120330.598660:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:246 to client_task_runner_.
+[172143:172143:1228/120330.631916:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
