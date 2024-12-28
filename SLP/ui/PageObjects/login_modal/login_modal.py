@@ -12,6 +12,7 @@ RECOVERY_NEXT_BTN = (By.CSS_SELECTOR, '#identifierNext > div > button')
 LAST_PSW_INPUT = (By.CSS_SELECTOR, '#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input')
 LAST_PSW_BTN = (By.CSS_SELECTOR, '#passwordNext > div > button')
 TRY_ANOTHER_WAY = (By.CSS_SELECTOR, '#yDmH0d > c-wiz > div > div.JYXaTc > div > div.FO2vFd > div > div > button')
+AOUTH_NUMBER = (By.CSS_SELECTOR, '#yDmH0d > c-wiz > div > div.UXFQgc > div > div > div > form > span > section:nth-child(2) > div > div > section > div > div > span > figure > samp')
 
 
 class LoginModal(BaseComponent):
@@ -104,8 +105,8 @@ class LoginModal(BaseComponent):
     def click_get_try_another_btn(self):
         self.get_try_another_btn().click_button()
 
-
-
+    def aouth_number_txt(self):
+        return self.node.find_element(*AOUTH_NUMBER).text
 
 
 
