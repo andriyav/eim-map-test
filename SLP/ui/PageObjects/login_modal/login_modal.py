@@ -8,7 +8,7 @@ NEXT_BTN_FIRST = (By.XPATH, '//*[@id="identifierNext"]/div/button')
 NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button')
 PASSWORD_INPUT = (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
 RECOVERY_ACCOUNT_BTN = (By.CSS_SELECTOR, '#accountRecoveryButton > div > div > a')
-RECOVERY_NEXT_BTN = (By.CSS_SELECTOR, '#identifierNext > div > button > span')
+RECOVERY_NEXT_BTN = (By.CSS_SELECTOR, '#identifierNext > div > button > div.VfPpkd-RLmnJb')
 #identifierNext > div > button > div.VfPpkd-RLmnJb
 
 
