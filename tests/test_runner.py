@@ -60,8 +60,8 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).click_next_button_first()
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
-        # LoginModal(self.driver).click_get_recovery_btn()
-        # LoginModal(self.driver).click_recovery_next_btn()
+        LoginModal(self.driver).click_get_recovery_btn()
+        LoginModal(self.driver).click_recovery_next_btn()
         self.driver.maximize_window()
         time.sleep(5)
         with open("page_source.html", "w", encoding="utf-8") as f:

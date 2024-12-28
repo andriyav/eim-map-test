@@ -67,7 +67,7 @@ class LoginModal(BaseComponent):
         self.get_recovery_btn().click_button()
 
     def get_recovery_next_btn(self):
-        node = self.node.find_element(*RECOVERY_ACCOUNT_BTN)
+        node = self.node.find_element(*RECOVERY_NEXT_BTN)
         self._recovery_next_btn = Button(node)
         return self._recovery_next_btn
 
