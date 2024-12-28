@@ -46,6 +46,7 @@ jobs:
 
     - name: Archive Chrome Cache
       run: |
+        - mkdir -p ~/.cache/google-chrome/Default
         - zip -r chrome_cache.zip ~/.cache/google-chrome/Default
 
     - name: Upload Chrome Cache Artifact
