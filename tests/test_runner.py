@@ -82,6 +82,7 @@ class BaseTestRunner(unittest.TestCase):
             print(number, flush=True)
         except:
             print('No more number', flush=True)
+        time.sleep(20)
         # LoginModal(self.driver).click_get_recovery_btn()
         # time.sleep(5)
         # LoginModal(self.driver).click_recovery_next_btn()
