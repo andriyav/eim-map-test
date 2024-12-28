@@ -1,3 +1,3 @@
-2024/12/28-12:02:11.997 6 Reusing MANIFEST /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Local Storage/leveldb/MANIFEST-000001
-2024/12/28-12:02:11.999 6 Recovering log #3
-2024/12/28-12:02:11.999 6 Reusing old log /home/andry/PycharmProjects/SLPUI/tests/cache/Default/Local Storage/leveldb/000003.log 
+2024/12/28-11:20:44.072 356c Reusing MANIFEST C:\Users\aandrusy\ssh_repos\private\SLPUI\tests\cache\Default\Local Storage\leveldb/MANIFEST-000001
+2024/12/28-11:20:44.087 356c Recovering log #3
+2024/12/28-11:20:44.099 356c Reusing old log C:\Users\aandrusy\ssh_repos\private\SLPUI\tests\cache\Default\Local Storage\leveldb/000003.log 
