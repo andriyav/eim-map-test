@@ -7,7 +7,7 @@ from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
 # CHROME_USER_DIR = 'C:/Users/aandrusy/ssh_repos/private/SLPUI/tests/cache'
-CHROME_USER_DIR = '~/.cache/google-chrome/'
+CHROME_USER_DIR = './tests/cache'
 
 IMPLICITLY_WAIT = 10
 
