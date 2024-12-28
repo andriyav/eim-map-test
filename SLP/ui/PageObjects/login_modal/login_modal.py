@@ -7,11 +7,13 @@ GOOGLE_USER = (By.XPATH, '//*[@id="identifierId"]')
 NEXT_BTN_FIRST = (By.XPATH, '//*[@id="identifierNext"]/div/button')
 NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button')
 PASSWORD_INPUT = (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
+RECOVERY_ACCOUNT_BTN = (By.CSS_SELECTOR, '#accountRecoveryButton > div > div > a')
 
 
 class LoginModal(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
+        self._get_recovery_btn = None
         self._email_input = None
         self._password_input = None
         self._login_button_first = None
@@ -51,5 +53,13 @@ class LoginModal(BaseComponent):
 
     def click_next_button_second(self):
         self.get_next_button_second().click_button()
+
+    def get_recovery_btn(self):
+        node = self.node.find_element(*RECOVERY_ACCOUNT_BTN)
+        self._get_recovery_btn = Button(node)
+        return self._get_recovery_btn
+
+    def click_get_recovery_btn(self):
+        self.get_recovery_btn().click_button()
 
 
