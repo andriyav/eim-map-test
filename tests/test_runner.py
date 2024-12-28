@@ -22,7 +22,7 @@ class BaseTestRunner(unittest.TestCase):
         self._login()
 
     # def _init_driver(self):
-    #     chrome_options = webdriver.ChromeOptions()
+        chrome_options = webdriver.ChromeOptions()
     #     chrome_options.add_argument('--disable-gpu')
     #     chrome_options.add_argument('--no-sandbox')
     #     chrome_options.add_argument('--disable-dev-shm-usage')
