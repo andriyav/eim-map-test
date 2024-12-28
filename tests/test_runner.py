@@ -76,9 +76,9 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.implicitly_wait(10)
 
         time.sleep(10)
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
+        # screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        # os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        # self.driver.save_screenshot(screenshot_path)
         time.sleep(10)
         # cookies = self.driver.get_cookies()
         # with open("cookies.pkl", "wb") as cookie_file:
