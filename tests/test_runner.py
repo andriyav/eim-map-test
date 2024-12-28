@@ -26,9 +26,11 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.get(ValueProvider.get_base_url())
 
+
     def _login(self):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
+        time.sleep(60)
         self.driver.maximize_window()
 
     # Login with username and password
@@ -41,11 +43,11 @@ class BaseTestRunner(unittest.TestCase):
 
     def _login_google_login(self):
         self.driver.implicitly_wait(10)
-        LoginComponent(self.driver).click_authorisation_btn()
-        LoginModal(self.driver).set_email(ValueProvider.get_email())
-        LoginModal(self.driver).click_next_button_first()
-        LoginModal(self.driver).set_password(ValueProvider.get_password())
-        LoginModal(self.driver).click_next_button_second()
+        # LoginComponent(self.driver).click_authorisation_btn()
+        # LoginModal(self.driver).set_email(ValueProvider.get_email())
+        # LoginModal(self.driver).click_next_button_first()
+        # LoginModal(self.driver).set_password(ValueProvider.get_password())
+        # LoginModal(self.driver).click_next_button_second()
         self.driver.maximize_window()
         time.sleep(5)
 
