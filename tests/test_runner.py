@@ -74,6 +74,11 @@ class BaseTestRunner(unittest.TestCase):
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
         self.driver.save_screenshot(screenshot_path)
+        try:
+            number = LoginModal(self.driver).aouth_number_txt()
+            print(number, flush=True)
+        except:
+            print('Number has been accepted')
         # LoginModal(self.driver).click_get_try_another_btn()
         time.sleep(5)
         self.driver.maximize_window()
