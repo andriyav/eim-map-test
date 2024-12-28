@@ -61,9 +61,7 @@ class BaseTestRunner(unittest.TestCase):
         # self.driver.refresh()
         # self.driver.get(ValueProvider.get_google_url())
         time.sleep(5)
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
+
         self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
@@ -76,6 +74,9 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
         self.driver.implicitly_wait(10)
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
         time.sleep(10)
 
         time.sleep(10)
