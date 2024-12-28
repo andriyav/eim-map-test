@@ -42,6 +42,12 @@
       - name: Archive Chrome Cache
         run: zip -r cache_archive.zip ~/.cache/google-chrome/
 
+      - name: Upload HTML Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: page-source
+          path: page_source.html  # Ensure this matches the actual file path
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
