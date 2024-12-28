@@ -1,8 +1,11 @@
 import sys
 import os
+
+from xmlrunner import XMLTestRunner
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import unittest
-import HtmlTestRunner
+
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -76,12 +79,13 @@ class TestPromotionChecklist(BaseTestRunner):
                 result = dict(zip(LIST_FIELDS, actual))
                 self.assertTrue(all(actual), result)
 
-    # if __name__ == "__main__":
-    #     unittest.main()
-
     if __name__ == "__main__":
-        print('ldllddddd')
-        unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='Reports'))
+        # Discover and run all tests in the 'tests' folder
+        test_suite = unittest.defaultTestLoader.discover('tests')
+        with open('test-reports/results.xml', 'wb') as output:
+            XMLTestRunner(output=output).run(test_suite)
+
+
 #s
 #     @parameterized.expand(sources)
 #     def test_list_address_properties_country(self, source):
