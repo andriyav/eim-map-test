@@ -9,13 +9,15 @@ NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button')
 PASSWORD_INPUT = (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
 RECOVERY_ACCOUNT_BTN = (By.CSS_SELECTOR, '#accountRecoveryButton > div > div > a')
 RECOVERY_NEXT_BTN = (By.CSS_SELECTOR, '#identifierNext > div > button')
-#identifierNext > div > button > div.VfPpkd-RLmnJb
-
+LAST_PSW_INPUT = (By.CSS_SELECTOR, '#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input')
+LAST_PSW_BTN = (By.CSS_SELECTOR, '#passwordNext > div > button')
 
 
 class LoginModal(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
+        self._get_last_psw_next_btn = None
+        self._last_password_input = None
         self._recovery_next_btn = None
         self._get_recovery_btn = None
         self._email_input = None
@@ -73,6 +75,24 @@ class LoginModal(BaseComponent):
 
     def click_recovery_next_btn(self):
         self.get_recovery_next_btn().click_button()
+        
+    def get_last_password_input(self):
+        if not self._password_input:
+            node = self.node.find_element(*LAST_PSW_INPUT)
+            self._last_password_input = Input(node)
+        return self._last_password_input
+
+    def set_last_password(self, password: str):
+        self.get_last_password_input().set_text(password)
+        return self
+
+    def get_last_psw_next_btn(self):
+        node = self.node.find_element(*LAST_PSW_BTN)
+        self._get_last_psw_next_btn = Button(node)
+        return self._get_last_psw_next_btn
+
+    def click_get_last_psw_next_btn(self):
+        self.get_last_psw_next_btn().click_button()
 
 
 
