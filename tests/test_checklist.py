@@ -39,6 +39,8 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 
 class TestPromotionChecklist(BaseTestRunner):
+
+    @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
         pass
 
