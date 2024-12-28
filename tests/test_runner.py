@@ -66,14 +66,14 @@ class BaseTestRunner(unittest.TestCase):
             number = LoginModal(self.driver).aouth_number_txt()
             print(number, flush=True)
         except:
-            print('Number has been accepted')
+            print('Number has not been generated', flush=True)
         time.sleep(20)
 
         try:
             number = LoginModal(self.driver).aouth_number_txt()
             print(number, flush=True)
         except:
-            print('Number has been accepted')
+            print('No more number', flush=True)
 
         time.sleep(20)
 
@@ -81,7 +81,7 @@ class BaseTestRunner(unittest.TestCase):
             number = LoginModal(self.driver).aouth_number_txt()
             print(number, flush=True)
         except:
-            print('Number has been accepted')
+            print('No more number', flush=True)
         # LoginModal(self.driver).click_get_recovery_btn()
         # time.sleep(5)
         # LoginModal(self.driver).click_recovery_next_btn()
