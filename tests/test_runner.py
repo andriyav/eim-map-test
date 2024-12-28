@@ -88,8 +88,10 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.maximize_window()
         # self.driver.get(ValueProvider.get_base_url())
         time.sleep(5)
-        # with open("page_source.html", "w", encoding="utf-8") as f:
-        #     f.write(self.driver.page_source)
+        with open("page_source.html", "w", encoding="utf-8") as f:
+            f.write(self.driver.page_source)
+
+        time.sleep(10)
         # self.driver.get(ValueProvider.get_base_url())
         # LoginComponent(self.driver).click_authorisation_btn()
 
