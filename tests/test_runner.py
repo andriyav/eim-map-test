@@ -74,6 +74,8 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
         self.driver.implicitly_wait(10)
+        with open("page_source.html", "w", encoding="utf-8") as f:
+            f.write(self.driver.page_source)
 
         time.sleep(10)
         # screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
