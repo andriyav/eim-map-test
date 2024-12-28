@@ -11,11 +11,13 @@ RECOVERY_ACCOUNT_BTN = (By.CSS_SELECTOR, '#accountRecoveryButton > div > div > a
 RECOVERY_NEXT_BTN = (By.CSS_SELECTOR, '#identifierNext > div > button')
 LAST_PSW_INPUT = (By.CSS_SELECTOR, '#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input')
 LAST_PSW_BTN = (By.CSS_SELECTOR, '#passwordNext > div > button')
+TRY_ANOTHER_WAY = (By.CSS_SELECTOR, '#yDmH0d > c-wiz > div > div.JYXaTc > div > div.FO2vFd > div > div > button')
 
 
 class LoginModal(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
+        self._get_try_another_btn = None
         self._get_last_psw_next_btn = None
         self._last_password_input = None
         self._recovery_next_btn = None
@@ -93,6 +95,17 @@ class LoginModal(BaseComponent):
 
     def click_get_last_psw_next_btn(self):
         self.get_last_psw_next_btn().click_button()
+
+    def get_try_another_btn(self):
+        node = self.node.find_element(*TRY_ANOTHER_WAY)
+        self._get_try_another_btn = Button(node)
+        return self._get_try_another_btn
+
+    def click_get_try_another_btn(self):
+        self.get_try_another_btn().click_button()
+
+
+
 
 
 
