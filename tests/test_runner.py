@@ -76,7 +76,7 @@ class BaseTestRunner(unittest.TestCase):
         time.sleep(5)
         with open("page_source.html", "w", encoding="utf-8") as f:
             f.write(self.driver.page_source)
-        time.sleep(5)
+        time.sleep(50)
 
     def tearDown(self):
         self.driver.quit()
