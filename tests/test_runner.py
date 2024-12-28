@@ -46,20 +46,20 @@ class BaseTestRunner(unittest.TestCase):
     '''Login with username and password'''
 
     def _init_driver(self):
-        with open("/home/runner/work/SLPUI/SLPUI/tests/cookies.pkl", "rb") as cookie_file:
-            cookies = pickle.load(cookie_file)
+        # with open("/home/runner/work/SLPUI/SLPUI/tests/cookies.pkl", "rb") as cookie_file:
+        #     cookies = pickle.load(cookie_file)
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.maximize_window()
-        self.driver.get(ValueProvider.get_google_url())
-        time.sleep(5)
-        for cookie in cookies:
-            self.driver.add_cookie(cookie)
-        self.driver.refresh()
-        self.driver.get(ValueProvider.get_google_url())
+        self.driver.get(ValueProvider.get_base_url())
+        # time.sleep(5)
+        # for cookie in cookies:
+        #     self.driver.add_cookie(cookie)
+        # self.driver.refresh()
+        # self.driver.get(ValueProvider.get_google_url())
         time.sleep(5)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
@@ -85,7 +85,7 @@ class BaseTestRunner(unittest.TestCase):
         time.sleep(3)
 
         self.driver.maximize_window()
-        self.driver.get(ValueProvider.get_base_url())
+        # self.driver.get(ValueProvider.get_base_url())
         time.sleep(5)
         # with open("page_source.html", "w", encoding="utf-8") as f:
         #     f.write(self.driver.page_source)
