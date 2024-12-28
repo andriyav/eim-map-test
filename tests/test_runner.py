@@ -61,10 +61,27 @@ class BaseTestRunner(unittest.TestCase):
         LoginModal(self.driver).set_password(ValueProvider.get_password())
         LoginModal(self.driver).click_next_button_second()
         time.sleep(5)
-        print('Hello Andriy', flush=True)
-        number = LoginModal(self.driver).aouth_number_txt()
-        print(number, flush=True)
+        print('Check the number', flush=True)
+        try:
+            number = LoginModal(self.driver).aouth_number_txt()
+            print(number, flush=True)
+        except:
+            print('Number has been accepted')
         time.sleep(20)
+
+        try:
+            number = LoginModal(self.driver).aouth_number_txt()
+            print(number, flush=True)
+        except:
+            print('Number has been accepted')
+
+        time.sleep(20)
+
+        try:
+            number = LoginModal(self.driver).aouth_number_txt()
+            print(number, flush=True)
+        except:
+            print('Number has been accepted')
         # LoginModal(self.driver).click_get_recovery_btn()
         # time.sleep(5)
         # LoginModal(self.driver).click_recovery_next_btn()
@@ -74,19 +91,12 @@ class BaseTestRunner(unittest.TestCase):
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
         self.driver.save_screenshot(screenshot_path)
-        try:
-            number = LoginModal(self.driver).aouth_number_txt()
-            print(number, flush=True)
-        except:
-            print('Number has been accepted')
-        # LoginModal(self.driver).click_get_try_another_btn()
-        time.sleep(5)
-        self.driver.maximize_window()
-        time.sleep(5)
 
         with open("page_source.html", "w", encoding="utf-8") as f:
             f.write(self.driver.page_source)
-        time.sleep(50)
+        # LoginModal(self.driver).click_get_try_another_btn()
+        self.driver.maximize_window()
+        time.sleep(5)
 
     def tearDown(self):
         self.driver.quit()
