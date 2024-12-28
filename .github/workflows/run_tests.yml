@@ -48,7 +48,7 @@
         run: xvfb-run -a python -m unittest tests/test_checklist.py
 
       - name: Archive Chrome Cache
-        run: zip -r cache_archive.zip ~/.cache/google-chrome/Default
+        run: zip -r cache_archive.zip ~/.cache/google-chrome/
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
