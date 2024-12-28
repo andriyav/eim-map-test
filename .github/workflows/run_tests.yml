@@ -40,12 +40,20 @@ jobs:
         ls -R
         echo "Current Directory: $(pwd)"
 
-    - name: Pause for Verification Code
-      run: echo "Manually enter verification code"
-      timeout-minutes: 10  # Wait for 10 minutes
 
     - name: Run Tests with Virtual Display
       run: xvfb-run -a python -m unittest tests/test_checklist.py
+
+    - name: Archive Chrome Cache
+      run: |
+        mkdir -p ./tests/cache
+        zip -r chrome_cache.zip ./tests/cache
+
+    - name: Upload Chrome Cache Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: chrome-cache
+        path: chrome_cache.zip
 
     - name: Upload Screenshots
       uses: actions/upload-artifact@v3
