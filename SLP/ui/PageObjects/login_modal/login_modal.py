@@ -8,11 +8,15 @@ NEXT_BTN_FIRST = (By.XPATH, '//*[@id="identifierNext"]/div/button')
 NEXT_BTN_SECOND = (By.XPATH, '//*[@id="passwordNext"]/div/button')
 PASSWORD_INPUT = (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
 RECOVERY_ACCOUNT_BTN = (By.CSS_SELECTOR, '#accountRecoveryButton > div > div > a')
+RECOVERY_NEXT_BTN = (By.CSS_SELECTOR, '#identifierNext > div > button > span')
+#identifierNext > div > button > div.VfPpkd-RLmnJb
+
 
 
 class LoginModal(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
+        self._recovery_next_btn = None
         self._get_recovery_btn = None
         self._email_input = None
         self._password_input = None
@@ -61,5 +65,14 @@ class LoginModal(BaseComponent):
 
     def click_get_recovery_btn(self):
         self.get_recovery_btn().click_button()
+
+    def get_recovery_next_btn(self):
+        node = self.node.find_element(*RECOVERY_ACCOUNT_BTN)
+        self._recovery_next_btn = Button(node)
+        return self._recovery_next_btn
+
+    def click_recovery_next_btn(self):
+        self.get_recovery_next_btn().click_button()
+
 
 
