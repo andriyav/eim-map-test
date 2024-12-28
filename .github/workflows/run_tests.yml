@@ -30,19 +30,11 @@
           sudo apt-get install -y wget
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
-
-#      - name: Unzip Chrome Cache to Default Directory
-#        run: |
-#          mkdir -p ~/.config/google-chrome/Default
-#          unzip /home/runner/work/SLPUI/SLPUI/data/cash.zip -d ~/.config/google-chrome/Default
   
 
       - name: Install Xvfb
         run: sudo apt-get install -y xvfb
 
-      - name: Pause for Verification Code
-        run: echo "Manually enter verification code"
-        timeout-minutes: 10  # Wait for 10 minutes
 
       - name: Run Tests with Virtual Display
         run: xvfb-run -a python -m unittest tests/test_checklist.py
