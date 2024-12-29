@@ -175,7 +175,6 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 SLPMain(self.driver).impl_wait_metadata()
                 ListComponent(self.driver).get_list_agent_preferred_phone()
                 actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
-                print(mls_id_dict.get(str(metadata)))
                 self.assertEqual(PREFERRED_PHONE, actual)
         print(
             ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")''',
