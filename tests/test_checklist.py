@@ -73,9 +73,9 @@ class TestPromotionChecklist(BaseTestRunner):
                 result = dict(zip(LIST_FIELDS, actual))
                 try:
                     self.assertTrue(all(actual), result)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {field}')
+                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -98,9 +98,9 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = True
                 try:
                     self.assertTrue(actual)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {country_code}')
+                    print(f'Metadata = {metadata} Failed ❌ in {country_code}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -122,9 +122,9 @@ class TestPromotionChecklist(BaseTestRunner):
                 actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                 try:
                     self.assertEqual(CO_OFFICE_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}')
+                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -133,7 +133,7 @@ class TestPromotionChecklist(BaseTestRunner):
         '''co_list_agent_preferred_phone are mapped with
 FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
         print(
-            '''co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"''',
+            '''co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone)"''',
             flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
@@ -146,9 +146,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
                 actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                 try:
                     self.assertEqual(CO_PREFERRED_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}')
+                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -170,9 +170,9 @@ FirstValueProvider:("agent_office_phone","office_phone")" '''
                 self.assertEqual(OFFICE_PHONE, actual)
                 try:
                     self.assertEqual(OFFICE_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}')
+                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -193,9 +193,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
                 try:
                     self.assertEqual(PREFERRED_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}')
+                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -221,9 +221,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 self.assertEqual(actual, target)
                 try:
                     self.assertEqual(actual, target)
-                    print(f'Metadata = {metadata} Ok ✅')
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}')
+                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -240,9 +240,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
         actual = DashBoard(self.driver).get_source_id_txt()
         try:
             self.assertEqual(actual, source)
-            print(f' Ok ✅')
+            print(f' Ok ✅', flush=True)
         except:
-            print(f'Failed ❌ in {actual}')
+            print(f'Failed ❌ in {actual}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -265,9 +265,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 self.assertTrue(is_upper)
                 try:
                     self.assertTrue(is_upper)
-                    print(f' Ok ✅')
+                    print(f' Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {field}')
+                    print(f'Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -288,9 +288,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     field_actual = True
                 try:
                     self.assertTrue(field_actual)
-                    print(f' Ok ✅')
+                    print(f' Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {field}')
+                    print(f'Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -311,9 +311,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     field_actual = True
                 try:
                     self.assertTrue(field_actual)
-                    print(f' Ok ✅')
+                    print(f' Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {field}')
+                    print(f'Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -333,9 +333,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 self.assertEqual(actual_field, expected_field)
                 try:
                     self.assertEqual(actual_field, expected_field)
-                    print(f' Ok ✅')
+                    print(f' Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {actual_field}')
+                    print(f'Failed ❌ in {actual_field}', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -420,8 +420,8 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     print('price_history.items.properties.previous_list_price = ', field_actual)
                 try:
                     self.assertTrue(all(actual))
-                    print(f' Ok ✅')
+                    print(f' Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {actual}')
+                    print(f'Failed ❌ in {actual}', flush=True)
 
             print("----------------------------------------------------------------------", flush=True)
