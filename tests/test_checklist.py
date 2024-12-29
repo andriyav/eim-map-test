@@ -80,30 +80,30 @@ class TestPromotionChecklist(BaseTestRunner):
                     self.assertTrue(all(actual), result)
         print("----------------------------------------------------------------------", flush=True)
 
-#     @parameterized.expand(sources)
-#     def test_list_address_properties_country(self, source):
-#         '''list_address.country is SetConstant to country code (US or CA)'''
-#         print("list_address.country is SetConstant to country code (US or CA)", flush=True)
-#         print(f"kw_id = {source}", flush=True)
-#         self.driver.implicitly_wait(20)
-#         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
-#         SLPMain(self.driver).source_select(source)
-#         metadata_numbers = ListComponent(self.driver).get_metadata_number()
-#         for metadata in range(1, metadata_numbers):
-#             with self.subTest(metadata=metadata):
-#                 SLPMain(self.driver).metadata_main_select(metadata)
-#                 SLPMain(self.driver).impl_wait_metadata()
-#                 ListComponent(self.driver).get_list_address_country()
-#                 country_code = ListComponent(self.driver).get_txt_list_address_country()
-#                 actual = False
-#                 if country_code == COUNTRY_US or country_code == COUNTRY_CA:
-#                     actual = True
-#                 try:
-#                     self.assertTrue(actual)
-#                     print(f'Metadata = {metadata} Ok ✅', flush=True)
-#                 except:
-#                     print(f'Metadata = {metadata} Failed ❌ in {country_code}', flush=True)
-#         print("----------------------------------------------------------------------", flush=True)
+    @parameterized.expand(sources)
+    def test_list_address_properties_country(self, source):
+        '''list_address.country is SetConstant to country code (US or CA)'''
+        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            with self.subTest(metadata=metadata):
+                SLPMain(self.driver).metadata_main_select(metadata)
+                SLPMain(self.driver).impl_wait_metadata()
+                ListComponent(self.driver).get_list_address_country()
+                country_code = ListComponent(self.driver).get_txt_list_address_country()
+                actual = False
+                if country_code == COUNTRY_US or country_code == COUNTRY_CA:
+                    actual = True
+                try:
+                    self.assertTrue(actual)
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
+                except:
+                    print(f'Metadata = {metadata} Failed ❌ in {country_code}', flush=True)
+        print("----------------------------------------------------------------------", flush=True)
 #
 #     @parameterized.expand(sources)
 #     def test_co_list_agent_office_phone(self, source):
