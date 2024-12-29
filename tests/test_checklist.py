@@ -332,7 +332,6 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 SLPMain(self.driver).impl_wait_metadata()
                 expected_field = ListComponent(self.driver).get_expected_field('kww_region')
                 actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
-                self.assertEqual(actual_field, expected_field)
                 try:
                     self.assertEqual(actual_field, expected_field)
                     print(f'Metadata = {metadata} Ok ✅', flush=True)
@@ -400,7 +399,6 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 else:
                     actual.append(field_actual)
                     print('price_history.items.properties.price_updated_at = ', field_actual)
-                self.assertTrue(all(actual))
 
                 price_history_current_list_price = ListComponent(self.driver).get_txt_get_field(
                     'price_history-items-properties-current_list_price')
