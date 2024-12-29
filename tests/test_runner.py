@@ -1,16 +1,10 @@
-import os
-import time
 import unittest
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
-from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-# CHROME_USER_DIR = 'C:/Users/aandrusy/ssh_repos/private/SLPUI/tests/cache'
 CHROME_USER_DIR = './tests/cache'
-
 IMPLICITLY_WAIT = 10
-
 
 class BaseTestRunner(unittest.TestCase):
 
@@ -35,7 +29,6 @@ class BaseTestRunner(unittest.TestCase):
     def _login(self):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
-
 
     def tearDown(self):
         self.driver.quit()
