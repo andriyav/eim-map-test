@@ -168,7 +168,6 @@ FirstValueProvider:("agent_office_phone","office_phone")" '''
                 SLPMain(self.driver).impl_wait_metadata()
                 ListComponent(self.driver).get_list_agent_office_phone()
                 actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
-                self.assertEqual(OFFICE_PHONE, actual)
                 try:
                     self.assertEqual(OFFICE_PHONE, actual)
                     print(f'Metadata = {metadata} Ok ✅', flush=True)
