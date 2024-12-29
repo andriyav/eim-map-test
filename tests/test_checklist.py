@@ -77,6 +77,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
                     print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
+                    self.assertTrue(all(actual), result)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
