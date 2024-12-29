@@ -343,7 +343,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
 
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
-        '''Price_history must use PriceHistoryEnhancer with ListPrice input'''
+        ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
         print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
