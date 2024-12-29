@@ -338,7 +338,7 @@ class TestPromotionChecklist(BaseTestRunner):
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
-    def test_list_address_nullifier_const(self, source):
+    def test_price_history(self, source):
         ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
         print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
         print(f"kw_id = {source}", flush=True)
