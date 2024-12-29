@@ -53,7 +53,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
-
+        print("No elements of list_address are nullified or set constant (except country)", flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
@@ -82,6 +82,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     def test_list_address_properties_country(self, source):
         '''list_address.country is SetConstant to country code (US or CA)'''
+        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
@@ -101,6 +102,7 @@ class TestPromotionChecklist(BaseTestRunner):
     def test_co_list_agent_office_phone(self, source):
         ''' co_list_agent_office_phone are mapped with
 FirstValueProvider:("agent_office_phone","office_phone")" '''
+        print('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -116,6 +118,8 @@ FirstValueProvider:("agent_office_phone","office_phone")" '''
     def test_co_list_agent_preferred_phone(self, source):
         '''co_list_agent_preferred_phone are mapped with
 FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
+        print('''co_list_agent_preferred_phone are mapped with
+FirstValueProvider:("agent_mobile_phone","agent_home_phone"''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -131,6 +135,8 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
     def test_list_agent_office_phone(self, source):
         '''and list_agent_office_phone are mapped with
 FirstValueProvider:("agent_office_phone","office_phone")" '''
+        print('''and list_agent_office_phone are mapped with
+FirstValueProvider:("agent_office_phone","office_phone")" ''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -146,6 +152,8 @@ FirstValueProvider:("agent_office_phone","office_phone")" '''
     def test_list_agent_preferred_phone(self, source):
         ''' list_agent_preferred_phone are mapped with
 FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
+        print(''' list_agent_preferred_phone are mapped with
+FirstValueProvider:("agent_mobile_phone","agent_home_phone")''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -161,6 +169,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_mls_id_sa_id(self, source):
         '''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'''
+        print('''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -181,6 +190,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_dashboard_source_number(self, source):
         '''Validate mls_id is the correct value from here'''
+        print('''Validate mls_id is the correct value from here''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
@@ -194,6 +204,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_currency_code(self, source):
         '''Currency_code must be UPPER'''
+        print('''Currency_code must be UPPER''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -211,6 +222,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_list_dt(self, source):
         '''list_dt is mapped'''
+        print('''list_dt is mapped''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -228,6 +240,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_raw_properties_list_status(self, source):
         '''raw.properties.list_status is mapped'''
+        print('''raw.properties.list_status is mapped''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -245,6 +258,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_kww_region(self, source):
         ''' Kww_region has no mapping '''
+        print(''' Kww_region has no mapping ''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -259,6 +273,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
         '''Price_history must use PriceHistoryEnhancer with ListPrice input'''
+        print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
