@@ -265,7 +265,6 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 if match:
                     currency_code = match.group(1)
                     is_upper = currency_code.isupper()
-                self.assertTrue(is_upper)
                 try:
                     self.assertTrue(is_upper)
                     print(f'Metadata = {metadata} Ok ✅', flush=True)
