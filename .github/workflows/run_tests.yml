@@ -3,7 +3,7 @@ name: Run Selenium Tests
 on:
   push:
     branches:
-      - dev3
+      - dev4_use_cache
   pull_request:
 
 jobs:
@@ -34,11 +34,17 @@ jobs:
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
+    - name: Extract Chrome Cache
+      run: |
+        mkdir -p ./tests/cache
+        tar -xzf ./chrome_cache.tar.gz -C ./tests/cache
+
     - name: List Repository Files
       run: |
         echo "Listing files in repository..."
         ls -R
         echo "Current Directory: $(pwd)"
+        
 
     - name: Run Tests with Virtual Display
       run: xvfb-run -a python -m unittest tests/test_checklist.py
