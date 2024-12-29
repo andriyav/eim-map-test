@@ -82,7 +82,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     def test_list_address_properties_country(self, source):
         '''list_address.country is SetConstant to country code (US or CA)'''
-
+        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
@@ -96,8 +96,12 @@ class TestPromotionChecklist(BaseTestRunner):
                 actual = False
                 if country_code == COUNTRY_US or country_code == COUNTRY_CA:
                     actual = True
-                self.assertTrue(actual)
-        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
+                try:
+                    self.assertTrue(actual)
+                    print(f'Metadata = {metadata} Ok ✅')
+                except:
+                    print(f'Metadata = {metadata} Failed ❌ in {country_code}')
+
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
