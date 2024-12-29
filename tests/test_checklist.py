@@ -265,9 +265,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 self.assertTrue(is_upper)
                 try:
                     self.assertTrue(is_upper)
-                    print(f' Ok ✅', flush=True)
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {field}', flush=True)
+                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -288,9 +288,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     field_actual = True
                 try:
                     self.assertTrue(field_actual)
-                    print(f' Ok ✅', flush=True)
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {field}', flush=True)
+                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -311,9 +311,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     field_actual = True
                 try:
                     self.assertTrue(field_actual)
-                    print(f' Ok ✅', flush=True)
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {field}', flush=True)
+                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
 
         print("----------------------------------------------------------------------", flush=True)
 
@@ -333,9 +333,9 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 self.assertEqual(actual_field, expected_field)
                 try:
                     self.assertEqual(actual_field, expected_field)
-                    print(f' Ok ✅', flush=True)
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {actual_field}', flush=True)
+                    print(f'Metadata = {metadata} Failed ❌ in {actual_field}', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -420,8 +420,8 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     print('price_history.items.properties.previous_list_price = ', field_actual)
                 try:
                     self.assertTrue(all(actual))
-                    print(f' Ok ✅', flush=True)
+                    print(f'Metadata = {metadata} Ok ✅', flush=True)
                 except:
-                    print(f'Failed ❌ in {actual}', flush=True)
+                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
 
             print("----------------------------------------------------------------------", flush=True)
