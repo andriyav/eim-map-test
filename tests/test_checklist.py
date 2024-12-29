@@ -219,7 +219,6 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 mls_id_target = f'mls_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[0]},const_type=str)'
                 sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
                 target = [mls_id_target, sa_id_target]
-                self.assertEqual(actual, target)
                 try:
                     self.assertEqual(actual, target)
                     print(f'Metadata = {metadata} Ok ✅', flush=True)
