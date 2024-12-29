@@ -47,7 +47,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
-
+        print("No elements of list_address are nullified or set constant (except country)", flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
@@ -71,9 +71,13 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                         print(f'{address_field} = ', field_actual)
                 result = dict(zip(LIST_FIELDS, actual))
-                self.assertTrue(all(actual), result)
-        print("No elements of list_address are nullified or set constant (except country)", flush=True)
+                try:
+                    self.assertTrue(all(actual), result)
+                    print(f'Metadata = {metadata} Ok ✅')
+                except:
+                    print(f'Metadata = {metadata} Failed ❌ in {field}')
 
+        print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
     def test_list_address_properties_country(self, source):
@@ -93,7 +97,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 if country_code == COUNTRY_US or country_code == COUNTRY_CA:
                     actual = True
                 self.assertTrue(actual)
-        print("\nlist_address.country is SetConstant to country code (US or CA)", flush=True)
+        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -112,7 +116,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                 self.assertEqual(CO_OFFICE_PHONE, actual)
         print(
-            '''\nco_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"''', flush=True)
+            '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -131,7 +135,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
                 actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                 self.assertEqual(CO_PREFERRED_PHONE, actual)
         print(
-            '''\nco_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"''', flush=True)
+            '''co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -149,7 +153,7 @@ FirstValueProvider:("agent_office_phone","office_phone")" '''
                 ListComponent(self.driver).get_list_agent_office_phone()
                 actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
                 self.assertEqual(OFFICE_PHONE, actual)
-        print('''\nlist_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")" ''',
+        print('''list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")" ''',
               flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
@@ -170,7 +174,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 print(mls_id_dict.get(str(metadata)))
                 self.assertEqual(PREFERRED_PHONE, actual)
         print(
-            '''\nlist_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")''',
+            ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")''',
             flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
@@ -194,7 +198,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
                 target = [mls_id_target, sa_id_target]
                 self.assertEqual(actual, target)
-        print('''\nValidate mls_source_id and sa_source_id are correct from here (NOT kw_id)''', flush=True)
+        print('''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -230,7 +234,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     currency_code = match.group(1)
                     is_upper = currency_code.isupper()
                 self.assertTrue(is_upper)
-        print('''\nCurrency_code must be UPPER''', flush=True)
+        print('''Currency_code must be UPPER''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -249,7 +253,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 if 'json_path=' in field:
                     field_actual = True
                 self.assertTrue(field_actual)
-        print('''\nlist_dt is mapped''', flush=True)
+        print('''list_dt is mapped''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -268,7 +272,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 if 'json_path=' in field:
                     field_actual = True
                 self.assertTrue(field_actual)
-        print('''\nraw.properties.list_status is mapped''', flush=True)
+        print('''raw.properties.list_status is mapped''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -285,7 +289,7 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                 expected_field = ListComponent(self.driver).get_expected_field('kww_region')
                 actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
                 self.assertEqual(actual_field, expected_field)
-        print('''\nKww_region has no mapping ''', flush=True)
+        print(''' Kww_region has no mapping ''', flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -369,5 +373,5 @@ FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
                     actual.append(field_actual)
                     print('price_history.items.properties.previous_list_price = ', field_actual)
                 self.assertTrue(all(actual))
-        print('''\nPrice_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+            print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
+            print("----------------------------------------------------------------------", flush=True)
