@@ -35,7 +35,6 @@ class BaseTestRunner(unittest.TestCase):
     def _login(self):
         self.driver.implicitly_wait(10)
         LoginComponent(self.driver).click_authorisation_btn()
-        time.sleep(5)
 
 
     def tearDown(self):
