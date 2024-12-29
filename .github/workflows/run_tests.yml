@@ -37,7 +37,7 @@ jobs:
     - name: Extract Chrome Cache
       run: |
         mkdir -p ./tests/cache
-        tar -xzf ./chrome_cache.tar.gz -C ./tests/cache
+        tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
 
     - name: List Repository Files
       run: |
