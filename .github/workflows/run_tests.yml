@@ -50,7 +50,7 @@ jobs:
 
     - name: Archive Chrome Cache (Linux)
       run: |
-        tar -czf chrome_cache.tar.gz -C ./tests cache
+        tar -czf chrome_cache.tar.gz -C ./tests/cache .
 
     - name: Upload Chrome Cache Artifact
       uses: actions/upload-artifact@v3
