@@ -15,7 +15,7 @@ from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
-SOURCE_ID = (By.CSS_SELECTOR,' #sources')
+SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
@@ -43,7 +43,6 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
                'list_address-properties-street_direction']
 
 
-
 class TestPromotionChecklist(BaseTestRunner):
 
     @parameterized.expand(sources)
@@ -60,43 +59,32 @@ class TestPromotionChecklist(BaseTestRunner):
         for metadata in range(1, metadata_numbers):
             SLPMain(self.driver).metadata_main_select(metadata)
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
-
             actual = []
-
             with self.subTest(metadata=class_txt):
                 try:
                     SLPMain(self.driver).impl_wait_metadata()
+                    for address_field in LIST_FIELDS:
+                        list_fields_txt = address_field.replace('-', '.')
+                        field = ListComponent(self.driver).get_txt_get_field(address_field)
+                        field_actual = False
+                        expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
+                        if (
+                                'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
+                            field_actual = True
+                            actual.append(field_actual)
+                        else:
+                            actual.append(field_actual)
+                            print(f'{address_field} = ', field_actual)
+                    result = dict(zip(LIST_FIELDS, actual))
+                    try:
+                        self.assertTrue(all(actual), result)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except AssertionError as e:
+                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        self.assertTrue(all(actual), result)
                 except NoSuchElementException as e:
-                    class_txt_check = ListComponent(self.driver).get_metadata_text(metadata)
-                    unmapped_txt = ListComponent(self.driver).get_unmapped_txt()
-                    print(unmapped_txt.lower(), 'unmapped_txt')
-                    print(class_txt_check.lower(), 'class_txt')
-                    if class_txt_check.lower() in unmapped_txt.lower():
-                        print(f"The class in Map for `listing` ({class_txt}) not found_______________{e}. ")
-                    print('______________________________')
-
-
-                for address_field in LIST_FIELDS:
-                    list_fields_txt = address_field.replace('-', '.')
-                    field = ListComponent(self.driver).get_txt_get_field(address_field)
-                    field_actual = False
-                    expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
-                    if ('nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
-                        field_actual = True
-                        actual.append(field_actual)
-                    else:
-                        actual.append(field_actual)
-                        print(f'{address_field} = ', field_actual)
-                result = dict(zip(LIST_FIELDS, actual))
-                try:
-                    self.assertTrue(all(actual), result)
-                    print(f'Metadata = {class_txt} Ok ✅', flush=True)
-                except AssertionError as e:
-                    print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
-                    self.assertTrue(all(actual), result)
-
+                    print(f"looks like the class {class_txt} is not mapped")
         print("----------------------------------------------------------------------", flush=True)
-
     # @parameterized.expand(sources)
     # def test_list_address_properties_country(self, source):
     #     '''list_address.country is SetConstant to country code (US or CA)'''
@@ -123,7 +111,6 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
     #                 self.assertTrue(actual)
     #     print("----------------------------------------------------------------------", flush=True)
-
 
     #
     # @parameterized.expand(sources)
