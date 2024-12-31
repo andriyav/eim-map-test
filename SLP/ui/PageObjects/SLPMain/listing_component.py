@@ -15,6 +15,8 @@ LIST_PREFERRED_PHONE = (By.CSS_SELECTOR,
                         '#nav-home > div > table > tbody > tr.master_schema.kw_listing.list_agent_office-properties-list_agent_preferred_phone')
 LIST_MLS_ID = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.required.mls_id')
 LIST_SA_ID = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.required.sa_source_id')
+UNMAPPED_CLASS = (By.CSS_SELECTOR, 'body > div.flashes.container')
+
 
 
 
@@ -37,6 +39,12 @@ class ListComponent(BaseComponent):
 
     def list_metadata_select(self, metadata):
         return self.get_list_metadata_select().set_select_by_index(metadata)
+
+    def get_metadata_for_text(self, metadata):
+        return self.node.find_element(By.XPATH, f'// *[ @ id = "metadataSelect"] / option[{metadata}]')
+
+    def get_metadata_text(self, metadata):
+        return self.get_metadata_for_text(metadata).text
 
     def get_map_filed(self, xpath):
         return self.node.find_element(*xpath)
@@ -89,6 +97,12 @@ class ListComponent(BaseComponent):
 
     def get_txt_get_field(self, field):
         return self.get_field(field).text
+
+    def get_unmapped(self):
+        return self.node.find_element(*UNMAPPED_CLASS)
+
+    def get_unmapped_txt(self):
+        return self.get_unmapped().text
 
     def get_expected_field(self, field):
         return \

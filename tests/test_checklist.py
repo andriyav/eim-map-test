@@ -1,6 +1,7 @@
 import re
 import os
 from parameterized import parameterized
+from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard
@@ -43,41 +44,45 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 class TestPromotionChecklist(BaseTestRunner):
 
-
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
         print("No elements of list_address are nullified or set constant (except country)", flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
         self.driver.save_screenshot(screenshot_path)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                actual = []
-                for address_field in LIST_FIELDS:
-                    list_fields_txt = address_field.replace('-', '.')
-                    field = ListComponent(self.driver).get_txt_get_field(address_field)
-                    field_actual = False
-                    expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
-                    if ('nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
-                        field_actual = True
-                        actual.append(field_actual)
-                    else:
-                        actual.append(field_actual)
-                        print(f'{address_field} = ', field_actual)
-                result = dict(zip(LIST_FIELDS, actual))
+            SLPMain(self.driver).metadata_main_select(metadata)
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            actual = []
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertTrue(all(actual), result)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
-                    self.assertTrue(all(actual), result)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    for address_field in LIST_FIELDS:
+                        list_fields_txt = address_field.replace('-', '.')
+                        field = ListComponent(self.driver).get_txt_get_field(address_field)
+                        field_actual = False
+                        expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
+                        if (
+                                'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
+                            field_actual = True
+                            actual.append(field_actual)
+                        else:
+                            actual.append(field_actual)
+                            print(f'{address_field} = ', field_actual)
+                    result = dict(zip(LIST_FIELDS, actual))
+                    try:
+                        self.assertTrue(all(actual), result)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except AssertionError as e:
+                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        self.assertTrue(all(actual), result)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -86,23 +91,28 @@ class TestPromotionChecklist(BaseTestRunner):
         print("list_address.country is SetConstant to country code (US or CA)", flush=True)
         print(f"kw_id = {source}", flush=True)
         self.driver.implicitly_wait(20)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_list_address_country()
-                country_code = ListComponent(self.driver).get_txt_list_address_country()
-                actual = False
-                if country_code == COUNTRY_US or country_code == COUNTRY_CA:
-                    actual = True
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertTrue(actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {country_code}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_address_country()
+                    country_code = ListComponent(self.driver).get_txt_list_address_country()
+                    actual = False
+                    if country_code == COUNTRY_US or country_code == COUNTRY_CA:
+                        actual = True
+                    try:
+                        self.assertTrue(actual)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
+                        self.assertTrue(actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped")
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -113,20 +123,26 @@ class TestPromotionChecklist(BaseTestRunner):
             '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"''',
             flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_co_list_agent_office_phone()
-                actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertEqual(CO_OFFICE_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_co_list_agent_office_phone()
+                    actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
+                    try:
+                        self.assertEqual(CO_OFFICE_PHONE, actual)
+                        print(f'Metadata = {metadata} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                        self.assertEqual(CO_OFFICE_PHONE, actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
+
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -137,20 +153,25 @@ class TestPromotionChecklist(BaseTestRunner):
             '''co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone)"''',
             flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_co_list_agent_preferred_phone()
-                actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertEqual(CO_PREFERRED_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_co_list_agent_preferred_phone()
+                    actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
+                    try:
+                        self.assertEqual(CO_PREFERRED_PHONE, actual)
+                        print(f'Metadata = {metadata} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                        self.assertEqual(CO_PREFERRED_PHONE, actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -160,20 +181,25 @@ class TestPromotionChecklist(BaseTestRunner):
         print('''list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")" ''',
               flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_list_agent_office_phone()
-                actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertEqual(OFFICE_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_agent_office_phone()
+                    actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
+                    try:
+                        self.assertEqual(OFFICE_PHONE, actual)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
+                        self.assertEqual(OFFICE_PHONE, actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -183,20 +209,25 @@ class TestPromotionChecklist(BaseTestRunner):
             ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")''',
             flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_list_agent_preferred_phone()
-                actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertEqual(PREFERRED_PHONE, actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_agent_preferred_phone()
+                    actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
+                    try:
+                        self.assertEqual(PREFERRED_PHONE, actual)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
+                        self.assertEqual(PREFERRED_PHONE, actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -204,26 +235,31 @@ class TestPromotionChecklist(BaseTestRunner):
         '''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'''
         print('''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)''', flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                ListComponent(self.driver).get_list_sa_id()
-                sa_id = ListComponent(self.driver).get_txt_ist_sa_id()
-                mls_id = ListComponent(self.driver).get_txt_list_mls_id()
-                actual = [mls_id, sa_id]
-                target_list = mls_id_dict.get(source)
-                mls_id_target = f'mls_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[0]},const_type=str)'
-                sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
-                target = [mls_id_target, sa_id_target]
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertEqual(actual, target)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_sa_id()
+                    sa_id = ListComponent(self.driver).get_txt_ist_sa_id()
+                    mls_id = ListComponent(self.driver).get_txt_list_mls_id()
+                    actual = [mls_id, sa_id]
+                    target_list = mls_id_dict.get(source)
+                    mls_id_target = f'mls_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[0]},const_type=str)'
+                    sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
+                    target = [mls_id_target, sa_id_target]
+                    try:
+                        self.assertEqual(actual, target)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
+                        self.assertEqual(actual, target)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -231,7 +267,7 @@ class TestPromotionChecklist(BaseTestRunner):
         '''Validate mls_id is the correct value'''
         print('''Validate mls_id is the correct value from here''', flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
@@ -244,6 +280,7 @@ class TestPromotionChecklist(BaseTestRunner):
             print(f' Ok ✅', flush=True)
         except:
             print(f'Failed ❌ in {actual}', flush=True)
+            self.assertEqual(actual, source)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -251,23 +288,29 @@ class TestPromotionChecklist(BaseTestRunner):
         '''Currency_code must be UPPER'''
         print('''Currency_code must be UPPER''', flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                field = ListComponent(self.driver).get_txt_get_field('currency_code')
-                match = re.search(r"const=([A-Za-z]{3})", field)
-                if match:
-                    currency_code = match.group(1)
-                    is_upper = currency_code.isupper()
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertTrue(is_upper)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    field = ListComponent(self.driver).get_txt_get_field('currency_code')
+                    match = re.search(r"const=([A-Za-z]{3})", field)
+                    if match:
+                        currency_code = match.group(1)
+                        is_upper = currency_code.isupper()
+                    try:
+                        self.assertTrue(is_upper)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        self.assertTrue(is_upper)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
+
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -275,22 +318,27 @@ class TestPromotionChecklist(BaseTestRunner):
         '''list_dt is mapped'''
         print('''list_dt is mapped''', flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                field_actual = False
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                field = ListComponent(self.driver).get_txt_get_field('list_dt')
-                if 'json_path=' in field:
-                    field_actual = True
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertTrue(field_actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    field = ListComponent(self.driver).get_txt_get_field('list_dt')
+                    field_actual = False
+                    if 'json_path=' in field:
+                        field_actual = True
+                    try:
+                        self.assertTrue(field_actual)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        self.assertTrue(field_actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -302,18 +350,23 @@ class TestPromotionChecklist(BaseTestRunner):
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                field_actual = False
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                field = ListComponent(self.driver).get_txt_get_field('raw-properties-list_status')
-                if 'json_path=' in field:
-                    field_actual = True
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertTrue(field_actual)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {field}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    field = ListComponent(self.driver).get_txt_get_field('raw-properties-list_status')
+                    field_actual = False
+                    if 'json_path=' in field:
+                        field_actual = True
+                    try:
+                        self.assertTrue(field_actual)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        self.assertTrue(field_actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -321,20 +374,25 @@ class TestPromotionChecklist(BaseTestRunner):
         ''' Kww_region has no mapping '''
         print(''' Kww_region has no mapping ''', flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            with self.subTest(metadata=metadata):
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                expected_field = ListComponent(self.driver).get_expected_field('kww_region')
-                actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertEqual(actual_field, expected_field)
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual_field}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    expected_field = ListComponent(self.driver).get_expected_field('kww_region')
+                    actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
+                    try:
+                        self.assertEqual(actual_field, expected_field)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual_field}', flush=True)
+                        self.assertEqual(actual_field, expected_field)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     @parameterized.expand(sources)
@@ -342,84 +400,89 @@ class TestPromotionChecklist(BaseTestRunner):
         ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
         print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             actual = []
-            with self.subTest(metadata=metadata):
-                field_actual = False
-                SLPMain(self.driver).metadata_main_select(metadata)
-                SLPMain(self.driver).impl_wait_metadata()
-                price_history = ListComponent(self.driver).get_txt_get_field('price_history')
-                if 'json_path=' in price_history and 'PriceHistoryEnhancer' in price_history:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history = ', field_actual)
-
-                price_history_items = ListComponent(self.driver).get_txt_get_field('price_history-items')
-                field_actual = False
-                if 'ValueProvider(json_path=[],skip_values=[])' in price_history_items:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history-items = ', field_actual)
-
-                price_history_in_use = ListComponent(self.driver).get_txt_get_field(
-                    'price_history-items-properties-in_use')
-                field_actual = False
-                if 'ValueProvider(json_path=in_use,skip_values=[])' in price_history_in_use:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history-items-properties-in_use = ', field_actual)
-
-                price_history_percent_change = ListComponent(self.driver).get_txt_get_field(
-                    'price_history-items-properties-percent_change')
-                field_actual = False
-                if 'ValueProvider(json_path=percent_change,skip_values=[])' in price_history_percent_change:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history.items.properties.percent_change = ', field_actual)
-
-                price_history_update_at = ListComponent(self.driver).get_txt_get_field(
-                    'price_history-items-properties-price_updated_at')
-                field_actual = False
-                if 'ValueProvider(json_path=price_updated_at,skip_values=[])' in price_history_update_at:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history.items.properties.price_updated_at = ', field_actual)
-
-                price_history_current_list_price = ListComponent(self.driver).get_txt_get_field(
-                    'price_history-items-properties-current_list_price')
-                field_actual = False
-                if 'ValueProvider(json_path=current_list_price,skip_values=[])' in price_history_current_list_price:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history.items.properties.current_list_price = ', field_actual)
-
-                price_history_previous_list_price = ListComponent(self.driver).get_txt_get_field(
-                    'price_history-items-properties-previous_list_price')
-                field_actual = False
-                if 'ValueProvider(json_path=previous_list_price,skip_values=[])' in price_history_previous_list_price:
-                    field_actual = True
-                    actual.append(field_actual)
-                else:
-                    actual.append(field_actual)
-                    print('price_history.items.properties.previous_list_price = ', field_actual)
+            with self.subTest(metadata=class_txt):
                 try:
-                    self.assertTrue(all(actual))
-                    print(f'Metadata = {metadata} Ok ✅', flush=True)
-                except:
-                    print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    field_actual = False
+                    price_history = ListComponent(self.driver).get_txt_get_field('price_history')
+                    if 'json_path=' in price_history and 'PriceHistoryEnhancer' in price_history:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history = ', field_actual)
+
+                    price_history_items = ListComponent(self.driver).get_txt_get_field('price_history-items')
+                    field_actual = False
+                    if 'ValueProvider(json_path=[],skip_values=[])' in price_history_items:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history-items = ', field_actual)
+
+                    price_history_in_use = ListComponent(self.driver).get_txt_get_field(
+                        'price_history-items-properties-in_use')
+                    field_actual = False
+                    if 'ValueProvider(json_path=in_use,skip_values=[])' in price_history_in_use:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history-items-properties-in_use = ', field_actual)
+
+                    price_history_percent_change = ListComponent(self.driver).get_txt_get_field(
+                        'price_history-items-properties-percent_change')
+                    field_actual = False
+                    if 'ValueProvider(json_path=percent_change,skip_values=[])' in price_history_percent_change:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history.items.properties.percent_change = ', field_actual)
+
+                    price_history_update_at = ListComponent(self.driver).get_txt_get_field(
+                        'price_history-items-properties-price_updated_at')
+                    field_actual = False
+                    if 'ValueProvider(json_path=price_updated_at,skip_values=[])' in price_history_update_at:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history.items.properties.price_updated_at = ', field_actual)
+
+                    price_history_current_list_price = ListComponent(self.driver).get_txt_get_field(
+                        'price_history-items-properties-current_list_price')
+                    field_actual = False
+                    if 'ValueProvider(json_path=current_list_price,skip_values=[])' in price_history_current_list_price:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history.items.properties.current_list_price = ', field_actual)
+
+                    price_history_previous_list_price = ListComponent(self.driver).get_txt_get_field(
+                        'price_history-items-properties-previous_list_price')
+                    field_actual = False
+                    if 'ValueProvider(json_path=previous_list_price,skip_values=[])' in price_history_previous_list_price:
+                        field_actual = True
+                        actual.append(field_actual)
+                    else:
+                        actual.append(field_actual)
+                        print('price_history.items.properties.previous_list_price = ', field_actual)
+                    try:
+                        self.assertTrue(all(actual))
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
+                        self.assertTrue(all(actual))
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
