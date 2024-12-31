@@ -25,6 +25,7 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.maximize_window()
         self.driver.get(ValueProvider.get_base_url())
+        self.driver.maximize_window()
 
     def _login(self):
         self.driver.implicitly_wait(10)
