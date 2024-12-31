@@ -136,9 +136,9 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                     try:
                         self.assertEqual(CO_OFFICE_PHONE, actual)
-                        print(f'Metadata = {metadata} Ok ✅', flush=True)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
                     except:
-                        print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
                         self.assertEqual(CO_OFFICE_PHONE, actual)
                 except NoSuchElementException as e:
                     print(f"looks like the class {class_txt} is not mapped", flush=True)
@@ -166,9 +166,9 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                     try:
                         self.assertEqual(CO_PREFERRED_PHONE, actual)
-                        print(f'Metadata = {metadata} Ok ✅', flush=True)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
                     except:
-                        print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
                         self.assertEqual(CO_PREFERRED_PHONE, actual)
                 except NoSuchElementException as e:
                     print(f"looks like the class {class_txt} is not mapped", flush=True)
