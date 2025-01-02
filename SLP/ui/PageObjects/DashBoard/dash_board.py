@@ -38,7 +38,7 @@ class DashBoard(BaseComponent):
 
     def set_kw_source_id(self, source: str):
         # set source mls_id"
-        self.get_source_input().set_text_in(source)
+        self.get_source_input().set_text(source)
         return self
 
     def get_kw_id_input(self):
