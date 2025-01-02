@@ -17,6 +17,11 @@ class ValueProvider:
     def get_base_url(cls):
         return os.getenv("BASE_URL")
 
+
+    @classmethod
+    def get_chrome_user_dir(cls):
+        return os.getenv("CHROME_USER_DIR")
+
     @classmethod
     def get_mls_id(cls):
         sources = [

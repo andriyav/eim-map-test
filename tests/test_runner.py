@@ -6,7 +6,7 @@ from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = '/home/runner/.config/google-chrome/'
+CHROME_USER_DIR = ValueProvider.get_chrome_user_dir()
 
 IMPLICITLY_WAIT = 10
 
