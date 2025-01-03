@@ -19,25 +19,11 @@ class ValueProvider:
 
 
     @classmethod
-    def get_chrome_user_dir(cls):
-        return os.getenv("CHROME_USER_DIR")
-
-    @classmethod
     def get_mls_id(cls):
         sources = [
             "19"
         ]
         return sources
-    @classmethod
-    def get_chrome_user(cls):
-        try:
-            chrome_user_dir = './tests/cache'
-        except:
-            chrome_user_dir = '/ home / runner /.config / google - chrome /'
-        return chrome_user_dir
-
-
-
 
     @classmethod
     def get_mapping_configuration(cls):

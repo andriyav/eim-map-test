@@ -1,12 +1,10 @@
 import os
-import time
 import unittest
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = ValueProvider.get_chrome_user()
 CHROME_USER_DIR_LOCAL = '/home/runner/.config/google-chrome/'
 CHROME_USER_DIR_GIT = './tests/cache'
 
@@ -26,13 +24,13 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         if os.path.isdir(CHROME_USER_DIR_LOCAL):
-            chrome_options = webdriver.ChromeOptions()
-            chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR_LOCAL}")
-            chrome_options.add_argument("profile-directory=Default")
+            CHROME_USER_DIR = CHROME_USER_DIR_LOCAL
+
         else:
-            chrome_options = webdriver.ChromeOptions()
-            chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR_GIT}")
-            chrome_options.add_argument("profile-directory=Default")
+            CHROME_USER_DIR = CHROME_USER_DIR_GIT
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+        chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.driver.maximize_window()
