@@ -3,7 +3,7 @@ name: Run Selenium Tests
 on:
   push:
     branches:
-      - main
+      - dev_HTMLTestRunner
   pull_request:
 
 jobs:

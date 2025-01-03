@@ -2,6 +2,7 @@ import re
 import os
 import unittest
 
+import allure
 import xmlrunner
 from HtmlTestRunner import HTMLTestRunner
 from parameterized import parameterized
@@ -49,6 +50,7 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 class TestPromotionChecklist(BaseTestRunner):
 
+    @allure.testcase("No elements of list_address are nullified or set constant (except country)")
     @parameterized.expand(sources)
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
@@ -493,7 +495,9 @@ class TestPromotionChecklist(BaseTestRunner):
     #     print("----------------------------------------------------------------------", flush=True)
 
 if __name__ == "__main__":
-    # Open a file to write the XML report
-    with open("test-reports/results.xml", "wb") as output:
-        unittest.main(testRunner=xmlrunner.XMLTestRunner(output=output), verbosity=2)
-
+    # Ensure the test-reports directory exists, and open the XML output file
+    try:
+        with open("/SLPUI/test-reports/results.xml", "wb") as output:
+            unittest.main(testRunner=xmlrunner.XMLTestRunner(output=output), verbosity=2)
+    except Exception as e:
+        print(f"Error occurred: {e}")
