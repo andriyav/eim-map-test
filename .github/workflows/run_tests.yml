@@ -49,14 +49,14 @@ jobs:
     - name: Run Tests with Virtual Display
       run: xvfb-run -a python -m unittest tests/test_checklist.py
 
-    - name: Set Up Chrome Cache Directory
-      run: |
-        mkdir -p ./tests/cache
-        echo "Chrome cache simulation" > ./tests/cache/sample_cache.txt
-
-    - name: Archive Chrome Cache (Linux)
-      run: |
-        tar -czf chrome_cache.tar.gz -C ./tests/cache .
+#    - name: Set Up Chrome Cache Directory
+#      run: |
+#        mkdir -p ./tests/cache
+#        echo "Chrome cache simulation" > ./tests/cache/sample_cache.txt
+#
+#    - name: Archive Chrome Cache (Linux)
+#      run: |
+#        tar -czf chrome_cache.tar.gz -C ./tests/cache .
 
     - name: Upload Chrome Cache Artifact
       uses: actions/upload-artifact@v3
