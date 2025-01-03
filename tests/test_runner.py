@@ -1,6 +1,8 @@
 import os
 import time
 import unittest
+
+from HtmlTestRunner import HTMLTestRunner
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
@@ -42,3 +44,11 @@ class BaseTestRunner(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit()
+
+
+if __name__ == "__main__":
+    # Specify the output folder for reports
+    unittest.main(
+        testRunner=HTMLTestRunner(output="reports", report_name="GoogleTestReport"),
+        verbosity=2
+    )
