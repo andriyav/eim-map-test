@@ -1,12 +1,12 @@
 import os
-import time
 import unittest
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = ValueProvider.get_chrome_user_dir()
+CHROME_USER_DIR_LOCAL = '/home/runner/.config/google-chrome/'
+CHROME_USER_DIR_GIT = './tests/cache'
 
 IMPLICITLY_WAIT = 10
 
@@ -23,6 +23,11 @@ class BaseTestRunner(unittest.TestCase):
     '''Login with username and password'''
 
     def _init_driver(self):
+        if os.getenv('CI') == 'true' and os.getenv('GITHUB_ACTIONS') == 'true':
+            CHROME_USER_DIR = CHROME_USER_DIR_GIT
+
+        else:
+            CHROME_USER_DIR = CHROME_USER_DIR_LOCAL
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
         chrome_options.add_argument("profile-directory=Default")
