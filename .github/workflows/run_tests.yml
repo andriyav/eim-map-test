@@ -3,7 +3,7 @@ name: Run Selenium Tests
 on:
   push:
     branches:
-      - main
+      - dev_CHROME_USER_DIR
   pull_request:
 
 jobs:
