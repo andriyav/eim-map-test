@@ -1,7 +1,5 @@
 import re
 import os
-import time
-
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -15,7 +13,7 @@ from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
-SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
+SOURCE_ID = (By.CSS_SELECTOR,' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
@@ -41,6 +39,7 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
                'list_address-properties-street_number', 'list_address-properties-unit_number',
                'list_address-properties-street_suffix', 'list_address-properties-street_post_dir',
                'list_address-properties-street_direction']
+
 
 
 class TestPromotionChecklist(BaseTestRunner):
@@ -116,7 +115,6 @@ class TestPromotionChecklist(BaseTestRunner):
                     print(f"looks like the class {class_txt} is not mapped")
         print("----------------------------------------------------------------------", flush=True)
 
-
     @parameterized.expand(sources)
     def test_co_list_agent_office_phone(self, source):
         ''' co_list_agent_office_phone are mapped with
@@ -138,9 +136,9 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                     try:
                         self.assertEqual(CO_OFFICE_PHONE, actual)
-                        print(f'Metadata = {metadata} Ok ✅', flush=True)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
                     except:
-                        print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
                         self.assertEqual(CO_OFFICE_PHONE, actual)
                 except NoSuchElementException as e:
                     print(f"looks like the class {class_txt} is not mapped", flush=True)
@@ -168,9 +166,9 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                     try:
                         self.assertEqual(CO_PREFERRED_PHONE, actual)
-                        print(f'Metadata = {metadata} Ok ✅', flush=True)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
                     except:
-                        print(f'Metadata = {metadata} Failed ❌ in {actual}', flush=True)
+                        print(f'Metadata = {class_txt} Failed ❌ in {actual}', flush=True)
                         self.assertEqual(CO_PREFERRED_PHONE, actual)
                 except NoSuchElementException as e:
                     print(f"looks like the class {class_txt} is not mapped", flush=True)
