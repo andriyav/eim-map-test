@@ -24,12 +24,12 @@ class BaseTestRunner(unittest.TestCase):
 
     def _init_driver(self):
         if os.getenv('CI') == 'true' and os.getenv('GITHUB_ACTIONS') == 'true':
-            CHROME_USER_DIR = CHROME_USER_DIR_GIT
+            chrome_user_dir = CHROME_USER_DIR_GIT
 
         else:
-            CHROME_USER_DIR = CHROME_USER_DIR_LOCAL
+            chrome_user_dir = CHROME_USER_DIR_LOCAL
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+        chrome_options.add_argument(f"user-data-dir={chrome_user_dir}")
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
