@@ -2,6 +2,7 @@ import re
 import os
 
 import allure
+import pytest
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -48,6 +49,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('No elements of list_address are nullified or set constant (except country)')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore:api v1")
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
         print("No elements of list_address are nullified or set constant (except country)", flush=True)
