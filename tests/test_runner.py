@@ -8,7 +8,6 @@ user_profile = os.environ.get("USERPROFILE")
 cache_path = os.path.join(user_profile, "AppData", "Local", "Google", "Chrome", "User Data")
 CHROME_USER_DIR_LOCAL = cache_path
 CHROME_USER_DIR_GIT = './tests/cache'
-
 IMPLICITLY_WAIT = 10
 
 
