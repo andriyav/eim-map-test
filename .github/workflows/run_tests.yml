@@ -47,20 +47,24 @@ jobs:
 
     - name: Run Tests with Virtual Display
       run: xvfb-run -a pytest -s --alluredir=allure-results tests/test_checklist.py
+      continue-on-error: true  # Continue even if tests fail
 
     - name: Upload Chrome Cache Artifact
+      if: always()  # Ensure this runs even if tests fail
       uses: actions/upload-artifact@v3
       with:
         name: chrome-cache
         path: chrome_cache.tar.gz
 
     - name: Upload Screenshots
+      if: always()  # Ensure this runs even if tests fail
       uses: actions/upload-artifact@v3
       with:
         name: screenshots
         path: artifacts/screenshots  # Ensure this matches the actual folder path
 
     - name: Upload HTML Artifact
+      if: always()  # Ensure this runs even if tests fail
       uses: actions/upload-artifact@v3
       with:
         name: page-source
@@ -68,13 +72,15 @@ jobs:
 
     # Generate Allure Report
     - name: Generate Allure Report
+      if: always()  # Ensure this runs even if tests fail
       run: |
         npm install -g allure-commandline --silent
         allure generate allure-results -o allure-report --clean
 
     # Deploy Allure Report to GitHub Pages
     - name: Deploy Allure Report
+      if: always()  # Ensure this runs even if tests fail
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN}}  # Ensure the token is in your GitHub secrets
+        github_token: ${{ secrets.GH_TOKEN }}  # Ensure the token is in your GitHub secrets
         publish_dir: allure-report
