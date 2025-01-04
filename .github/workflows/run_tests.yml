@@ -46,7 +46,7 @@ jobs:
         echo "Current Directory: $(pwd)"
 
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a pytest -s --alluredir=allure-results tests/test_checklist.py
+      run: xvfb-run -a pytest -s --alluredir=allure-results --capture=sys tests/test_checklist.py
       continue-on-error: true  # Continue even if tests fail
 
     - name: Upload Chrome Cache Artifact
@@ -74,7 +74,7 @@ jobs:
     - name: Generate Allure Report
       if: always()  # Ensure this runs even if tests fail
       run: |
-        npm install -g allure-commandline@latest  
+        npm install -g allure-commandline@latest
         allure generate allure-results -o allure-report
 
     # Deploy Allure Report to GitHub Pages
