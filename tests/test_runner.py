@@ -1,5 +1,4 @@
 import os
-import time
 import unittest
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
@@ -9,6 +8,8 @@ user_profile = os.environ.get("USERPROFILE")
 cache_path = os.path.join(user_profile, "AppData", "Local", "Google", "Chrome", "User Data_test")
 CHROME_USER_DIR_LOCAL = cache_path
 CHROME_USER_DIR_GIT = './tests/cache'
+
+
 IMPLICITLY_WAIT = 10
 
 
