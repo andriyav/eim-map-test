@@ -46,7 +46,7 @@ jobs:
         echo "Current Directory: $(pwd)"
 
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a pytest --alluredir=allure-results tests/test_checklist.py
+      run: xvfb-run -a pytest -s --alluredir=allure-results tests/test_checklist.py
 
     - name: Upload Chrome Cache Artifact
       uses: actions/upload-artifact@v3
