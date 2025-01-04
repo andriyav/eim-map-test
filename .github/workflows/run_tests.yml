@@ -49,7 +49,7 @@ jobs:
     - name: Download Previous Allure Results (if available)
       uses: actions/download-artifact@v3
       with:
-        name: merged-allure-results
+        name: allure-results
         path: previous-allure-results
       continue-on-error: true  # Continue if no previous results are found
 
