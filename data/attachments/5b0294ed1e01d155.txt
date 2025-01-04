@@ -1,0 +1,4 @@
+raw.properties.list_status is mapped
+kw_id = 166
+Metadata = PROPERTY Ok ✅
+----------------------------------------------------------------------

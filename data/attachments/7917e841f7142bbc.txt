@@ -1,9 +1,0 @@
-co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"
-kw_id = 105
-Metadata = PROPERTY - A Failed ❌ in co_list_agent_office.properties.co_list_agent_office_phone
-+
-[add]
-ValueProvider(json_path=agent_office_phone,skip_values=[])
-[add]
-[add]
-[add]

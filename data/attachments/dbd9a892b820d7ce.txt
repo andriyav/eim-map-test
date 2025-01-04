@@ -1,2 +1,0 @@
-list_dt is mapped
-kw_id = 106

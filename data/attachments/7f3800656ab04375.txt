@@ -1,2 +1,0 @@
-Currency_code must be UPPER
-kw_id = 103

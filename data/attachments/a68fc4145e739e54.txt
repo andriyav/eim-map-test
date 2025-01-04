@@ -1,0 +1,9 @@
+Currency_code must be UPPER
+kw_id = 674
+Metadata = PROPERTY - RESIDENTIALPROPERTY Failed ❌ in currency_code
++
+[add]
+ValueProvider(json_path=currency,skip_values=["Either"])
+[add]
+[add]
+[add]

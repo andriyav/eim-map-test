@@ -1,0 +1,7 @@
+ Kww_region has no mapping 
+kw_id = 19
+Metadata = PROPERTY Ok ✅
+looks like the class LOOKUP is not mapped
+looks like the class UNIT is not mapped
+looks like the class ROOM is not mapped
+----------------------------------------------------------------------

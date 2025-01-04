@@ -1,2 +1,0 @@
- list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")
-kw_id = 103

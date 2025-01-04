@@ -1,0 +1,3 @@
+Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)
+kw_id = 674
+Metadata = PROPERTY - RESIDENTIALPROPERTY Failed ❌ in ['mls_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=BS_BREA,const_type=str)', 'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=6025,const_type=int)']

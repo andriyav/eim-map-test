@@ -1,0 +1,7 @@
+ Kww_region has no mapping 
+kw_id = 86
+Metadata = PROPERTY Ok ✅
+looks like the class LOOKUP is not mapped
+looks like the class PROPERTYROOMS is not mapped
+looks like the class PROPERTYUNITTYPES is not mapped
+----------------------------------------------------------------------

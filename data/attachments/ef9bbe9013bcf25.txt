@@ -1,0 +1,8 @@
+list_dt is mapped
+kw_id = 46
+Metadata = PROPERTY - RESIDENTIALINCOME Ok ✅
+Metadata = PROPERTY - RESIDENTIALLAND Ok ✅
+Metadata = PROPERTY - RESIDENTIALLEASE Ok ✅
+Metadata = PROPERTY - RESIDENTIALMOBILEHOME Ok ✅
+Metadata = PROPERTY - RESIDENTIALPROPERTY Ok ✅
+----------------------------------------------------------------------

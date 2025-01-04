@@ -1,0 +1,7 @@
+list_address.country is SetConstant to country code (US or CA)
+kw_id = 19
+Metadata = PROPERTY Ok ✅
+looks like the class LOOKUP is not mapped
+looks like the class UNIT is not mapped
+looks like the class ROOM is not mapped
+----------------------------------------------------------------------

@@ -1,0 +1,8 @@
+raw.properties.list_status is mapped
+kw_id = 674
+Metadata = PROPERTY - RESIDENTIALPROPERTY Failed ❌ in raw.properties.list_status
++
+[add]
+[add]
+[add]
+[add]

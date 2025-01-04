@@ -1,0 +1,8 @@
+co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone)"
+kw_id = 46
+Metadata = PROPERTY - RESIDENTIALINCOME Ok ✅
+Metadata = PROPERTY - RESIDENTIALLAND Ok ✅
+Metadata = PROPERTY - RESIDENTIALLEASE Ok ✅
+Metadata = PROPERTY - RESIDENTIALMOBILEHOME Ok ✅
+Metadata = PROPERTY - RESIDENTIALPROPERTY Ok ✅
+----------------------------------------------------------------------

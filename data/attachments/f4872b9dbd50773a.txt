@@ -1,2 +1,0 @@
- Kww_region has no mapping 
-kw_id = 103

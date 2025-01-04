@@ -1,8 +1,0 @@
-Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)
-kw_id = 102
-Metadata = PROPERTY Ok ✅
-looks like the class LOOKUP is not mapped
-looks like the class CUSTOMFIELDS is not mapped
-looks like the class UNIT is not mapped
-looks like the class ROOM is not mapped
-----------------------------------------------------------------------

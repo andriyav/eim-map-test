@@ -1,5 +1,0 @@
-Currency_code must be UPPER
-kw_id = 100
-Metadata = PROPERTY Ok ✅
-looks like the class FIELDRULE is not mapped
-----------------------------------------------------------------------

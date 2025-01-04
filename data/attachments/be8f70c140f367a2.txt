@@ -1,2 +1,0 @@
-list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")" 
-kw_id = 104

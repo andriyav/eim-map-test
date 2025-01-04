@@ -1,0 +1,8 @@
+Price_history must use PriceHistoryEnhancer with ListPrice input
+kw_id = 166
+price_history-items-properties-in_use =  False
+price_history.items.properties.percent_change =  False
+price_history.items.properties.price_updated_at =  False
+price_history.items.properties.current_list_price =  False
+price_history.items.properties.previous_list_price =  False
+Metadata = PROPERTY Failed ❌ in [True, True, False, False, False, False, False]
