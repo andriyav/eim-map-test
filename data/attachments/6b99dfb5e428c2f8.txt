@@ -1,0 +1,9 @@
+co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"
+kw_id = 10
+Metadata = PROPERTY Failed ❌ in co_list_agent_office.properties.co_list_agent_office_phone
++
+[add]
+FirstValueProvider(json_path=["agent_office_phone","office_phone"])
+[add]
+[add]
+[add]

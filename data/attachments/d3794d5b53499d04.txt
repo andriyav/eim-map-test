@@ -1,0 +1,2 @@
+Price_history must use PriceHistoryEnhancer with ListPrice input
+kw_id = 104

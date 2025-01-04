@@ -1,0 +1,9 @@
+raw.properties.list_status is mapped
+kw_id = 105
+Metadata = PROPERTY - A Ok ✅
+Metadata = PROPERTY - B Ok ✅
+Metadata = PROPERTY - C Ok ✅
+Metadata = PROPERTY - D Ok ✅
+Metadata = PROPERTY - E Ok ✅
+Metadata = PROPERTY - F Ok ✅
+----------------------------------------------------------------------

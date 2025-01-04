@@ -1,0 +1,2 @@
+Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)
+kw_id = 103

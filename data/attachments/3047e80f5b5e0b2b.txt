@@ -1,0 +1,18 @@
+ Kww_region has no mapping 
+kw_id = 10
+Metadata = PROPERTY Ok ✅
+looks like the class CUSTOMPROPERTY is not mapped
+looks like the class DATASYSTEM is not mapped
+looks like the class ENUMERATION is not mapped
+looks like the class PROPERTYROOMS is not mapped
+looks like the class PROPERTYUNITTYPES is not mapped
+looks like the class PUBLICRECORDPROPERTYBUILDING is not mapped
+looks like the class PUBLICRECORDPROPERTYLASTMARKETSALE is not mapped
+looks like the class PUBLICRECORDPROPERTYLOCATION is not mapped
+looks like the class PUBLICRECORDPROPERTYOWNERSHIP is not mapped
+looks like the class PUBLICRECORDPROPERTYOWNERSHIPTRANSFER is not mapped
+looks like the class PUBLICRECORDPROPERTYPRIORSALE is not mapped
+looks like the class PUBLICRECORDPROPERTYSEARCH is not mapped
+looks like the class PUBLICRECORDPROPERTYSITE is not mapped
+looks like the class PUBLICRECORDPROPERTYTAXASSESSMENT is not mapped
+----------------------------------------------------------------------

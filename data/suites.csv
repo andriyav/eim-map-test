@@ -1,4 +1,25 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='10']","156280","test_price_history_0_10","tests","Sat Jan 04 22:25:10 UTC 2025","passed","Sat Jan 04 22:27:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='105']","52714","test_kww_region_6_105","tests","Sat Jan 04 21:42:51 UTC 2025","passed","Sat Jan 04 21:43:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='104']","12730","test_currency_code_5_104","tests","Sat Jan 04 21:32:36 UTC 2025","broken","Sat Jan 04 21:32:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='10']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155670","test_list_agent_office_phone_0_10","tests","Sat Jan 04 21:53:26 UTC 2025","passed","Sat Jan 04 21:56:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='106']","12891","test_list_dt_7_106","tests","Sat Jan 04 22:14:03 UTC 2025","broken","Sat Jan 04 22:14:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='103']","12586","test_dashboard_source_number_4_103","tests","Sat Jan 04 21:37:13 UTC 2025","broken","Sat Jan 04 21:37:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='10']","156606","test_list_dt_0_10","tests","Sat Jan 04 22:08:36 UTC 2025","passed","Sat Jan 04 22:11:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='100']","23408","test_raw_properties_list_status_1_100","tests","Sat Jan 04 22:35:38 UTC 2025","passed","Sat Jan 04 22:36:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='103']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","12634","test_co_list_agent_preferred_phone_4_103","tests","Sat Jan 04 21:24:45 UTC 2025","broken","Sat Jan 04 21:24:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='106']","12598","test_list_agent_preferred_phone_7_106","tests","Sat Jan 04 22:05:44 UTC 2025","broken","Sat Jan 04 22:05:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='100']","24529","test_list_dt_1_100","tests","Sat Jan 04 22:11:13 UTC 2025","passed","Sat Jan 04 22:11:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='103']","12788","test_list_agent_preferred_phone_4_103","tests","Sat Jan 04 22:05:06 UTC 2025","broken","Sat Jan 04 22:05:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='102']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","53391","test_co_list_agent_preferred_phone_3_102","tests","Sat Jan 04 21:23:52 UTC 2025","passed","Sat Jan 04 21:24:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='10']","155730","test_list_agent_preferred_phone_0_10","tests","Sat Jan 04 22:01:00 UTC 2025","passed","Sat Jan 04 22:03:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='104']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12757","test_co_list_agent_office_phone_5_104","tests","Sat Jan 04 21:19:45 UTC 2025","broken","Sat Jan 04 21:19:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='105']","51948","test_currency_code_6_105","tests","Sat Jan 04 21:32:49 UTC 2025","passed","Sat Jan 04 21:33:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='105']","36706","test_price_history_6_105","tests","Sat Jan 04 22:29:32 UTC 2025","failed","Sat Jan 04 22:30:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -31,5 +52,523 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","3924","test_list_address_nullifier_const","tests","Sat Jan 04 21:14:38 UTC 2025","passed","Sat Jan 04 21:14:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='741']","61456","test_list_address_nullifier_const_0_741","tests","Sat Jan 04 21:14:42 UTC 2025","passed","Sat Jan 04 21:15:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2532","test_list_address_properties_country","tests","Sat Jan 04 21:48:32 UTC 2025","passed","Sat Jan 04 21:48:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='101']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","12643","test_co_list_agent_preferred_phone_2_101","tests","Sat Jan 04 21:23:39 UTC 2025","passed","Sat Jan 04 21:23:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='102']","8689","test_dashboard_source_number_3_102","tests","Sat Jan 04 21:37:04 UTC 2025","passed","Sat Jan 04 21:37:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2845","test_price_history","tests","Sat Jan 04 22:25:07 UTC 2025","passed","Sat Jan 04 22:25:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='107']","12989","test_list_address_nullifier_const_8_107","tests","Sat Jan 04 21:48:19 UTC 2025","failed","Sat Jan 04 21:48:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","3483","test_co_list_agent_office_phone","tests","Sat Jan 04 21:17:46 UTC 2025","passed","Sat Jan 04 21:17:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='102']","53425","test_list_dt_3_102","tests","Sat Jan 04 22:11:51 UTC 2025","passed","Sat Jan 04 22:12:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='102']","53590","test_raw_properties_list_status_3_102","tests","Sat Jan 04 22:36:15 UTC 2025","passed","Sat Jan 04 22:37:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='104']","12540","test_list_address_nullifier_const_5_104","tests","Sat Jan 04 21:47:41 UTC 2025","broken","Sat Jan 04 21:47:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='105']","50904","test_raw_properties_list_status_6_105","tests","Sat Jan 04 22:37:34 UTC 2025","passed","Sat Jan 04 22:38:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='107']","155667","test_raw_properties_list_status_8_107","tests","Sat Jan 04 22:38:37 UTC 2025","passed","Sat Jan 04 22:41:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='107']","156359","test_price_history_8_107","tests","Sat Jan 04 22:30:21 UTC 2025","passed","Sat Jan 04 22:32:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='101']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","13196","test_co_list_agent_office_phone_2_101","tests","Sat Jan 04 21:18:26 UTC 2025","passed","Sat Jan 04 21:18:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='104']","22692","test_list_address_properties_country_5_104","tests","Sat Jan 04 21:51:31 UTC 2025","broken","Sat Jan 04 21:51:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='106']","23908","test_list_address_properties_country_7_106","tests","Sat Jan 04 21:52:46 UTC 2025","broken","Sat Jan 04 21:53:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='104']","12671","test_kww_region_5_104","tests","Sat Jan 04 21:42:38 UTC 2025","broken","Sat Jan 04 21:42:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='104']","12732","test_mls_id_sa_id_5_104","tests","Sat Jan 04 22:21:13 UTC 2025","broken","Sat Jan 04 22:21:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='102']","54093","test_currency_code_3_102","tests","Sat Jan 04 21:31:29 UTC 2025","passed","Sat Jan 04 21:32:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='101']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12596","test_list_agent_office_phone_2_101","tests","Sat Jan 04 21:56:24 UTC 2025","passed","Sat Jan 04 21:56:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='100']","13111","test_price_history_1_100","tests","Sat Jan 04 22:27:46 UTC 2025","failed","Sat Jan 04 22:28:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='101']","13528","test_raw_properties_list_status_2_101","tests","Sat Jan 04 22:36:01 UTC 2025","passed","Sat Jan 04 22:36:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='106']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","13886","test_co_list_agent_preferred_phone_7_106","tests","Sat Jan 04 21:25:24 UTC 2025","broken","Sat Jan 04 21:25:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='102']","93567","test_list_address_properties_country_3_102","tests","Sat Jan 04 21:49:34 UTC 2025","passed","Sat Jan 04 21:51:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='102']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","53612","test_list_agent_office_phone_3_102","tests","Sat Jan 04 21:56:37 UTC 2025","passed","Sat Jan 04 21:57:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='107']","155625","test_list_dt_8_107","tests","Sat Jan 04 22:14:16 UTC 2025","passed","Sat Jan 04 22:16:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='103']","12580","test_raw_properties_list_status_4_103","tests","Sat Jan 04 22:37:08 UTC 2025","broken","Sat Jan 04 22:37:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='105']","12752","test_list_address_nullifier_const_6_105","tests","Sat Jan 04 21:47:53 UTC 2025","failed","Sat Jan 04 21:48:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='106']","12892","test_mls_id_sa_id_7_106","tests","Sat Jan 04 22:22:18 UTC 2025","broken","Sat Jan 04 22:22:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='103']","12696","test_price_history_4_103","tests","Sat Jan 04 22:29:06 UTC 2025","broken","Sat Jan 04 22:29:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='106']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12571","test_co_list_agent_office_phone_7_106","tests","Sat Jan 04 21:20:11 UTC 2025","broken","Sat Jan 04 21:20:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='10']","13671","test_list_address_nullifier_const_0_10","tests","Sat Jan 04 21:46:35 UTC 2025","failed","Sat Jan 04 21:46:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='104']","12687","test_raw_properties_list_status_5_104","tests","Sat Jan 04 22:37:21 UTC 2025","broken","Sat Jan 04 22:37:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='104']","12620","test_dashboard_source_number_5_104","tests","Sat Jan 04 21:37:25 UTC 2025","broken","Sat Jan 04 21:37:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='10']","156789","test_kww_region_0_10","tests","Sat Jan 04 21:38:18 UTC 2025","passed","Sat Jan 04 21:40:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='103']","12637","test_currency_code_4_103","tests","Sat Jan 04 21:32:23 UTC 2025","broken","Sat Jan 04 21:32:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='100']","33208","test_list_address_properties_country_1_100","tests","Sat Jan 04 21:48:47 UTC 2025","passed","Sat Jan 04 21:49:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='103']","23608","test_list_address_properties_country_4_103","tests","Sat Jan 04 21:51:07 UTC 2025","broken","Sat Jan 04 21:51:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='102']","54074","test_kww_region_3_102","tests","Sat Jan 04 21:41:31 UTC 2025","passed","Sat Jan 04 21:42:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='105']","52913","test_list_dt_6_105","tests","Sat Jan 04 22:13:10 UTC 2025","passed","Sat Jan 04 22:14:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2582","test_list_address_nullifier_const","tests","Sat Jan 04 21:46:32 UTC 2025","passed","Sat Jan 04 21:46:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='105']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12850","test_co_list_agent_office_phone_6_105","tests","Sat Jan 04 21:19:58 UTC 2025","failed","Sat Jan 04 21:20:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2423","test_co_list_agent_preferred_phone","tests","Sat Jan 04 21:20:38 UTC 2025","passed","Sat Jan 04 21:20:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='105']","52058","test_mls_id_sa_id_6_105","tests","Sat Jan 04 22:21:26 UTC 2025","passed","Sat Jan 04 22:22:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='106']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12759","test_list_agent_office_phone_7_106","tests","Sat Jan 04 21:58:09 UTC 2025","broken","Sat Jan 04 21:58:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='105']","12504","test_list_agent_preferred_phone_6_105","tests","Sat Jan 04 22:05:31 UTC 2025","failed","Sat Jan 04 22:05:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='100']","23064","test_list_agent_preferred_phone_1_100","tests","Sat Jan 04 22:03:36 UTC 2025","passed","Sat Jan 04 22:03:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='102']","13105","test_list_address_nullifier_const_3_102","tests","Sat Jan 04 21:47:15 UTC 2025","failed","Sat Jan 04 21:47:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='100']","22737","test_currency_code_1_100","tests","Sat Jan 04 21:30:53 UTC 2025","passed","Sat Jan 04 21:31:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='107']","156027","test_list_agent_preferred_phone_8_107","tests","Sat Jan 04 22:05:56 UTC 2025","passed","Sat Jan 04 22:08:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='102']","53600","test_list_agent_preferred_phone_3_102","tests","Sat Jan 04 22:04:12 UTC 2025","passed","Sat Jan 04 22:05:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='100']","22905","test_kww_region_1_100","tests","Sat Jan 04 21:40:55 UTC 2025","passed","Sat Jan 04 21:41:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2859","test_dashboard_source_number","tests","Sat Jan 04 21:36:30 UTC 2025","passed","Sat Jan 04 21:36:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='106']","12726","test_kww_region_7_106","tests","Sat Jan 04 21:43:44 UTC 2025","broken","Sat Jan 04 21:43:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='107']","13250","test_list_address_properties_country_8_107","tests","Sat Jan 04 21:53:10 UTC 2025","failed","Sat Jan 04 21:53:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='107']","15168","test_dashboard_source_number_8_107","tests","Sat Jan 04 21:38:00 UTC 2025","broken","Sat Jan 04 21:38:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2952","test_currency_code","tests","Sat Jan 04 21:28:14 UTC 2025","passed","Sat Jan 04 21:28:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='10']","12653","test_list_address_properties_country_0_10","tests","Sat Jan 04 21:48:34 UTC 2025","failed","Sat Jan 04 21:48:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2555","test_kww_region","tests","Sat Jan 04 21:38:15 UTC 2025","passed","Sat Jan 04 21:38:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='100']","8329","test_dashboard_source_number_1_100","tests","Sat Jan 04 21:36:43 UTC 2025","passed","Sat Jan 04 21:36:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='103']","12644","test_list_address_nullifier_const_4_103","tests","Sat Jan 04 21:47:28 UTC 2025","broken","Sat Jan 04 21:47:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='102']","54231","test_mls_id_sa_id_3_102","tests","Sat Jan 04 22:20:06 UTC 2025","passed","Sat Jan 04 22:21:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='10']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","155793","test_co_list_agent_preferred_phone_0_10","tests","Sat Jan 04 21:20:40 UTC 2025","passed","Sat Jan 04 21:23:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='101']","13331","test_currency_code_2_101","tests","Sat Jan 04 21:31:16 UTC 2025","passed","Sat Jan 04 21:31:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='107']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","14000","test_co_list_agent_office_phone_8_107","tests","Sat Jan 04 21:20:24 UTC 2025","failed","Sat Jan 04 21:20:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='101']","13599","test_list_dt_2_101","tests","Sat Jan 04 22:11:37 UTC 2025","passed","Sat Jan 04 22:11:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='106']","12806","test_raw_properties_list_status_7_106","tests","Sat Jan 04 22:38:25 UTC 2025","broken","Sat Jan 04 22:38:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='101']","13022","test_list_agent_preferred_phone_2_101","tests","Sat Jan 04 22:03:59 UTC 2025","passed","Sat Jan 04 22:04:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='107']","156561","test_currency_code_8_107","tests","Sat Jan 04 21:33:54 UTC 2025","passed","Sat Jan 04 21:36:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='101']","12575","test_mls_id_sa_id_2_101","tests","Sat Jan 04 22:19:54 UTC 2025","passed","Sat Jan 04 22:20:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='103']","12683","test_mls_id_sa_id_4_103","tests","Sat Jan 04 22:21:00 UTC 2025","broken","Sat Jan 04 22:21:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='10']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","13050","test_co_list_agent_office_phone_0_10","tests","Sat Jan 04 21:17:50 UTC 2025","failed","Sat Jan 04 21:18:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2612","test_list_agent_office_phone","tests","Sat Jan 04 21:53:23 UTC 2025","passed","Sat Jan 04 21:53:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='103']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12754","test_list_agent_office_phone_4_103","tests","Sat Jan 04 21:57:31 UTC 2025","broken","Sat Jan 04 21:57:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='103']","12909","test_kww_region_4_103","tests","Sat Jan 04 21:42:25 UTC 2025","broken","Sat Jan 04 21:42:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='100']","12898","test_list_address_nullifier_const_1_100","tests","Sat Jan 04 21:46:48 UTC 2025","failed","Sat Jan 04 21:47:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='100']","23494","test_mls_id_sa_id_1_100","tests","Sat Jan 04 22:19:30 UTC 2025","passed","Sat Jan 04 22:19:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='103']","12699","test_list_dt_4_103","tests","Sat Jan 04 22:12:44 UTC 2025","broken","Sat Jan 04 22:12:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='104']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","12738","test_co_list_agent_preferred_phone_5_104","tests","Sat Jan 04 21:24:58 UTC 2025","broken","Sat Jan 04 21:25:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='105']","52406","test_list_address_properties_country_6_105","tests","Sat Jan 04 21:51:54 UTC 2025","passed","Sat Jan 04 21:52:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='100']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","23298","test_co_list_agent_preferred_phone_1_100","tests","Sat Jan 04 21:23:16 UTC 2025","passed","Sat Jan 04 21:23:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='105']","9757","test_dashboard_source_number_6_105","tests","Sat Jan 04 21:37:38 UTC 2025","passed","Sat Jan 04 21:37:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='104']","12568","test_list_agent_preferred_phone_5_104","tests","Sat Jan 04 22:05:19 UTC 2025","broken","Sat Jan 04 22:05:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='107']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","156036","test_list_agent_office_phone_8_107","tests","Sat Jan 04 21:58:22 UTC 2025","passed","Sat Jan 04 22:00:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='104']","12611","test_list_dt_5_104","tests","Sat Jan 04 22:12:57 UTC 2025","broken","Sat Jan 04 22:13:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='10']","156038","test_currency_code_0_10","tests","Sat Jan 04 21:28:17 UTC 2025","passed","Sat Jan 04 21:30:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2688","test_list_agent_preferred_phone","tests","Sat Jan 04 22:00:58 UTC 2025","passed","Sat Jan 04 22:01:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='100']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","22995","test_co_list_agent_office_phone_1_100","tests","Sat Jan 04 21:18:03 UTC 2025","passed","Sat Jan 04 21:18:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='106']","12833","test_list_address_nullifier_const_7_106","tests","Sat Jan 04 21:48:06 UTC 2025","broken","Sat Jan 04 21:48:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='10']","156059","test_mls_id_sa_id_0_10","tests","Sat Jan 04 22:16:54 UTC 2025","passed","Sat Jan 04 22:19:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='104']","12701","test_price_history_5_104","tests","Sat Jan 04 22:29:19 UTC 2025","broken","Sat Jan 04 22:29:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='102']","53447","test_price_history_3_102","tests","Sat Jan 04 22:28:13 UTC 2025","passed","Sat Jan 04 22:29:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","3856","test_list_dt","tests","Sat Jan 04 22:08:32 UTC 2025","passed","Sat Jan 04 22:08:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='107']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","156489","test_co_list_agent_preferred_phone_8_107","tests","Sat Jan 04 21:25:38 UTC 2025","passed","Sat Jan 04 21:28:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='103']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12639","test_co_list_agent_office_phone_4_103","tests","Sat Jan 04 21:19:33 UTC 2025","broken","Sat Jan 04 21:19:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='10']","157539","test_raw_properties_list_status_0_10","tests","Sat Jan 04 22:33:00 UTC 2025","passed","Sat Jan 04 22:35:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='101']","13280","test_list_address_nullifier_const_2_101","tests","Sat Jan 04 21:47:01 UTC 2025","passed","Sat Jan 04 21:47:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='101']","13502","test_kww_region_2_101","tests","Sat Jan 04 21:41:18 UTC 2025","passed","Sat Jan 04 21:41:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='101']","12612","test_dashboard_source_number_2_101","tests","Sat Jan 04 21:36:51 UTC 2025","passed","Sat Jan 04 21:37:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='101']","13474","test_list_address_properties_country_2_101","tests","Sat Jan 04 21:49:20 UTC 2025","passed","Sat Jan 04 21:49:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='100']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","22914","test_list_agent_office_phone_1_100","tests","Sat Jan 04 21:56:01 UTC 2025","passed","Sat Jan 04 21:56:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='107']","155846","test_kww_region_8_107","tests","Sat Jan 04 21:43:56 UTC 2025","passed","Sat Jan 04 21:46:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='106']","12609","test_dashboard_source_number_7_106","tests","Sat Jan 04 21:37:48 UTC 2025","broken","Sat Jan 04 21:38:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='102']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","53655","test_co_list_agent_office_phone_3_102","tests","Sat Jan 04 21:18:39 UTC 2025","passed","Sat Jan 04 21:19:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='107']","156440","test_mls_id_sa_id_8_107","tests","Sat Jan 04 22:22:31 UTC 2025","passed","Sat Jan 04 22:25:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2784","test_raw_properties_list_status","tests","Sat Jan 04 22:32:57 UTC 2025","passed","Sat Jan 04 22:33:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='106']","12717","test_price_history_7_106","tests","Sat Jan 04 22:30:08 UTC 2025","broken","Sat Jan 04 22:30:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='101']","13136","test_price_history_2_101","tests","Sat Jan 04 22:28:00 UTC 2025","passed","Sat Jan 04 22:28:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2809","test_mls_id_sa_id","tests","Sat Jan 04 22:16:51 UTC 2025","passed","Sat Jan 04 22:16:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='106']","12939","test_currency_code_7_106","tests","Sat Jan 04 21:33:41 UTC 2025","broken","Sat Jan 04 21:33:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='105']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12673","test_list_agent_office_phone_6_105","tests","Sat Jan 04 21:57:56 UTC 2025","failed","Sat Jan 04 21:58:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='105']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","13059","test_co_list_agent_preferred_phone_6_105","tests","Sat Jan 04 21:25:11 UTC 2025","failed","Sat Jan 04 21:25:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='104']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12660","test_list_agent_office_phone_5_104","tests","Sat Jan 04 21:57:43 UTC 2025","broken","Sat Jan 04 21:57:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='10']","9829","test_dashboard_source_number_0_10","tests","Sat Jan 04 21:36:33 UTC 2025","passed","Sat Jan 04 21:36:43 UTC 2025","TestPromotionChecklist","test_checklist","",""

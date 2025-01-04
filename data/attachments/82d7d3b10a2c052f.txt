@@ -1,0 +1,2 @@
+raw.properties.list_status is mapped
+kw_id = 103
