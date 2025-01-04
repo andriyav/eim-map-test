@@ -1,7 +1,0 @@
- list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")
-kw_id = 80
-Metadata = PROPERTY Ok ✅
-looks like the class LOOKUP is not mapped
-looks like the class CUSTOMFIELDS is not mapped
-looks like the class ROOM is not mapped
-----------------------------------------------------------------------
