@@ -1,14 +1,12 @@
 import os
-import time
 import unittest
-
-from HtmlTestRunner import HTMLTestRunner
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
 
-CHROME_USER_DIR = ValueProvider.get_chrome_user_dir()
+CHROME_USER_DIR_LOCAL = '/home/runner/.config/google-chrome/'
+CHROME_USER_DIR_GIT = './tests/cache'
 
 IMPLICITLY_WAIT = 10
 
@@ -25,8 +23,13 @@ class BaseTestRunner(unittest.TestCase):
     '''Login with username and password'''
 
     def _init_driver(self):
+        if os.getenv('CI') == 'true' and os.getenv('GITHUB_ACTIONS') == 'true':
+            chrome_user_dir = CHROME_USER_DIR_GIT
+
+        else:
+            chrome_user_dir = CHROME_USER_DIR_LOCAL
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+        chrome_options.add_argument(f"user-data-dir={chrome_user_dir}")
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
@@ -44,11 +47,3 @@ class BaseTestRunner(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit()
-
-
-if __name__ == "__main__":
-    # Specify the output folder for reports
-    unittest.main(
-        testRunner=HTMLTestRunner(output="reports", report_name="GoogleTestReport"),
-        verbosity=2
-    )
