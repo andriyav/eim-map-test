@@ -46,7 +46,7 @@ jobs:
         echo "Current Directory: $(pwd)"
 
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | tee allure-results/stdout.log
+      run: xvfb-run -a pytest -s --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | tee allure-results/stdout.log
 
       continue-on-error: true  # Continue even if tests fail
 
