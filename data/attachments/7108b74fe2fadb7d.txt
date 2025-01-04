@@ -1,0 +1,10 @@
+No elements of list_address are nullified or set constant (except country)
+kw_id = 741
+Metadata = PROPERTY - A Ok ✅
+Metadata = PROPERTY - B Ok ✅
+Metadata = PROPERTY - C Ok ✅
+Metadata = PROPERTY - D Ok ✅
+Metadata = PROPERTY - E Ok ✅
+Metadata = PROPERTY - I Ok ✅
+Metadata = PROPERTY - J Ok ✅
+----------------------------------------------------------------------
