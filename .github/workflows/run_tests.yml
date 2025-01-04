@@ -46,7 +46,8 @@ jobs:
         echo "Current Directory: $(pwd)"
 
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a -e /dev/stdout pytest -s --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | tee allure-results/stdout.log
+      run: xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
+
 
 
 
