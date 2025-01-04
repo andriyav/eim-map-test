@@ -4,9 +4,11 @@ from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 from data.value_provider import ValueProvider
-
-CHROME_USER_DIR_LOCAL = '/home/runner/.config/google-chrome2/'
+user_profile = os.environ.get("USERPROFILE")
+cache_path = os.path.join(user_profile, "AppData", "Local", "Google", "Chrome", "User Data_test")
+CHROME_USER_DIR_LOCAL = cache_path
 CHROME_USER_DIR_GIT = './tests/cache'
+
 
 IMPLICITLY_WAIT = 10
 
