@@ -45,14 +45,28 @@ jobs:
         ls -R
         echo "Current Directory: $(pwd)"
 
+    # Download Previous Allure Results
+    - name: Download Previous Allure Results
+      uses: actions/download-artifact@v3
+      with:
+        name: allure-results
+        path: previous-allure-results
+
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
-
-
-
+      run: |
+        mkdir -p allure-results
+        xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
 
       continue-on-error: true  # Continue even if tests fail
 
+    # Merge Previous and Current Results
+    - name: Merge Allure Results
+      run: |
+        mkdir -p merged-results
+        cp -r previous-allure-results/* allure-results/ || true
+        mv allure-results/* merged-results/
+
+    # Upload Chrome Cache Artifact
     - name: Upload Chrome Cache Artifact
       if: always()  # Ensure this runs even if tests fail
       uses: actions/upload-artifact@v3
@@ -79,7 +93,15 @@ jobs:
       if: always()  # Ensure this runs even if tests fail
       run: |
         npm install -g allure-commandline@latest
-        allure generate allure-results -o allure-report
+        allure generate merged-results -o allure-report
+
+    # Upload Merged Allure Results for Next Run
+    - name: Upload Merged Allure Results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path: merged-results
 
     # Deploy Allure Report to GitHub Pages
     - name: Deploy Allure Report
