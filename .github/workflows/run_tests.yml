@@ -74,7 +74,7 @@ jobs:
     - name: Generate Allure Report
       if: always()  # Ensure this runs even if tests fail
       run: |
-        npm install -g allure-commandline --silent
+        npm install -g allure-commandline@latest  
         allure generate allure-results -o allure-report
 
     # Deploy Allure Report to GitHub Pages
