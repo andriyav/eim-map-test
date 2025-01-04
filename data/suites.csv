@@ -31,5 +31,5 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2502","test_list_address_nullifier_const","tests","Sat Jan 04 21:01:39 UTC 2025","passed","Sat Jan 04 21:01:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='741']","58333","test_list_address_nullifier_const_0_741","tests","Sat Jan 04 21:01:42 UTC 2025","passed","Sat Jan 04 21:02:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","4406","test_list_address_nullifier_const","tests","Sat Jan 04 21:04:32 UTC 2025","passed","Sat Jan 04 21:04:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='741']","62615","test_list_address_nullifier_const_0_741","tests","Sat Jan 04 21:04:36 UTC 2025","passed","Sat Jan 04 21:05:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
