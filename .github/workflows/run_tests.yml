@@ -49,6 +49,7 @@ jobs:
       run: xvfb-run -a pytest -o log_cli=true --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | tee allure-results/stdout.log
 
 
+
       continue-on-error: true  # Continue even if tests fail
 
     - name: Upload Chrome Cache Artifact
