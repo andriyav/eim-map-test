@@ -11,19 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Checkout Repository
     - name: Checkout Repository
       uses: actions/checkout@v3
 
+    # Step 2: Set up Python
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.x
 
+    # Step 3: Install dependencies
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    # Step 4: Install Google Chrome
     - name: Install Google Chrome
       run: |
         sudo apt-get update
@@ -31,67 +35,55 @@ jobs:
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt install -y ./google-chrome-stable_current_amd64.deb  
 
+    # Step 5: Install Xvfb
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
+    # Step 6: Extract Chrome Cache
     - name: Extract Chrome Cache
       run: |
         mkdir -p ./tests/cache
         tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
 
-    - name: List Repository Files
-      run: |
-        echo "Listing files in repository..."
-        ls -R
-        echo "Current Directory: $(pwd)"
-
-    # Ensure Previous Results Exist Before Download
-    - name: List All Artifacts in Current Directory
-      run: |
-        echo "Listing files in the current directory:"
-        ls -R
-
-    # Download Previous Allure Results (if available)
-    - name: Download Previous Allure Results (if available)
-      uses: actions/download-artifact@v3
-      with:
-        name: allure-results  # Ensure this matches the name of your uploaded artifact
-        path: previous-allure-results
-      continue-on-error: true  # If the artifact doesn't exist, continue the workflow
-
+    # Step 7: Run Tests with Virtual Display
     - name: Run Tests with Virtual Display
       run: |
         mkdir -p allure-results
         xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
       continue-on-error: true  # Continue even if tests fail
 
-    # Merge Allure Results
-    - name: Merge Allure Results
-      run: |
-        mkdir -p merged-results
-        # Merge previous results if they exist, otherwise, use the new results
-        cp -r previous-allure-results/* allure-results/ || true
-        mv allure-results/* merged-results/
-
-    # Upload Merged Allure Results
-    - name: Upload Merged Allure Results
+    # Step 8: Upload Allure Results
+    - name: Upload Allure Results
       if: always()  # Ensure this runs even if tests fail
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path: merged-results
+        path: allure-results
 
-    # Generate Allure Report
+    # Step 9: Download Previous Allure Results (if available)
+    - name: Download Previous Allure Results (if available)
+      uses: actions/download-artifact@v3
+      with:
+        name: allure-results
+        path: previous-allure-results
+      continue-on-error: true  # If the artifact doesn't exist, continue the workflow
+
+    # Step 10: Merge Allure Results
+    - name: Merge Allure Results
+      run: |
+        mkdir -p merged-results
+        cp -r previous-allure-results/* allure-results/ || true
+        mv allure-results/* merged-results/
+
+    # Step 11: Generate Allure Report
     - name: Generate Allure Report
-      if: always()  # Ensure this runs even if tests fail
       run: |
         npm install -g allure-commandline@latest
         allure generate merged-results -o allure-report
 
-    # Deploy Allure Report to GitHub Pages
+    # Step 12: Deploy Allure Report to GitHub Pages
     - name: Deploy Allure Report
-      if: always()  # Ensure this runs even if tests fail
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}  # Ensure the token is in your GitHub secrets
+        github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: allure-report
