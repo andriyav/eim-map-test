@@ -46,7 +46,7 @@ jobs:
         echo "Current Directory: $(pwd)"
 
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a pytest -s --alluredir=allure-results --log-cli-level=INFO tests/test_checklist.py
+      run: xvfb-run -a pytest -s --alluredir=allure-results --log-cli-level=DEBUG tests/test_checklist.py
       continue-on-error: true  # Continue even if tests fail
 
     - name: Upload Chrome Cache Artifact
