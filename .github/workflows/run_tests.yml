@@ -51,7 +51,7 @@ jobs:
         echo "Listing files in the current directory:"
         ls -R
 
-    # Download Previous Allure Results
+    # Download Previous Allure Results (if available)
     - name: Download Previous Allure Results (if available)
       uses: actions/download-artifact@v3
       with:
@@ -63,19 +63,19 @@ jobs:
       run: |
         mkdir -p allure-results
         xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
-
       continue-on-error: true  # Continue even if tests fail
 
     # Merge Allure Results
     - name: Merge Allure Results
       run: |
         mkdir -p merged-results
+        # Merge previous results if they exist, otherwise, use the new results
         cp -r previous-allure-results/* allure-results/ || true
         mv allure-results/* merged-results/
 
-    # Upload Allure Results for Next Run
+    # Upload Merged Allure Results
     - name: Upload Merged Allure Results
-      if: always()
+      if: always()  # Ensure this runs even if tests fail
       uses: actions/upload-artifact@v3
       with:
         name: allure-results
