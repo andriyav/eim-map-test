@@ -1,5 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"No elements of list_address are nullified or set constant (except country) [with source='741']","58677","test_list_address_nullifier_const_0_741","tests","Sat Jan 04 16:48:09 UTC 2025","passed","Sat Jan 04 16:49:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='741']","60969","test_list_address_nullifier_const_0_741","tests","Sat Jan 04 17:02:50 UTC 2025","passed","Sat Jan 04 17:03:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -32,4 +32,4 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","3981","test_list_address_nullifier_const","tests","Sat Jan 04 16:48:05 UTC 2025","passed","Sat Jan 04 16:48:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","6913","test_list_address_nullifier_const","tests","Sat Jan 04 17:02:43 UTC 2025","passed","Sat Jan 04 17:02:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
