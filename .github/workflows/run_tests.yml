@@ -50,7 +50,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: allure-results
-        path: previous-allure-results
+        path: merged-results
       continue-on-error: true  # Continue if no previous results are found
 
     # Step 8: Run Tests with Virtual Display
@@ -65,7 +65,7 @@ jobs:
       run: |
         mkdir -p merged-results
         # Merge previous results into the new results if they exist
-        cp -r previous-allure-results/* allure-results/ || true
+        cp -r merged-results/* allure-results/ || true
         mv allure-results/* merged-results/
 
     # Step 10: Upload Merged Allure Results
