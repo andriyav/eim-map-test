@@ -45,48 +45,17 @@ jobs:
         ls -R
         echo "Current Directory: $(pwd)"
 
-    # Ensure Previous Results Exist Before Download
-    - name: List All Artifacts in Current Directory
-      run: |
-        echo "Listing files in the current directory:"
-        ls -R
-
-    # Download Previous Allure Results
-    - name: Download Previous Allure Results (if available)
-      uses: actions/download-artifact@v3
-      with:
-        name: allure-results  # Ensure this matches the name of your uploaded artifact
-        path: previous-allure-results
-      continue-on-error: true  # If the artifact doesn't exist, continue the workflow
-
     - name: Run Tests with Virtual Display
-      run: |
-        mkdir -p allure-results
-        xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
+      run: xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
 
       continue-on-error: true  # Continue even if tests fail
-
-    # Merge Allure Results
-    - name: Merge Allure Results
-      run: |
-        mkdir -p merged-results
-        cp -r previous-allure-results/* allure-results/ || true
-        mv allure-results/* merged-results/
-
-    # Upload Allure Results for Next Run
-    - name: Upload Merged Allure Results
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-results
-        path: merged-results
 
     # Generate Allure Report
     - name: Generate Allure Report
       if: always()  # Ensure this runs even if tests fail
       run: |
         npm install -g allure-commandline@latest
-        allure generate merged-results -o allure-report
+        allure generate allure-results -o allure-report
 
     # Deploy Allure Report to GitHub Pages
     - name: Deploy Allure Report
