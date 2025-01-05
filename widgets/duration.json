@@ -1,1 +1,1 @@
-[{"uid":"6c4d9544fe4c0051","name":"test_list_address_nullifier_const_0_741","time":{"start":1736074417913,"stop":1736074476995,"duration":59082},"status":"failed","severity":"normal"}]
+[{"uid":"75a3e19233038282","name":"test_list_address_nullifier_const","time":{"start":1736074723643,"stop":1736074728568,"duration":4925},"status":"passed","severity":"normal"},{"uid":"efedddb31600e351","name":"test_list_address_nullifier_const_0_741","time":{"start":1736074728570,"stop":1736074786983,"duration":58413},"status":"failed","severity":"normal"}]
