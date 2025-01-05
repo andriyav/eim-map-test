@@ -31,7 +31,8 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2023","test_price_history","tests","Sun Jan 05 21:48:34 UTC 2025","passed","Sun Jan 05 21:48:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2798","test_co_list_agent_office_phone","tests","Sun Jan 05 21:52:20 UTC 2025","passed","Sun Jan 05 21:52:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='741']","56642","test_mls_id_sa_id_0_741","tests","Sun Jan 05 22:01:21 UTC 2025","passed","Sun Jan 05 22:02:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -64,9 +65,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2018","test_dashboard_source_number","tests","Sun Jan 05 21:41:31 UTC 2025","passed","Sun Jan 05 21:41:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='741']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","56961","test_list_agent_office_phone_0_741","tests","Sun Jan 05 21:44:40 UTC 2025","passed","Sun Jan 05 21:45:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2262","test_currency_code","tests","Sun Jan 05 21:54:18 UTC 2025","passed","Sun Jan 05 21:54:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -99,7 +98,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2173","test_co_list_agent_preferred_phone","tests","Sun Jan 05 21:39:33 UTC 2025","passed","Sun Jan 05 21:39:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2130","test_list_address_properties_country","tests","Sun Jan 05 21:57:24 UTC 2025","passed","Sun Jan 05 21:57:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -132,9 +131,10 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2623","test_co_list_agent_office_phone","tests","Sun Jan 05 21:38:33 UTC 2025","passed","Sun Jan 05 21:38:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='741']","57814","test_price_history_0_741","tests","Sun Jan 05 21:48:36 UTC 2025","passed","Sun Jan 05 21:49:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='741']","56507","test_raw_properties_list_status_0_741","tests","Sun Jan 05 21:49:36 UTC 2025","passed","Sun Jan 05 21:50:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2035","test_co_list_agent_preferred_phone","tests","Sun Jan 05 21:53:19 UTC 2025","passed","Sun Jan 05 21:53:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='741']","57227","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 21:56:27 UTC 2025","failed","Sun Jan 05 21:57:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='741']","57830","test_price_history_0_741","tests","Sun Jan 05 22:02:20 UTC 2025","passed","Sun Jan 05 22:03:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='741']","56869","test_kww_region_0_741","tests","Sun Jan 05 21:55:27 UTC 2025","passed","Sun Jan 05 21:56:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -167,181 +167,9 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2233","test_list_address_nullifier_const","tests","Sun Jan 05 21:42:39 UTC 2025","passed","Sun Jan 05 21:42:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"A decorator for applying a mark on test functions and classes.
-
-    ``MarkDecorators`` are created with ``pytest.mark``::
-
-        mark1 = pytest.mark.NAME  # Simple MarkDecorator
-        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
-
-    and can then be applied as decorators to test functions::
-
-        @mark2
-        def test_function():
-            pass
-
-    When a ``MarkDecorator`` is called, it does the following:
-
-    1. If called with a single class as its only positional argument and no
-       additional keyword arguments, it attaches the mark to the class so it
-       gets applied automatically to all test cases found in that class.
-
-    2. If called with a single function as its only positional argument and
-       no additional keyword arguments, it attaches the mark to the function,
-       containing all the arguments already stored internally in the
-       ``MarkDecorator``.
-
-    3. When called in any other case, it returns a new ``MarkDecorator``
-       instance with the original ``MarkDecorator``'s content updated with
-       the arguments passed to this call.
-
-    Note: The rules above prevent a ``MarkDecorator`` from storing only a
-    single function or class reference as its positional argument with no
-    additional keyword or positional arguments. You can work around this by
-    using `with_args()`.
-    ","2148","test_raw_properties_list_status","tests","Sun Jan 05 21:49:33 UTC 2025","passed","Sun Jan 05 21:49:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='741']","56962","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 21:42:41 UTC 2025","failed","Sun Jan 05 21:43:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"A decorator for applying a mark on test functions and classes.
-
-    ``MarkDecorators`` are created with ``pytest.mark``::
-
-        mark1 = pytest.mark.NAME  # Simple MarkDecorator
-        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
-
-    and can then be applied as decorators to test functions::
-
-        @mark2
-        def test_function():
-            pass
-
-    When a ``MarkDecorator`` is called, it does the following:
-
-    1. If called with a single class as its only positional argument and no
-       additional keyword arguments, it attaches the mark to the class so it
-       gets applied automatically to all test cases found in that class.
-
-    2. If called with a single function as its only positional argument and
-       no additional keyword arguments, it attaches the mark to the function,
-       containing all the arguments already stored internally in the
-       ``MarkDecorator``.
-
-    3. When called in any other case, it returns a new ``MarkDecorator``
-       instance with the original ``MarkDecorator``'s content updated with
-       the arguments passed to this call.
-
-    Note: The rules above prevent a ``MarkDecorator`` from storing only a
-    single function or class reference as its positional argument with no
-    additional keyword or positional arguments. You can work around this by
-    using `with_args()`.
-    ","1998","test_list_agent_office_phone","tests","Sun Jan 05 21:44:38 UTC 2025","passed","Sun Jan 05 21:44:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='741']","57918","test_list_address_properties_country_0_741","tests","Sun Jan 05 21:43:40 UTC 2025","failed","Sun Jan 05 21:44:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='741']","56445","test_mls_id_sa_id_0_741","tests","Sun Jan 05 21:47:37 UTC 2025","passed","Sun Jan 05 21:48:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"A decorator for applying a mark on test functions and classes.
-
-    ``MarkDecorators`` are created with ``pytest.mark``::
-
-        mark1 = pytest.mark.NAME  # Simple MarkDecorator
-        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
-
-    and can then be applied as decorators to test functions::
-
-        @mark2
-        def test_function():
-            pass
-
-    When a ``MarkDecorator`` is called, it does the following:
-
-    1. If called with a single class as its only positional argument and no
-       additional keyword arguments, it attaches the mark to the class so it
-       gets applied automatically to all test cases found in that class.
-
-    2. If called with a single function as its only positional argument and
-       no additional keyword arguments, it attaches the mark to the function,
-       containing all the arguments already stored internally in the
-       ``MarkDecorator``.
-
-    3. When called in any other case, it returns a new ``MarkDecorator``
-       instance with the original ``MarkDecorator``'s content updated with
-       the arguments passed to this call.
-
-    Note: The rules above prevent a ``MarkDecorator`` from storing only a
-    single function or class reference as its positional argument with no
-    additional keyword or positional arguments. You can work around this by
-    using `with_args()`.
-    ","2074","test_list_agent_preferred_phone","tests","Sun Jan 05 21:45:37 UTC 2025","passed","Sun Jan 05 21:45:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='741']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","55984","test_co_list_agent_preferred_phone_0_741","tests","Sun Jan 05 21:39:35 UTC 2025","passed","Sun Jan 05 21:40:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"A decorator for applying a mark on test functions and classes.
-
-    ``MarkDecorators`` are created with ``pytest.mark``::
-
-        mark1 = pytest.mark.NAME  # Simple MarkDecorator
-        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
-
-    and can then be applied as decorators to test functions::
-
-        @mark2
-        def test_function():
-            pass
-
-    When a ``MarkDecorator`` is called, it does the following:
-
-    1. If called with a single class as its only positional argument and no
-       additional keyword arguments, it attaches the mark to the class so it
-       gets applied automatically to all test cases found in that class.
-
-    2. If called with a single function as its only positional argument and
-       no additional keyword arguments, it attaches the mark to the function,
-       containing all the arguments already stored internally in the
-       ``MarkDecorator``.
-
-    3. When called in any other case, it returns a new ``MarkDecorator``
-       instance with the original ``MarkDecorator``'s content updated with
-       the arguments passed to this call.
-
-    Note: The rules above prevent a ``MarkDecorator`` from storing only a
-    single function or class reference as its positional argument with no
-    additional keyword or positional arguments. You can work around this by
-    using `with_args()`.
-    ","2125","test_list_address_properties_country","tests","Sun Jan 05 21:43:38 UTC 2025","passed","Sun Jan 05 21:43:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='741']","57369","test_list_dt_0_741","tests","Sun Jan 05 21:46:38 UTC 2025","passed","Sun Jan 05 21:47:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='741']","56563","test_kww_region_0_741","tests","Sun Jan 05 21:41:42 UTC 2025","passed","Sun Jan 05 21:42:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"A decorator for applying a mark on test functions and classes.
-
-    ``MarkDecorators`` are created with ``pytest.mark``::
-
-        mark1 = pytest.mark.NAME  # Simple MarkDecorator
-        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
-
-    and can then be applied as decorators to test functions::
-
-        @mark2
-        def test_function():
-            pass
-
-    When a ``MarkDecorator`` is called, it does the following:
-
-    1. If called with a single class as its only positional argument and no
-       additional keyword arguments, it attaches the mark to the class so it
-       gets applied automatically to all test cases found in that class.
-
-    2. If called with a single function as its only positional argument and
-       no additional keyword arguments, it attaches the mark to the function,
-       containing all the arguments already stored internally in the
-       ``MarkDecorator``.
-
-    3. When called in any other case, it returns a new ``MarkDecorator``
-       instance with the original ``MarkDecorator``'s content updated with
-       the arguments passed to this call.
-
-    Note: The rules above prevent a ``MarkDecorator`` from storing only a
-    single function or class reference as its positional argument with no
-    additional keyword or positional arguments. You can work around this by
-    using `with_args()`.
-    ","2005","test_list_dt","tests","Sun Jan 05 21:46:36 UTC 2025","passed","Sun Jan 05 21:46:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2014","test_list_dt","tests","Sun Jan 05 22:00:20 UTC 2025","passed","Sun Jan 05 22:00:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "co_list_agent_office_phone are mapped with [with source='741']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","57462","test_co_list_agent_office_phone_0_741","tests","Sun Jan 05 21:38:36 UTC 2025","failed","Sun Jan 05 21:39:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","56636","test_co_list_agent_office_phone_0_741","tests","Sun Jan 05 21:52:23 UTC 2025","failed","Sun Jan 05 21:53:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -374,7 +202,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2017","test_mls_id_sa_id","tests","Sun Jan 05 21:47:35 UTC 2025","passed","Sun Jan 05 21:47:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2075","test_mls_id_sa_id","tests","Sun Jan 05 22:01:19 UTC 2025","passed","Sun Jan 05 22:01:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -407,7 +235,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2117","test_currency_code","tests","Sun Jan 05 21:40:31 UTC 2025","passed","Sun Jan 05 21:40:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2029","test_kww_region","tests","Sun Jan 05 21:55:25 UTC 2025","passed","Sun Jan 05 21:55:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -440,7 +268,179 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2012","test_kww_region","tests","Sun Jan 05 21:41:40 UTC 2025","passed","Sun Jan 05 21:41:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='741']","57772","test_currency_code_0_741","tests","Sun Jan 05 21:40:33 UTC 2025","passed","Sun Jan 05 21:41:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='741']","6969","test_dashboard_source_number_0_741","tests","Sun Jan 05 21:41:33 UTC 2025","passed","Sun Jan 05 21:41:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='741']","56885","test_list_agent_preferred_phone_0_741","tests","Sun Jan 05 21:45:39 UTC 2025","passed","Sun Jan 05 21:46:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2010","test_list_agent_preferred_phone","tests","Sun Jan 05 21:59:21 UTC 2025","passed","Sun Jan 05 21:59:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2103","test_list_agent_office_phone","tests","Sun Jan 05 21:58:23 UTC 2025","passed","Sun Jan 05 21:58:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='741']","56660","test_list_address_properties_country_0_741","tests","Sun Jan 05 21:57:26 UTC 2025","failed","Sun Jan 05 21:58:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","1989","test_dashboard_source_number","tests","Sun Jan 05 21:55:17 UTC 2025","passed","Sun Jan 05 21:55:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='741']","56306","test_currency_code_0_741","tests","Sun Jan 05 21:54:20 UTC 2025","passed","Sun Jan 05 21:55:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='741']","6619","test_dashboard_source_number_0_741","tests","Sun Jan 05 21:55:19 UTC 2025","passed","Sun Jan 05 21:55:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='741']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","56817","test_co_list_agent_preferred_phone_0_741","tests","Sun Jan 05 21:53:21 UTC 2025","passed","Sun Jan 05 21:54:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2064","test_price_history","tests","Sun Jan 05 22:02:18 UTC 2025","passed","Sun Jan 05 22:02:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2223","test_list_address_nullifier_const","tests","Sun Jan 05 21:56:24 UTC 2025","passed","Sun Jan 05 21:56:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='741']","56351","test_list_agent_preferred_phone_0_741","tests","Sun Jan 05 21:59:23 UTC 2025","passed","Sun Jan 05 22:00:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","2062","test_raw_properties_list_status","tests","Sun Jan 05 22:03:18 UTC 2025","passed","Sun Jan 05 22:03:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='741']","57335","test_list_dt_0_741","tests","Sun Jan 05 22:00:22 UTC 2025","passed","Sun Jan 05 22:01:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='741']","61638","test_raw_properties_list_status_0_741","tests","Sun Jan 05 22:03:20 UTC 2025","passed","Sun Jan 05 22:04:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='741']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","56554","test_list_agent_office_phone_0_741","tests","Sun Jan 05 21:58:25 UTC 2025","passed","Sun Jan 05 21:59:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
