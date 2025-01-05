@@ -92,6 +92,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌ \n"):
                         print(f'\nMetadata = {class_txt} Failed ❌ \n', flush=True)
+                        print(f'{address_field} = ', field_actual, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -127,6 +128,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(country_code, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -196,6 +198,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -229,6 +232,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -259,6 +263,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -296,6 +301,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -353,6 +359,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(field, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -385,6 +392,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(field, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -418,6 +426,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(field, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -448,6 +457,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual_field, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -477,7 +487,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history = ', field_actual)
+                        print('price_history = ', field_actual, flush=True)
 
                     price_history_items = ListComponent(self.driver).get_txt_get_field('price_history-items')
                     field_actual = False
@@ -486,7 +496,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history-items = ', field_actual)
+                        print('price_history-items = ', field_actual, flush=True)
 
                     price_history_in_use = ListComponent(self.driver).get_txt_get_field(
                         'price_history-items-properties-in_use')
@@ -496,7 +506,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history-items-properties-in_use = ', field_actual)
+                        print('price_history-items-properties-in_use = ', field_actual, flush=True)
 
                     price_history_percent_change = ListComponent(self.driver).get_txt_get_field(
                         'price_history-items-properties-percent_change')
@@ -506,7 +516,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history.items.properties.percent_change = ', field_actual)
+                        print('price_history.items.properties.percent_change = ', field_actual, flush=True)
 
                     price_history_update_at = ListComponent(self.driver).get_txt_get_field(
                         'price_history-items-properties-price_updated_at')
@@ -516,7 +526,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history.items.properties.price_updated_at = ', field_actual)
+                        print('price_history.items.properties.price_updated_at = ', field_actual, flush=True)
 
                     price_history_current_list_price = ListComponent(self.driver).get_txt_get_field(
                         'price_history-items-properties-current_list_price')
@@ -526,7 +536,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history.items.properties.current_list_price = ', field_actual)
+                        print('price_history.items.properties.current_list_price = ', field_actual, flush=True)
 
                     price_history_previous_list_price = ListComponent(self.driver).get_txt_get_field(
                         'price_history-items-properties-previous_list_price')
@@ -536,7 +546,7 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                     else:
                         actual.append(field_actual)
-                        print('price_history.items.properties.previous_list_price = ', field_actual)
+                        print('price_history.items.properties.previous_list_price = ', field_actual, flush=True)
                     self.assertTrue(all(actual))
                     with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
                         print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
