@@ -42,7 +42,7 @@
       - name: Run Tests with Virtual Display
         run: |
           mkdir -p allure-results
-          xvfb-run -a pytest --capture=no --log-cli-level=INFO --tb=short --alluredir=allure-results tests/test_checklist.py
+          xvfb-run -a pytest --alluredir=allure-results tests/test_checklist.py
         continue-on-error: true
 
 
