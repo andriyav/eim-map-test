@@ -93,36 +93,39 @@ class TestPromotionChecklist(BaseTestRunner):
                         print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
-    # @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
-    # @parameterized.expand(sources)
-    # def test_list_address_properties_country(self, source):
-    #     '''list_address.country is SetConstant to country code (US or CA)'''
-    #     print("list_address.country is SetConstant to country code (US or CA)", flush=True)
-    #     print(f"kw_id = {source}", flush=True)
-    #     self.driver.implicitly_wait(20)
-    #     WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-    #     SLPMain(self.driver).source_select(source)
-    #     metadata_numbers = ListComponent(self.driver).get_metadata_number()
-    #     for metadata in range(1, metadata_numbers):
-    #         class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
-    #         with self.subTest(metadata=class_txt):
-    #             try:
-    #                 SLPMain(self.driver).metadata_main_select(metadata)
-    #                 SLPMain(self.driver).impl_wait_metadata()
-    #                 ListComponent(self.driver).get_list_address_country()
-    #                 country_code = ListComponent(self.driver).get_txt_list_address_country()
-    #                 actual = False
-    #                 if country_code == COUNTRY_US or country_code == COUNTRY_CA:
-    #                     actual = True
-    #                 try:
-    #                     self.assertTrue(actual)
-    #                     print(f'Metadata = {class_txt} Ok ✅', flush=True)
-    #                 except:
-    #                     print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
-    #                     self.assertTrue(actual)
-    #             except NoSuchElementException as e:
-    #                 print(f"looks like the class {class_txt} is not mapped")
-    #     print("----------------------------------------------------------------------", flush=True)
+    @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
+    @parameterized.expand(sources)
+    def test_list_address_properties_country(self, source):
+        '''list_address.country is SetConstant to country code (US or CA)'''
+        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_address_country()
+                    country_code = ListComponent(self.driver).get_txt_list_address_country()
+                    actual = False
+                    if country_code == COUNTRY_US or country_code == COUNTRY_CA:
+                        actual = True
+                    try:
+                        self.assertTrue(actual)
+                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+                         print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+                            print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
+                        self.assertTrue(actual)
+                except NoSuchElementException as e:
+                    with allure.step(f"looks like the class {class_txt} is not mapped"):
+                        print(f"looks like the class {class_txt} is not mapped")
+        print("----------------------------------------------------------------------", flush=True)
 
     # @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     # @parameterized.expand(sources)
