@@ -81,7 +81,7 @@ class TestPromotionChecklist(BaseTestRunner):
                             actual.append(field_actual)
                         else:
                             actual.append(field_actual)
-                            print(f'{address_field} = ', field_actual)
+                            print(f'{address_field} = ', field_actual, flush=True)
 
                     result = dict(zip(LIST_FIELDS, actual))
                     # Assert inside the try block
@@ -92,7 +92,6 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌ \n"):
                         print(f'\nMetadata = {class_txt} Failed ❌ \n', flush=True)
-                        print(f'{address_field} = ', field_actual, flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
