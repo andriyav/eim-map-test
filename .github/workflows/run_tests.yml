@@ -49,7 +49,7 @@
       - name: Generate Allure Report
         run: |
           npm install -g allure-commandline@latest
-          allure generate merged-results -o allure-report
+          allure generate allure-results -o allure-report
 
       - name: Upload Allure Results
         if: always()

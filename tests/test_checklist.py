@@ -47,83 +47,83 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 class TestPromotionChecklist(BaseTestRunner):
 
-    @allure.testcase('No elements of list_address are nullified or set constant (except country)')
-    @parameterized.expand(sources)
-    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
-    def test_list_address_nullifier_const(self, source):
-        '''No elements of list_address are nullified or set constant (except country)'''
-        print("No elements of list_address are nullified or set constant (except country)", flush=True)
-        print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
-        metadata_numbers = ListComponent(self.driver).get_metadata_number()
-        for metadata in range(1, metadata_numbers):
-            SLPMain(self.driver).metadata_main_select(metadata)
-            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
-            actual = []
-            with self.subTest(metadata=class_txt):
-                try:
-                    SLPMain(self.driver).impl_wait_metadata()
-                    for address_field in LIST_FIELDS:
-                        list_fields_txt = address_field.replace('-', '.')
-                        field = ListComponent(self.driver).get_txt_get_field(address_field)
-                        field_actual = False
-                        expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
-                        if (
-                                'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
-                            field_actual = True
-                            actual.append(field_actual)
-                        else:
-                            actual.append(field_actual)
-                            print(f'{address_field} = ', field_actual)
-                    result = dict(zip(LIST_FIELDS, actual))
-                    try:
-                        self.assertTrue(all(actual), result)
-                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
-                            print(f'Metadata = {class_txt} Ok ✅', flush=True)
-                    except AssertionError as e:
-                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
-                            print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
-                        self.assertTrue(all(actual), result)
-                except NoSuchElementException as e:
-                    with allure.step(f"looks like the class {class_txt} is not mapped"):
-                        print(f"looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
-
-    # @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
+    # @allure.testcase('No elements of list_address are nullified or set constant (except country)')
     # @parameterized.expand(sources)
-    # def test_list_address_properties_country(self, source):
-    #     '''list_address.country is SetConstant to country code (US or CA)'''
-    #     print("list_address.country is SetConstant to country code (US or CA)", flush=True)
+    # @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    # def test_list_address_nullifier_const(self, source):
+    #     '''No elements of list_address are nullified or set constant (except country)'''
+    #     print("No elements of list_address are nullified or set constant (except country)", flush=True)
     #     print(f"kw_id = {source}", flush=True)
-    #     self.driver.implicitly_wait(20)
     #     WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
     #     SLPMain(self.driver).source_select(source)
+    #     screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+    #     os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+    #     self.driver.save_screenshot(screenshot_path)
     #     metadata_numbers = ListComponent(self.driver).get_metadata_number()
     #     for metadata in range(1, metadata_numbers):
+    #         SLPMain(self.driver).metadata_main_select(metadata)
     #         class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+    #         actual = []
     #         with self.subTest(metadata=class_txt):
     #             try:
-    #                 SLPMain(self.driver).metadata_main_select(metadata)
     #                 SLPMain(self.driver).impl_wait_metadata()
-    #                 ListComponent(self.driver).get_list_address_country()
-    #                 country_code = ListComponent(self.driver).get_txt_list_address_country()
-    #                 actual = False
-    #                 if country_code == COUNTRY_US or country_code == COUNTRY_CA:
-    #                     actual = True
+    #                 for address_field in LIST_FIELDS:
+    #                     list_fields_txt = address_field.replace('-', '.')
+    #                     field = ListComponent(self.driver).get_txt_get_field(address_field)
+    #                     field_actual = False
+    #                     expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
+    #                     if (
+    #                             'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
+    #                         field_actual = True
+    #                         actual.append(field_actual)
+    #                     else:
+    #                         actual.append(field_actual)
+    #                         print(f'{address_field} = ', field_actual)
+    #                 result = dict(zip(LIST_FIELDS, actual))
     #                 try:
-    #                     self.assertTrue(actual)
-    #                     print(f'Metadata = {class_txt} Ok ✅', flush=True)
-    #                 except:
-    #                     print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
-    #                     self.assertTrue(actual)
+    #                     self.assertTrue(all(actual), result)
+    #                     with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+    #                         print(f'Metadata = {class_txt} Ok ✅', flush=True)
+    #                 except AssertionError as e:
+    #                     with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+    #                         print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+    #                     self.assertTrue(all(actual), result)
     #             except NoSuchElementException as e:
-    #                 print(f"looks like the class {class_txt} is not mapped")
+    #                 with allure.step(f"looks like the class {class_txt} is not mapped"):
+    #                     print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
-    #
+
+    @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
+    @parameterized.expand(sources)
+    def test_list_address_properties_country(self, source):
+        '''list_address.country is SetConstant to country code (US or CA)'''
+        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_address_country()
+                    country_code = ListComponent(self.driver).get_txt_list_address_country()
+                    actual = False
+                    if country_code == COUNTRY_US or country_code == COUNTRY_CA:
+                        actual = True
+                    try:
+                        self.assertTrue(actual)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except:
+                        print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
+                        self.assertTrue(actual)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped")
+        print("----------------------------------------------------------------------", flush=True)
+
     # @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     # @parameterized.expand(sources)
     # def test_co_list_agent_office_phone(self, source):
