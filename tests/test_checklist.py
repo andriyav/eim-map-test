@@ -73,25 +73,29 @@ class TestPromotionChecklist(BaseTestRunner):
                         field_actual = False
                         expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
                         if (
-                                'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
+                                'nullifier' not in field.lower() and
+                                'skip_values=[]' in field.lower() and
+                                'setconstant' not in field.lower()
+                        ) or field == expected_field:
                             field_actual = True
                             actual.append(field_actual)
                         else:
                             actual.append(field_actual)
                             print(f'{address_field} = ', field_actual)
-                    result = dict(zip(LIST_FIELDS, actual))
 
+                    result = dict(zip(LIST_FIELDS, actual))
+                    # Assert inside the try block
                     self.assertTrue(all(actual), result)
-                    with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
+                        print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
                 except AssertionError as e:
-                    with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
-                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                    # Handle assertion errors separately
+                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
+                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"looks like the class {class_txt} is not mapped"):
-                        print(f"looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
+                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
 
     @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
     @parameterized.expand(sources)
