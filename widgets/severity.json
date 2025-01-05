@@ -1,1 +1,1 @@
-[{"uid":"f300a715231ef212","name":"test_list_address_properties_country_0_741","time":{"start":1736072903135,"stop":1736072935775,"duration":32640},"status":"failed","severity":"normal"},{"uid":"88e165183992ed6a","name":"test_list_address_properties_country","time":{"start":1736072900390,"stop":1736072903134,"duration":2744},"status":"passed","severity":"normal"}]
+[{"uid":"eb27d0044ae9576a","name":"test_list_address_nullifier_const_0_741","time":{"start":1736074022764,"stop":1736074079504,"duration":56740},"status":"failed","severity":"normal"}]
