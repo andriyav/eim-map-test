@@ -1,1 +1,1 @@
-[]
+[{"uid":"5b2d1b0356b74a","name":"test_list_address_properties_country","time":{"start":1736072271514,"stop":1736072274712,"duration":3198},"status":"passed","severity":"normal"},{"uid":"92de08b76de820b","name":"test_list_address_properties_country_0_741","time":{"start":1736072274714,"stop":1736072308242,"duration":33528},"status":"failed","severity":"normal"}]
