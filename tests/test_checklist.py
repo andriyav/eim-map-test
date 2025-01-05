@@ -85,11 +85,11 @@ class TestPromotionChecklist(BaseTestRunner):
                     result = dict(zip(LIST_FIELDS, actual))
                     # Assert inside the try block
                     self.assertTrue(all(actual), result)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
                         print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
                         print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
@@ -120,12 +120,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     if country_code == COUNTRY_US or country_code == COUNTRY_CA:
                         actual = True
                     self.assertTrue(actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -154,12 +154,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_co_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                     self.assertEqual(CO_OFFICE_PHONE, actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
                         print(f'Metadata = {class_txt} Ok ✅', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -188,12 +188,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_co_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                     self.assertEqual(CO_PREFERRED_PHONE, actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -221,12 +221,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
                     self.assertEqual(OFFICE_PHONE, actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -253,12 +253,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
                     self.assertEqual(PREFERRED_PHONE, actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -290,12 +290,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
                     target = [mls_id_target, sa_id_target]
                     self.assertEqual(actual, target)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -348,11 +348,11 @@ class TestPromotionChecklist(BaseTestRunner):
                         is_upper = currency_code.isupper()
                     self.assertTrue(is_upper)
                     with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -379,12 +379,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     if 'json_path=' in field:
                         field_actual = True
                     self.assertTrue(field_actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -412,12 +412,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     if 'json_path=' in field:
                         field_actual = True
                     self.assertTrue(field_actual)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -442,12 +442,12 @@ class TestPromotionChecklist(BaseTestRunner):
                     expected_field = ListComponent(self.driver).get_expected_field('kww_region')
                     actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
                     self.assertEqual(actual_field, expected_field)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -538,13 +538,13 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                         print('price_history.items.properties.previous_list_price = ', field_actual)
                     self.assertTrue(all(actual))
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
+                    with allure.step(f"Looks like the class {class_txt} is not mapped\n"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
