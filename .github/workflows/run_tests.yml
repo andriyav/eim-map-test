@@ -39,28 +39,29 @@ jobs:
         mkdir -p ./tests/cache
         tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
 
-    - name: List Repository Files
-      run: |
-        echo "Listing files in repository..."
-        ls -R
-        echo "Current Directory: $(pwd)"
-
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
+      run: |
+        mkdir -p allure-results
+        xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
+      continue-on-error: true
 
-      continue-on-error: true  # Continue even if tests fail
 
-    # Generate Allure Report
+
     - name: Generate Allure Report
-      if: always()  # Ensure this runs even if tests fail
       run: |
         npm install -g allure-commandline@latest
-        allure generate allure-results -o allure-report
+        allure generate merged-results -o allure-report
 
-    # Deploy Allure Report to GitHub Pages
+    - name: Upload Allure Results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path: allure-results
+      continue-on-error: true
+
     - name: Deploy Allure Report
-      if: always()  # Ensure this runs even if tests fail
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}  # Ensure the token is in your GitHub secrets
+        github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: allure-report
