@@ -1,5 +1,0 @@
- Kww_region has no mapping 
-kw_id = 674
-Metadata = PROPERTY - RESIDENTIALPROPERTY Ok ✅
-Metadata = PROPERTY - COMMERCIALPROPERTY Ok ✅
-----------------------------------------------------------------------

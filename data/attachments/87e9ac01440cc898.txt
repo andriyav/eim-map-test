@@ -1,9 +1,0 @@
- list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")
-kw_id = 15
-Metadata = PROPERTY Failed ❌ in list_agent_office.properties.list_agent_preferred_phone
-+
-[add]
-FirstValueProvider(json_path=["agent_mobile_phone","agent_home_phone"])
-[add]
-[add]
-[add]

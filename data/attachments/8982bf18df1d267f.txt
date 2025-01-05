@@ -1,4 +1,0 @@
- Kww_region has no mapping 
-kw_id = 166
-Metadata = PROPERTY Ok ✅
-----------------------------------------------------------------------

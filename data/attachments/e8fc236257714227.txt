@@ -1,4 +1,0 @@
-Price_history must use PriceHistoryEnhancer with ListPrice input
-kw_id = 367
-price_history-items =  False
-Metadata = PROPERTY Failed ❌ in [True, False, True, True, True, True, True]

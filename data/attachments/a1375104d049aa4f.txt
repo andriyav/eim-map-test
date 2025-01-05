@@ -1,5 +1,0 @@
-co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"
-kw_id = 674
-Metadata = PROPERTY - RESIDENTIALPROPERTY Ok ✅
-Metadata = PROPERTY - COMMERCIALPROPERTY Ok ✅
-----------------------------------------------------------------------

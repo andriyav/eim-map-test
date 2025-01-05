@@ -1,4 +1,0 @@
-list_address.country is SetConstant to country code (US or CA)
-kw_id = 423
-Metadata = PROPERTY Ok ✅
-----------------------------------------------------------------------
