@@ -51,6 +51,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print("No elements of list_address are nullified or set constant (except country)", flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -90,7 +91,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except AssertionError as e:
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
@@ -237,9 +238,7 @@ class TestPromotionChecklist(BaseTestRunner):
     def test_list_agent_preferred_phone(self, source):
         ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
         print("\n----------------------------------------------------------------------\n", flush=True)
-        print(
-            ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")''',
-            flush=True)
+        print('list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")',flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
