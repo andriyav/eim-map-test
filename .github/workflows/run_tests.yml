@@ -42,7 +42,7 @@
       - name: Run Tests with Virtual Display
         run: |
           mkdir -p allure-results
-          xvfb-run -a pytest --alluredir=allure-results tests/test_checklist.py
+          xvfb-run -a pytest --maxfail=0 --continue-on-collection-errors --alluredir=allure-results tests/test_checklist.py
         continue-on-error: true
 
 
