@@ -88,7 +88,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     # Assert inside the try block
                     self.assertTrue(all(actual), result)
                     with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                        print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
 
                 except AssertionError as e:
                     # Handle assertion errors separately
