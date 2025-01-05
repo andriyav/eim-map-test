@@ -1,8 +1,0 @@
-list_dt is mapped
-kw_id = 80
-Metadata = PROPERTY Failed ❌ in list_dt
-+
-[add]
-[add]
-[add]
-[add]
