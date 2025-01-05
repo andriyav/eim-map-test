@@ -1,5 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"No elements of list_address are nullified or set constant (except country) [with source='741']","59846","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 11:56:48 UTC 2025","failed","Sun Jan 05 11:57:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='741']","55805","test_list_address_properties_country_0_741","tests","Sun Jan 05 12:05:54 UTC 2025","failed","Sun Jan 05 12:06:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -32,7 +32,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2999","test_list_address_nullifier_const","tests","Sun Jan 05 11:56:45 UTC 2025","passed","Sun Jan 05 11:56:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2762","test_list_address_nullifier_const","tests","Sun Jan 05 12:04:52 UTC 2025","passed","Sun Jan 05 12:04:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -65,5 +65,5 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2674","test_list_address_properties_country","tests","Sun Jan 05 11:57:48 UTC 2025","passed","Sun Jan 05 11:57:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='741']","58898","test_list_address_properties_country_0_741","tests","Sun Jan 05 11:57:50 UTC 2025","failed","Sun Jan 05 11:58:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2084","test_list_address_properties_country","tests","Sun Jan 05 12:05:52 UTC 2025","passed","Sun Jan 05 12:05:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='741']","57372","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 12:04:55 UTC 2025","failed","Sun Jan 05 12:05:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
