@@ -118,17 +118,17 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = False
                     if country_code == COUNTRY_US or country_code == COUNTRY_CA:
                         actual = True
-                    try:
-                        self.assertTrue(actual)
-                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
-                         print(f'Metadata = {class_txt} Ok ✅', flush=True)
-                    except:
-                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
-                            print(f'Metadata = {class_txt} Failed ❌ in {country_code}', flush=True)
-                        self.assertTrue(actual)
+                    self.assertTrue(actual)
+                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
+                        print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    with allure.step(f"Metadata = {class_txt} Failed ❌"):
+                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
+                    raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"looks like the class {class_txt} is not mapped"):
-                        print(f"looks like the class {class_txt} is not mapped")
+                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
+                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     # @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
