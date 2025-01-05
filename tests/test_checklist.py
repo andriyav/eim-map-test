@@ -1,6 +1,5 @@
 import re
 import os
-
 import allure
 import pytest
 from parameterized import parameterized
@@ -96,6 +95,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
     @parameterized.expand(sources)
@@ -129,7 +129,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     @parameterized.expand(sources)
@@ -162,8 +162,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('4')
     @parameterized.expand(sources)
@@ -196,7 +195,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-    print("----------------------------------------------------------------------", flush=True)
+    print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('5')
     @parameterized.expand(sources)
@@ -228,7 +227,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-    print("----------------------------------------------------------------------", flush=True)
+    print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('6')
     @parameterized.expand(sources)
@@ -260,7 +259,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('7')
     @parameterized.expand(sources)
@@ -296,7 +295,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('8')
     @parameterized.expand(sources)
@@ -320,7 +319,7 @@ class TestPromotionChecklist(BaseTestRunner):
             with allure.step(f'Failed ❌ in {actual}'):
                 print(f'Failed ❌ in {actual}', flush=True)
             self.assertEqual(actual, source)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('9')
     @parameterized.expand(sources)
@@ -353,7 +352,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('10')
     @parameterized.expand(sources)
@@ -385,7 +384,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('11')
     @parameterized.expand(sources)
@@ -417,7 +416,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('12')
     @parameterized.expand(sources)
@@ -447,7 +446,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('13')
     @parameterized.expand(sources)
@@ -543,4 +542,4 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("----------------------------------------------------------------------", flush=True)
+        print("\n----------------------------------------------------------------------\n", flush=True)
