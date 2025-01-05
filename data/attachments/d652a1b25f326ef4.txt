@@ -1,0 +1,29 @@
+
+----------------------------------------------------------------------
+
+ list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")
+kw_id = 741
+
+Metadata = PROPERTY - A Ok ✅
+
+
+Metadata = PROPERTY - B Ok ✅
+
+
+Metadata = PROPERTY - C Ok ✅
+
+
+Metadata = PROPERTY - D Ok ✅
+
+
+Metadata = PROPERTY - E Ok ✅
+
+
+Metadata = PROPERTY - I Ok ✅
+
+
+Metadata = PROPERTY - J Ok ✅
+
+
+----------------------------------------------------------------------
+

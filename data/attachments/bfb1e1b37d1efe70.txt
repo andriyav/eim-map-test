@@ -1,0 +1,26 @@
+
+----------------------------------------------------------------------
+
+list_address.country is SetConstant to country code (US or CA)
+kw_id = 741
+
+Metadata = PROPERTY - A Ok ✅
+
+
+Metadata = PROPERTY - B Ok ✅
+
+
+Metadata = PROPERTY - C Ok ✅
+
+
+Metadata = PROPERTY - D Failed ❌
+
+u
+Metadata = PROPERTY - E Ok ✅
+
+
+Metadata = PROPERTY - I Ok ✅
+
+
+Metadata = PROPERTY - J Ok ✅
+
