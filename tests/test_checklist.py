@@ -87,7 +87,6 @@ class TestPromotionChecklist(BaseTestRunner):
                 except AssertionError as e:
                     with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
                         print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
-                    self.assertTrue(all(actual), result)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"looks like the class {class_txt} is not mapped"):
