@@ -93,7 +93,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except AssertionError as e:
                     # Handle assertion errors separately
                     with allure.step(f"Metadata = {class_txt} Failed ❌"):
-                        print(f'Metadata = {class_txt} Failed ❌', flush=True)
+                        print(f'\nMetadata = {class_txt} Failed ❌', flush=True)
                     raise e  # Re-raise to ensure the test fails
 
                 except NoSuchElementException as e:
