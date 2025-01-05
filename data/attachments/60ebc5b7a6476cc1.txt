@@ -1,0 +1,12 @@
+list_address.country is SetConstant to country code (US or CA)
+kw_id = 741
+Metadata = PROPERTY - A Ok ✅
+Metadata = PROPERTY - B Ok ✅
+Metadata = PROPERTY - C Ok ✅
+Metadata = PROPERTY - D Failed ❌ in list_address.properties.country
++
+[add]
+[add]
+[add]
+[add]
+SetConstant(const=usd,const_type=str)
