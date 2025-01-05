@@ -31,7 +31,9 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","3672","test_list_address_properties_country","tests","Sun Jan 05 11:39:32 UTC 2025","passed","Sun Jan 05 11:39:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","3674","test_list_address_nullifier_const","tests","Sun Jan 05 11:51:13 UTC 2025","passed","Sun Jan 05 11:51:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='741']","57738","test_list_address_properties_country_0_741","tests","Sun Jan 05 11:52:18 UTC 2025","failed","Sun Jan 05 11:53:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='741']","58335","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 11:51:17 UTC 2025","failed","Sun Jan 05 11:52:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -64,6 +66,4 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","7626","test_list_address_nullifier_const","tests","Sun Jan 05 11:38:25 UTC 2025","passed","Sun Jan 05 11:38:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='741']","59916","test_list_address_properties_country_0_741","tests","Sun Jan 05 11:39:36 UTC 2025","failed","Sun Jan 05 11:40:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='741']","59808","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 11:38:32 UTC 2025","failed","Sun Jan 05 11:39:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2503","test_list_address_properties_country","tests","Sun Jan 05 11:52:15 UTC 2025","passed","Sun Jan 05 11:52:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
