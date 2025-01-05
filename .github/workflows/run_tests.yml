@@ -1,74 +1,66 @@
-name: Run Selenium Tests
+  name: Run Selenium Tests
 
-on:
-  push:
-    branches:
-      - dev_reporting
-  pull_request:
+  on:
+    push:
+      branches:
+        - dev_reporting
+    pull_request:
 
-jobs:
-  selenium-tests:
-    runs-on: ubuntu-latest
+  jobs:
+    selenium-tests:
+      runs-on: ubuntu-latest
 
-    steps:
-    # Step 1: Checkout Repository
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    # Step 2: Set up Python
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.x
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
 
-    # Step 3: Install dependencies
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    # Step 4: Install Google Chrome
-    - name: Install Google Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install -y ./google-chrome-stable_current_amd64.deb  
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb  
 
-    # Step 5: Install Xvfb
-    - name: Install Xvfb
-      run: sudo apt-get install -y xvfb
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
 
-    # Step 6: Extract Chrome Cache
-    - name: Extract Chrome Cache
-      run: |
-        mkdir -p ./tests/cache
-        tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
+      - name: Extract Chrome Cache
+        run: |
+          mkdir -p ./tests/cache
+          tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
 
-    # Step 7: Run Tests with Virtual Display
-    - name: Run Tests with Virtual Display
-      run: |
-        mkdir -p allure-results
-        xvfb-run -a pytest --capture=no --log-cli-level=INFO --tb=short --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
-      continue-on-error: true
+      - name: Run Tests with Virtual Display
+        run: |
+          mkdir -p allure-results
+          xvfb-run -a pytest --capture=no --log-cli-level=INFO --tb=short --alluredir=allure-results tests/test_checklist.py
+        continue-on-error: true
 
-    # Step 8: Upload Allure Results
-    - name: Upload Allure Results
-      if: always()  # Ensure this runs even if tests fail
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-results
-        path: allure-results
 
-    # Step 9: Generate Allure Report
-    - name: Generate Allure Report
-      run: |
-        npm install -g allure-commandline@latest
-        allure generate allure-results -o allure-report
+      - name: Generate Allure Report
+        run: |
+          npm install -g allure-commandline@latest
+          allure generate merged-results -o allure-report
 
-    # Step 10: Deploy Allure Report to GitHub Pages
-    - name: Deploy Allure Report
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: allure-report
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure-results
+        continue-on-error: true
+
+      - name: Deploy Allure Report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: allure-report
