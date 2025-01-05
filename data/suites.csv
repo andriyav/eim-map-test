@@ -1,4 +1,6 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"No elements of list_address are nullified or set constant (except country) [with source='741']","55902","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 11:29:02 UTC 2025","failed","Sun Jan 05 11:29:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='741']","56992","test_list_address_properties_country_0_741","tests","Sun Jan 05 11:30:00 UTC 2025","failed","Sun Jan 05 11:30:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -31,5 +33,37 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","3139","test_list_address_nullifier_const","tests","Sun Jan 05 11:24:37 UTC 2025","passed","Sun Jan 05 11:24:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='741']","56741","test_list_address_nullifier_const_0_741","tests","Sun Jan 05 11:24:40 UTC 2025","failed","Sun Jan 05 11:25:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2110","test_list_address_properties_country","tests","Sun Jan 05 11:29:58 UTC 2025","passed","Sun Jan 05 11:30:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"A decorator for applying a mark on test functions and classes.
+
+    ``MarkDecorators`` are created with ``pytest.mark``::
+
+        mark1 = pytest.mark.NAME  # Simple MarkDecorator
+        mark2 = pytest.mark.NAME(name1=value)  # Parametrized MarkDecorator
+
+    and can then be applied as decorators to test functions::
+
+        @mark2
+        def test_function():
+            pass
+
+    When a ``MarkDecorator`` is called, it does the following:
+
+    1. If called with a single class as its only positional argument and no
+       additional keyword arguments, it attaches the mark to the class so it
+       gets applied automatically to all test cases found in that class.
+
+    2. If called with a single function as its only positional argument and
+       no additional keyword arguments, it attaches the mark to the function,
+       containing all the arguments already stored internally in the
+       ``MarkDecorator``.
+
+    3. When called in any other case, it returns a new ``MarkDecorator``
+       instance with the original ``MarkDecorator``'s content updated with
+       the arguments passed to this call.
+
+    Note: The rules above prevent a ``MarkDecorator`` from storing only a
+    single function or class reference as its positional argument with no
+    additional keyword or positional arguments. You can work around this by
+    using `with_args()`.
+    ","5376","test_list_address_nullifier_const","tests","Sun Jan 05 11:28:57 UTC 2025","passed","Sun Jan 05 11:29:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
