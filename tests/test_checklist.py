@@ -51,9 +51,6 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_nullifier_const(self, source):
-        with allure.step("Starting test: Price_history must use PriceHistoryEnhancer with ListPrice input"):
-            print("Price_history must use PriceHistoryEnhancer with ListPrice input")
-            allure.attach("Source ID", f"{source}", allure.attachment_type.TEXT)
         '''No elements of list_address are nullified or set constant (except country)'''
         print("No elements of list_address are nullified or set constant (except country)", flush=True)
         print(f"kw_id = {source}", flush=True)
@@ -85,14 +82,15 @@ class TestPromotionChecklist(BaseTestRunner):
                     result = dict(zip(LIST_FIELDS, actual))
                     try:
                         self.assertTrue(all(actual), result)
-                        with allure.step(f"Running subtest for metadata: {class_txt}"):
+                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
                             print(f'Metadata = {class_txt} Ok ✅', flush=True)
-                            allure.attach(f"Metadata {class_txt}", class_txt, allure.attachment_type.TEXT)
                     except AssertionError as e:
-                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+                            print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
                         self.assertTrue(all(actual), result)
                 except NoSuchElementException as e:
-                    print(f"looks like the class {class_txt} is not mapped", flush=True)
+                    with allure.step(f"looks like the class {class_txt} is not mapped"):
+                        print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
     # @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
