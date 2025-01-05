@@ -49,7 +49,7 @@ jobs:
     - name: Run Tests with Virtual Display
       run: |
         mkdir -p allure-results
-        xvfb-run -a pytest --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
+        xvfb-run -a pytest -s --log-cli-level=INFO --alluredir=allure-results tests/test_checklist.py | stdbuf -oL tee allure-results/stdout.log
       continue-on-error: true
 
     # Step 8: Upload Allure Results
