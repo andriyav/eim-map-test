@@ -1,9 +1,0 @@
- Kww_region has no mapping 
-kw_id = 367
-Metadata = PROPERTY Failed ❌ in kww_region
-+
-[add]
-[add]
-[add]
-[add]
-SetPredefinedConst(const_path=NullValues.NONE)
