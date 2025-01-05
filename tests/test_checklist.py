@@ -1,5 +1,8 @@
 import re
 import os
+
+import allure
+import pytest
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -44,7 +47,9 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 class TestPromotionChecklist(BaseTestRunner):
 
+    @allure.testcase('No elements of list_address are nullified or set constant (except country)')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_nullifier_const(self, source):
         '''No elements of list_address are nullified or set constant (except country)'''
         print("No elements of list_address are nullified or set constant (except country)", flush=True)
@@ -77,14 +82,18 @@ class TestPromotionChecklist(BaseTestRunner):
                     result = dict(zip(LIST_FIELDS, actual))
                     try:
                         self.assertTrue(all(actual), result)
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+                            print(f'Metadata = {class_txt} Ok ✅', flush=True)
                     except AssertionError as e:
-                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        with allure.step(f"(f'Metadata = {class_txt} Ok ✅')"):
+                            print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
                         self.assertTrue(all(actual), result)
                 except NoSuchElementException as e:
-                    print(f"looks like the class {class_txt} is not mapped", flush=True)
+                    with allure.step(f"looks like the class {class_txt} is not mapped"):
+                        print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
 
+    # @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
     # @parameterized.expand(sources)
     # def test_list_address_properties_country(self, source):
     #     '''list_address.country is SetConstant to country code (US or CA)'''
@@ -114,7 +123,8 @@ class TestPromotionChecklist(BaseTestRunner):
     #             except NoSuchElementException as e:
     #                 print(f"looks like the class {class_txt} is not mapped")
     #     print("----------------------------------------------------------------------", flush=True)
-    #
+
+    # @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     # @parameterized.expand(sources)
     # def test_co_list_agent_office_phone(self, source):
     #     ''' co_list_agent_office_phone are mapped with
@@ -145,6 +155,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('4')
     # @parameterized.expand(sources)
     # def test_co_list_agent_preferred_phone(self, source):
     #     '''co_list_agent_preferred_phone are mapped with
@@ -174,6 +185,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('5')
     # @parameterized.expand(sources)
     # def test_list_agent_office_phone(self, source):
     #     '''list_agent_office_phone are mapped with
@@ -202,6 +214,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('6')
     # @parameterized.expand(sources)
     # def test_list_agent_preferred_phone(self, source):
     #     ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
@@ -230,6 +243,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('7')
     # @parameterized.expand(sources)
     # def test_mls_id_sa_id(self, source):
     #     '''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'''
@@ -262,6 +276,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('8')
     # @parameterized.expand(sources)
     # def test_dashboard_source_number(self, source):
     #     '''Validate mls_id is the correct value'''
@@ -283,6 +298,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #         self.assertEqual(actual, source)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('9')
     # @parameterized.expand(sources)
     # def test_currency_code(self, source):
     #     '''Currency_code must be UPPER'''
@@ -313,6 +329,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('10')
     # @parameterized.expand(sources)
     # def test_list_dt(self, source):
     #     '''list_dt is mapped'''
@@ -341,6 +358,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('11')
     # @parameterized.expand(sources)
     # def test_raw_properties_list_status(self, source):
     #     '''raw.properties.list_status is mapped'''
@@ -369,6 +387,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('12')
     # @parameterized.expand(sources)
     # def test_kww_region(self, source):
     #     ''' Kww_region has no mapping '''
@@ -395,6 +414,7 @@ class TestPromotionChecklist(BaseTestRunner):
     #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
     #     print("----------------------------------------------------------------------", flush=True)
     #
+    # @allure.testcase('13')
     # @parameterized.expand(sources)
     # def test_price_history(self, source):
     #     ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
