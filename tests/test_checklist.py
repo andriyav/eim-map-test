@@ -95,12 +95,13 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
+
 
     @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
     @parameterized.expand(sources)
     def test_list_address_properties_country(self, source):
         '''list_address.country is SetConstant to country code (US or CA)'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print("list_address.country is SetConstant to country code (US or CA)", flush=True)
         print(f"kw_id = {source}", flush=True)
         self.driver.implicitly_wait(20)
@@ -129,13 +130,14 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
+
 
     @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     @parameterized.expand(sources)
     def test_co_list_agent_office_phone(self, source):
         ''' co_list_agent_office_phone are mapped with
             FirstValueProvider:("agent_office_phone","office_phone")" '''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print(
             '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"''',
             flush=True)
@@ -162,13 +164,14 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
+
 
     @allure.testcase('4')
     @parameterized.expand(sources)
     def test_co_list_agent_preferred_phone(self, source):
         '''co_list_agent_preferred_phone are mapped with
         FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print(
             '''co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone)"''',
             flush=True)
@@ -195,13 +198,14 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-    print("\n----------------------------------------------------------------------\n", flush=True)
+
 
     @allure.testcase('5')
     @parameterized.expand(sources)
     def test_list_agent_office_phone(self, source):
         '''list_agent_office_phone are mapped with
     `   FirstValueProvider:("agent_office_phone","office_phone")" '''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")" ''',
               flush=True)
         print(f"kw_id = {source}", flush=True)
@@ -227,12 +231,12 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-    print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('6')
     @parameterized.expand(sources)
     def test_list_agent_preferred_phone(self, source):
         ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print(
             ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")''',
             flush=True)
@@ -265,6 +269,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     def test_mls_id_sa_id(self, source):
         '''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -295,12 +300,12 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('8')
     @parameterized.expand(sources)
     def test_dashboard_source_number(self, source):
         '''Validate mls_id is the correct value'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''Validate mls_id is the correct value from here''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -319,12 +324,12 @@ class TestPromotionChecklist(BaseTestRunner):
             with allure.step(f'Failed ❌ in {actual}'):
                 print(f'Failed ❌ in {actual}', flush=True)
             self.assertEqual(actual, source)
-        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('9')
     @parameterized.expand(sources)
     def test_currency_code(self, source):
         '''Currency_code must be UPPER'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''Currency_code must be UPPER''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -352,12 +357,12 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('10')
     @parameterized.expand(sources)
     def test_list_dt(self, source):
         '''list_dt is mapped'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''list_dt is mapped''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -384,12 +389,13 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
+
 
     @allure.testcase('11')
     @parameterized.expand(sources)
     def test_raw_properties_list_status(self, source):
         '''raw.properties.list_status is mapped'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''raw.properties.list_status is mapped''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -416,12 +422,12 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('12')
     @parameterized.expand(sources)
     def test_kww_region(self, source):
         ''' Kww_region has no mapping '''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print(''' Kww_region has no mapping ''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -446,12 +452,12 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
 
     @allure.testcase('13')
     @parameterized.expand(sources)
     def test_price_history(self, source):
         ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
         print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
         print(f"kw_id = {source}", flush=True)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
@@ -542,4 +548,3 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
