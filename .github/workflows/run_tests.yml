@@ -47,7 +47,7 @@ jobs:
         
 
     - name: Run Tests with Virtual Display
-      run: xvfb-run -a python -m unittest tests/test_checklist.py
+      run: xvfb-run -a python tests/test_checklist.py
 
 #    - name: Set Up Chrome Cache Directory
 #      run: |

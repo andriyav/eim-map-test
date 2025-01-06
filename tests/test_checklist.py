@@ -1,5 +1,7 @@
 import re
 import os
+import unittest
+import HtmlTestRunner
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -486,3 +488,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     print(f"looks like the class {class_txt} is not mapped", flush=True)
         print("----------------------------------------------------------------------", flush=True)
+
+
+if __name__ == '__main__':
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='example_dir'))
