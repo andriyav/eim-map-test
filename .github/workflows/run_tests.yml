@@ -19,6 +19,10 @@ jobs:
       with:
         python-version: 3.x
 
+    - name: Set PYTHONPATH environment variable
+      run: |
+        echo "PYTHONPATH=/c/Users/aandrusy/ssh_repos/private/SLPUI:$PYTHONPATH" >> $GITHUB_ENV
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -44,19 +48,9 @@ jobs:
         echo "Listing files in repository..."
         ls -R
         echo "Current Directory: $(pwd)"
-        
 
     - name: Run Tests with Virtual Display
       run: xvfb-run -a python tests/test_checklist.py
-
-#    - name: Set Up Chrome Cache Directory
-#      run: |
-#        mkdir -p ./tests/cache
-#        echo "Chrome cache simulation" > ./tests/cache/sample_cache.txt
-#
-#    - name: Archive Chrome Cache (Linux)
-#      run: |
-#        tar -czf chrome_cache.tar.gz -C ./tests/cache .
 
     - name: Upload Chrome Cache Artifact
       uses: actions/upload-artifact@v3
