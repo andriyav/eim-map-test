@@ -100,6 +100,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_properties_country(self, source):
         '''list_address.country is SetConstant to country code (US or CA)'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -136,6 +137,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_office_phone(self, source):
         ''' co_list_agent_office_phone are mapped with
             FirstValueProvider:("agent_office_phone","office_phone")" '''
@@ -171,6 +173,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('4')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_preferred_phone(self, source):
         '''co_list_agent_preferred_phone are mapped with
         FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
@@ -206,6 +209,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('5')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_office_phone(self, source):
         '''list_agent_office_phone are mapped with
     `   FirstValueProvider:("agent_office_phone","office_phone")" '''
@@ -239,6 +243,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('6')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_preferred_phone(self, source):
         ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -271,6 +276,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('7')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_mls_id_sa_id(self, source):
         '''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -308,6 +314,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('8')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_dashboard_source_number(self, source):
         '''Validate mls_id is the correct value'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -332,6 +339,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('9')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_currency_code(self, source):
         '''Currency_code must be UPPER'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -366,6 +374,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('10')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_dt(self, source):
         '''list_dt is mapped'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -400,6 +409,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('11')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_raw_properties_list_status(self, source):
         '''raw.properties.list_status is mapped'''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -433,6 +443,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('12')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_kww_region(self, source):
         ''' Kww_region has no mapping '''
         print("\n----------------------------------------------------------------------\n", flush=True)
@@ -464,6 +475,7 @@ class TestPromotionChecklist(BaseTestRunner):
 
     @allure.testcase('13')
     @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_price_history(self, source):
         ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
         print("\n----------------------------------------------------------------------\n", flush=True)
