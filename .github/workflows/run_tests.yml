@@ -3,7 +3,7 @@
   on:
     push:
       branches:
-        - dev_reporting
+        - main
     pull_request:
 
   jobs:
