@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
-
+BASE_URL = 'https://stage-slp.data.kw.com/login'
+BASE_URL_PROD = 'https://prod-slp.data.kw.com/login'
 load_dotenv()
 
 
@@ -15,7 +16,7 @@ class ValueProvider:
 
     @classmethod
     def get_base_url(cls):
-        return os.getenv("BASE_URL")
+        return BASE_URL
 
 
     @classmethod
