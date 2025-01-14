@@ -1,3 +1,5 @@
+import os
+import time
 import unittest
 from selenium import webdriver
 from SLP.ui.PageObjects.SLPlogin.slp_login import LoginComponent
@@ -26,6 +28,14 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.get(ValueProvider.get_base_url())
         self.driver.maximize_window()
+
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
+        with open("page_source.html", "w", encoding="utf-8") as f:
+            f.write(self.driver.page_source)
+        self.driver.maximize_window()
+        time.sleep(5)
 
     def _login(self):
         self.driver.implicitly_wait(10)
