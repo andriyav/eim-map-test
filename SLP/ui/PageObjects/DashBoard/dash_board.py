@@ -49,7 +49,7 @@ class DashBoard(BaseComponent):
 
     def set_kwid(self, kw_id: str):
         # set source KW_ID"
-        self.get_kw_id_input().set_text_in(kw_id)
+        self.get_kw_id_input().set_text(kw_id)
 
     def get_submit_btn(self):
         node = self.node.find_element(*SUBMIT_BTN)

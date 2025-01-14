@@ -91,7 +91,7 @@ class RawData(BaseComponent):
 
         #Locate the 'bool' span element following 'display_address'
         next_element = span_element_kw_updated_by.find_element(By.XPATH,
-                                                               f".//a[contains(text(), 'list_agent_mls_id')]/following-sibling::span[@class='string']")
+                                                               f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
         # Extract the text content using JavaScript and print the result
         return self.node.execute_script('return arguments[0].textContent;', next_element)
 
