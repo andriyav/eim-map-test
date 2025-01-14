@@ -41,5 +41,3 @@ class DBHandler:
         except:
             return False
 
-
-print(DBHandler.db_handler(220, '440001151', 'l001261'))
