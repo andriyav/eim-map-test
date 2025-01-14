@@ -43,49 +43,49 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
 
 
 class TestPromotionChecklist(BaseTestRunner):
-    def test_list_address_nullifier_const(self):
-        pass
-    #
-    # @parameterized.expand(sources)
     # def test_list_address_nullifier_const(self, source):
-    #     '''No elements of list_address are nullified or set constant (except country)'''
-    #     print("No elements of list_address are nullified or set constant (except country)", flush=True)
-    #     print(f"kw_id = {source}", flush=True)
-    #     WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-    #     SLPMain(self.driver).source_select(source)
-    #     screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-    #     os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-    #     self.driver.save_screenshot(screenshot_path)
-    #     metadata_numbers = ListComponent(self.driver).get_metadata_number()
-    #     for metadata in range(1, metadata_numbers):
-    #         SLPMain(self.driver).metadata_main_select(metadata)
-    #         class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
-    #         actual = []
-    #         with self.subTest(metadata=class_txt):
-    #             try:
-    #                 SLPMain(self.driver).impl_wait_metadata()
-    #                 for address_field in LIST_FIELDS:
-    #                     list_fields_txt = address_field.replace('-', '.')
-    #                     field = ListComponent(self.driver).get_txt_get_field(address_field)
-    #                     field_actual = False
-    #                     expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
-    #                     if (
-    #                             'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
-    #                         field_actual = True
-    #                         actual.append(field_actual)
-    #                     else:
-    #                         actual.append(field_actual)
-    #                         print(f'{address_field} = ', field_actual)
-    #                 result = dict(zip(LIST_FIELDS, actual))
-    #                 try:
-    #                     self.assertTrue(all(actual), result)
-    #                     print(f'Metadata = {class_txt} Ok ✅', flush=True)
-    #                 except AssertionError as e:
-    #                     print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
-    #                     self.assertTrue(all(actual), result)
-    #             except NoSuchElementException as e:
-    #                 print(f"looks like the class {class_txt} is not mapped", flush=True)
-    #     print("----------------------------------------------------------------------", flush=True)
+    #     pass
+
+    @parameterized.expand(sources)
+    def test_list_address_nullifier_const(self, source):
+        '''No elements of list_address are nullified or set constant (except country)'''
+        print("No elements of list_address are nullified or set constant (except country)", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            SLPMain(self.driver).metadata_main_select(metadata)
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            actual = []
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).impl_wait_metadata()
+                    for address_field in LIST_FIELDS:
+                        list_fields_txt = address_field.replace('-', '.')
+                        field = ListComponent(self.driver).get_txt_get_field(address_field)
+                        field_actual = False
+                        expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
+                        if (
+                                'nullifier' not in field.lower() and 'skip_values=[]' in field.lower() and 'setconstant' not in field.lower()) or field == expected_field:
+                            field_actual = True
+                            actual.append(field_actual)
+                        else:
+                            actual.append(field_actual)
+                            print(f'{address_field} = ', field_actual)
+                    result = dict(zip(LIST_FIELDS, actual))
+                    try:
+                        self.assertTrue(all(actual), result)
+                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    except AssertionError as e:
+                        print(f'Metadata = {class_txt} Failed ❌ in {field}', flush=True)
+                        self.assertTrue(all(actual), result)
+                except NoSuchElementException as e:
+                    print(f"looks like the class {class_txt} is not mapped", flush=True)
+        print("----------------------------------------------------------------------", flush=True)
     #
     # @parameterized.expand(sources)
     # def test_list_address_properties_country(self, source):
