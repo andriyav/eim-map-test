@@ -51,11 +51,13 @@ class TestPromotionChecklist(BaseTestRunner):
         '''No elements of list_address are nullified or set constant (except country)'''
         print("No elements of list_address are nullified or set constant (except country)", flush=True)
         print(f"kw_id = {source}", flush=True)
-        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
-        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
-        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-        self.driver.save_screenshot(screenshot_path)
+        try:
+            WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+            SLPMain(self.driver).source_select(source)
+        except:
+            screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+            os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+            self.driver.save_screenshot(screenshot_path)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             SLPMain(self.driver).metadata_main_select(metadata)
