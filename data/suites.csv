@@ -1,25 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"raw.properties.list_status is mapped [with source='102']","53176","test_raw_properties_list_status_16_102","tests","Fri Jan 10 01:18:55 UTC 2025","passed","Fri Jan 10 01:19:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='546']","12195","test_mls_id_sa_id_04_546","tests","Fri Jan 10 00:26:15 UTC 2025","passed","Fri Jan 10 00:26:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='479']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","42559","test_list_agent_office_phone_02_479","tests","Thu Jan 09 23:19:41 UTC 2025","passed","Thu Jan 09 23:20:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='271']","13146","test_price_history_10_271","tests","Fri Jan 10 00:52:00 UTC 2025","failed","Fri Jan 10 00:52:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='312']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","70068","test_co_list_agent_office_phone_00_312","tests","Thu Jan 09 20:55:03 UTC 2025","passed","Thu Jan 09 20:56:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='345']","194574","test_list_address_properties_country_17_345","tests","Thu Jan 09 23:09:32 UTC 2025","passed","Thu Jan 09 23:12:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='9']","22567","test_kww_region_06_9","tests","Thu Jan 09 22:06:15 UTC 2025","passed","Thu Jan 09 22:06:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='271']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12556","test_co_list_agent_office_phone_10_271","tests","Thu Jan 09 21:04:44 UTC 2025","failed","Thu Jan 09 21:04:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='330']","295372","test_list_address_properties_country_03_330","tests","Thu Jan 09 22:46:47 UTC 2025","failed","Thu Jan 09 22:51:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='479']","43195","test_currency_code_02_479","tests","Thu Jan 09 21:38:48 UTC 2025","passed","Thu Jan 09 21:39:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='9']","21981","test_raw_properties_list_status_06_9","tests","Fri Jan 10 01:08:51 UTC 2025","passed","Fri Jan 10 01:09:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='403']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","48630","test_co_list_agent_office_phone_11_403","tests","Thu Jan 09 21:04:57 UTC 2025","passed","Thu Jan 09 21:05:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='9']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","22297","test_list_agent_office_phone_06_9","tests","Thu Jan 09 23:23:24 UTC 2025","passed","Thu Jan 09 23:23:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='409']","13182","test_currency_code_05_409","tests","Thu Jan 09 21:42:19 UTC 2025","passed","Thu Jan 09 21:42:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='90']","155287","test_raw_properties_list_status_18_90","tests","Fri Jan 10 01:21:34 UTC 2025","passed","Fri Jan 10 01:24:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='9']","8333","test_dashboard_source_number_06_9","tests","Thu Jan 09 21:58:58 UTC 2025","passed","Thu Jan 09 21:59:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -52,12 +31,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2688","test_co_list_agent_preferred_phone","tests","Thu Jan 09 21:16:01 UTC 2025","passed","Thu Jan 09 21:16:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='345']","105119","test_list_address_nullifier_const_17_345","tests","Thu Jan 09 22:38:27 UTC 2025","passed","Thu Jan 09 22:40:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='102']","53317","test_currency_code_16_102","tests","Thu Jan 09 21:52:45 UTC 2025","passed","Thu Jan 09 21:53:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='362']","32741","test_list_agent_preferred_phone_07_362","tests","Thu Jan 09 23:44:50 UTC 2025","passed","Thu Jan 09 23:45:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='625']","32939","test_list_agent_preferred_phone_01_625","tests","Thu Jan 09 23:40:12 UTC 2025","passed","Thu Jan 09 23:40:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='76']","43362","test_kww_region_08_76","tests","Thu Jan 09 22:07:09 UTC 2025","passed","Thu Jan 09 22:07:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2446","test_list_agent_office_phone","tests","Tue Jan 14 09:47:22 UTC 2025","passed","Tue Jan 14 09:47:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -90,11 +64,8 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2658","test_raw_properties_list_status","tests","Fri Jan 10 01:03:21 UTC 2025","passed","Fri Jan 10 01:03:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='326']","155917","test_mls_id_sa_id_09_326","tests","Fri Jan 10 00:28:19 UTC 2025","passed","Fri Jan 10 00:30:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='102']","53000","test_kww_region_16_102","tests","Thu Jan 09 22:16:25 UTC 2025","passed","Thu Jan 09 22:17:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='492']","48026","test_kww_region_14_492","tests","Thu Jan 09 22:13:01 UTC 2025","passed","Thu Jan 09 22:13:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='479']","42656","test_price_history_02_479","tests","Fri Jan 10 00:44:02 UTC 2025","passed","Fri Jan 10 00:44:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2525","test_currency_code","tests","Tue Jan 14 09:44:11 UTC 2025","passed","Tue Jan 14 09:44:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='316']","33446","test_list_agent_preferred_phone_0_316","tests","Tue Jan 14 09:48:00 UTC 2025","broken","Tue Jan 14 09:48:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -127,13 +98,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","4843","test_co_list_agent_office_phone","tests","Thu Jan 09 20:54:58 UTC 2025","passed","Thu Jan 09 20:55:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='105']","47757","test_currency_code_12_105","tests","Thu Jan 09 21:47:53 UTC 2025","passed","Thu Jan 09 21:48:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='14']","41725","test_list_address_nullifier_const_13_14","tests","Thu Jan 09 22:33:28 UTC 2025","passed","Thu Jan 09 22:34:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='479']","42727","test_mls_id_sa_id_02_479","tests","Fri Jan 10 00:22:57 UTC 2025","passed","Fri Jan 10 00:23:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='403']","47764","test_raw_properties_list_status_11_403","tests","Fri Jan 10 01:13:17 UTC 2025","passed","Fri Jan 10 01:14:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='271']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","12803","test_co_list_agent_preferred_phone_10_271","tests","Thu Jan 09 21:25:43 UTC 2025","failed","Thu Jan 09 21:25:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2451","test_mls_id_sa_id","tests","Tue Jan 14 09:49:10 UTC 2025","passed","Tue Jan 14 09:49:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -166,20 +131,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2729","test_list_address_nullifier_const","tests","Thu Jan 09 22:21:50 UTC 2025","passed","Thu Jan 09 22:21:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='90']","154919","test_list_agent_preferred_phone_18_90","tests","Thu Jan 09 23:57:16 UTC 2025","passed","Thu Jan 09 23:59:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='492']","47767","test_raw_properties_list_status_14_492","tests","Fri Jan 10 01:15:33 UTC 2025","passed","Fri Jan 10 01:16:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='625']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","33398","test_list_agent_office_phone_01_625","tests","Thu Jan 09 23:19:07 UTC 2025","passed","Thu Jan 09 23:19:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='155']","155055","test_list_agent_preferred_phone_15_155","tests","Thu Jan 09 23:52:03 UTC 2025","passed","Thu Jan 09 23:54:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='30']","11833","test_price_history_19_30","tests","Fri Jan 10 01:03:09 UTC 2025","passed","Fri Jan 10 01:03:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='409']","13016","test_raw_properties_list_status_05_409","tests","Fri Jan 10 01:08:38 UTC 2025","passed","Fri Jan 10 01:08:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='492']","48054","test_list_address_nullifier_const_14_492","tests","Thu Jan 09 22:34:10 UTC 2025","passed","Thu Jan 09 22:34:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='14']","41385","test_currency_code_13_14","tests","Thu Jan 09 21:48:41 UTC 2025","passed","Thu Jan 09 21:49:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='14']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","41746","test_list_agent_office_phone_13_14","tests","Thu Jan 09 23:29:28 UTC 2025","failed","Thu Jan 09 23:30:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='546']","12271","test_list_address_properties_country_04_546","tests","Thu Jan 09 22:51:43 UTC 2025","passed","Thu Jan 09 22:51:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='30']","11655","test_raw_properties_list_status_19_30","tests","Fri Jan 10 01:24:09 UTC 2025","passed","Fri Jan 10 01:24:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2386","test_list_address_nullifier_const","tests","Tue Jan 14 09:46:00 UTC 2025","passed","Tue Jan 14 09:46:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -212,26 +164,10 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2596","test_list_address_properties_country","tests","Thu Jan 09 22:42:59 UTC 2025","passed","Thu Jan 09 22:43:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='409']","13064","test_mls_id_sa_id_05_409","tests","Fri Jan 10 00:26:27 UTC 2025","passed","Fri Jan 10 00:26:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='330']","155379","test_list_address_nullifier_const_03_330","tests","Thu Jan 09 22:24:21 UTC 2025","failed","Thu Jan 09 22:26:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='30']","7013","test_dashboard_source_number_19_30","tests","Thu Jan 09 22:00:36 UTC 2025","passed","Thu Jan 09 22:00:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='492']","48116","test_list_address_properties_country_14_492","tests","Thu Jan 09 23:02:15 UTC 2025","passed","Thu Jan 09 23:03:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='30']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","11176","test_co_list_agent_office_phone_19_30","tests","Thu Jan 09 21:15:49 UTC 2025","failed","Thu Jan 09 21:16:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='90']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155290","test_co_list_agent_office_phone_18_90","tests","Thu Jan 09 21:13:14 UTC 2025","failed","Thu Jan 09 21:15:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='90']","155010","test_currency_code_18_90","tests","Thu Jan 09 21:55:24 UTC 2025","passed","Thu Jan 09 21:57:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='155']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","154644","test_co_list_agent_preferred_phone_15_155","tests","Thu Jan 09 21:29:01 UTC 2025","passed","Thu Jan 09 21:31:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='102']","53391","test_price_history_16_102","tests","Fri Jan 10 00:57:56 UTC 2025","passed","Fri Jan 10 00:58:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='403']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","48985","test_co_list_agent_preferred_phone_11_403","tests","Thu Jan 09 21:25:56 UTC 2025","passed","Thu Jan 09 21:26:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='14']","41371","test_price_history_13_14","tests","Fri Jan 10 00:53:51 UTC 2025","passed","Fri Jan 10 00:54:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='345']","104620","test_price_history_17_345","tests","Fri Jan 10 00:58:49 UTC 2025","passed","Fri Jan 10 01:00:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='362']","32394","test_currency_code_07_362","tests","Thu Jan 09 21:42:54 UTC 2025","passed","Thu Jan 09 21:43:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='76']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","43042","test_co_list_agent_preferred_phone_08_76","tests","Thu Jan 09 21:22:25 UTC 2025","failed","Thu Jan 09 21:23:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2373","test_list_address_properties_country","tests","Tue Jan 14 09:46:36 UTC 2025","passed","Tue Jan 14 09:46:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='316']","33606","test_list_address_nullifier_const_0_316","tests","Tue Jan 14 09:46:03 UTC 2025","broken","Tue Jan 14 09:46:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='316']","33580","test_price_history_0_316","tests","Tue Jan 14 09:49:49 UTC 2025","broken","Tue Jan 14 09:50:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='316']","34511","test_currency_code_0_316","tests","Tue Jan 14 09:44:13 UTC 2025","broken","Tue Jan 14 09:44:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -264,30 +200,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2692","test_currency_code","tests","Thu Jan 09 21:37:02 UTC 2025","passed","Thu Jan 09 21:37:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='403']","7229","test_dashboard_source_number_11_403","tests","Thu Jan 09 21:59:37 UTC 2025","passed","Thu Jan 09 21:59:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='362']","32588","test_mls_id_sa_id_07_362","tests","Fri Jan 10 00:27:03 UTC 2025","passed","Fri Jan 10 00:27:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='625']","33136","test_raw_properties_list_status_01_625","tests","Fri Jan 10 01:04:34 UTC 2025","passed","Fri Jan 10 01:05:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='9']","22679","test_price_history_06_9","tests","Fri Jan 10 00:47:45 UTC 2025","failed","Fri Jan 10 00:48:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='76']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","43215","test_co_list_agent_office_phone_08_76","tests","Thu Jan 09 21:01:25 UTC 2025","passed","Thu Jan 09 21:02:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='345']","104819","test_list_dt_17_345","tests","Fri Jan 10 00:16:38 UTC 2025","passed","Fri Jan 10 00:18:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='403']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","48984","test_list_agent_office_phone_11_403","tests","Thu Jan 09 23:27:50 UTC 2025","passed","Thu Jan 09 23:28:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='479']","44052","test_list_dt_02_479","tests","Fri Jan 10 00:01:49 UTC 2025","passed","Fri Jan 10 00:02:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='345']","105326","test_raw_properties_list_status_17_345","tests","Fri Jan 10 01:19:48 UTC 2025","passed","Fri Jan 10 01:21:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='271']","7056","test_dashboard_source_number_10_271","tests","Thu Jan 09 21:59:30 UTC 2025","passed","Thu Jan 09 21:59:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='403']","49442","test_list_address_properties_country_11_403","tests","Thu Jan 09 22:59:56 UTC 2025","passed","Thu Jan 09 23:00:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='362']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","32429","test_co_list_agent_preferred_phone_07_362","tests","Thu Jan 09 21:21:52 UTC 2025","passed","Thu Jan 09 21:22:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='102']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","52936","test_co_list_agent_office_phone_16_102","tests","Thu Jan 09 21:10:37 UTC 2025","passed","Thu Jan 09 21:11:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='155']","154845","test_price_history_15_155","tests","Fri Jan 10 00:55:21 UTC 2025","passed","Fri Jan 10 00:57:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='409']","12754","test_kww_region_05_409","tests","Thu Jan 09 22:06:02 UTC 2025","passed","Thu Jan 09 22:06:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='479']","42604","test_list_address_nullifier_const_02_479","tests","Thu Jan 09 22:23:38 UTC 2025","passed","Thu Jan 09 22:24:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='76']","42919","test_list_address_nullifier_const_08_76","tests","Thu Jan 09 22:28:19 UTC 2025","passed","Thu Jan 09 22:29:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='326']","295143","test_list_address_properties_country_09_326","tests","Thu Jan 09 22:54:48 UTC 2025","passed","Thu Jan 09 22:59:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='546']","7349","test_dashboard_source_number_04_546","tests","Thu Jan 09 21:58:42 UTC 2025","passed","Thu Jan 09 21:58:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2686","test_raw_properties_list_status","tests","Tue Jan 14 09:50:22 UTC 2025","passed","Tue Jan 14 09:50:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -320,16 +233,9 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2636","test_price_history","tests","Fri Jan 10 00:42:15 UTC 2025","passed","Fri Jan 10 00:42:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='9']","21896","test_list_agent_preferred_phone_06_9","tests","Thu Jan 09 23:44:28 UTC 2025","passed","Thu Jan 09 23:44:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='625']","32768","test_currency_code_01_625","tests","Thu Jan 09 21:38:16 UTC 2025","passed","Thu Jan 09 21:38:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='403']","48896","test_list_address_nullifier_const_11_403","tests","Thu Jan 09 22:31:51 UTC 2025","passed","Thu Jan 09 22:32:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='330']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","156307","test_co_list_agent_preferred_phone_03_330","tests","Thu Jan 09 21:18:29 UTC 2025","failed","Thu Jan 09 21:21:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='492']","6797","test_dashboard_source_number_14_492","tests","Thu Jan 09 22:00:00 UTC 2025","passed","Thu Jan 09 22:00:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='345']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","105121","test_co_list_agent_preferred_phone_17_345","tests","Thu Jan 09 21:32:29 UTC 2025","passed","Thu Jan 09 21:34:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='345']","104833","test_mls_id_sa_id_17_345","tests","Fri Jan 10 00:37:43 UTC 2025","passed","Fri Jan 10 00:39:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2421","test_co_list_agent_preferred_phone","tests","Tue Jan 14 09:43:34 UTC 2025","passed","Tue Jan 14 09:43:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='316']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","33612","test_co_list_agent_office_phone_0_316","tests","Tue Jan 14 09:43:01 UTC 2025","broken","Tue Jan 14 09:43:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -362,32 +268,12 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2761","test_mls_id_sa_id","tests","Fri Jan 10 00:21:09 UTC 2025","passed","Fri Jan 10 00:21:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='271']","13509","test_list_address_nullifier_const_10_271","tests","Thu Jan 09 22:31:37 UTC 2025","failed","Thu Jan 09 22:31:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='155']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155047","test_list_agent_office_phone_15_155","tests","Thu Jan 09 23:30:59 UTC 2025","passed","Thu Jan 09 23:33:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='9']","22435","test_list_dt_06_9","tests","Fri Jan 10 00:05:33 UTC 2025","passed","Fri Jan 10 00:05:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='312']","101130","test_list_address_properties_country_00_312","tests","Thu Jan 09 22:43:01 UTC 2025","passed","Thu Jan 09 22:44:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='326']","156436","test_price_history_09_326","tests","Fri Jan 10 00:49:24 UTC 2025","passed","Fri Jan 10 00:52:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='105']","48477","test_price_history_12_105","tests","Fri Jan 10 00:53:03 UTC 2025","failed","Fri Jan 10 00:53:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='330']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155470","test_list_agent_office_phone_03_330","tests","Thu Jan 09 23:20:23 UTC 2025","failed","Thu Jan 09 23:22:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='76']","42814","test_raw_properties_list_status_08_76","tests","Fri Jan 10 01:09:45 UTC 2025","passed","Fri Jan 10 01:10:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='362']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","32974","test_list_agent_office_phone_07_362","tests","Thu Jan 09 23:23:46 UTC 2025","passed","Thu Jan 09 23:24:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='14']","42547","test_list_agent_preferred_phone_13_14","tests","Thu Jan 09 23:50:32 UTC 2025","failed","Thu Jan 09 23:51:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='105']","48528","test_list_address_properties_country_12_105","tests","Thu Jan 09 23:00:45 UTC 2025","passed","Thu Jan 09 23:01:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='403']","48806","test_mls_id_sa_id_11_403","tests","Fri Jan 10 00:31:08 UTC 2025","passed","Fri Jan 10 00:31:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='362']","52674","test_list_address_properties_country_07_362","tests","Thu Jan 09 22:52:41 UTC 2025","passed","Thu Jan 09 22:53:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='345']","104733","test_list_agent_preferred_phone_17_345","tests","Thu Jan 09 23:55:31 UTC 2025","passed","Thu Jan 09 23:57:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='403']","48945","test_currency_code_11_403","tests","Thu Jan 09 21:47:04 UTC 2025","passed","Thu Jan 09 21:47:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='409']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","13284","test_list_agent_office_phone_05_409","tests","Thu Jan 09 23:23:11 UTC 2025","passed","Thu Jan 09 23:23:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='76']","47985","test_currency_code_08_76","tests","Thu Jan 09 21:43:27 UTC 2025","passed","Thu Jan 09 21:44:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='90']","155235","test_list_address_nullifier_const_18_90","tests","Thu Jan 09 22:40:12 UTC 2025","failed","Thu Jan 09 22:42:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='90']","155273","test_mls_id_sa_id_18_90","tests","Fri Jan 10 00:39:28 UTC 2025","passed","Fri Jan 10 00:42:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='155']","156244","test_kww_region_15_155","tests","Thu Jan 09 22:13:49 UTC 2025","passed","Thu Jan 09 22:16:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='105']","48803","test_list_agent_preferred_phone_12_105","tests","Thu Jan 09 23:49:43 UTC 2025","failed","Thu Jan 09 23:50:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","48637","test_co_list_agent_office_phone","tests","Tue Jan 14 09:42:12 UTC 2025","passed","Tue Jan 14 09:43:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='316']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","33571","test_list_agent_office_phone_0_316","tests","Tue Jan 14 09:47:24 UTC 2025","broken","Tue Jan 14 09:47:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='316']","23058","test_raw_properties_list_status_0_316","tests","Tue Jan 14 09:50:25 UTC 2025","broken","Tue Jan 14 09:50:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='316']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","33744","test_co_list_agent_preferred_phone_0_316","tests","Tue Jan 14 09:43:37 UTC 2025","broken","Tue Jan 14 09:44:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -420,20 +306,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2732","test_list_agent_preferred_phone","tests","Thu Jan 09 23:38:57 UTC 2025","passed","Thu Jan 09 23:39:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='102']","7466","test_dashboard_source_number_16_102","tests","Thu Jan 09 22:00:14 UTC 2025","passed","Thu Jan 09 22:00:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='409']","8280","test_dashboard_source_number_05_409","tests","Thu Jan 09 21:58:50 UTC 2025","passed","Thu Jan 09 21:58:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='271']","12871","test_raw_properties_list_status_10_271","tests","Fri Jan 10 01:13:04 UTC 2025","passed","Fri Jan 10 01:13:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='105']","48115","test_list_dt_12_105","tests","Fri Jan 10 00:10:50 UTC 2025","passed","Fri Jan 10 00:11:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='625']","33087","test_kww_region_01_625","tests","Thu Jan 09 22:01:58 UTC 2025","passed","Thu Jan 09 22:02:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='105']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","47809","test_co_list_agent_office_phone_12_105","tests","Thu Jan 09 21:05:45 UTC 2025","failed","Thu Jan 09 21:06:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='492']","48206","test_price_history_14_492","tests","Fri Jan 10 00:54:33 UTC 2025","passed","Fri Jan 10 00:55:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='409']","13063","test_list_agent_preferred_phone_05_409","tests","Thu Jan 09 23:44:15 UTC 2025","passed","Thu Jan 09 23:44:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='312']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","69849","test_co_list_agent_preferred_phone_00_312","tests","Thu Jan 09 21:16:03 UTC 2025","passed","Thu Jan 09 21:17:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='326']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155065","test_list_agent_office_phone_09_326","tests","Thu Jan 09 23:25:02 UTC 2025","passed","Thu Jan 09 23:27:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2417","test_list_dt","tests","Tue Jan 14 09:48:34 UTC 2025","passed","Tue Jan 14 09:48:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -466,15 +339,9 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2693","test_kww_region","tests","Thu Jan 09 22:00:43 UTC 2025","passed","Thu Jan 09 22:00:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='90']","155249","test_list_dt_18_90","tests","Fri Jan 10 00:18:23 UTC 2025","passed","Fri Jan 10 00:20:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='479']","72224","test_list_address_properties_country_02_479","tests","Thu Jan 09 22:45:35 UTC 2025","passed","Thu Jan 09 22:46:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='362']","32626","test_raw_properties_list_status_07_362","tests","Fri Jan 10 01:09:13 UTC 2025","passed","Fri Jan 10 01:09:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='30']","11696","test_list_agent_preferred_phone_19_30","tests","Thu Jan 09 23:59:51 UTC 2025","passed","Fri Jan 10 00:00:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='330']","155513","test_mls_id_sa_id_03_330","tests","Fri Jan 10 00:23:39 UTC 2025","passed","Fri Jan 10 00:26:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='9']","22576","test_mls_id_sa_id_06_9","tests","Fri Jan 10 00:26:40 UTC 2025","passed","Fri Jan 10 00:27:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='326']","7015","test_dashboard_source_number_09_326","tests","Thu Jan 09 21:59:23 UTC 2025","passed","Thu Jan 09 21:59:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='326']","155954","test_list_dt_09_326","tests","Fri Jan 10 00:07:12 UTC 2025","passed","Fri Jan 10 00:09:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2625","test_list_agent_preferred_phone","tests","Tue Jan 14 09:47:58 UTC 2025","passed","Tue Jan 14 09:48:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='316']","33682","test_mls_id_sa_id_0_316","tests","Tue Jan 14 09:49:12 UTC 2025","broken","Tue Jan 14 09:49:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='316']","43056","test_list_address_properties_country_0_316","tests","Tue Jan 14 09:46:39 UTC 2025","broken","Tue Jan 14 09:47:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -507,25 +374,10 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2597","test_list_dt","tests","Fri Jan 10 00:00:02 UTC 2025","passed","Fri Jan 10 00:00:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='30']","11642","test_list_address_nullifier_const_19_30","tests","Thu Jan 09 22:42:47 UTC 2025","passed","Thu Jan 09 22:42:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='105']","47916","test_mls_id_sa_id_12_105","tests","Fri Jan 10 00:31:56 UTC 2025","passed","Fri Jan 10 00:32:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='625']","32670","test_price_history_01_625","tests","Fri Jan 10 00:43:29 UTC 2025","passed","Fri Jan 10 00:44:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='546']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","11944","test_co_list_agent_office_phone_04_546","tests","Thu Jan 09 21:00:03 UTC 2025","failed","Thu Jan 09 21:00:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='345']","105183","test_kww_region_17_345","tests","Thu Jan 09 22:17:18 UTC 2025","passed","Thu Jan 09 22:19:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='14']","7379","test_dashboard_source_number_13_14","tests","Thu Jan 09 21:59:53 UTC 2025","passed","Thu Jan 09 22:00:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='102']","52863","test_list_agent_preferred_phone_16_102","tests","Thu Jan 09 23:54:38 UTC 2025","passed","Thu Jan 09 23:55:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='155']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155544","test_co_list_agent_office_phone_15_155","tests","Thu Jan 09 21:08:01 UTC 2025","failed","Thu Jan 09 21:10:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='90']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","154697","test_list_agent_office_phone_18_90","tests","Thu Jan 09 23:36:11 UTC 2025","passed","Thu Jan 09 23:38:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='625']","33458","test_list_address_nullifier_const_01_625","tests","Thu Jan 09 22:23:04 UTC 2025","failed","Thu Jan 09 22:23:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='30']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","11739","test_co_list_agent_preferred_phone_19_30","tests","Thu Jan 09 21:36:50 UTC 2025","failed","Thu Jan 09 21:37:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='546']","12258","test_raw_properties_list_status_04_546","tests","Fri Jan 10 01:08:26 UTC 2025","passed","Fri Jan 10 01:08:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='479']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","42157","test_co_list_agent_office_phone_02_479","tests","Thu Jan 09 20:56:46 UTC 2025","passed","Thu Jan 09 20:57:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2496","test_kww_region","tests","Tue Jan 14 09:45:24 UTC 2025","passed","Tue Jan 14 09:45:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='316']","33753","test_kww_region_0_316","tests","Tue Jan 14 09:45:26 UTC 2025","broken","Tue Jan 14 09:46:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='316']","33686","test_dashboard_source_number_0_316","tests","Tue Jan 14 09:44:50 UTC 2025","broken","Tue Jan 14 09:45:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='316']","33621","test_list_dt_0_316","tests","Tue Jan 14 09:48:36 UTC 2025","broken","Tue Jan 14 09:49:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -558,163 +410,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2684","test_dashboard_source_number","tests","Thu Jan 09 21:58:10 UTC 2025","passed","Thu Jan 09 21:58:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='30']","11576","test_list_address_properties_country_19_30","tests","Thu Jan 09 23:17:42 UTC 2025","passed","Thu Jan 09 23:17:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='271']","13157","test_currency_code_10_271","tests","Thu Jan 09 21:46:51 UTC 2025","passed","Thu Jan 09 21:47:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='30']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","11345","test_list_agent_office_phone_19_30","tests","Thu Jan 09 23:38:46 UTC 2025","passed","Thu Jan 09 23:38:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='625']","6995","test_dashboard_source_number_01_625","tests","Thu Jan 09 21:58:21 UTC 2025","passed","Thu Jan 09 21:58:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='155']","155075","test_list_address_nullifier_const_15_155","tests","Thu Jan 09 22:34:58 UTC 2025","failed","Thu Jan 09 22:37:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='409']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","12672","test_co_list_agent_preferred_phone_05_409","tests","Thu Jan 09 21:21:17 UTC 2025","passed","Thu Jan 09 21:21:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='362']","7947","test_dashboard_source_number_07_362","tests","Thu Jan 09 21:59:06 UTC 2025","passed","Thu Jan 09 21:59:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='492']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","49275","test_list_agent_office_phone_14_492","tests","Thu Jan 09 23:30:09 UTC 2025","failed","Thu Jan 09 23:30:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='105']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","47865","test_co_list_agent_preferred_phone_12_105","tests","Thu Jan 09 21:26:45 UTC 2025","failed","Thu Jan 09 21:27:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='9']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","22599","test_co_list_agent_office_phone_06_9","tests","Thu Jan 09 21:00:27 UTC 2025","passed","Thu Jan 09 21:00:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='90']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","155824","test_co_list_agent_preferred_phone_18_90","tests","Thu Jan 09 21:34:14 UTC 2025","passed","Thu Jan 09 21:36:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='90']","155062","test_price_history_18_90","tests","Fri Jan 10 01:00:34 UTC 2025","passed","Fri Jan 10 01:03:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='30']","11694","test_mls_id_sa_id_19_30","tests","Fri Jan 10 00:42:03 UTC 2025","passed","Fri Jan 10 00:42:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='9']","32593","test_list_address_properties_country_06_9","tests","Thu Jan 09 22:52:08 UTC 2025","passed","Thu Jan 09 22:52:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='9']","22411","test_currency_code_06_9","tests","Thu Jan 09 21:42:32 UTC 2025","passed","Thu Jan 09 21:42:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='312']","71900","test_list_agent_preferred_phone_00_312","tests","Thu Jan 09 23:39:00 UTC 2025","failed","Thu Jan 09 23:40:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='546']","11873","test_list_agent_preferred_phone_04_546","tests","Thu Jan 09 23:44:03 UTC 2025","failed","Thu Jan 09 23:44:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='345']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","104834","test_list_agent_office_phone_17_345","tests","Thu Jan 09 23:34:26 UTC 2025","passed","Thu Jan 09 23:36:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='14']","41592","test_list_address_properties_country_13_14","tests","Thu Jan 09 23:01:34 UTC 2025","passed","Thu Jan 09 23:02:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='271']","12884","test_list_agent_preferred_phone_10_271","tests","Thu Jan 09 23:48:41 UTC 2025","failed","Thu Jan 09 23:48:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='345']","7249","test_dashboard_source_number_17_345","tests","Thu Jan 09 22:00:22 UTC 2025","passed","Thu Jan 09 22:00:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='9']","23253","test_list_address_nullifier_const_06_9","tests","Thu Jan 09 22:27:22 UTC 2025","failed","Thu Jan 09 22:27:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='330']","154955","test_currency_code_03_330","tests","Thu Jan 09 21:39:32 UTC 2025","passed","Thu Jan 09 21:42:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='14']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","41690","test_co_list_agent_preferred_phone_13_14","tests","Thu Jan 09 21:27:33 UTC 2025","failed","Thu Jan 09 21:28:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='625']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","32985","test_co_list_agent_preferred_phone_01_625","tests","Thu Jan 09 21:17:13 UTC 2025","passed","Thu Jan 09 21:17:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='326']","155258","test_kww_region_09_326","tests","Thu Jan 09 22:07:53 UTC 2025","passed","Thu Jan 09 22:10:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='102']","53475","test_list_dt_16_102","tests","Fri Jan 10 00:15:45 UTC 2025","passed","Fri Jan 10 00:16:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='76']","8818","test_dashboard_source_number_08_76","tests","Thu Jan 09 21:59:14 UTC 2025","passed","Thu Jan 09 21:59:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='90']","7080","test_dashboard_source_number_18_90","tests","Thu Jan 09 22:00:29 UTC 2025","passed","Thu Jan 09 22:00:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='76']","43415","test_list_dt_08_76","tests","Fri Jan 10 00:06:29 UTC 2025","passed","Fri Jan 10 00:07:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='546']","11833","test_list_dt_04_546","tests","Fri Jan 10 00:05:08 UTC 2025","passed","Fri Jan 10 00:05:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='271']","12973","test_mls_id_sa_id_10_271","tests","Fri Jan 10 00:30:55 UTC 2025","passed","Fri Jan 10 00:31:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='625']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","32700","test_co_list_agent_office_phone_01_625","tests","Thu Jan 09 20:56:13 UTC 2025","passed","Thu Jan 09 20:56:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='362']","32719","test_price_history_07_362","tests","Fri Jan 10 00:48:08 UTC 2025","passed","Fri Jan 10 00:48:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='546']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","11892","test_list_agent_office_phone_04_546","tests","Thu Jan 09 23:22:59 UTC 2025","passed","Thu Jan 09 23:23:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='90']","295460","test_list_address_properties_country_18_90","tests","Thu Jan 09 23:12:46 UTC 2025","failed","Thu Jan 09 23:17:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='155']","155946","test_mls_id_sa_id_15_155","tests","Fri Jan 10 00:34:14 UTC 2025","passed","Fri Jan 10 00:36:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='76']","43179","test_price_history_08_76","tests","Fri Jan 10 00:48:41 UTC 2025","passed","Fri Jan 10 00:49:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='409']","13102","test_list_dt_05_409","tests","Fri Jan 10 00:05:20 UTC 2025","passed","Fri Jan 10 00:05:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='105']","8411","test_dashboard_source_number_12_105","tests","Thu Jan 09 21:59:44 UTC 2025","passed","Thu Jan 09 21:59:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='330']","155331","test_list_dt_03_330","tests","Fri Jan 10 00:02:33 UTC 2025","passed","Fri Jan 10 00:05:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='14']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","41457","test_co_list_agent_office_phone_13_14","tests","Thu Jan 09 21:06:33 UTC 2025","failed","Thu Jan 09 21:07:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='546']","12450","test_price_history_04_546","tests","Fri Jan 10 00:47:20 UTC 2025","passed","Fri Jan 10 00:47:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='492']","47618","test_currency_code_14_492","tests","Thu Jan 09 21:49:22 UTC 2025","passed","Thu Jan 09 21:50:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='409']","13006","test_list_address_properties_country_05_409","tests","Thu Jan 09 22:51:55 UTC 2025","passed","Thu Jan 09 22:52:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='30']","11354","test_kww_region_19_30","tests","Thu Jan 09 22:21:38 UTC 2025","passed","Thu Jan 09 22:21:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='326']","155313","test_list_address_nullifier_const_09_326","tests","Thu Jan 09 22:29:02 UTC 2025","failed","Thu Jan 09 22:31:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='326']","155508","test_raw_properties_list_status_09_326","tests","Fri Jan 10 01:10:28 UTC 2025","passed","Fri Jan 10 01:13:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='326']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","155027","test_co_list_agent_preferred_phone_09_326","tests","Thu Jan 09 21:23:08 UTC 2025","passed","Thu Jan 09 21:25:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='362']","33200","test_list_address_nullifier_const_07_362","tests","Thu Jan 09 22:27:46 UTC 2025","passed","Thu Jan 09 22:28:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='403']","49156","test_list_dt_11_403","tests","Fri Jan 10 00:10:01 UTC 2025","passed","Fri Jan 10 00:10:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='155']","155755","test_list_dt_15_155","tests","Fri Jan 10 00:13:09 UTC 2025","passed","Fri Jan 10 00:15:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='155']","155645","test_currency_code_15_155","tests","Thu Jan 09 21:50:10 UTC 2025","passed","Thu Jan 09 21:52:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='155']","295181","test_list_address_properties_country_15_155","tests","Thu Jan 09 23:03:03 UTC 2025","passed","Thu Jan 09 23:07:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='403']","48996","test_list_agent_preferred_phone_11_403","tests","Thu Jan 09 23:48:54 UTC 2025","failed","Thu Jan 09 23:49:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='403']","49398","test_price_history_11_403","tests","Fri Jan 10 00:52:13 UTC 2025","passed","Fri Jan 10 00:53:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='312']","72149","test_list_address_nullifier_const_00_312","tests","Thu Jan 09 22:21:52 UTC 2025","failed","Thu Jan 09 22:23:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='409']","12852","test_price_history_05_409","tests","Fri Jan 10 00:47:32 UTC 2025","failed","Fri Jan 10 00:47:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='479']","42846","test_list_agent_preferred_phone_02_479","tests","Thu Jan 09 23:40:45 UTC 2025","passed","Thu Jan 09 23:41:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='312']","70703","test_mls_id_sa_id_00_312","tests","Fri Jan 10 00:21:12 UTC 2025","passed","Fri Jan 10 00:22:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='362']","33100","test_list_dt_07_362","tests","Fri Jan 10 00:05:56 UTC 2025","passed","Fri Jan 10 00:06:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='345']","104943","test_currency_code_17_345","tests","Thu Jan 09 21:53:39 UTC 2025","passed","Thu Jan 09 21:55:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='312']","7407","test_dashboard_source_number_00_312","tests","Thu Jan 09 21:58:13 UTC 2025","passed","Thu Jan 09 21:58:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='9']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","22549","test_co_list_agent_preferred_phone_06_9","tests","Thu Jan 09 21:21:30 UTC 2025","passed","Thu Jan 09 21:21:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='312']","71622","test_kww_region_00_312","tests","Thu Jan 09 22:00:46 UTC 2025","passed","Thu Jan 09 22:01:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='14']","41700","test_mls_id_sa_id_13_14","tests","Fri Jan 10 00:32:44 UTC 2025","passed","Fri Jan 10 00:33:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='625']","33836","test_mls_id_sa_id_01_625","tests","Fri Jan 10 00:22:23 UTC 2025","passed","Fri Jan 10 00:22:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='90']","154986","test_kww_region_18_90","tests","Thu Jan 09 22:19:03 UTC 2025","passed","Thu Jan 09 22:21:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='312']","71160","test_list_dt_00_312","tests","Fri Jan 10 00:00:05 UTC 2025","failed","Fri Jan 10 00:01:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='312']","71121","test_currency_code_00_312","tests","Thu Jan 09 21:37:04 UTC 2025","passed","Thu Jan 09 21:38:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='546']","12258","test_currency_code_04_546","tests","Thu Jan 09 21:42:07 UTC 2025","passed","Thu Jan 09 21:42:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='326']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","155644","test_co_list_agent_office_phone_09_326","tests","Thu Jan 09 21:02:08 UTC 2025","passed","Thu Jan 09 21:04:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='102']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","53249","test_co_list_agent_preferred_phone_16_102","tests","Thu Jan 09 21:31:36 UTC 2025","passed","Thu Jan 09 21:32:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='409']","13684","test_list_address_nullifier_const_05_409","tests","Thu Jan 09 22:27:09 UTC 2025","failed","Thu Jan 09 22:27:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='105']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","48327","test_list_agent_office_phone_12_105","tests","Thu Jan 09 23:28:39 UTC 2025","failed","Thu Jan 09 23:29:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='326']","156117","test_currency_code_09_326","tests","Thu Jan 09 21:44:15 UTC 2025","passed","Thu Jan 09 21:46:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='102']","53410","test_mls_id_sa_id_16_102","tests","Fri Jan 10 00:36:50 UTC 2025","passed","Fri Jan 10 00:37:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='330']","155479","test_raw_properties_list_status_03_330","tests","Fri Jan 10 01:05:50 UTC 2025","passed","Fri Jan 10 01:08:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='105']","48630","test_kww_region_12_105","tests","Thu Jan 09 22:11:30 UTC 2025","passed","Thu Jan 09 22:12:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='492']","48797","test_list_dt_14_492","tests","Fri Jan 10 00:12:20 UTC 2025","passed","Fri Jan 10 00:13:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='102']","93083","test_list_address_properties_country_16_102","tests","Thu Jan 09 23:07:59 UTC 2025","passed","Thu Jan 09 23:09:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='155']","7409","test_dashboard_source_number_15_155","tests","Thu Jan 09 22:00:07 UTC 2025","passed","Thu Jan 09 22:00:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='546']","12214","test_kww_region_04_546","tests","Thu Jan 09 22:05:50 UTC 2025","passed","Thu Jan 09 22:06:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='345']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","104296","test_co_list_agent_office_phone_17_345","tests","Thu Jan 09 21:11:30 UTC 2025","passed","Thu Jan 09 21:13:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='362']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","35203","test_co_list_agent_office_phone_07_362","tests","Thu Jan 09 21:00:50 UTC 2025","passed","Thu Jan 09 21:01:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='271']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12769","test_list_agent_office_phone_10_271","tests","Thu Jan 09 23:27:37 UTC 2025","passed","Thu Jan 09 23:27:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='546']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","12091","test_co_list_agent_preferred_phone_04_546","tests","Thu Jan 09 21:21:05 UTC 2025","failed","Thu Jan 09 21:21:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='76']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","43121","test_list_agent_office_phone_08_76","tests","Thu Jan 09 23:24:19 UTC 2025","passed","Thu Jan 09 23:25:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='105']","46862","test_raw_properties_list_status_12_105","tests","Fri Jan 10 01:14:04 UTC 2025","passed","Fri Jan 10 01:14:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='330']","6731","test_dashboard_source_number_03_330","tests","Thu Jan 09 21:58:36 UTC 2025","passed","Thu Jan 09 21:58:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='271']","12850","test_list_address_properties_country_10_271","tests","Thu Jan 09 22:59:43 UTC 2025","passed","Thu Jan 09 22:59:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='76']","74331","test_list_address_properties_country_08_76","tests","Thu Jan 09 22:53:33 UTC 2025","passed","Thu Jan 09 22:54:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='330']","155864","test_kww_region_03_330","tests","Thu Jan 09 22:03:14 UTC 2025","failed","Thu Jan 09 22:05:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='30']","11811","test_currency_code_19_30","tests","Thu Jan 09 21:57:59 UTC 2025","passed","Thu Jan 09 21:58:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='403']","48823","test_kww_region_11_403","tests","Thu Jan 09 22:10:41 UTC 2025","passed","Thu Jan 09 22:11:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='312']","70979","test_raw_properties_list_status_00_312","tests","Fri Jan 10 01:03:23 UTC 2025","passed","Fri Jan 10 01:04:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='271']","13271","test_kww_region_10_271","tests","Thu Jan 09 22:10:28 UTC 2025","passed","Thu Jan 09 22:10:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='312']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","71449","test_list_agent_office_phone_00_312","tests","Thu Jan 09 23:17:56 UTC 2025","passed","Thu Jan 09 23:19:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='102']","53789","test_list_address_nullifier_const_16_102","tests","Thu Jan 09 22:37:33 UTC 2025","failed","Thu Jan 09 22:38:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='330']","155581","test_list_agent_preferred_phone_03_330","tests","Thu Jan 09 23:41:28 UTC 2025","failed","Thu Jan 09 23:44:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='155']","154773","test_raw_properties_list_status_15_155","tests","Fri Jan 10 01:16:20 UTC 2025","passed","Fri Jan 10 01:18:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='14']","41361","test_raw_properties_list_status_13_14","tests","Fri Jan 10 01:14:51 UTC 2025","passed","Fri Jan 10 01:15:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='14']","41821","test_list_dt_13_14","tests","Fri Jan 10 00:11:38 UTC 2025","failed","Fri Jan 10 00:12:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='330']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","154770","test_co_list_agent_office_phone_03_330","tests","Thu Jan 09 20:57:28 UTC 2025","failed","Thu Jan 09 21:00:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='492']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","46891","test_co_list_agent_office_phone_14_492","tests","Thu Jan 09 21:07:15 UTC 2025","failed","Thu Jan 09 21:08:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='625']","32869","test_list_dt_01_625","tests","Fri Jan 10 00:01:16 UTC 2025","passed","Fri Jan 10 00:01:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='76']","43311","test_list_agent_preferred_phone_08_76","tests","Thu Jan 09 23:45:23 UTC 2025","failed","Thu Jan 09 23:46:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='326']","155316","test_list_agent_preferred_phone_09_326","tests","Thu Jan 09 23:46:06 UTC 2025","passed","Thu Jan 09 23:48:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='479']","43053","test_kww_region_02_479","tests","Thu Jan 09 22:02:31 UTC 2025","passed","Thu Jan 09 22:03:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='330']","155364","test_price_history_03_330","tests","Fri Jan 10 00:44:44 UTC 2025","passed","Fri Jan 10 00:47:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='492']","47729","test_mls_id_sa_id_14_492","tests","Fri Jan 10 00:33:26 UTC 2025","passed","Fri Jan 10 00:34:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='479']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","42562","test_co_list_agent_preferred_phone_02_479","tests","Thu Jan 09 21:17:46 UTC 2025","passed","Thu Jan 09 21:18:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='479']","8071","test_dashboard_source_number_02_479","tests","Thu Jan 09 21:58:28 UTC 2025","passed","Thu Jan 09 21:58:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='271']","12675","test_list_dt_10_271","tests","Fri Jan 10 00:09:48 UTC 2025","passed","Fri Jan 10 00:10:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='312']","71599","test_price_history_00_312","tests","Fri Jan 10 00:42:18 UTC 2025","passed","Fri Jan 10 00:43:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='362']","32383","test_kww_region_07_362","tests","Thu Jan 09 22:06:37 UTC 2025","passed","Thu Jan 09 22:07:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='76']","43399","test_mls_id_sa_id_08_76","tests","Fri Jan 10 00:27:35 UTC 2025","passed","Fri Jan 10 00:28:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='105']","48586","test_list_address_nullifier_const_12_105","tests","Thu Jan 09 22:32:40 UTC 2025","failed","Thu Jan 09 22:33:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='492']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","46982","test_co_list_agent_preferred_phone_14_492","tests","Thu Jan 09 21:28:14 UTC 2025","failed","Thu Jan 09 21:29:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='409']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","12490","test_co_list_agent_office_phone_05_409","tests","Thu Jan 09 21:00:15 UTC 2025","failed","Thu Jan 09 21:00:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='14']","41981","test_kww_region_13_14","tests","Thu Jan 09 22:12:19 UTC 2025","passed","Thu Jan 09 22:13:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='625']","52758","test_list_address_properties_country_01_625","tests","Thu Jan 09 22:44:42 UTC 2025","passed","Thu Jan 09 22:45:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='546']","12793","test_list_address_nullifier_const_04_546","tests","Thu Jan 09 22:26:56 UTC 2025","failed","Thu Jan 09 22:27:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='102']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","52605","test_list_agent_office_phone_16_102","tests","Thu Jan 09 23:33:34 UTC 2025","passed","Thu Jan 09 23:34:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='492']","48472","test_list_agent_preferred_phone_14_492","tests","Thu Jan 09 23:51:15 UTC 2025","failed","Thu Jan 09 23:52:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='479']","42810","test_raw_properties_list_status_02_479","tests","Fri Jan 10 01:05:07 UTC 2025","passed","Fri Jan 10 01:05:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='30']","11207","test_list_dt_19_30","tests","Fri Jan 10 00:20:58 UTC 2025","failed","Fri Jan 10 00:21:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2511","test_price_history","tests","Tue Jan 14 09:49:46 UTC 2025","passed","Tue Jan 14 09:49:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -747,4 +443,4 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2678","test_list_agent_office_phone","tests","Thu Jan 09 23:17:53 UTC 2025","passed","Thu Jan 09 23:17:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2495","test_dashboard_source_number","tests","Tue Jan 14 09:44:48 UTC 2025","passed","Tue Jan 14 09:44:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
