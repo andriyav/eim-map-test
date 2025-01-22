@@ -31,7 +31,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2066","test_raw_properties_list_status","tests","Wed Jan 22 09:41:25 UTC 2025","passed","Wed Jan 22 09:41:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","3737","test_co_list_agent_office_phone","tests","Wed Jan 22 09:49:30 UTC 2025","passed","Wed Jan 22 09:49:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -64,7 +64,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2274","test_mls_id_sa_id","tests","Wed Jan 22 09:40:59 UTC 2025","passed","Wed Jan 22 09:41:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2526","test_list_agent_preferred_phone","tests","Wed Jan 22 09:54:30 UTC 2025","passed","Wed Jan 22 09:54:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -97,7 +97,9 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2103","test_list_address_properties_country","tests","Wed Jan 22 09:40:08 UTC 2025","passed","Wed Jan 22 09:40:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2541","test_kww_region","tests","Wed Jan 22 09:51:57 UTC 2025","passed","Wed Jan 22 09:52:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='741']","33629","test_price_history_0_741","tests","Wed Jan 22 09:56:22 UTC 2025","broken","Wed Jan 22 09:56:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='741']","33493","test_mls_id_sa_id_0_741","tests","Wed Jan 22 09:55:46 UTC 2025","broken","Wed Jan 22 09:56:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -130,9 +132,11 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","4435","test_co_list_agent_office_phone","tests","Wed Jan 22 09:38:52 UTC 2025","passed","Wed Jan 22 09:38:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Currency_code must be UPPER [with source='744']","10841","test_currency_code_0_744","tests","Wed Jan 22 09:39:22 UTC 2025","passed","Wed Jan 22 09:39:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_address.country is SetConstant to country code (US or CA) [with source='744']","10748","test_list_address_properties_country_0_744","tests","Wed Jan 22 09:40:10 UTC 2025","passed","Wed Jan 22 09:40:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2318","test_list_address_nullifier_const","tests","Wed Jan 22 09:52:33 UTC 2025","passed","Wed Jan 22 09:52:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_preferred_phone are mapped with [with source='741']
+        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","33649","test_co_list_agent_preferred_phone_0_741","tests","Wed Jan 22 09:50:10 UTC 2025","broken","Wed Jan 22 09:50:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_address.country is SetConstant to country code (US or CA) [with source='741']","42776","test_list_address_properties_country_0_741","tests","Wed Jan 22 09:53:12 UTC 2025","broken","Wed Jan 22 09:53:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='741']","33692","test_list_agent_preferred_phone_0_741","tests","Wed Jan 22 09:54:33 UTC 2025","broken","Wed Jan 22 09:55:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -165,8 +169,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2135","test_dashboard_source_number","tests","Wed Jan 22 09:39:33 UTC 2025","passed","Wed Jan 22 09:39:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_dt is mapped [with source='744']","10871","test_list_dt_0_744","tests","Wed Jan 22 09:40:49 UTC 2025","passed","Wed Jan 22 09:40:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2857","test_price_history","tests","Wed Jan 22 09:56:19 UTC 2025","passed","Wed Jan 22 09:56:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -199,11 +202,8 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2126","test_list_dt","tests","Wed Jan 22 09:40:46 UTC 2025","passed","Wed Jan 22 09:40:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_preferred_phone are mapped with FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone"") [with source='744']","10537","test_list_agent_preferred_phone_0_744","tests","Wed Jan 22 09:40:36 UTC 2025","failed","Wed Jan 22 09:40:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"raw.properties.list_status is mapped [with source='744']","10794","test_raw_properties_list_status_0_744","tests","Wed Jan 22 09:41:27 UTC 2025","passed","Wed Jan 22 09:41:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"No elements of list_address are nullified or set constant (except country) [with source='744']","11007","test_list_address_nullifier_const_0_744","tests","Wed Jan 22 09:39:57 UTC 2025","passed","Wed Jan 22 09:40:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Price_history must use PriceHistoryEnhancer with ListPrice input [with source='744']","10849","test_price_history_0_744","tests","Wed Jan 22 09:41:14 UTC 2025","passed","Wed Jan 22 09:41:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2463","test_list_agent_office_phone","tests","Wed Jan 22 09:53:54 UTC 2025","passed","Wed Jan 22 09:53:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"No elements of list_address are nullified or set constant (except country) [with source='741']","33511","test_list_address_nullifier_const_0_741","tests","Wed Jan 22 09:52:36 UTC 2025","broken","Wed Jan 22 09:53:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -236,10 +236,13 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2060","test_price_history","tests","Wed Jan 22 09:41:12 UTC 2025","passed","Wed Jan 22 09:41:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_preferred_phone are mapped with [with source='744']
-        FirstValueProvider:(""agent_mobile_phone"",""agent_home_phone""","10662","test_co_list_agent_preferred_phone_0_744","tests","Wed Jan 22 09:39:10 UTC 2025","failed","Wed Jan 22 09:39:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_source_id and sa_source_id are correct from here (NOT kw_id) [with source='744']","10653","test_mls_id_sa_id_0_744","tests","Wed Jan 22 09:41:02 UTC 2025","passed","Wed Jan 22 09:41:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2624","test_currency_code","tests","Wed Jan 22 09:50:43 UTC 2025","passed","Wed Jan 22 09:50:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Validate mls_id is the correct value [with source='741']","33853","test_dashboard_source_number_0_741","tests","Wed Jan 22 09:51:23 UTC 2025","broken","Wed Jan 22 09:51:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Kww_region has no mapping [with source='741']","33549","test_kww_region_0_741","tests","Wed Jan 22 09:52:00 UTC 2025","broken","Wed Jan 22 09:52:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_agent_office_phone are mapped with [with source='741']
+    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","33610","test_list_agent_office_phone_0_741","tests","Wed Jan 22 09:53:57 UTC 2025","broken","Wed Jan 22 09:54:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"co_list_agent_office_phone are mapped with [with source='741']
+            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","33478","test_co_list_agent_office_phone_0_741","tests","Wed Jan 22 09:49:34 UTC 2025","broken","Wed Jan 22 09:50:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -272,9 +275,8 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2063","test_currency_code","tests","Wed Jan 22 09:39:20 UTC 2025","passed","Wed Jan 22 09:39:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"co_list_agent_office_phone are mapped with [with source='744']
-            FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","11139","test_co_list_agent_office_phone_0_744","tests","Wed Jan 22 09:38:56 UTC 2025","failed","Wed Jan 22 09:39:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2496","test_raw_properties_list_status","tests","Wed Jan 22 09:56:56 UTC 2025","passed","Wed Jan 22 09:56:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"list_dt is mapped [with source='741']","33673","test_list_dt_0_741","tests","Wed Jan 22 09:55:09 UTC 2025","broken","Wed Jan 22 09:55:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -307,9 +309,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2172","test_co_list_agent_preferred_phone","tests","Wed Jan 22 09:39:07 UTC 2025","passed","Wed Jan 22 09:39:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Validate mls_id is the correct value [with source='744']","7025","test_dashboard_source_number_0_744","tests","Wed Jan 22 09:39:35 UTC 2025","passed","Wed Jan 22 09:39:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"Kww_region has no mapping [with source='744']","10560","test_kww_region_0_744","tests","Wed Jan 22 09:39:45 UTC 2025","passed","Wed Jan 22 09:39:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2489","test_list_address_properties_country","tests","Wed Jan 22 09:53:09 UTC 2025","passed","Wed Jan 22 09:53:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -342,9 +342,8 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2059","test_list_agent_preferred_phone","tests","Wed Jan 22 09:40:34 UTC 2025","passed","Wed Jan 22 09:40:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"list_agent_office_phone are mapped with [with source='744']
-    `   FirstValueProvider:(""agent_office_phone"",""office_phone"")"" ","10575","test_list_agent_office_phone_0_744","tests","Wed Jan 22 09:40:23 UTC 2025","passed","Wed Jan 22 09:40:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2513","test_list_dt","tests","Wed Jan 22 09:55:07 UTC 2025","passed","Wed Jan 22 09:55:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"raw.properties.list_status is mapped [with source='741']","23208","test_raw_properties_list_status_0_741","tests","Wed Jan 22 09:56:58 UTC 2025","broken","Wed Jan 22 09:57:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -377,7 +376,8 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2160","test_list_address_nullifier_const","tests","Wed Jan 22 09:39:55 UTC 2025","passed","Wed Jan 22 09:39:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2539","test_dashboard_source_number","tests","Wed Jan 22 09:51:21 UTC 2025","passed","Wed Jan 22 09:51:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"Currency_code must be UPPER [with source='741']","34627","test_currency_code_0_741","tests","Wed Jan 22 09:50:46 UTC 2025","broken","Wed Jan 22 09:51:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -410,7 +410,7 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2150","test_kww_region","tests","Wed Jan 22 09:39:42 UTC 2025","passed","Wed Jan 22 09:39:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2573","test_mls_id_sa_id","tests","Wed Jan 22 09:55:43 UTC 2025","passed","Wed Jan 22 09:55:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
     ``MarkDecorators`` are created with ``pytest.mark``::
@@ -443,4 +443,4 @@
     single function or class reference as its positional argument with no
     additional keyword or positional arguments. You can work around this by
     using `with_args()`.
-    ","2141","test_list_agent_office_phone","tests","Wed Jan 22 09:40:21 UTC 2025","passed","Wed Jan 22 09:40:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+    ","2499","test_co_list_agent_preferred_phone","tests","Wed Jan 22 09:50:07 UTC 2025","passed","Wed Jan 22 09:50:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
