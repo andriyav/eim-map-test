@@ -8,7 +8,7 @@ class DBHandler:
 
     @classmethod
     def db_handler(cls, source, mls_agent, mls_office):
-        con = DBAccess.db_access_prod()
+        con = DBAccess.db_access_stage()
         cur = con.cursor()
         cur.execute(f''' select *
         from mls_agent ma
