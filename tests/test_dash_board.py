@@ -9,8 +9,10 @@ from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectCompo
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
-SOURCE_ID = (By.XPATH, '//*[@id="sources"]')
+from utils.db_access import DBAccess
+from utils.db_handler import DBHandler
 
+SOURCE_ID = (By.XPATH, '//*[@id="sources"]')
 
 class SLPPageTestCase(BaseTestRunner):
 
@@ -109,3 +111,22 @@ class SLPPageTestCase(BaseTestRunner):
         media_count = RawData(self.driver).get_photo_count()
         # Check that values of media_count filed is equal to the number of elements in the list of photo filed.
         self.assertEqual(media_count, photo_number)
+
+    @parameterized.expand(sources)
+    def test_agent_office_call(self, source):
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
+        SLPMain(self.driver).mls_btn_click()
+        SLPMain(self.driver).ld_btn_click()
+        DashBoard(self.driver).set_kw_source_id(source)
+        DashBoard(self.driver).click_submit_btn()
+        DashBoard(self.driver).click_view_data_btn()
+        RawData(self.driver).click_raw_data_tub()
+        agent = RawData(self.driver).get_list_agent_office('list_agent_mls_id')
+        office = RawData(self.driver).get_list_agent_office('list_office_mls_id')
+        mls_agent = agent[1:-1]
+        mls_office = office[1:-1]
+        expected = DBHandler.db_handler(source, mls_agent, mls_office)
+        self.assertTrue(expected)
+
