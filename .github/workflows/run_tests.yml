@@ -3,7 +3,7 @@ name: Run Selenium Tests
 on:
   push:
     branches:
-      - main
+      - cache_artifacte
   pull_request:
 
 jobs:
