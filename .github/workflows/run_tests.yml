@@ -1,16 +1,16 @@
-  name: Run Selenium Tests
+name: Run Selenium Tests
 
-  on:
-    push:
-      branches:
-        - main
-    pull_request:
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
-  jobs:
-    selenium-tests:
-      runs-on: ubuntu-latest
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
@@ -34,17 +34,20 @@
       - name: Install Xvfb
         run: sudo apt-get install -y xvfb
 
-      - name: Extract Chrome Cache
+      - name: Restore Chrome Cache
         run: |
-          mkdir -p ./tests/cache
-          tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
+          if [ -f cache/chrome_cache.tar.gz ]; then
+            echo "Extracting Chrome Cache..."
+            tar -xzf /home/runner/work/SLPUI/SLPUI/tests/chrome_cache.tar.gz -C /home/runner/.config/google-chrome
+          else
+            echo "No Chrome cache found, running tests without cache."
+          fi
 
       - name: Run Tests with Virtual Display
         run: |
           mkdir -p allure-results
           xvfb-run -a pytest --capture=no --alluredir=allure-results tests/test_checklist.py
         continue-on-error: true
-
 
       - name: Generate Allure Report
         run: |
@@ -64,3 +67,14 @@
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: allure-report
+
+      - name: Save Updated Chrome Cache (Optional)
+        if: always()
+        run: |
+          mkdir -p cache
+          tar -czf cache/chrome_cache.tar.gz -C /home/runner/.config/google-chrome .
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add cache/chrome_cache.tar.gz
+          git commit -m "Update Chrome cache" || echo "No changes to commit"
+          git push origin main || echo "No changes to push"
