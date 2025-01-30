@@ -16,10 +16,7 @@ LIST_PREFERRED_PHONE = (By.CSS_SELECTOR,
 LIST_MLS_ID = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.required.mls_id')
 LIST_SA_ID = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.required.sa_source_id')
 UNMAPPED_CLASS = (By.CSS_SELECTOR, 'body > div.flashes.container')
-
-
-
-
+CATEGORY_FIELD = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
 
 
 class ListComponent(BaseComponent):
@@ -112,3 +109,9 @@ class ListComponent(BaseComponent):
 [add]
 [add]
 [add]"""
+
+    def get_list_category(self):
+        return self.node.find_element(*CATEGORY_FIELD)
+
+    def list_category_txt(self):
+        return self.get_list_category().text

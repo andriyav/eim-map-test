@@ -3,7 +3,7 @@
   on:
     push:
       branches:
-        - main
+        - List_Category
     pull_request:
 
   jobs:

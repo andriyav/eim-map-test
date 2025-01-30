@@ -570,3 +570,39 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped\n"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
+
+    @allure.testcase('List_Category essential inputs ')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_list_category(self, source):
+        '''List_Category essential inputs '''
+        print("\n----------------------------------------------------------------------\n", flush=True)
+        print("List_Category essential inputs ", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            SLPMain(self.driver).metadata_main_select(metadata)
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            actual = []
+            with self.subTest(metadata=class_txt):
+                try:
+                    field_actual = False
+                    SLPMain(self.driver).impl_wait_metadata()
+                    expected_field = ListComponent(self.driver).list_category_txt()
+                    if 'internet_display' in expected_field.lower() and 'state' in expected_field.lower() and 'status' in expected_field.lower():
+                        field_actual = True
+                    # Assert inside the try block
+                    self.assertTrue(field_actual)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌ \n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌ \n', flush=True)
+                        print(expected_field, flush=True)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
+                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
