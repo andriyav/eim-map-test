@@ -18,11 +18,6 @@ LIST_SA_ID = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_sche
 UNMAPPED_CLASS = (By.CSS_SELECTOR, 'body > div.flashes.container')
 
 
-
-
-
-
-
 class ListComponent(BaseComponent):
     def __init__(self, node):
         super().__init__(node)

@@ -18,7 +18,6 @@ COLLAPSIBLE_AO = ".//ul[@class='obj level1 collapsible']"
 COLLAPSIBLE_LEVEL1_AO = '//ul[@class="array level1 collapsible"]'
 
 
-
 class RawData(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
@@ -81,7 +80,6 @@ class RawData(BaseComponent):
         result = str(outer[index_max].count('+'))
         return result
 
-
     def get_list_agent_office(self, value):
         # The method returns the value of list_agent_office".
         # Locate the parent element containing 'list_agent_office"o'
@@ -90,7 +88,7 @@ class RawData(BaseComponent):
         # Locate the nested 'ul' element with the specified class
         span_element_kw_updated_by = parent_kw_updated_by.find_element(By.XPATH, COLLAPSIBLE_AO)
 
-        #Locate the 'bool' span element following 'display_address'
+        # Locate the 'bool' span element following 'display_address'
         next_element = span_element_kw_updated_by.find_element(By.XPATH,
                                                                f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
         # Extract the text content using JavaScript and print the result
@@ -99,14 +97,14 @@ class RawData(BaseComponent):
     def get_list_address(self, value):
         # The method returns the value of get_list_address fields.
         # Locate the parent element containing 'marketing_info'
-        parent_kw_updated_by = self.node.find_element(By.XPATH, LIST_ADDRESS)
+        parent = self.node.find_element(By.XPATH, LIST_ADDRESS)
 
         # Locate the nested 'ul' element with the specified class
-        span_element_kw_updated_by = parent_kw_updated_by.find_element(By.XPATH, COLLAPSIBLE)
+        span_element = parent.find_element(By.XPATH, COLLAPSIBLE)
 
         # Locate the 'bool' span element following 'display_address'
-        next_element = span_element_kw_updated_by.find_element(By.XPATH,
-                                                               f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
+        next_element = span_element.find_element(By.XPATH,
+                                                 f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
 
         # Extract the text content using JavaScript and print the result
         return self.node.execute_script('return arguments[0].textContent;', next_element)
