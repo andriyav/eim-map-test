@@ -2,7 +2,7 @@ from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from data.test_data import sources
-from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard
+from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
@@ -26,6 +26,7 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).ld_btn_click()
         DashBoard(self.driver).set_kw_source_id(source)
         DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         actual = DashBoard(self.driver).get_source_id_txt()
         # Check if the source mls_id on the board matches the loaded source.
         self.assertEqual(actual, source)
@@ -39,6 +40,7 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).ld_btn_click()
         DashBoard(self.driver).set_kw_source_id(source)
         DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         DashBoard(self.driver).select_photo_check_box()
         DashBoard(self.driver).select_oh_check_box()
         # Check that the open house and media records are displayed on the dashboard.
@@ -58,6 +60,7 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).ld_btn_click()
         DashBoard(self.driver).set_kw_source_id(source)
         DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         rows = DashBoard(self.driver).get_list_of_sources()
         n = 0
         result = False
@@ -82,6 +85,7 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).ld_btn_click()
         DashBoard(self.driver).set_kw_source_id(source)
         DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         DashBoard(self.driver).click_view_data_btn()
         RawData(self.driver).click_raw_data_tub()
         display_address = RawData(self.driver).get_marketing_info_collapse('display_address')
@@ -105,6 +109,7 @@ class SLPPageTestCase(BaseTestRunner):
         kw_id_txt = DashBoard(self.driver).get_kw_id_txt()
         DashBoard(self.driver).set_kwid(kw_id_txt)
         DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         DashBoard(self.driver).click_view_data_btn_single()
         RawData(self.driver).click_raw_data_tub__single()
         photo_number = RawData(self.driver).get_photo_number()
@@ -121,6 +126,7 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).ld_btn_click()
         DashBoard(self.driver).set_kw_source_id(source)
         DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         DashBoard(self.driver).click_view_data_btn()
         RawData(self.driver).click_raw_data_tub()
         agent = RawData(self.driver).get_list_agent_office('list_agent_mls_id')

@@ -9,7 +9,7 @@ CHROME_USER_DIR_LOCAL = cache_path
 CHROME_USER_DIR_GIT = './tests/cache'
 
 
-IMPLICITLY_WAIT = 10
+IMPLICITLY_WAIT = 50
 
 
 class BaseTestRunner(unittest.TestCase):
