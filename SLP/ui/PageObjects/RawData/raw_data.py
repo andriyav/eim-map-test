@@ -9,6 +9,7 @@ PHOTO_NUM = (By.XPATH,
 PHOTO_COUNT = (By.XPATH, "//a[@class='prop' and contains(., 'mls_media_count')]/following-sibling::span[@class='num']")
 PHOTO_TEXT = "//a[contains(text(), 'photos')]"
 MARKETING_IFO = "//a[contains(text(), 'marketing_info')]/ancestor::li"
+LIST_ADDRESS = "//a[contains(text(), 'list_address')]/ancestor::li"
 MEDIA_COUNT = "//a[contains(text(), 'mls_media_count')]/../span[@class='num']"
 COLLAPSIBLE = ".//ul[@class='obj level1 collapsible']"
 COLLAPSIBLE_LEVEL1 = '//ul[@class="array level1 collapsible"]'
@@ -95,3 +96,17 @@ class RawData(BaseComponent):
         # Extract the text content using JavaScript and print the result
         return self.node.execute_script('return arguments[0].textContent;', next_element)
 
+    def get_list_address(self, value):
+        # The method returns the value of get_list_address fields.
+        # Locate the parent element containing 'marketing_info'
+        parent_kw_updated_by = self.node.find_element(By.XPATH, LIST_ADDRESS)
+
+        # Locate the nested 'ul' element with the specified class
+        span_element_kw_updated_by = parent_kw_updated_by.find_element(By.XPATH, COLLAPSIBLE)
+
+        # Locate the 'bool' span element following 'display_address'
+        next_element = span_element_kw_updated_by.find_element(By.XPATH,
+                                                               f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
+
+        # Extract the text content using JavaScript and print the result
+        return self.node.execute_script('return arguments[0].textContent;', next_element)

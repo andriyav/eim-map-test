@@ -22,6 +22,7 @@ UNMAPPED_CLASS = (By.CSS_SELECTOR, 'body > div.flashes.container')
 
 
 
+
 class ListComponent(BaseComponent):
     def __init__(self, node):
         super().__init__(node)

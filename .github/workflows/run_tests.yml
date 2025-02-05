@@ -3,7 +3,7 @@
   on:
     push:
       branches:
-        - main
+        - dev_check_list_test
     pull_request:
 
   jobs:
