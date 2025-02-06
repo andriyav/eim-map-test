@@ -672,7 +672,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except AssertionError as e:
                     # Handle assertion errors separately
                     with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', actual_gp, actual_gs, flush=True)
                         print(actual_gp, flush=True)
                         print(actual_gs, flush=True)
                     raise e  # Re-raise to ensure the test fails
