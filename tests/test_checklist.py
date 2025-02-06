@@ -15,7 +15,6 @@ from data.mls_id_data import mls_id_dict
 from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
-
 from utils.print_assertions import PrintAssertions
 
 SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
@@ -115,7 +114,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = False
                     if country_code == COUNTRY_US or country_code == COUNTRY_CA:
                         actual = True
-                    self.assertTrue(actual)
+                    self.assertTrue(actual, country_code)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -252,7 +251,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     mls_id_target = f'mls_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[0]},const_type=str)'
                     sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
                     target = [mls_id_target, sa_id_target]
-                    self.assertEqual(actual, target)
+                    self.assertEqual(actual, target, sa_id)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -277,12 +276,9 @@ class TestPromotionChecklist(BaseTestRunner):
         actual = DashBoard(self.driver).get_source_id_txt()
         try:
             self.assertEqual(actual, source)
-            with allure.step(f' Ok ✅'):
-                print(f' Ok ✅', flush=True)
+            PrintAssertions.nok_print(class_txt='Property')
         except:
-            with allure.step(f'Failed ❌ in {actual}'):
-                print(f'Failed ❌ in {actual}', flush=True)
-            self.assertEqual(actual, source)
+            PrintAssertions.nok_print(class_txt='Property')
 
     @allure.testcase('9')
     @parameterized.expand(sources)
@@ -304,7 +300,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     if match:
                         currency_code = match.group(1)
                         is_upper = currency_code.isupper()
-                    self.assertTrue(is_upper)
+                    self.assertTrue(is_upper, field)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -332,7 +328,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     field_actual = False
                     if 'json_path=' in field:
                         field_actual = True
-                    self.assertTrue(field_actual)
+                    self.assertTrue(field_actual, field)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -360,7 +356,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     field_actual = False
                     if 'json_path=' in field:
                         field_actual = True
-                    self.assertTrue(field_actual)
+                    self.assertTrue(field_actual, field)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -386,7 +382,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     expected_field = ListComponent(self.driver).get_expected_field('kww_region')
                     actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
-                    self.assertEqual(actual_field, expected_field)
+                    self.assertEqual(actual_field, expected_field, actual_field)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -509,13 +505,10 @@ class TestPromotionChecklist(BaseTestRunner):
         if len(actual) == 2:
             result = True
             try:
-                self.assertTrue(result)
-                with allure.step(f' Ok ✅'):
-                    print(f' Ok ✅', flush=True)
+                self.assertTrue(result, actual)
+                PrintAssertions.ok_print(class_txt='property')
             except:
-                with allure.step(f'Failed ❌ in {actual}'):
-                    print(f'Failed ❌ in {actual}', flush=True)
-                self.assertEqual(actual, source)
+                PrintAssertions.nok_print(class_txt='property')
 
     @allure.testcase('All available elements of list_address.properties.address are included')
     @parameterized.expand(sources)
@@ -541,7 +534,7 @@ class TestPromotionChecklist(BaseTestRunner):
                             and 'g_city' in actual and 'h_state_or_province' in actual \
                             and 'i_postal_code' in actual:
                         result = True
-                    self.assertTrue(result)
+                    self.assertTrue(result, actual)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -572,7 +565,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     if 'source_lat' in actual_gp and 'source_lon' in actual_gp and 'CoordinatesEnhancer' in actual_gp \
                             and 'source_lat' in actual_gs and 'source_lon' in actual_gs and 'CoordinatesEnhancer' in actual_gs:
                         result = True
-                    self.assertTrue(result, f'{actual_gs},  ,{actual_gp}')
+                    self.assertTrue(result, f'{actual_gs}, ,{actual_gp}')
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
