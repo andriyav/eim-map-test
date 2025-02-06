@@ -40,7 +40,7 @@ class SLPPageTestCase(BaseTestRunner):
         SLPMain(self.driver).ld_btn_click()
         DashBoard(self.driver).set_kw_source_id(source)
         DashBoard(self.driver).click_submit_btn()
-        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
         DashBoard(self.driver).select_photo_check_box()
         DashBoard(self.driver).select_oh_check_box()
         # Check that the open house and media records are displayed on the dashboard.

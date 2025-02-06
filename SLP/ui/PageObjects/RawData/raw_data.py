@@ -9,13 +9,13 @@ PHOTO_NUM = (By.XPATH,
 PHOTO_COUNT = (By.XPATH, "//a[@class='prop' and contains(., 'mls_media_count')]/following-sibling::span[@class='num']")
 PHOTO_TEXT = "//a[contains(text(), 'photos')]"
 MARKETING_IFO = "//a[contains(text(), 'marketing_info')]/ancestor::li"
+LIST_ADDRESS = "//a[contains(text(), 'list_address')]/ancestor::li"
 MEDIA_COUNT = "//a[contains(text(), 'mls_media_count')]/../span[@class='num']"
 COLLAPSIBLE = ".//ul[@class='obj level1 collapsible']"
 COLLAPSIBLE_LEVEL1 = '//ul[@class="array level1 collapsible"]'
 LIST_AGENT_OFFICE = "//a[contains(text(), 'list_agent_office')]/ancestor::li"
 COLLAPSIBLE_AO = ".//ul[@class='obj level1 collapsible']"
 COLLAPSIBLE_LEVEL1_AO = '//ul[@class="array level1 collapsible"]'
-
 
 
 class RawData(BaseComponent):
@@ -80,7 +80,6 @@ class RawData(BaseComponent):
         result = str(outer[index_max].count('+'))
         return result
 
-
     def get_list_agent_office(self, value):
         # The method returns the value of list_agent_office".
         # Locate the parent element containing 'list_agent_office"o'
@@ -89,9 +88,23 @@ class RawData(BaseComponent):
         # Locate the nested 'ul' element with the specified class
         span_element_kw_updated_by = parent_kw_updated_by.find_element(By.XPATH, COLLAPSIBLE_AO)
 
-        #Locate the 'bool' span element following 'display_address'
+        # Locate the 'bool' span element following 'display_address'
         next_element = span_element_kw_updated_by.find_element(By.XPATH,
                                                                f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
         # Extract the text content using JavaScript and print the result
         return self.node.execute_script('return arguments[0].textContent;', next_element)
 
+    def get_list_address(self, value):
+        # The method returns the value of get_list_address fields.
+        # Locate the parent element containing 'marketing_info'
+        parent = self.node.find_element(By.XPATH, LIST_ADDRESS)
+
+        # Locate the nested 'ul' element with the specified class
+        span_element = parent.find_element(By.XPATH, COLLAPSIBLE)
+
+        # Locate the 'bool' span element following 'display_address'
+        next_element = span_element.find_element(By.XPATH,
+                                                 f".//a[contains(text(), '{value}')]/following-sibling::span[@class='string']")
+
+        # Extract the text content using JavaScript and print the result
+        return self.node.execute_script('return arguments[0].textContent;', next_element)

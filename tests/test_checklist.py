@@ -6,7 +6,8 @@ from parameterized import parameterized
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard
+from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
+from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
@@ -15,7 +16,7 @@ from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
-SOURCE_ID = (By.CSS_SELECTOR,' #sources')
+SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
@@ -41,7 +42,6 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
                'list_address-properties-street_number', 'list_address-properties-unit_number',
                'list_address-properties-street_suffix', 'list_address-properties-street_post_dir',
                'list_address-properties-street_direction']
-
 
 
 class TestPromotionChecklist(BaseTestRunner):
@@ -569,4 +569,113 @@ class TestPromotionChecklist(BaseTestRunner):
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
                     with allure.step(f"Looks like the class {class_txt} is not mapped\n"):
+                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+
+    @allure.testcase('list_address.state_prov returns 2-letter State code')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_state_prov(self, source):
+        '''list_address.state_prov returns 2-letter State code'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
+        print('''list_address.state_prov returns 2-letter State code''', flush=True)
+        print(f"kw_id = {source}", flush=True)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
+        SLPMain(self.driver).mls_btn_click()
+        SLPMain(self.driver).ld_btn_click()
+        DashBoard(self.driver).set_kw_source_id(source)
+        DashBoard(self.driver).click_submit_btn()
+        WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
+        DashBoard(self.driver).click_view_data_btn()
+        RawData(self.driver).click_raw_data_tub()
+        actual_raw = RawData(self.driver).get_list_address('state_prov')
+        actual = actual_raw.replace('"', '')
+        result = False
+        if len(actual) == 2:
+            result = True
+            try:
+                self.assertTrue(result)
+                with allure.step(f' Ok ✅'):
+                    print(f' Ok ✅', flush=True)
+            except:
+                with allure.step(f'Failed ❌ in {actual}'):
+                    print(f'Failed ❌ in {actual}', flush=True)
+                self.assertEqual(actual, source)
+
+    @allure.testcase('All available elements of list_address.properties.address are included')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_list_address(self, source):
+        '''All available elements of list_address.properties.address are included'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
+        print("All available elements of list_address.properties.address are included", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    actual = ListComponent(self.driver).get_txt_get_field('list_address-properties-address')
+                    result = False
+                    if 'a_street_number' in actual and 'b_street_dir_prefix' in actual\
+                            and 'c_street_name' in actual and 'd_street_suffix' in actual\
+                            and 'e_street_dir_suffix' in actual and 'f_unit_number' in actual\
+                            and 'g_city' in actual and 'h_state_or_province' in actual\
+                            and 'i_postal_code' in actual:
+                        result = True
+                    self.assertTrue(result)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual, flush=True)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
+                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+
+    @allure.testcase('List_address.coordinates should utilize Latitude and Longitude')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_list_address_coordinates(self, source):
+        '''List_address.coordinates should utilize Latitude and Longitude'''
+        print("\n----------------------------------------------------------------------\n", flush=True)
+        print("List_address.coordinates should utilize Latitude and Longitude", flush=True)
+        print(f"kw_id = {source}", flush=True)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    actual_gp = ListComponent(self.driver).get_txt_get_field('list_address-properties-coordinates_gp')
+                    actual_gs = ListComponent(self.driver).get_txt_get_field('list_address-properties-coordinates_gs')
+                    result = False
+                    if 'source_lat' in actual_gp and 'source_lon' in actual_gp and 'CoordinatesEnhancer' in actual_gp \
+                            and 'source_lat' in actual_gs and 'source_lon' in actual_gs and 'CoordinatesEnhancer' in actual_gs:
+                        result = True
+                    self.assertTrue(result)
+                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
+                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
+                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                        print(actual_gp, flush=True)
+                        print(actual_gs, flush=True)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
                         print(f"Looks like the class {class_txt} is not mapped", flush=True)
