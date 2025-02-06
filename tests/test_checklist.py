@@ -666,7 +666,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     if 'source_lat' in actual_gp and 'source_lon' in actual_gp and 'CoordinatesEnhancer' in actual_gp \
                             and 'source_lat' in actual_gs and 'source_lon' in actual_gs and 'CoordinatesEnhancer' in actual_gs:
                         result = True
-                    self.assertTrue(result)
+                    self.assertTrue(result, f'{actual_gs},  ,{actual_gp}')
                     with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
                         print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
                 except AssertionError as e:
