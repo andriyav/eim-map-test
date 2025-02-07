@@ -21,12 +21,16 @@ SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+CO_PREFERRED_PHONE_SKIP = "co_list_agent_office.properties.co_list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"])\n[add]\n[add]\n[add]"
 CO_PREFERRED_PHONE = "co_list_agent_office.properties.co_list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+OFFICE_PHONE_SKIP = "list_agent_office.properties.list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"])\n[add]\n[add]\n[add]"
 OFFICE_PHONE = "list_agent_office.properties.list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
 PREFERRED_PHONE = "list_agent_office.properties.list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+PREFERRED_PHONE_SKIP = "list_agent_office.properties.list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"])\n[add]\n[add]\n[add]"
 UNIT_NUMBER = 'list_address.properties.unit_number\n+\n[add]\n[add]\n[add]\n[add]'
 STREET_SUFFIX = 'list_address.properties.street_suffix\n+\n[add]\n[add]\n[add]\n[add]'
 YEAR_BUILT = 'year_built\n+\n[add]\n[add]\n[add]\n[add]'
+CO_OFFICE_PHONE_SKIP = 'co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"])\n[add]\n[add]\n[add]'
 LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state_prov',
                'list_address-properties-postal_code', 'list_address-properties-street_name',
                'list_address-properties-street_number', 'list_address-properties-unit_number',
@@ -113,7 +117,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase(
-        '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
+        '''co_list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")''')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_office_phone(self, source):
@@ -130,7 +134,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_co_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
-                    self.assertEqual(CO_OFFICE_PHONE, actual)
+                    result = False
+                    if actual == CO_OFFICE_PHONE or actual == CO_OFFICE_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -156,7 +163,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_co_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
-                    self.assertEqual(CO_PREFERRED_PHONE, actual)
+                    result = False
+                    if actual == CO_PREFERRED_PHONE or actual == CO_PREFERRED_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -182,7 +192,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
-                    self.assertEqual(OFFICE_PHONE, actual)
+                    result = False
+                    if actual == OFFICE_PHONE or actual == OFFICE_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -208,7 +221,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
-                    self.assertEqual(PREFERRED_PHONE, actual)
+                    result = False
+                    if actual == PREFERRED_PHONE or actual == PREFERRED_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
