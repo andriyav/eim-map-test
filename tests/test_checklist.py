@@ -276,7 +276,7 @@ class TestPromotionChecklist(BaseTestRunner):
         actual = DashBoard(self.driver).get_source_id_txt()
         try:
             self.assertEqual(actual, source)
-            PrintAssertions.nok_print(class_txt='Property')
+            PrintAssertions.ok_print(class_txt='Property')
         except:
             PrintAssertions.nok_print(class_txt='Property')
 
