@@ -37,7 +37,7 @@
       - name: Extract Chrome Cache
         run: |
           mkdir -p ./tests/cache
-          tar -xzf /home/runner/work/eim-map-test/SLPUI/tests/chrome_cache.tar.gz -C ./tests/cache
+          tar -xzf /home/runner/work/eim-map-test/eim-map-test/tests/chrome_cache.tar.gz -C ./tests/cache
 
       - name: Run Tests with Virtual Display
         run: |
