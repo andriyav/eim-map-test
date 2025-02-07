@@ -122,7 +122,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase(
-        '''co_list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")''')
+        'co_list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_office_phone(self, source):
@@ -151,7 +151,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('4')
+    @allure.testcase('co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_preferred_phone(self, source):
@@ -180,7 +180,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('5')
+    @allure.testcase('list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")"')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_office_phone(self, source):
@@ -209,7 +209,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('6')
+    @allure.testcase('list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_preferred_phone(self, source):
@@ -238,7 +238,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('7')
+    @allure.testcase('Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_mls_id_sa_id(self, source):
@@ -270,7 +270,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('8')
+    @allure.testcase('Validate mls_id is the correct value')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_dashboard_source_number(self, source):
@@ -290,7 +290,7 @@ class TestPromotionChecklist(BaseTestRunner):
         except:
             PrintAssertions.nok_print(class_txt='Property')
 
-    @allure.testcase('9')
+    @allure.testcase('Currency_code must be UPPER')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_currency_code(self, source):
@@ -319,7 +319,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('10')
+    @allure.testcase('list_dt is mapped')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_dt(self, source):
@@ -347,7 +347,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('11')
+    @allure.testcase('raw.properties.list_status is mapped')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_raw_properties_list_status(self, source):
@@ -375,7 +375,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('12')
+    @allure.testcase('Kww_region has no mapping')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_kww_region(self, source):
@@ -401,7 +401,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('13')
+    @allure.testcase('Price_history must use PriceHistoryEnhancer with ListPrice input')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_price_history(self, source):
