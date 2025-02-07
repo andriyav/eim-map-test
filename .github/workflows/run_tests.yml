@@ -42,6 +42,7 @@
       - name: Run Tests with Virtual Display
         run: |
           mkdir -p allure-results
+          export DISPLAY=:99
           xvfb-run -a pytest --capture=no --alluredir=allure-results tests/test_checklist.py
         continue-on-error: true
 
@@ -49,7 +50,7 @@
       - name: Generate Allure Report
         run: |
           npm install -g allure-commandline@latest
-          allure generate allure-results -o allure-report
+          allure generate --clean allure-results -o allure-report
 
       - name: Upload Allure Results
         if: always()

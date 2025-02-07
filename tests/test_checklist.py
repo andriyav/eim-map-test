@@ -15,6 +15,7 @@ from data.mls_id_data import mls_id_dict
 from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
+from utils.print_assertions import PrintAssertions
 
 SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
@@ -50,10 +51,8 @@ class TestPromotionChecklist(BaseTestRunner):
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_nullifier_const(self, source):
-        '''No elements of list_address are nullified or set constant (except country)'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print("No elements of list_address are nullified or set constant (except country)", flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'No elements of list_address are nullified or set constant (except country)'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
@@ -86,27 +85,20 @@ class TestPromotionChecklist(BaseTestRunner):
                     result = dict(zip(LIST_FIELDS, actual))
                     # Assert inside the try block
                     self.assertTrue(all(actual), result)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅', flush=True)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌ \n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌ \n', flush=True)
-                        print(actual)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
-
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('list_address.country is SetConstant to country code (US or CA)')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_properties_country(self, source):
-        '''list_address.country is SetConstant to country code (US or CA)'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print("list_address.country is SetConstant to country code (US or CA)", flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'list_address.country is SetConstant to country code (US or CA)'
+        PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
@@ -122,31 +114,22 @@ class TestPromotionChecklist(BaseTestRunner):
                     actual = False
                     if country_code == COUNTRY_US or country_code == COUNTRY_CA:
                         actual = True
-                    self.assertTrue(actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertTrue(actual, country_code)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(country_code, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
-
-    @allure.testcase('''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
+    @allure.testcase(
+        '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_office_phone(self, source):
-        ''' co_list_agent_office_phone are mapped with
-            FirstValueProvider:("agent_office_phone","office_phone")" '''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print(
-            '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")"''',
-            flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'co_list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -159,30 +142,20 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_co_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                     self.assertEqual(CO_OFFICE_PHONE, actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'Metadata = {class_txt} Ok ✅', flush=True)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
-
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('4')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_preferred_phone(self, source):
-        '''co_list_agent_preferred_phone are mapped with
-        FirstValueProvider:("agent_mobile_phone","agent_home_phone"'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print(
-            '''co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone)"''',
-            flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -195,29 +168,20 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_co_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                     self.assertEqual(CO_PREFERRED_PHONE, actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
-
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('5')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_office_phone(self, source):
-        '''list_agent_office_phone are mapped with
-    `   FirstValueProvider:("agent_office_phone","office_phone")" '''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")" ''',
-              flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")"'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -230,26 +194,20 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
                     self.assertEqual(OFFICE_PHONE, actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('6')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_preferred_phone(self, source):
-        ''' list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")',flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -262,27 +220,20 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
                     self.assertEqual(PREFERRED_PHONE, actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
-        print("\n----------------------------------------------------------------------\n", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('7')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_mls_id_sa_id(self, source):
-        '''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -300,27 +251,21 @@ class TestPromotionChecklist(BaseTestRunner):
                     mls_id_target = f'mls_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[0]},const_type=str)'
                     sa_id_target = f'sa_source_id\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const={target_list[1]},const_type=int)'
                     target = [mls_id_target, sa_id_target]
-                    self.assertEqual(actual, target)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertEqual(actual, target, sa_id)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('8')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_dashboard_source_number(self, source):
-        '''Validate mls_id is the correct value'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''Validate mls_id is the correct value from here''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'Validate mls_id is the correct value'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
@@ -331,21 +276,16 @@ class TestPromotionChecklist(BaseTestRunner):
         actual = DashBoard(self.driver).get_source_id_txt()
         try:
             self.assertEqual(actual, source)
-            with allure.step(f' Ok ✅'):
-                print(f' Ok ✅', flush=True)
+            PrintAssertions.ok_print(class_txt='Property')
         except:
-            with allure.step(f'Failed ❌ in {actual}'):
-                print(f'Failed ❌ in {actual}', flush=True)
-            self.assertEqual(actual, source)
+            PrintAssertions.nok_print(class_txt='Property')
 
     @allure.testcase('9')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_currency_code(self, source):
-        '''Currency_code must be UPPER'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''Currency_code must be UPPER''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'Currency_code must be UPPER'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -360,27 +300,21 @@ class TestPromotionChecklist(BaseTestRunner):
                     if match:
                         currency_code = match.group(1)
                         is_upper = currency_code.isupper()
-                    self.assertTrue(is_upper)
-                    with allure.step(f"Metadata = {class_txt} Ok ✅"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertTrue(is_upper, field)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(field, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('10')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_dt(self, source):
-        '''list_dt is mapped'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''list_dt is mapped''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'list_dt is mapped'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -394,28 +328,21 @@ class TestPromotionChecklist(BaseTestRunner):
                     field_actual = False
                     if 'json_path=' in field:
                         field_actual = True
-                    self.assertTrue(field_actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertTrue(field_actual, field)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(field, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
-
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('11')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_raw_properties_list_status(self, source):
-        '''raw.properties.list_status is mapped'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''raw.properties.list_status is mapped''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'raw.properties.list_status is mapped'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -429,27 +356,21 @@ class TestPromotionChecklist(BaseTestRunner):
                     field_actual = False
                     if 'json_path=' in field:
                         field_actual = True
-                    self.assertTrue(field_actual)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertTrue(field_actual, field)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(field, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('12')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_kww_region(self, source):
-        ''' Kww_region has no mapping '''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print(''' Kww_region has no mapping ''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'Kww_region has no mapping'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -461,27 +382,21 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     expected_field = ListComponent(self.driver).get_expected_field('kww_region')
                     actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
-                    self.assertEqual(actual_field, expected_field)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertEqual(actual_field, expected_field, actual_field)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual_field, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('13')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_price_history(self, source):
-        ''' Price_history must use PriceHistoryEnhancer with ListPrice input'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''Price_history must use PriceHistoryEnhancer with ListPrice input''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'Price_history must use PriceHistoryEnhancer with ListPrice input'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
@@ -560,25 +475,20 @@ class TestPromotionChecklist(BaseTestRunner):
                         actual.append(field_actual)
                         print('price_history.items.properties.previous_list_price = ', field_actual, flush=True)
                     self.assertTrue(all(actual))
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped\n"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('list_address.state_prov returns 2-letter State code')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_state_prov(self, source):
-        '''list_address.state_prov returns 2-letter State code'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print('''list_address.state_prov returns 2-letter State code''', flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'list_address.state_prov returns 2-letter State code'
+        PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
@@ -595,22 +505,17 @@ class TestPromotionChecklist(BaseTestRunner):
         if len(actual) == 2:
             result = True
             try:
-                self.assertTrue(result)
-                with allure.step(f' Ok ✅'):
-                    print(f' Ok ✅', flush=True)
+                self.assertTrue(result, actual)
+                PrintAssertions.ok_print(class_txt='property')
             except:
-                with allure.step(f'Failed ❌ in {actual}'):
-                    print(f'Failed ❌ in {actual}', flush=True)
-                self.assertEqual(actual, source)
+                PrintAssertions.nok_print(class_txt='property')
 
     @allure.testcase('All available elements of list_address.properties.address are included')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address(self, source):
-        '''All available elements of list_address.properties.address are included'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print("All available elements of list_address.properties.address are included", flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'All available elements of list_address.properties.address are included'
+        PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
@@ -623,33 +528,27 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     actual = ListComponent(self.driver).get_txt_get_field('list_address-properties-address')
                     result = False
-                    if 'a_street_number' in actual and 'b_street_dir_prefix' in actual\
-                            and 'c_street_name' in actual and 'd_street_suffix' in actual\
-                            and 'e_street_dir_suffix' in actual and 'f_unit_number' in actual\
-                            and 'g_city' in actual and 'h_state_or_province' in actual\
+                    if 'a_street_number' in actual and 'b_street_dir_prefix' in actual \
+                            and 'c_street_name' in actual and 'd_street_suffix' in actual \
+                            and 'e_street_dir_suffix' in actual and 'f_unit_number' in actual \
+                            and 'g_city' in actual and 'h_state_or_province' in actual \
                             and 'i_postal_code' in actual:
                         result = True
-                    self.assertTrue(result)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertTrue(result, actual)
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase('List_address.coordinates should utilize Latitude and Longitude')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_address_coordinates(self, source):
-        '''List_address.coordinates should utilize Latitude and Longitude'''
-        print("\n----------------------------------------------------------------------\n", flush=True)
-        print("List_address.coordinates should utilize Latitude and Longitude", flush=True)
-        print(f"kw_id = {source}", flush=True)
+        title = 'List_address.coordinates should utilize Latitude and Longitude'
+        PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
@@ -666,16 +565,11 @@ class TestPromotionChecklist(BaseTestRunner):
                     if 'source_lat' in actual_gp and 'source_lon' in actual_gp and 'CoordinatesEnhancer' in actual_gp \
                             and 'source_lat' in actual_gs and 'source_lon' in actual_gs and 'CoordinatesEnhancer' in actual_gs:
                         result = True
-                    self.assertTrue(result)
-                    with allure.step(f"\nMetadata = {class_txt} Ok ✅\n"):
-                        print(f'\nMetadata = {class_txt} Ok ✅\n', flush=True)
+                    self.assertTrue(result, f'{actual_gs}, ,{actual_gp}')
+                    PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
-                    with allure.step(f"\nMetadata = {class_txt} Failed ❌\n"):
-                        print(f'\nMetadata = {class_txt} Failed ❌\n', flush=True)
-                        print(actual_gp, flush=True)
-                        print(actual_gs, flush=True)
+                    PrintAssertions.nok_print(class_txt)
                     raise e  # Re-raise to ensure the test fails
                 except NoSuchElementException as e:
-                    with allure.step(f"Looks like the class {class_txt} is not mapped"):
-                        print(f"Looks like the class {class_txt} is not mapped", flush=True)
+                    PrintAssertions.no_map_print(class_txt)
