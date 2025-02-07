@@ -647,7 +647,6 @@ class TestPromotionChecklist(BaseTestRunner):
                             actual.append(field_actual)
                             print(f'{address_field} = ', field_actual, flush=True)
                     result = dict(zip(NOT_NULLIFIED_FIELDS, actual))
-                    print(result, flush=True)
                     # Assert inside the try block
                     self.assertTrue(all(actual), result)
                     PrintAssertions.ok_print(class_txt)
