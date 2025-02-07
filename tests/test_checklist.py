@@ -36,6 +36,11 @@ LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state
                'list_address-properties-street_number', 'list_address-properties-unit_number',
                'list_address-properties-street_suffix', 'list_address-properties-street_post_dir',
                'list_address-properties-street_direction']
+NOT_NULLIFIED_FIELDS = ['close_price', 'current_list_price', 'hoa-items-properties-assoc_fee',
+                        'hoa-items-properties-assoc_fee_search', 'marketing_info-properties-display_list_price',
+                        'raw-properties-parking_total', 'structure-properties-parking_total',
+                        'taxes-items-properties-tax_amt']
+SCHOOL_ITEMS_EXPECTED = 'location.properties.schools.items\n+\n[add]\n[add]\n[add]\n[add]'
 
 
 class TestPromotionChecklist(BaseTestRunner):
@@ -600,6 +605,78 @@ class TestPromotionChecklist(BaseTestRunner):
                     if actual == YEAR_BUILT or 'ValidateYearBuilt' in actual:
                         result = True
                     self.assertTrue(result, actual)
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('Do NOT Nullify any of these fields')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_not_nullify(self, source):
+        title = 'Do NOT Nullify any of these fields'
+        PrintAssertions.title_print(title, source)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            SLPMain(self.driver).metadata_main_select(metadata)
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            actual = []
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).impl_wait_metadata()
+                    for address_field in NOT_NULLIFIED_FIELDS:
+                        list_fields_txt = address_field.replace('-', '.')
+                        field = ListComponent(self.driver).get_txt_get_field(address_field)
+                        field_actual = False
+                        expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
+                        if (
+                                'nullifier' not in field.lower() and
+                                'skip_values=[]' in field.lower()
+                        ) or field == expected_field:
+                            field_actual = True
+                            actual.append(field_actual)
+                        else:
+                            actual.append(field_actual)
+                            print(f'{address_field} = ', field_actual, flush=True)
+                    result = dict(zip(NOT_NULLIFIED_FIELDS, actual))
+                    print(result, flush=True)
+                    # Assert inside the try block
+                    self.assertTrue(all(actual), result)
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('schools.items does NOT need the empty bracket Value Provider')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_list_address_properties_country(self, source):
+        title = 'schools.items does NOT need the empty bracket Value Provider'
+        PrintAssertions.title_print(title, source)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_address_country()
+                    actual = ListComponent(self.driver).get_txt_get_field('location-properties-schools-items')
+                    self.assertEqual(actual, SCHOOL_ITEMS_EXPECTED)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
