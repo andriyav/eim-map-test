@@ -24,20 +24,9 @@ CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+
 CO_PREFERRED_PHONE = "co_list_agent_office.properties.co_list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
 OFFICE_PHONE = "list_agent_office.properties.list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
 PREFERRED_PHONE = "list_agent_office.properties.list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
-UNIT_NUMBER = """list_address.properties.unit_number
-+
-[add]
-[add]
-[add]
-[add]"""
-
-STREET_SUFFIX = """list_address.properties.street_suffix
-+
-[add]
-[add]
-[add]
-[add]"""
-
+UNIT_NUMBER = 'list_address.properties.unit_number\n+\n[add]\n[add]\n[add]\n[add]'
+STREET_SUFFIX = 'list_address.properties.street_suffix\n+\n[add]\n[add]\n[add]\n[add]'
+YEAR_BUILT = 'year_built\n+\n[add]\n[add]\n[add]\n[add]'
 LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state_prov',
                'list_address-properties-postal_code', 'list_address-properties-street_name',
                'list_address-properties-street_number', 'list_address-properties-unit_number',
@@ -566,6 +555,35 @@ class TestPromotionChecklist(BaseTestRunner):
                             and 'source_lat' in actual_gs and 'source_lon' in actual_gs and 'CoordinatesEnhancer' in actual_gs:
                         result = True
                     self.assertTrue(result, f'{actual_gs}, ,{actual_gp}')
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('Field year_built uses the rule ValidateYearBuilt')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_year_built(self, source):
+        title = 'Field year_built uses the rule ValidateYearBuilt'
+        PrintAssertions.title_print(title, source)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    actual = ListComponent(self.driver).get_txt_get_field('year_built')
+                    result = False
+                    if actual == YEAR_BUILT or 'ValidateYearBuilt' in actual:
+                        result = True
+                    self.assertTrue(result, actual)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
