@@ -660,7 +660,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @allure.testcase('schools.items does NOT need the empty bracket Value Provider')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
-    def test_list_address_properties_country(self, source):
+    def test_schools_items(self, source):
         title = 'schools.items does NOT need the empty bracket Value Provider'
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
