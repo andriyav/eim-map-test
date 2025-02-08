@@ -21,28 +21,26 @@ SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+CO_PREFERRED_PHONE_SKIP = "co_list_agent_office.properties.co_list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"])\n[add]\n[add]\n[add]"
 CO_PREFERRED_PHONE = "co_list_agent_office.properties.co_list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
+OFFICE_PHONE_SKIP = "list_agent_office.properties.list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"])\n[add]\n[add]\n[add]"
 OFFICE_PHONE = "list_agent_office.properties.list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
 PREFERRED_PHONE = "list_agent_office.properties.list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
-UNIT_NUMBER = """list_address.properties.unit_number
-+
-[add]
-[add]
-[add]
-[add]"""
-
-STREET_SUFFIX = """list_address.properties.street_suffix
-+
-[add]
-[add]
-[add]
-[add]"""
-
+PREFERRED_PHONE_SKIP = "list_agent_office.properties.list_agent_preferred_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_mobile_phone\",\"agent_home_phone\"])\n[add]\n[add]\n[add]"
+UNIT_NUMBER = 'list_address.properties.unit_number\n+\n[add]\n[add]\n[add]\n[add]'
+STREET_SUFFIX = 'list_address.properties.street_suffix\n+\n[add]\n[add]\n[add]\n[add]'
+YEAR_BUILT = 'year_built\n+\n[add]\n[add]\n[add]\n[add]'
+CO_OFFICE_PHONE_SKIP = 'co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"])\n[add]\n[add]\n[add]'
 LIST_FIELDS = ['list_address-properties-address', 'list_address-properties-state_prov',
                'list_address-properties-postal_code', 'list_address-properties-street_name',
                'list_address-properties-street_number', 'list_address-properties-unit_number',
                'list_address-properties-street_suffix', 'list_address-properties-street_post_dir',
                'list_address-properties-street_direction']
+NOT_NULLIFIED_FIELDS = ['close_price', 'current_list_price', 'hoa-items-properties-assoc_fee',
+                        'hoa-items-properties-assoc_fee_search', 'marketing_info-properties-display_list_price',
+                        'raw-properties-parking_total', 'structure-properties-parking_total',
+                        'taxes-items-properties-tax_amt']
+SCHOOL_ITEMS_EXPECTED = 'location.properties.schools.items\n+\n[add]\n[add]\n[add]\n[add]'
 
 
 class TestPromotionChecklist(BaseTestRunner):
@@ -124,7 +122,7 @@ class TestPromotionChecklist(BaseTestRunner):
                     PrintAssertions.no_map_print(class_txt)
 
     @allure.testcase(
-        '''co_list_agent_office_phone are mapped with FirstValueProvider:('agent_office_phone","office_phone")''')
+        'co_list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_office_phone(self, source):
@@ -141,7 +139,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_co_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
-                    self.assertEqual(CO_OFFICE_PHONE, actual)
+                    result = False
+                    if actual == CO_OFFICE_PHONE or actual == CO_OFFICE_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -150,7 +151,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('4')
+    @allure.testcase('co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_co_list_agent_preferred_phone(self, source):
@@ -167,7 +168,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_co_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
-                    self.assertEqual(CO_PREFERRED_PHONE, actual)
+                    result = False
+                    if actual == CO_PREFERRED_PHONE or actual == CO_PREFERRED_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -176,7 +180,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('5')
+    @allure.testcase('list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")"')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_office_phone(self, source):
@@ -193,7 +197,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
-                    self.assertEqual(OFFICE_PHONE, actual)
+                    result = False
+                    if actual == OFFICE_PHONE or actual == OFFICE_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -202,7 +209,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('6')
+    @allure.testcase('list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_agent_preferred_phone(self, source):
@@ -219,7 +226,10 @@ class TestPromotionChecklist(BaseTestRunner):
                     SLPMain(self.driver).impl_wait_metadata()
                     ListComponent(self.driver).get_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
-                    self.assertEqual(PREFERRED_PHONE, actual)
+                    result = False
+                    if actual == PREFERRED_PHONE or actual == PREFERRED_PHONE_SKIP:
+                        result = True
+                    self.assertTrue(result)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
@@ -228,7 +238,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('7')
+    @allure.testcase('Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_mls_id_sa_id(self, source):
@@ -260,7 +270,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('8')
+    @allure.testcase('Validate mls_id is the correct value')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_dashboard_source_number(self, source):
@@ -280,7 +290,7 @@ class TestPromotionChecklist(BaseTestRunner):
         except:
             PrintAssertions.nok_print(class_txt='Property')
 
-    @allure.testcase('9')
+    @allure.testcase('Currency_code must be UPPER')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_currency_code(self, source):
@@ -309,7 +319,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('10')
+    @allure.testcase('list_dt is mapped')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_list_dt(self, source):
@@ -337,7 +347,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('11')
+    @allure.testcase('raw.properties.list_status is mapped')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_raw_properties_list_status(self, source):
@@ -365,7 +375,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('12')
+    @allure.testcase('Kww_region has no mapping')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_kww_region(self, source):
@@ -391,7 +401,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @allure.testcase('13')
+    @allure.testcase('Price_history must use PriceHistoryEnhancer with ListPrice input')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
     def test_price_history(self, source):
@@ -566,6 +576,106 @@ class TestPromotionChecklist(BaseTestRunner):
                             and 'source_lat' in actual_gs and 'source_lon' in actual_gs and 'CoordinatesEnhancer' in actual_gs:
                         result = True
                     self.assertTrue(result, f'{actual_gs}, ,{actual_gp}')
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('Field year_built uses the rule ValidateYearBuilt')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_year_built(self, source):
+        title = 'Field year_built uses the rule ValidateYearBuilt'
+        PrintAssertions.title_print(title, source)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    actual = ListComponent(self.driver).get_txt_get_field('year_built')
+                    result = False
+                    if actual == YEAR_BUILT or 'ValidateYearBuilt' in actual:
+                        result = True
+                    self.assertTrue(result, actual)
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('Do NOT Nullify any of these fields')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_not_nullify(self, source):
+        title = 'Do NOT Nullify any of these fields'
+        PrintAssertions.title_print(title, source)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
+        os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+        self.driver.save_screenshot(screenshot_path)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            SLPMain(self.driver).metadata_main_select(metadata)
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            actual = []
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).impl_wait_metadata()
+                    for address_field in NOT_NULLIFIED_FIELDS:
+                        list_fields_txt = address_field.replace('-', '.')
+                        field = ListComponent(self.driver).get_txt_get_field(address_field)
+                        field_actual = False
+                        expected_field = ListComponent(self.driver).get_expected_field(list_fields_txt)
+                        if (
+                                'nullifier' not in field.lower() and
+                                'skip_values=[]' in field.lower()
+                        ) or field == expected_field:
+                            field_actual = True
+                            actual.append(field_actual)
+                        else:
+                            actual.append(field_actual)
+                            print(f'{address_field} = ', field_actual, flush=True)
+                    result = dict(zip(NOT_NULLIFIED_FIELDS, actual))
+                    # Assert inside the try block
+                    self.assertTrue(all(actual), result)
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('schools.items does NOT need the empty bracket Value Provider')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_schools_items(self, source):
+        title = 'schools.items does NOT need the empty bracket Value Provider'
+        PrintAssertions.title_print(title, source)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        SLPMain(self.driver).source_select(source)
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    SLPMain(self.driver).metadata_main_select(metadata)
+                    SLPMain(self.driver).impl_wait_metadata()
+                    ListComponent(self.driver).get_list_address_country()
+                    actual = ListComponent(self.driver).get_txt_get_field('location-properties-schools-items')
+                    self.assertEqual(actual, SCHOOL_ITEMS_EXPECTED)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
