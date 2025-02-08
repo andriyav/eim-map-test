@@ -1,5 +1,8 @@
 # import time
 # import pyautogui
+import time
+
+import pyautogui
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -57,11 +60,11 @@ class SLPMain:
     def click_save_button_(self):
         return self.get_save_button().click_button()
 
-    # def click_OK_button_(self):
-    #     pyautogui.FAILSAFE = False
-    #     pyautogui.moveTo(1100, 230)
-    #     time.sleep(1)
-    #     pyautogui.click()
+    def click_OK_button_(self):
+        pyautogui.FAILSAFE = False
+        pyautogui.moveTo(1100, 230)
+        time.sleep(1)
+        pyautogui.click()
 
     def get_save_time(self):
         return self.node.find_element(*DATE_SAVE)

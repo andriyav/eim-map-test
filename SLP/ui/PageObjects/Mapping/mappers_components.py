@@ -43,7 +43,7 @@ class MappersComponents(BaseComponent):
     def set_json_path_value(self):
         json_path_value = ValueProvider.get_mapping_configuration()
         mapper = json_path_value["Metadata"]
-        return self.get_mapper_json_path().set_text_in(mapper)
+        return self.get_mapper_json_path().set_text(mapper)
 
     def get_button_create(self):
         return self.node.find_element(*MAPPER_CREATE_BTN)
