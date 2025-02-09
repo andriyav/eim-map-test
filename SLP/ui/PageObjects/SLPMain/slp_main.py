@@ -20,8 +20,7 @@ IMPLIS_WAIT_MAP = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
 SOURCE_SELECT = (By.CSS_SELECTOR, '#sources')
 SPINNER = (By.CSS_SELECTOR, '#spin_save_map')
 MLS_BTN = (By.CSS_SELECTOR, '#navbarNav > ul.navbar-nav.me-auto.mb-2.mb-lg-0 > li:nth-child(2) > a')
-LDBUTTON = (By.CSS_SELECTOR,'#navbarNav > ul.navbar-nav.me-auto.mb-2.mb-lg-0 > li.nav-item.dropdown.show > div > a')
-
+LDBUTTON = (By.LINK_TEXT, "Listings Dashboard")
 
 class SLPMain:
     def __init__(self, driver):

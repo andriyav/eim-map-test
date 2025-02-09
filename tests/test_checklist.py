@@ -17,7 +17,7 @@ from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 from utils.print_assertions import PrintAssertions
 
-SOURCE_ID = (By.CSS_SELECTOR, ' #sources')
+SOURCE_ID = (By.ID, 'sources')
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
