@@ -6,7 +6,7 @@ from SLP.ui.Elements.select import Select
 from SLP.ui.PageObjects.base_components import BaseComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 APPLY_SOURCE_BTN =(By.XPATH,'//*[@id="applySource"]')
-SOURCE_ID = (By.CSS_SELECTOR, '#sources')
+SOURCE_ID = (By.ID, 'sources')
 SOURCE_SELECT = (By.CSS_SELECTOR, '#navbarDropdown')
 SOURCE_IN_BUTTON = (By.CSS_SELECTOR,
                     '#navbarNav > ul.navbar-nav.ml-auto.mb-2.mb-lg-0 > li > ul > li.nav-item.dropdown > a')
