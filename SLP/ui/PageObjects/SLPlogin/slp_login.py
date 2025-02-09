@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
 from SLP.ui.PageObjects.base_components import BaseComponent
-from SLP.ui.PageObjects.Login_Modal.login_modal import LoginModal
+from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
 LOGIN_WITH_GOOGLE = (By.XPATH,'//*[@id="nav-home"]/div/table/tbody/tr[2]/td/div/input')
 
 
