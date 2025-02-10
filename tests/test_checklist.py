@@ -584,7 +584,7 @@ class TestPromotionChecklist(BaseTestRunner):
                 except NoSuchElementException as e:
                     PrintAssertions.no_map_print(class_txt)
 
-    @pytest.mark.skip(reason="Skipping this test for now")
+
     @allure.testcase('Field year_built uses the rule ValidateYearBuilt')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
