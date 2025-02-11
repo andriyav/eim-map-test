@@ -5,7 +5,7 @@ from selenium.webdriver.support import wait
 from SLP.ui.Elements.select import Select
 from SLP.ui.PageObjects.base_components import BaseComponent
 from SLP.ui.PageObjects.login_modal.login_modal import LoginModal
-APPLY_SOURCE_BTN =(By.XPATH,'//*[@id="applySource"]')
+APPLY_SOURCE_BTN =(By.ID,'applySource')
 SOURCE_ID = (By.CSS_SELECTOR, '#sources')
 SOURCE_SELECT = (By.CSS_SELECTOR, '#navbarDropdown')
 SOURCE_IN_BUTTON = (By.CSS_SELECTOR,

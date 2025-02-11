@@ -16,7 +16,7 @@ from utils.print_assertions import PrintAssertions
 PHOTO_TAB = (By.XPATH, "/html/body/section/div/div/div/div[1]/div/div/a[2]")
 IS_SHORT_SALE = (By.CSS_SELECTOR, '#nav-home > div > table > tbody > tr.master_schema.kw_listing.is_short_sale')
 IMPLIS_WAIT_MAP = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
-SOURCE_ID = (By.XPATH,'//*[@id="sources"]')
+SOURCE_ID = (By.ID,'sources')
 GOLDEN_VALUE = '''is_short_sale
 +
 [add]
