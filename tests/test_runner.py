@@ -26,7 +26,6 @@ class BaseTestRunner(unittest.TestCase):
     def _init_driver(self):
         if os.getenv('CI') == 'true' and os.getenv('GITHUB_ACTIONS') == 'true':
             chrome_user_dir = CHROME_USER_DIR_GIT
-
         else:
             chrome_user_dir = CHROME_USER_DIR_LOCAL
         chrome_options = webdriver.ChromeOptions()
