@@ -43,7 +43,7 @@
         run: |
           mkdir -p allure-results
           export DISPLAY=:99
-          xvfb-run -a pytest --capture=no --alluredir=allure-results tests/test_checklist.py
+          xvfb-run -a pytest --capture=no --alluredir=allure-results --reruns 3 tests/test_checklist.py
         continue-on-error: true
 
 

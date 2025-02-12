@@ -33,7 +33,6 @@ class BaseTestRunner(unittest.TestCase):
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
-        # self.driver.maximize_window()
         self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
@@ -43,7 +42,6 @@ class BaseTestRunner(unittest.TestCase):
         # LoginModal(self.driver).click_next_button_first()
         # LoginModal(self.driver).set_password(ValueProvider.get_password())
         # LoginModal(self.driver).click_next_button_second()
-        # self.driver.maximize_window()
 
     def tearDown(self):
         self.driver.quit()

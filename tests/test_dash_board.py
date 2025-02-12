@@ -1,3 +1,4 @@
+import pytest
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -5,16 +6,16 @@ from data.test_data import sources
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
-from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
+from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent, SOURCE_ID
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 
 from utils.db_access import DBAccess
 from utils.db_handler import DBHandler
 
-SOURCE_ID = (By.ID, 'sources')
 
 class SLPPageTestCase(BaseTestRunner):
+
 
     @parameterized.expand(sources)
     def test_dashboard_source_number(self, source):

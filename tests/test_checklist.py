@@ -10,14 +10,14 @@ from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
-from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
+from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent, SOURCE_ID
 from data.mls_id_data import mls_id_dict
 from data.test_data import sources
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC
 from utils.print_assertions import PrintAssertions
 
-SOURCE_ID = (By.ID, 'sources')
+
 COUNTRY_US = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=US,const_type=str)"
 COUNTRY_CA = "list_address.properties.country\n+\n[add]\n[add]\n[add]\n[add]\nSetConstant(const=CA,const_type=str)"
 CO_OFFICE_PHONE = "co_list_agent_office.properties.co_list_agent_office_phone\n+\n[add]\nFirstValueProvider(json_path=[\"agent_office_phone\",\"office_phone\"],skip_values=[])\n[add]\n[add]\n[add]"
