@@ -43,7 +43,7 @@ class BaseTestRunner(unittest.TestCase):
         # LoginModal(self.driver).click_next_button_first()
         # LoginModal(self.driver).set_password(ValueProvider.get_password())
         # LoginModal(self.driver).click_next_button_second()
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
 
     def tearDown(self):
         self.driver.quit()
