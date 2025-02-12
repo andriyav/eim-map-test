@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from utils.db_access import DBAccess
 from utils.db_handler import DBHandler
 
-SOURCE_ID = (By.XPATH, '//*[@id="sources"]')
+SOURCE_ID = (By.ID, 'sources')
 
 class SLPPageTestCase(BaseTestRunner):
 

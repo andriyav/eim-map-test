@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from SLP.ui.Elements.select import Select
 from SLP.ui.PageObjects.base_components import BaseComponent
 
-METADATA_SELECT = (By.XPATH, '//*[@id="metadataSelect"]')
+METADATA_SELECT = (By.ID, 'metadataSelect')
 COUNTRY = (By.XPATH, '/html/body/section/div/div/div/div[1]/div/form/div[6]/div/div/table/tbody/tr[83]')
 CO_LIST_OFFICE_PHONE = (By.CSS_SELECTOR,
                         '#nav-home > div > table > tbody > tr.master_schema.kw_listing.co_list_agent_office-properties-co_list_agent_office_phone')
