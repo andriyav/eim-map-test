@@ -42,7 +42,7 @@ pytest --capture=no --alluredir=allure-results tests/test_checklist.py
 ```
 * Validating morphed source data by testing the Dashboard UI before source promotion to prod.
 ```shell
-pytest --capture=no --alluredir=allure-results tests/test_dash_board.py
+pytest --capture=no --alluredir=allure-results --reruns 3 tests/test_dash_board.py
 ```
 
 ```shell
