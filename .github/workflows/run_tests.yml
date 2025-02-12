@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -53,19 +53,19 @@ jobs:
         tar -czf chrome_cache.tar.gz -C ./tests/cache .
 
     - name: Upload Chrome Cache Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: chrome-cache
         path: chrome_cache.tar.gz
 
     - name: Upload Screenshots
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: screenshots
         path: artifacts/screenshots  # Ensure this matches the actual folder path
 
     - name: Upload HTML Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: page-source
         path: page_source.html  # Ensure this matches the actual file path
