@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
@@ -20,7 +22,8 @@ class SLPPageTestCase(BaseTestRunner):
     @parameterized.expand(sources)
     def test_dashboard_source_number(self, source):
         # go to dashboard
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
+        wait.until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
@@ -34,7 +37,8 @@ class SLPPageTestCase(BaseTestRunner):
 
     @parameterized.expand(sources)
     def test_dashboard_media_oh(self, source):
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
+        wait.until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
@@ -54,7 +58,8 @@ class SLPPageTestCase(BaseTestRunner):
 
     @parameterized.expand(sources)
     def test_sold_data(self, source):
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
+        wait.until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
@@ -79,7 +84,8 @@ class SLPPageTestCase(BaseTestRunner):
 
     @parameterized.expand(sources)
     def test_market_info(self, source):
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
+        wait.until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
@@ -99,7 +105,8 @@ class SLPPageTestCase(BaseTestRunner):
 
     @parameterized.expand(sources)
     def test_media_count(self, source):
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
+        wait.until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
@@ -120,7 +127,8 @@ class SLPPageTestCase(BaseTestRunner):
 
     @parameterized.expand(sources)
     def test_agent_office_call(self, source):
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
+        wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
+        wait.until(EC.element_to_be_clickable(SOURCE_ID))
         SLPMain(self.driver).source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
         SLPMain(self.driver).mls_btn_click()
