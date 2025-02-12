@@ -29,7 +29,6 @@ class BaseTestRunner(unittest.TestCase):
         chrome_options.add_argument("profile-directory=Default")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
-        self.driver.maximize_window()
         self.driver.get(ValueProvider.get_base_url())
 
     def _login(self):
