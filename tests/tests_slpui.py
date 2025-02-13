@@ -1,3 +1,5 @@
+import time
+
 import allure
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
@@ -51,9 +53,10 @@ class SLPPageTestCase(BaseTestRunner):
                     # Map restart to reset locator
                     SourceSelectComponent(self.driver).click_source_button()
                     SourceSelectComponent(self.driver).click_in_source_button()
-                    SourceSelectComponent(self.driver).get_select_wait().until(EC.visibility_of_element_located(SOURCE_ID))
+                    WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
                     SLPMain(self.driver).source_select(source)
                     SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
+                    time.sleep(10)
                     self.assertEqual(actual, GOLDEN_VALUE, actual)
                     PrintAssertions.ok_print(metadata)
                 except AssertionError as e:
