@@ -15,7 +15,6 @@ COLLAPSIBLE = (By.XPATH, ".//ul[@class='obj level1 collapsible']")
 COLLAPSIBLE_LEVEL1 = (By.XPATH, '//ul[@class="array level1 collapsible"]')
 LIST_AGENT_OFFICE = (By.XPATH, "//a[contains(text(), 'list_agent_office')]/ancestor::li")
 COLLAPSIBLE_AO = (By.XPATH, ".//ul[@class='obj level1 collapsible']")
-# COLLAPSIBLE_LEVEL1_AO = '//ul[@class="array level1 collapsible"]'
 
 
 class RawData(BaseComponent):
