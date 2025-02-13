@@ -7,15 +7,14 @@ RAW_DATA_TUB_SINGLE = (By.XPATH, '/html/body/div[4]/div[3]/div[2]/table/tbody/tr
 PHOTO_NUM = (By.XPATH,
              "//a[contains(@class, 'prop') and contains(., 'photos')]/following-sibling::ul[@class='array level1 collapsible']")
 PHOTO_COUNT = (By.XPATH, "//a[@class='prop' and contains(., 'mls_media_count')]/following-sibling::span[@class='num']")
-PHOTO_TEXT = "//a[contains(text(), 'photos')]"
-MARKETING_IFO = "//a[contains(text(), 'marketing_info')]/ancestor::li"
-LIST_ADDRESS = "//a[contains(text(), 'list_address')]/ancestor::li"
-MEDIA_COUNT = "//a[contains(text(), 'mls_media_count')]/../span[@class='num']"
-COLLAPSIBLE = ".//ul[@class='obj level1 collapsible']"
-COLLAPSIBLE_LEVEL1 = '//ul[@class="array level1 collapsible"]'
-LIST_AGENT_OFFICE = "//a[contains(text(), 'list_agent_office')]/ancestor::li"
-COLLAPSIBLE_AO = ".//ul[@class='obj level1 collapsible']"
-COLLAPSIBLE_LEVEL1_AO = '//ul[@class="array level1 collapsible"]'
+PHOTO_TEXT = (By.XPATH, "//a[contains(text(), 'photos')]")
+MARKETING_IFO = (By.XPATH, "//a[contains(text(), 'marketing_info')]/ancestor::li")
+LIST_ADDRESS = (By.XPATH, "//a[contains(text(), 'list_address')]/ancestor::li")
+MEDIA_COUNT = (By.XPATH, "//a[contains(text(), 'mls_media_count')]/../span[@class='num']")
+COLLAPSIBLE = (By.XPATH, ".//ul[@class='obj level1 collapsible']")
+COLLAPSIBLE_LEVEL1 = (By.XPATH, '//ul[@class="array level1 collapsible"]')
+LIST_AGENT_OFFICE = (By.XPATH, "//a[contains(text(), 'list_agent_office')]/ancestor::li")
+COLLAPSIBLE_AO = (By.XPATH, ".//ul[@class='obj level1 collapsible']")
 
 
 class RawData(BaseComponent):
@@ -44,18 +43,17 @@ class RawData(BaseComponent):
 
     def get_photo_count(self):
         # The method returns the value of media_count on the dashboard.
-        parent_element = self.node.find_element(
-            By.XPATH, MEDIA_COUNT)
+        parent_element = self.node.find_element(*MEDIA_COUNT)
         result = self.node.execute_script('return arguments[0].textContent;', parent_element)
         return result
 
     def get_marketing_info_collapse(self, value):
         # The method returns the value of marketing_info fields.
         # Locate the parent element containing 'marketing_info'
-        parent_kw_updated_by = self.node.find_element(By.XPATH, MARKETING_IFO)
+        parent_kw_updated_by = self.node.find_element(*MARKETING_IFO)
 
         # Locate the nested 'ul' element with the specified class
-        span_element_kw_updated_by = parent_kw_updated_by.find_element(By.XPATH, COLLAPSIBLE)
+        span_element_kw_updated_by = parent_kw_updated_by.find_element(*COLLAPSIBLE)
 
         # Locate the 'bool' span element following 'display_address'
         next_element = span_element_kw_updated_by.find_element(By.XPATH,
@@ -66,8 +64,8 @@ class RawData(BaseComponent):
 
     def get_photo_number(self):
         # The method returns length of the list with photo URLs.
-        photo_link = self.node.find_element(By.XPATH, PHOTO_TEXT)
-        span_element_list_address = photo_link.find_elements(By.XPATH, COLLAPSIBLE_LEVEL1)
+        photo_link = self.node.find_element(*PHOTO_TEXT)
+        span_element_list_address = photo_link.find_elements(*COLLAPSIBLE_LEVEL1)
         outer = []
         indexes = []
         for i in span_element_list_address:
@@ -83,10 +81,10 @@ class RawData(BaseComponent):
     def get_list_agent_office(self, value):
         # The method returns the value of list_agent_office".
         # Locate the parent element containing 'list_agent_office"o'
-        parent_kw_updated_by = self.node.find_element(By.XPATH, LIST_AGENT_OFFICE)
+        parent_kw_updated_by = self.node.find_element(*LIST_AGENT_OFFICE)
 
         # Locate the nested 'ul' element with the specified class
-        span_element_kw_updated_by = parent_kw_updated_by.find_element(By.XPATH, COLLAPSIBLE_AO)
+        span_element_kw_updated_by = parent_kw_updated_by.find_element(*COLLAPSIBLE_AO)
 
         # Locate the 'bool' span element following 'display_address'
         next_element = span_element_kw_updated_by.find_element(By.XPATH,
@@ -97,10 +95,10 @@ class RawData(BaseComponent):
     def get_list_address(self, value):
         # The method returns the value of get_list_address fields.
         # Locate the parent element containing 'marketing_info'
-        parent = self.node.find_element(By.XPATH, LIST_ADDRESS)
+        parent = self.node.find_element(*LIST_ADDRESS)
 
         # Locate the nested 'ul' element with the specified class
-        span_element = parent.find_element(By.XPATH, COLLAPSIBLE)
+        span_element = parent.find_element(*COLLAPSIBLE)
 
         # Locate the 'bool' span element following 'display_address'
         next_element = span_element.find_element(By.XPATH,
