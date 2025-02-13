@@ -1,5 +1,6 @@
 import time
 
+import allure
 import pytest
 from parameterized import parameterized
 from selenium.webdriver.common.by import By
@@ -18,7 +19,7 @@ from utils.db_handler import DBHandler
 
 class SLPPageTestCase(BaseTestRunner):
 
-
+    @allure.testcase('Test source number validation')
     @parameterized.expand(sources)
     def test_dashboard_source_number(self, source):
         # go to dashboard
@@ -35,6 +36,7 @@ class SLPPageTestCase(BaseTestRunner):
         # Check if the source mls_id on the board matches the loaded source.
         self.assertEqual(actual, source)
 
+    @allure.testcase('Check Media and OH availability')
     @parameterized.expand(sources)
     def test_dashboard_media_oh(self, source):
         wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
@@ -56,6 +58,7 @@ class SLPPageTestCase(BaseTestRunner):
             result = False
         self.assertTrue(result)
 
+    @allure.testcase('Test for Sold Data')
     @parameterized.expand(sources)
     def test_sold_data(self, source):
         wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
@@ -82,6 +85,7 @@ class SLPPageTestCase(BaseTestRunner):
                 break
         self.assertTrue(result)
 
+    @allure.testcase('Test market_info fields')
     @parameterized.expand(sources)
     def test_market_info(self, source):
         wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
@@ -103,6 +107,7 @@ class SLPPageTestCase(BaseTestRunner):
         # Check that marketing info statuses have values set to true.
         self.assertNotIn(False, (display_address, display_internet, display_list_price, display_listing, display_photo))
 
+    @allure.testcase('Media count test')
     @parameterized.expand(sources)
     def test_media_count(self, source):
         wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
@@ -125,7 +130,9 @@ class SLPPageTestCase(BaseTestRunner):
         # Check that values of media_count filed is equal to the number of elements in the list of photo filed.
         self.assertEqual(media_count, photo_number)
 
+    @allure.testcase('AO enhancer call test')
     @parameterized.expand(sources)
+    @pytest.mark.critical
     def test_agent_office_call(self, source):
         wait = WebDriverWait(self.driver, 20, poll_frequency=0.5, ignored_exceptions=(Exception,))
         wait.until(EC.element_to_be_clickable(SOURCE_ID))
