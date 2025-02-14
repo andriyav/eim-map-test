@@ -1,26 +1,12 @@
-# import time
-# import pyautogui
 import time
-
 import pyautogui
-from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-from selenium import webdriver
 from SLP.ui.Elements.button import Button
 from SLP.ui.Elements.tab import Tub
-from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
-from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
-from selenium.webdriver.support import expected_conditions as EC
 
 LISTING_TAB = (By.XPATH, '/html/body/section/div/div/div/div[1]/div/div/a[1]')
 PHOTO_TAB = (By.XPATH, '/html/body/section/div/div/div/div[1]/div/div/a[2]')
 SAVE_MAP_BTN = (By.CSS_SELECTOR, '#btn_save_map')
-DATE_SAVE = (By.ID, 'last_edited')
-IMPLIS_WAIT_MAP = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
-SOURCE_SELECT = (By.CSS_SELECTOR, '#sources')
-SPINNER = (By.CSS_SELECTOR, '#spin_save_map')
-MLS_BTN = (By.CSS_SELECTOR, '#navbarNav > ul.navbar-nav.me-auto.mb-2.mb-lg-0 > li:nth-child(2) > a')
-LDBUTTON = (By.LINK_TEXT, "Listings Dashboard")
 
 class BasePage:
     def __init__(self, driver):
