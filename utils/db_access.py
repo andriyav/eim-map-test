@@ -17,7 +17,7 @@ class DBAccess:
         )
 
     @classmethod
-    def db_access_prod(cls):
+    def db_access_stage_mls_admin(cls):
         return psycopg2.connect(
             host=os.getenv('HOST_PROD'),
             port=os.getenv('PORT'),

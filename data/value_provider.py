@@ -15,6 +15,17 @@ class ValueProvider:
         return os.getenv("PASSWORD")
 
     @classmethod
+    def get_token_IDX(cls) -> str:
+        return os.getenv("PASSWORD")
+
+    @classmethod
+    def get_token_VOW(cls) -> str:
+        return os.getenv("PASSWORD")
+
+    @classmethod
+    def get_token_DLA(cls) -> str:
+        return os.getenv("PASSWORD")
+    @classmethod
     def get_base_url(cls):
         return BASE_URL
 
