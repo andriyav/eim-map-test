@@ -3,7 +3,7 @@
   on:
     push:
       branches:
-        - main
+        - de_basepage
     pull_request:
 
   jobs:
