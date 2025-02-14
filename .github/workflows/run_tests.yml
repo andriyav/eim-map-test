@@ -46,7 +46,6 @@
           xvfb-run -a pytest --capture=no --alluredir=allure-results tests/test_checklist.py
         continue-on-error: true
 
-
       - name: Generate Allure Report
         run: |
           npm install -g allure-commandline@latest
