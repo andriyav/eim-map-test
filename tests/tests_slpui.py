@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from data.test_data import sources
 from SLP.ui.PageObjects.Mapping.mapping import Mapping
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
-from SLP.ui.slp_main import SLPMain
+from SLP.ui.base_page import SLPMain
 from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent
 from tests.test_runner import BaseTestRunner
 from selenium.webdriver.support import expected_conditions as EC

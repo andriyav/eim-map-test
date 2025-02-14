@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 from SLP.ui.PageObjects.Mapping.rule_components import RuleComponents
-from SLP.ui.slp_main import SLPMain
+from SLP.ui.base_page import SLPMain
 
 IMPLIS_WAIT_MAP = (By.CSS_SELECTOR, '#listing_mapper_list_category__0')
 

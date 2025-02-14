@@ -1,7 +1,7 @@
 import time
 from SLP.ui.PageObjects.Mapping.mapper_map import MapperMap
 from SLP.ui.PageObjects.Mapping.rule_map import RuleMap
-from SLP.ui.slp_main import SLPMain
+from SLP.ui.base_page import SLPMain
 from data.value_provider import ValueProvider
 
 

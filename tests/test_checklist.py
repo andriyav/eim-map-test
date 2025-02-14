@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
-from SLP.ui.slp_main import SLPMain
+from SLP.ui.base_page import SLPMain
 from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent, SOURCE_ID
 from data.mls_id_data import mls_id_dict
 from data.test_data import sources
