@@ -52,7 +52,7 @@ class DBHandler:
                         where dm.mls_id = {mls_num};'''
 
     @classmethod
-    def config_downloads_queries(cls, mls_num, query_name):
+    def config_downloads_queries(cls, query_name):
         return f''' 	select qt.name, dc.config, dc.secrets, dmq.query_params, qt.template, dmq.custom_config 
     from download_mls dm
     left outer join download_config dc on dc.id = dm.download_config_id
@@ -60,5 +60,5 @@ class DBHandler:
     left outer join download_type dt on dt.id = dmq.download_type_id
     left outer join content_type_map ctm on ctm.id = dmq.content_type_map_id
     left outer join query_template qt on qt.id = dmq.query_template_id
-    where dm.mls_id = {mls_num}
+    where dm.mls_id = '387'
     and qt.name = '{query_name}';'''
