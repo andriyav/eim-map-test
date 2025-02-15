@@ -4,11 +4,11 @@ import allure
 import pytest
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
+from SLP.ui.PageObjects.SLPMain.madia_component import MediaComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent, SOURCE_ID
 from data.mls_id_data import mls_id_dict
@@ -52,18 +52,19 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'No elements of list_address are nullified or set constant (except country)'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
         self.driver.save_screenshot(screenshot_path)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            SLPMain(self.driver).metadata_main_select(metadata)
+            slp_main.metadata_main_select(metadata)
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             actual = []
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.impl_wait_metadata()
                     for address_field in LIST_FIELDS:
                         list_fields_txt = address_field.replace('-', '.')
                         field = ListComponent(self.driver).get_txt_get_field(address_field)
@@ -99,14 +100,15 @@ class TestPromotionChecklist(BaseTestRunner):
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_list_address_country()
                     country_code = ListComponent(self.driver).get_txt_list_address_country()
                     actual = False
@@ -129,14 +131,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'co_list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_co_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_office_phone()
                     result = False
@@ -158,14 +161,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'co_list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone"'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_co_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_co_list_agent_preferred_phone()
                     result = False
@@ -187,14 +191,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'list_agent_office_phone are mapped with FirstValueProvider:("agent_office_phone","office_phone")"'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_list_agent_office_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_office_phone()
                     result = False
@@ -216,14 +221,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'list_agent_preferred_phone are mapped with FirstValueProvider:("agent_mobile_phone","agent_home_phone")'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_list_agent_preferred_phone()
                     actual = ListComponent(self.driver).get_txt_list_agent_preferred_phone()
                     result = False
@@ -245,14 +251,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'Validate mls_source_id and sa_source_id are correct from here (NOT kw_id)'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_list_sa_id()
                     sa_id = ListComponent(self.driver).get_txt_ist_sa_id()
                     mls_id = ListComponent(self.driver).get_txt_list_mls_id()
@@ -277,12 +284,14 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'Validate mls_id is the correct value'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        dash_board = DashBoard(self.driver)
+        slp_main.source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
-        SLPMain(self.driver).mls_btn_click()
-        SLPMain(self.driver).ld_btn_click()
-        DashBoard(self.driver).set_kw_source_id(source)
-        DashBoard(self.driver).click_submit_btn()
+        slp_main.mls_btn_click()
+        slp_main.ld_btn_click()
+        dash_board.set_kw_source_id(source)
+        dash_board.click_submit_btn()
         actual = DashBoard(self.driver).get_source_id_txt()
         try:
             self.assertEqual(actual, source)
@@ -297,14 +306,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'Currency_code must be UPPER'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     field = ListComponent(self.driver).get_txt_get_field('currency_code')
                     match = re.search(r"const=([A-Za-z]{3})", field)
                     if match:
@@ -326,14 +336,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'list_dt is mapped'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     field = ListComponent(self.driver).get_txt_get_field('list_dt')
                     field_actual = False
                     if 'json_path=' in field:
@@ -354,14 +365,15 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'raw.properties.list_status is mapped'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     field = ListComponent(self.driver).get_txt_get_field('raw-properties-list_status')
                     field_actual = False
                     if 'json_path=' in field:
@@ -382,13 +394,14 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'Kww_region has no mapping'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
+                    slp_main.metadata_main_select(metadata)
                     SLPMain(self.driver).impl_wait_metadata()
                     expected_field = ListComponent(self.driver).get_expected_field('kww_region')
                     actual_field = ListComponent(self.driver).get_txt_get_field('kww_region')
@@ -408,15 +421,16 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'Price_history must use PriceHistoryEnhancer with ListPrice input'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             actual = []
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     field_actual = False
                     price_history = ListComponent(self.driver).get_txt_get_field('price_history')
                     if 'json_path=' in price_history and 'PriceHistoryEnhancer' in price_history:
@@ -500,14 +514,16 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'list_address.state_prov returns 2-letter State code'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        dash_board = DashBoard(self.driver)
+        slp_main.source_select(source)
         SourceSelectComponent(self.driver).get_select_wait().until(EC.invisibility_of_element_located(SOURCE_ID))
-        SLPMain(self.driver).mls_btn_click()
-        SLPMain(self.driver).ld_btn_click()
-        DashBoard(self.driver).set_kw_source_id(source)
-        DashBoard(self.driver).click_submit_btn()
+        slp_main.mls_btn_click()
+        slp_main.ld_btn_click()
+        dash_board.set_kw_source_id(source)
+        dash_board.click_submit_btn()
         WebDriverWait(self.driver, 50).until(EC.element_to_be_clickable(SUBMIT_BTN))
-        DashBoard(self.driver).click_view_data_btn()
+        dash_board.click_view_data_btn()
         RawData(self.driver).click_raw_data_tub()
         actual_raw = RawData(self.driver).get_list_address('state_prov')
         actual = actual_raw.replace('"', '')
@@ -528,14 +544,15 @@ class TestPromotionChecklist(BaseTestRunner):
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     actual = ListComponent(self.driver).get_txt_get_field('list_address-properties-address')
                     result = False
                     if 'a_street_number' in actual and 'b_street_dir_prefix' in actual \
@@ -561,14 +578,15 @@ class TestPromotionChecklist(BaseTestRunner):
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     actual_gp = ListComponent(self.driver).get_txt_get_field('list_address-properties-coordinates_gp')
                     actual_gs = ListComponent(self.driver).get_txt_get_field('list_address-properties-coordinates_gs')
                     result = False
@@ -593,14 +611,15 @@ class TestPromotionChecklist(BaseTestRunner):
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     actual = ListComponent(self.driver).get_txt_get_field('year_built')
                     result = False
                     if actual == YEAR_BUILT or 'ValidateYearBuilt' in actual:
@@ -621,18 +640,19 @@ class TestPromotionChecklist(BaseTestRunner):
         title = 'Do NOT Nullify any of these fields'
         PrintAssertions.title_print(title, source)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         screenshot_path = os.path.join(os.getcwd(), 'artifacts/screenshots', f'{self.id()}.png')
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
         self.driver.save_screenshot(screenshot_path)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
-            SLPMain(self.driver).metadata_main_select(metadata)
+            slp_main.metadata_main_select(metadata)
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             actual = []
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.impl_wait_metadata()
                     for address_field in NOT_NULLIFIED_FIELDS:
                         list_fields_txt = address_field.replace('-', '.')
                         field = ListComponent(self.driver).get_txt_get_field(address_field)
@@ -666,17 +686,50 @@ class TestPromotionChecklist(BaseTestRunner):
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
-        SLPMain(self.driver).source_select(source)
+        slp_main = SLPMain(self.driver)
+        slp_main.source_select(source)
         metadata_numbers = ListComponent(self.driver).get_metadata_number()
         for metadata in range(1, metadata_numbers):
             class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
             with self.subTest(metadata=class_txt):
                 try:
-                    SLPMain(self.driver).metadata_main_select(metadata)
-                    SLPMain(self.driver).impl_wait_metadata()
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_metadata()
                     ListComponent(self.driver).get_list_address_country()
                     actual = ListComponent(self.driver).get_txt_get_field('location-properties-schools-items')
                     self.assertEqual(actual, SCHOOL_ITEMS_EXPECTED)
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('Ph_category is mapped with the rule "PhotoCategory" applied')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_ph_category(self, source):
+        title = 'Ph_category is mapped with the rule "PhotoCategory" applied'
+        PrintAssertions.title_print(title, source)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        slp_main = SLPMain(self.driver)
+        media = MediaComponent(self.driver)
+        slp_main.source_select(source)
+        slp_main.select_photo_tub()
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_media_metadata()
+                    ph_text = media.get_txt_ph_type()
+                    result = False
+                    if 'PhotoCategory' in ph_text:
+                        result = True
+                    self.assertTrue(result, ph_text)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately

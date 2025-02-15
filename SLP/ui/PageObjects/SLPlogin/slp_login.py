@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
@@ -10,9 +11,11 @@ class LoginComponent(BaseComponent):
     def __init__(self, node):
         super().__init__(node)
 
+    @allure.step("Get authorisation button")
     def get_authorisation_btn(self) -> WebElement:
         return self.node.find_element(*LOGIN_WITH_GOOGLE)
 
+    @allure.step("Click authorisation button")
     def click_authorisation_btn(self):
         self.get_authorisation_btn().click()
         return LoginModal(self.node)

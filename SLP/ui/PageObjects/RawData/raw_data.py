@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from SLP.ui.Elements.tab import Tub
 from SLP.ui.PageObjects.base_components import BaseComponent
@@ -23,30 +24,36 @@ class RawData(BaseComponent):
         self.parent_div = None
         self._raw_data_tub = None
 
+    @allure.step("Get Raw data tub")
     def get_raw_data_tub(self):
         node = self.node.find_element(*RAW_DATA_TUB)
         self._raw_data_tub = Tub(node)
         return self._raw_data_tub
 
+    @allure.step("Click raw data tub")
     def click_raw_data_tub(self):
         # choose raw data tab in dashboard
         self.get_raw_data_tub().select_tab()
 
+    @allure.step("Get raw data tub single")
     def get_raw_data_tub_single(self):
         node = self.node.find_element(*RAW_DATA_TUB_SINGLE)
         self._raw_data_tub = Tub(node)
         return self._raw_data_tub
 
+    @allure.step("Click raw data tub single")
     def click_raw_data_tub__single(self):
         # Select the Raw Data tab in the dashboard if a single listing is selected.
         self.get_raw_data_tub_single().select_tab()
 
+    @allure.step("Get photo count")
     def get_photo_count(self):
         # The method returns the value of media_count on the dashboard.
         parent_element = self.node.find_element(*MEDIA_COUNT)
         result = self.node.execute_script('return arguments[0].textContent;', parent_element)
         return result
 
+    @allure.step("Get marketing info collapse")
     def get_marketing_info_collapse(self, value):
         # The method returns the value of marketing_info fields.
         # Locate the parent element containing 'marketing_info'
@@ -62,6 +69,7 @@ class RawData(BaseComponent):
         # Extract the text content using JavaScript and print the result
         return self.node.execute_script('return arguments[0].textContent;', next_element)
 
+    @allure.step("Get photo number")
     def get_photo_number(self):
         # The method returns length of the list with photo URLs.
         photo_link = self.node.find_element(*PHOTO_TEXT)
@@ -78,6 +86,7 @@ class RawData(BaseComponent):
         result = str(outer[index_max].count('+'))
         return result
 
+    @allure.step("Get list agent office")
     def get_list_agent_office(self, value):
         # The method returns the value of list_agent_office".
         # Locate the parent element containing 'list_agent_office"o'
@@ -92,6 +101,7 @@ class RawData(BaseComponent):
         # Extract the text content using JavaScript and print the result
         return self.node.execute_script('return arguments[0].textContent;', next_element)
 
+    @allure.step("Get list address")
     def get_list_address(self, value):
         # The method returns the value of get_list_address fields.
         # Locate the parent element containing 'marketing_info'
