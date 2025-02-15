@@ -4,11 +4,11 @@ import allure
 import pytest
 from parameterized import parameterized
 from selenium.common import NoSuchElementException
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from SLP.ui.PageObjects.DashBoard.dash_board import DashBoard, SUBMIT_BTN
 from SLP.ui.PageObjects.RawData.raw_data import RawData
 from SLP.ui.PageObjects.SLPMain.listing_component import ListComponent
+from SLP.ui.PageObjects.SLPMain.madia_component import MediaComponent
 from SLP.ui.PageObjects.SLPMain.slp_main import SLPMain
 from SLP.ui.PageObjects.SLPMain.source_select_component import SourceSelectComponent, SOURCE_ID
 from data.mls_id_data import mls_id_dict
@@ -698,6 +698,38 @@ class TestPromotionChecklist(BaseTestRunner):
                     ListComponent(self.driver).get_list_address_country()
                     actual = ListComponent(self.driver).get_txt_get_field('location-properties-schools-items')
                     self.assertEqual(actual, SCHOOL_ITEMS_EXPECTED)
+                    PrintAssertions.ok_print(class_txt)
+                except AssertionError as e:
+                    # Handle assertion errors separately
+                    PrintAssertions.nok_print(class_txt)
+                    raise e  # Re-raise to ensure the test fails
+                except NoSuchElementException as e:
+                    PrintAssertions.no_map_print(class_txt)
+
+    @allure.testcase('Ph_category is mapped with the rule "PhotoCategory" applied')
+    @parameterized.expand(sources)
+    @pytest.mark.filterwarnings("ignore::DeprecationWarning")
+    def test_ph_category(self, source):
+        title = 'Ph_category is mapped with the rule "PhotoCategory" applied'
+        PrintAssertions.title_print(title, source)
+        self.driver.implicitly_wait(20)
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(SOURCE_ID))
+        slp_main = SLPMain(self.driver)
+        media = MediaComponent(self.driver)
+        slp_main.source_select(source)
+        slp_main.select_photo_tub()
+        metadata_numbers = ListComponent(self.driver).get_metadata_number()
+        for metadata in range(1, metadata_numbers):
+            class_txt = ListComponent(self.driver).get_metadata_text(metadata + 1)
+            with self.subTest(metadata=class_txt):
+                try:
+                    slp_main.metadata_main_select(metadata)
+                    slp_main.impl_wait_media_metadata()
+                    ph_text = media.get_txt_ph_type()
+                    result = False
+                    if 'PhotoCategory' in ph_text:
+                        result = True
+                    self.assertTrue(result, ph_text)
                     PrintAssertions.ok_print(class_txt)
                 except AssertionError as e:
                     # Handle assertion errors separately
