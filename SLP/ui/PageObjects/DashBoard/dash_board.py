@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from SLP.ui.Elements.button import Button
 from SLP.ui.Elements.check_box import CheckBox
@@ -36,6 +37,7 @@ class DashBoard(BaseComponent):
             self._source_input = Input(node)
         return self._source_input
 
+    @allure.step("Set KW source id")
     def set_kw_source_id(self, source: str):
         # set source mls_id"
         self.get_source_input().set_text(source)
@@ -56,47 +58,59 @@ class DashBoard(BaseComponent):
         self._submit_btn = Button(node)
         return self._submit_btn
 
+    @allure.step("Click submit button")
     def click_submit_btn(self):
         # Click submit button in Dash Board.
         self.get_submit_btn().click_button()
 
+    @allure.step("Get source id text")
     def get_source_id_txt(self):
         return self.node.find_element(*KW_SOURCE_ID_TXT).text
 
+    @allure.step("Get view data button")
     def get_view_data_btn(self):
         node = self.node.find_element(*VIEW_DATA)
         self._view_data_btn = Button(node)
         return self._view_data_btn
 
+    @allure.step("Click view data button")
     def click_view_data_btn(self):
         self.get_view_data_btn().click_button()
 
+    @allure.step("Get photo check box")
     def get_photo_check_box(self):
         node = self.node.find_element(*PHOTO_CHECK)
         self._phot_check_box = CheckBox(node)
         return self._phot_check_box
 
+    @allure.step("Select photo check box")
     def select_photo_check_box(self):
         return self.get_photo_check_box().select_check_box()
 
+    @allure.step("Get OH check box")
     def get_oh_check_box(self):
         node = self.node.find_element(*OH_CHECK)
         self._oh_check_box = CheckBox(node)
         return self._oh_check_box
 
+    @allure.step("Select OH check box")
     def select_oh_check_box(self):
         return self.get_oh_check_box().select_check_box()
 
+    @allure.step("Get list of sources")
     def get_list_of_sources(self):
         return self.node.find_elements(*LIST_SOURCES)
 
+    @allure.step("Get view data button single")
     def get_view_data_btn_single(self):
         node = self.node.find_element(*VIEW_DATA_SINGLE)
         self._view_data_btn_single = Button(node)
         return self._view_data_btn_single
 
+    @allure.step("Click view data button single")
     def click_view_data_btn_single(self):
         self.get_view_data_btn_single().click_button()
 
+    @allure.step("Get KW ID text")
     def get_kw_id_txt(self):
         return self.node.find_element(*KW_ID).text
