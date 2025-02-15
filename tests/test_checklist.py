@@ -709,7 +709,7 @@ class TestPromotionChecklist(BaseTestRunner):
     @allure.testcase('Ph_category is mapped with the rule "PhotoCategory" applied')
     @parameterized.expand(sources)
     @pytest.mark.filterwarnings("ignore::DeprecationWarning")
-    def test_Ph_category(self, source):
+    def test_ph_category(self, source):
         title = 'Ph_category is mapped with the rule "PhotoCategory" applied'
         PrintAssertions.title_print(title, source)
         self.driver.implicitly_wait(20)
