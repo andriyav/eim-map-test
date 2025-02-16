@@ -1,6 +1,7 @@
 import os
 import psycopg2
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
@@ -17,11 +18,11 @@ class DBAccess:
         )
 
     @classmethod
-    def db_access_prod(cls):
+    def db_access_stage_mls_admin(cls):
         return psycopg2.connect(
-            host=os.getenv('HOST_PROD'),
+            host=os.getenv('HOST_STAGE'),
             port=os.getenv('PORT'),
-            database=os.getenv('DATABASE'),
-            user=os.getenv('USER_PROD'),
-            password=os.getenv('PASSWORD_PROD')
-    )
+            database=os.getenv('DATABASE_MLS_ADMIN'),
+            user=os.getenv('USER_STAGE'),
+            password=os.getenv('PASSWORD_STAGE')
+        )

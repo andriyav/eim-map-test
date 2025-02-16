@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+
 BASE_URL = 'https://stage-slp.data.kw.com/login'
 BASE_URL_PROD = 'https://prod-slp.data.kw.com/login'
 load_dotenv()
@@ -15,9 +16,20 @@ class ValueProvider:
         return os.getenv("PASSWORD")
 
     @classmethod
+    def get_token_idx(cls) -> str:
+        return os.getenv("TOKEN_IDX")
+
+    @classmethod
+    def get_token_vow(cls) -> str:
+        return os.getenv("TOKEN_VOW")
+
+    @classmethod
+    def get_token_dla(cls) -> str:
+        return os.getenv("TOKEN_DLA")
+
+    @classmethod
     def get_base_url(cls):
         return BASE_URL
-
 
     @classmethod
     def get_mls_id(cls):
@@ -37,6 +49,3 @@ class ValueProvider:
             "Const": "False"
         }
         return config
-
-
-
