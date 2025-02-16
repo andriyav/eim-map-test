@@ -19,8 +19,6 @@ class APIrequest:
 
     @classmethod
     def get_request(cls, query, config_name):
-        global feed_name
-        list_failed = []
         url = f"https://query.ampre.ca/odata/{query}"
         url = url.format(missing_listings=missing_listings, missing_offices=missing_offices, top=top,
                          previous_query_listing_keys=previous_query_listing_keys, skip_count=skip_count,
@@ -35,13 +33,10 @@ class APIrequest:
         token = "token_IDX"
         if feed in ("7", "2"):
             token = token_idx
-            feed_name = "IDX"
         if feed in ("3", "4"):
             token = token_vow
-            feed_name = "VOW"
         if feed in ("5", "6"):
             token = token_dla
-            feed_name = "DLA"
         headers = {
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json"
