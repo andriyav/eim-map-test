@@ -1,9 +1,15 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","210","test_schools_items_11_28","tests","Mon Feb 17 14:13:24 UTC 2025","broken","Mon Feb 17 14:13:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","12119","test_mls_id_sa_id_12_377","tests","Mon Feb 17 13:52:55 UTC 2025","passed","Mon Feb 17 13:53:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_12_377","tests","Mon Feb 17 14:13:32 UTC 2025","broken","Mon Feb 17 14:13:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20262","test_co_list_agent_preferred_phone_00_176","tests","Mon Feb 17 10:46:00 UTC 2025","passed","Mon Feb 17 10:46:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11389","test_not_nullify_12_377","tests","Mon Feb 17 14:05:41 UTC 2025","failed","Mon Feb 17 14:05:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","53742","test_list_dt_09_647","tests","Tue Feb 18 13:48:20 UTC 2025","passed","Tue Feb 18 13:49:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19013","test_list_agent_preferred_phone_06_156","tests","Tue Feb 18 13:35:08 UTC 2025","passed","Tue Feb 18 13:35:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","300860","test_year_built_05_142","tests","Tue Feb 18 15:12:33 UTC 2025","failed","Tue Feb 18 15:17:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21422","test_list_address_nullifier_const_02_644","tests","Tue Feb 18 12:45:54 UTC 2025","passed","Tue Feb 18 12:46:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","298789","test_list_address_04_13","tests","Tue Feb 18 12:09:30 UTC 2025","passed","Tue Feb 18 12:14:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","158359","test_kww_region_04_13","tests","Tue Feb 18 11:55:42 UTC 2025","passed","Tue Feb 18 11:58:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20647","test_list_address_nullifier_const_03_171","tests","Tue Feb 18 12:46:16 UTC 2025","failed","Tue Feb 18 12:46:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","10124","test_ph_category_03_171","tests","Tue Feb 18 14:13:53 UTC 2025","failed","Tue Feb 18 14:14:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","47722","test_currency_code_09_647","tests","Tue Feb 18 11:48:07 UTC 2025","passed","Tue Feb 18 11:48:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","13052","test_dashboard_source_number_06_156","tests","Tue Feb 18 11:50:44 UTC 2025","passed","Tue Feb 18 11:50:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15817","test_dashboard_source_number_07_463","tests","Tue Feb 18 11:50:57 UTC 2025","passed","Tue Feb 18 11:51:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -36,23 +42,8 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","8149","test_list_address_properties_country","tests","Mon Feb 17 12:36:53 UTC 2025","passed","Mon Feb 17 12:37:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","61206","test_co_list_agent_office_phone_13_593","tests","Mon Feb 17 10:44:48 UTC 2025","passed","Mon Feb 17 10:45:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_price_history_05_418","tests","Mon Feb 17 14:13:05 UTC 2025","broken","Mon Feb 17 14:13:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19000","test_list_address_properties_country_09_633","tests","Mon Feb 17 12:49:00 UTC 2025","passed","Mon Feb 17 12:49:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_state_prov_13_593","tests","Mon Feb 17 14:13:29 UTC 2025","broken","Mon Feb 17 14:13:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","162241","test_list_address_nullifier_const_10_459","tests","Mon Feb 17 12:30:13 UTC 2025","failed","Mon Feb 17 12:32:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","15231","test_dashboard_source_number_08_200","tests","Mon Feb 17 11:17:16 UTC 2025","passed","Mon Feb 17 11:17:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","12259","test_list_agent_preferred_phone_09_633","tests","Mon Feb 17 13:22:01 UTC 2025","passed","Mon Feb 17 13:22:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4082","test_ph_category_00_176","tests","Mon Feb 17 14:06:46 UTC 2025","passed","Mon Feb 17 14:06:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154595","test_not_nullify_10_459","tests","Mon Feb 17 14:00:31 UTC 2025","failed","Mon Feb 17 14:03:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","161402","test_currency_code_11_28","tests","Mon Feb 17 11:11:07 UTC 2025","passed","Mon Feb 17 11:13:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_03_92","tests","Mon Feb 17 14:13:30 UTC 2025","broken","Mon Feb 17 14:13:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","14292","test_dashboard_source_number_00_176","tests","Mon Feb 17 11:15:19 UTC 2025","passed","Mon Feb 17 11:15:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","83182","test_list_dt_02_551","tests","Mon Feb 17 13:31:15 UTC 2025","passed","Mon Feb 17 13:32:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","78027","test_list_address_03_92","tests","Mon Feb 17 11:41:38 UTC 2025","passed","Mon Feb 17 11:42:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4023","test_ph_category_09_633","tests","Mon Feb 17 14:07:44 UTC 2025","passed","Mon Feb 17 14:07:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154444","test_list_agent_office_phone_11_28","tests","Mon Feb 17 13:12:02 UTC 2025","passed","Mon Feb 17 13:14:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","7636","test_co_list_agent_preferred_phone","tests","Tue Feb 18 11:26:02 UTC 2025","passed","Tue Feb 18 11:26:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162241","test_raw_properties_list_status_00_84","tests","Tue Feb 18 14:27:16 UTC 2025","passed","Tue Feb 18 14:29:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -85,12 +76,29 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","206","test_raw_properties_list_status","tests","Mon Feb 17 14:13:07 UTC 2025","broken","Mon Feb 17 14:13:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20513","test_list_address_nullifier_const_06_635","tests","Mon Feb 17 12:28:27 UTC 2025","passed","Mon Feb 17 12:28:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","47844","test_list_address_nullifier_const_08_200","tests","Mon Feb 17 12:29:06 UTC 2025","failed","Mon Feb 17 12:29:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18812","test_price_history_03_92","tests","Mon Feb 17 14:12:36 UTC 2025","passed","Mon Feb 17 14:12:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","51925","test_list_agent_office_phone_13_593","tests","Mon Feb 17 13:14:48 UTC 2025","passed","Mon Feb 17 13:15:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4146","test_ph_category_04_170","tests","Mon Feb 17 14:07:23 UTC 2025","passed","Mon Feb 17 14:07:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","10046","test_currency_code","tests","Tue Feb 18 11:37:33 UTC 2025","passed","Tue Feb 18 11:37:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160610","test_co_list_agent_preferred_phone_05_142","tests","Tue Feb 18 11:32:26 UTC 2025","passed","Tue Feb 18 11:35:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21681","test_mls_id_sa_id_03_171","tests","Tue Feb 18 13:53:02 UTC 2025","passed","Tue Feb 18 13:53:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19615","test_list_address_03_171","tests","Tue Feb 18 12:09:10 UTC 2025","passed","Tue Feb 18 12:09:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18122","test_price_history_08_263","tests","Tue Feb 18 14:25:41 UTC 2025","failed","Tue Feb 18 14:25:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21043","test_list_address_nullifier_const_01_629","tests","Tue Feb 18 12:45:33 UTC 2025","failed","Tue Feb 18 12:45:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16837","test_mls_id_sa_id_10_455","tests","Tue Feb 18 14:01:03 UTC 2025","passed","Tue Feb 18 14:01:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21207","test_kww_region_01_629","tests","Tue Feb 18 11:54:42 UTC 2025","passed","Tue Feb 18 11:55:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20799","test_list_agent_preferred_phone_03_171","tests","Tue Feb 18 13:29:27 UTC 2025","failed","Tue Feb 18 13:29:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","304198","test_list_address_05_142","tests","Tue Feb 18 12:14:28 UTC 2025","passed","Tue Feb 18 12:19:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14834","test_state_prov_01_629","tests","Tue Feb 18 14:59:02 UTC 2025","passed","Tue Feb 18 14:59:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","47086","test_list_agent_office_phone_09_647","tests","Tue Feb 18 13:24:54 UTC 2025","passed","Tue Feb 18 13:25:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19184","test_year_built_06_156","tests","Tue Feb 18 15:17:34 UTC 2025","passed","Tue Feb 18 15:17:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","13406","test_state_prov_08_263","tests","Tue Feb 18 15:00:43 UTC 2025","passed","Tue Feb 18 15:00:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16361","test_list_address_10_455","tests","Tue Feb 18 12:22:47 UTC 2025","failed","Tue Feb 18 12:23:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14152","test_state_prov_02_644","tests","Tue Feb 18 14:59:17 UTC 2025","passed","Tue Feb 18 14:59:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","22236","test_not_nullify_02_644","tests","Tue Feb 18 14:04:28 UTC 2025","passed","Tue Feb 18 14:04:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18387","test_list_agent_office_phone_01_629","tests","Tue Feb 18 13:17:14 UTC 2025","passed","Tue Feb 18 13:17:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17293","test_mls_id_sa_id_01_629","tests","Tue Feb 18 13:52:26 UTC 2025","passed","Tue Feb 18 13:52:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18598","test_currency_code_01_629","tests","Tue Feb 18 11:40:23 UTC 2025","passed","Tue Feb 18 11:40:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16766","test_currency_code_08_263","tests","Tue Feb 18 11:47:51 UTC 2025","passed","Tue Feb 18 11:48:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","79952","test_year_built_07_463","tests","Tue Feb 18 15:17:53 UTC 2025","passed","Tue Feb 18 15:19:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18918","test_list_address_coordinates_02_644","tests","Tue Feb 18 12:28:33 UTC 2025","failed","Tue Feb 18 12:28:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -123,25 +131,13 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","1757","test_list_dt","tests","Mon Feb 17 13:28:26 UTC 2025","passed","Mon Feb 17 13:28:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17853","test_list_address_properties_country_06_635","tests","Mon Feb 17 12:47:03 UTC 2025","passed","Mon Feb 17 12:47:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","13774","test_dashboard_source_number_12_377","tests","Mon Feb 17 11:18:14 UTC 2025","passed","Mon Feb 17 11:18:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20470","test_list_agent_office_phone_04_170","tests","Mon Feb 17 13:06:51 UTC 2025","passed","Mon Feb 17 13:07:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4573","test_ph_category_01_485","tests","Mon Feb 17 14:06:50 UTC 2025","failed","Mon Feb 17 14:06:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19781","test_co_list_agent_preferred_phone_09_633","tests","Mon Feb 17 10:53:26 UTC 2025","passed","Mon Feb 17 10:53:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17063","test_list_address_coordinates_04_170","tests","Mon Feb 17 12:07:19 UTC 2025","failed","Mon Feb 17 12:07:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","51967","test_currency_code_08_200","tests","Mon Feb 17 11:07:16 UTC 2025","passed","Mon Feb 17 11:08:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_state_prov_00_176","tests","Mon Feb 17 14:13:25 UTC 2025","broken","Mon Feb 17 14:13:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","155774","test_list_dt_10_459","tests","Mon Feb 17 13:35:00 UTC 2025","passed","Mon Feb 17 13:37:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","82754","test_not_nullify_02_551","tests","Mon Feb 17 13:56:47 UTC 2025","failed","Mon Feb 17 13:58:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","162570","test_list_address_02_551","tests","Mon Feb 17 11:38:56 UTC 2025","passed","Mon Feb 17 11:41:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","275","test_raw_properties_list_status_05_418","tests","Mon Feb 17 14:13:19 UTC 2025","broken","Mon Feb 17 14:13:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11511","test_mls_id_sa_id_00_176","tests","Mon Feb 17 13:41:16 UTC 2025","passed","Mon Feb 17 13:41:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_schools_items_04_170","tests","Mon Feb 17 14:13:23 UTC 2025","broken","Mon Feb 17 14:13:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","82737","test_mls_id_sa_id_02_551","tests","Mon Feb 17 13:44:02 UTC 2025","passed","Mon Feb 17 13:45:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","161512","test_co_list_agent_office_phone_10_459","tests","Mon Feb 17 10:39:05 UTC 2025","passed","Mon Feb 17 10:41:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","162300","test_list_agent_office_phone_01_485","tests","Mon Feb 17 13:01:49 UTC 2025","passed","Mon Feb 17 13:04:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","210","test_state_prov_09_633","tests","Mon Feb 17 14:13:28 UTC 2025","broken","Mon Feb 17 14:13:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","8971","test_list_address_nullifier_const","tests","Tue Feb 18 12:42:43 UTC 2025","passed","Tue Feb 18 12:42:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","79350","test_list_address_coordinates_09_647","tests","Tue Feb 18 12:41:06 UTC 2025","passed","Tue Feb 18 12:42:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17350","test_mls_id_sa_id_06_156","tests","Tue Feb 18 13:58:47 UTC 2025","passed","Tue Feb 18 13:59:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18900","test_price_history_01_629","tests","Tue Feb 18 14:18:12 UTC 2025","passed","Tue Feb 18 14:18:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15949","test_year_built_10_455","tests","Tue Feb 18 15:20:55 UTC 2025","passed","Tue Feb 18 15:21:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161149","test_kww_region_05_142","tests","Tue Feb 18 11:58:20 UTC 2025","passed","Tue Feb 18 12:01:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18046","test_co_list_agent_preferred_phone_03_171","tests","Tue Feb 18 11:29:26 UTC 2025","passed","Tue Feb 18 11:29:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -174,26 +170,18 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","10017","test_list_address_coordinates","tests","Mon Feb 17 11:57:51 UTC 2025","passed","Mon Feb 17 11:58:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21324","test_co_list_agent_office_phone_05_418","tests","Mon Feb 17 10:36:52 UTC 2025","passed","Mon Feb 17 10:37:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21809","test_kww_region_12_377","tests","Mon Feb 17 11:32:03 UTC 2025","passed","Mon Feb 17 11:32:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","83867","test_price_history_02_551","tests","Mon Feb 17 14:11:12 UTC 2025","passed","Mon Feb 17 14:12:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_price_history_07_494","tests","Mon Feb 17 14:13:06 UTC 2025","broken","Mon Feb 17 14:13:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154419","test_mls_id_sa_id_10_459","tests","Mon Feb 17 13:47:46 UTC 2025","passed","Mon Feb 17 13:50:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","41917","test_not_nullify_03_92","tests","Mon Feb 17 13:58:10 UTC 2025","passed","Mon Feb 17 13:58:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","52117","test_list_dt_13_593","tests","Mon Feb 17 13:40:22 UTC 2025","failed","Mon Feb 17 13:41:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","82878","test_list_agent_preferred_phone_02_551","tests","Mon Feb 17 13:18:28 UTC 2025","passed","Mon Feb 17 13:19:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_02_551","tests","Mon Feb 17 14:13:30 UTC 2025","broken","Mon Feb 17 14:13:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_year_built_10_459","tests","Mon Feb 17 14:13:31 UTC 2025","broken","Mon Feb 17 14:13:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11628","test_list_dt_07_494","tests","Mon Feb 17 13:33:54 UTC 2025","passed","Mon Feb 17 13:34:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_raw_properties_list_status_00_176","tests","Mon Feb 17 14:13:08 UTC 2025","broken","Mon Feb 17 14:13:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_state_prov_03_92","tests","Mon Feb 17 14:13:26 UTC 2025","broken","Mon Feb 17 14:13:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_raw_properties_list_status_12_377","tests","Mon Feb 17 14:13:21 UTC 2025","broken","Mon Feb 17 14:13:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_state_prov_05_418","tests","Mon Feb 17 14:13:27 UTC 2025","broken","Mon Feb 17 14:13:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","213","test_schools_items_05_418","tests","Mon Feb 17 14:13:23 UTC 2025","broken","Mon Feb 17 14:13:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_state_prov_07_494","tests","Mon Feb 17 14:13:27 UTC 2025","broken","Mon Feb 17 14:13:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11571","test_list_dt_00_176","tests","Mon Feb 17 13:28:28 UTC 2025","passed","Mon Feb 17 13:28:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_schools_items_08_200","tests","Mon Feb 17 14:13:24 UTC 2025","broken","Mon Feb 17 14:13:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","9610","test_state_prov","tests","Tue Feb 18 14:58:38 UTC 2025","passed","Tue Feb 18 14:58:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16888","test_raw_properties_list_status_06_156","tests","Tue Feb 18 14:36:18 UTC 2025","passed","Tue Feb 18 14:36:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162014","test_co_list_agent_office_phone_00_84","tests","Tue Feb 18 11:14:28 UTC 2025","passed","Tue Feb 18 11:17:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","77570","test_list_address_properties_country_09_647","tests","Tue Feb 18 13:12:49 UTC 2025","passed","Tue Feb 18 13:14:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","13484","test_ph_category_05_142","tests","Tue Feb 18 14:14:14 UTC 2025","failed","Tue Feb 18 14:14:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160755","test_mls_id_sa_id_00_84","tests","Tue Feb 18 13:49:45 UTC 2025","passed","Tue Feb 18 13:52:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","49361","test_price_history_09_647","tests","Tue Feb 18 14:25:59 UTC 2025","failed","Tue Feb 18 14:26:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18279","test_not_nullify_06_156","tests","Tue Feb 18 14:10:34 UTC 2025","failed","Tue Feb 18 14:10:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","300532","test_list_address_00_84","tests","Tue Feb 18 12:03:37 UTC 2025","passed","Tue Feb 18 12:08:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15397","test_state_prov_06_156","tests","Tue Feb 18 15:00:15 UTC 2025","passed","Tue Feb 18 15:00:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","49759","test_list_agent_office_phone_07_463","tests","Tue Feb 18 13:23:47 UTC 2025","passed","Tue Feb 18 13:24:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16595","test_year_built_01_629","tests","Tue Feb 18 15:06:36 UTC 2025","passed","Tue Feb 18 15:06:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -226,20 +214,9 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","1591","test_price_history","tests","Mon Feb 17 14:08:25 UTC 2025","passed","Mon Feb 17 14:08:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","24239","test_ph_category_10_459","tests","Mon Feb 17 14:07:48 UTC 2025","failed","Mon Feb 17 14:08:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_state_prov_12_377","tests","Mon Feb 17 14:13:28 UTC 2025","broken","Mon Feb 17 14:13:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4293","test_ph_category_11_28","tests","Mon Feb 17 14:08:12 UTC 2025","failed","Mon Feb 17 14:08:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17716","test_kww_region_06_635","tests","Mon Feb 17 11:24:59 UTC 2025","passed","Mon Feb 17 11:25:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","78869","test_list_address_08_200","tests","Mon Feb 17 11:44:17 UTC 2025","failed","Mon Feb 17 11:45:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","99725","test_list_address_coordinates_13_593","tests","Mon Feb 17 12:20:42 UTC 2025","passed","Mon Feb 17 12:22:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","210","test_schools_items_06_635","tests","Mon Feb 17 14:13:23 UTC 2025","broken","Mon Feb 17 14:13:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11547","test_list_dt_04_170","tests","Mon Feb 17 13:33:20 UTC 2025","passed","Mon Feb 17 13:33:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","47049","test_kww_region_08_200","tests","Mon Feb 17 11:25:34 UTC 2025","passed","Mon Feb 17 11:26:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","164714","test_kww_region_11_28","tests","Mon Feb 17 11:29:19 UTC 2025","passed","Mon Feb 17 11:32:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4181","test_ph_category_13_593","tests","Mon Feb 17 14:08:20 UTC 2025","failed","Mon Feb 17 14:08:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_schools_items_01_485","tests","Mon Feb 17 14:13:22 UTC 2025","broken","Mon Feb 17 14:13:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","12344","test_dashboard_source_number_11_28","tests","Mon Feb 17 11:18:02 UTC 2025","passed","Mon Feb 17 11:18:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","8866","test_kww_region","tests","Tue Feb 18 11:51:51 UTC 2025","passed","Tue Feb 18 11:51:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","47600","test_kww_region_09_647","tests","Tue Feb 18 12:02:23 UTC 2025","passed","Tue Feb 18 12:03:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19335","test_list_address_coordinates_01_629","tests","Tue Feb 18 12:28:14 UTC 2025","failed","Tue Feb 18 12:28:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -272,29 +249,13 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","1738","test_not_nullify","tests","Mon Feb 17 13:53:59 UTC 2025","passed","Mon Feb 17 13:54:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","300064","test_list_address_coordinates_11_28","tests","Mon Feb 17 12:15:21 UTC 2025","failed","Mon Feb 17 12:20:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_year_built_06_635","tests","Mon Feb 17 14:13:31 UTC 2025","broken","Mon Feb 17 14:13:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_raw_properties_list_status_01_485","tests","Mon Feb 17 14:13:08 UTC 2025","broken","Mon Feb 17 14:13:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_year_built_08_200","tests","Mon Feb 17 14:13:31 UTC 2025","broken","Mon Feb 17 14:13:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_09_633","tests","Mon Feb 17 14:13:31 UTC 2025","broken","Mon Feb 17 14:13:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","42591","test_not_nullify_08_200","tests","Mon Feb 17 13:59:36 UTC 2025","failed","Mon Feb 17 14:00:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_07_494","tests","Mon Feb 17 14:13:31 UTC 2025","broken","Mon Feb 17 14:13:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","16248","test_kww_region_09_633","tests","Mon Feb 17 11:26:21 UTC 2025","passed","Mon Feb 17 11:26:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11704","test_list_agent_preferred_phone_05_418","tests","Mon Feb 17 13:20:45 UTC 2025","passed","Mon Feb 17 13:20:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18852","test_list_address_nullifier_const_09_633","tests","Mon Feb 17 12:29:54 UTC 2025","failed","Mon Feb 17 12:30:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11116","test_not_nullify_07_494","tests","Mon Feb 17 13:59:25 UTC 2025","failed","Mon Feb 17 13:59:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20816","test_co_list_agent_preferred_phone_12_377","tests","Mon Feb 17 10:59:08 UTC 2025","passed","Mon Feb 17 10:59:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18717","test_co_list_agent_preferred_phone_05_418","tests","Mon Feb 17 10:51:39 UTC 2025","passed","Mon Feb 17 10:51:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_04_170","tests","Mon Feb 17 14:13:30 UTC 2025","broken","Mon Feb 17 14:13:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","90648","test_currency_code_02_551","tests","Mon Feb 17 11:03:38 UTC 2025","passed","Mon Feb 17 11:05:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_schools_items_09_633","tests","Mon Feb 17 14:13:24 UTC 2025","broken","Mon Feb 17 14:13:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11858","test_list_agent_preferred_phone_00_176","tests","Mon Feb 17 13:15:42 UTC 2025","passed","Mon Feb 17 13:15:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_schools_items_00_176","tests","Mon Feb 17 14:13:22 UTC 2025","broken","Mon Feb 17 14:13:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_raw_properties_list_status_13_593","tests","Mon Feb 17 14:13:21 UTC 2025","broken","Mon Feb 17 14:13:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11350","test_list_dt_09_633","tests","Mon Feb 17 13:34:49 UTC 2025","passed","Mon Feb 17 13:35:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20661","test_co_list_agent_office_phone_09_633","tests","Mon Feb 17 10:38:44 UTC 2025","passed","Mon Feb 17 10:39:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","16667","test_currency_code_09_633","tests","Mon Feb 17 11:08:08 UTC 2025","passed","Mon Feb 17 11:08:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","7549","test_price_history","tests","Tue Feb 18 14:15:24 UTC 2025","passed","Tue Feb 18 14:15:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","12237","test_state_prov_04_13","tests","Tue Feb 18 14:59:46 UTC 2025","passed","Tue Feb 18 14:59:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14131","test_dashboard_source_number_03_171","tests","Tue Feb 18 11:50:06 UTC 2025","passed","Tue Feb 18 11:50:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","50889","test_list_agent_preferred_phone_07_463","tests","Tue Feb 18 13:35:27 UTC 2025","passed","Tue Feb 18 13:36:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","75870","test_list_address_09_647","tests","Tue Feb 18 12:21:31 UTC 2025","failed","Tue Feb 18 12:22:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19016","test_mls_id_sa_id_02_644","tests","Tue Feb 18 13:52:43 UTC 2025","passed","Tue Feb 18 13:53:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18715","test_co_list_agent_office_phone_02_644","tests","Tue Feb 18 11:17:28 UTC 2025","passed","Tue Feb 18 11:17:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -327,18 +288,24 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","7453","test_list_address_nullifier_const","tests","Mon Feb 17 12:22:22 UTC 2025","passed","Mon Feb 17 12:22:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11495","test_mls_id_sa_id_05_418","tests","Mon Feb 17 13:46:18 UTC 2025","passed","Mon Feb 17 13:46:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","299730","test_list_address_properties_country_10_459","tests","Mon Feb 17 12:49:19 UTC 2025","passed","Mon Feb 17 12:54:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20133","test_list_agent_office_phone_00_176","tests","Mon Feb 17 13:01:29 UTC 2025","passed","Mon Feb 17 13:01:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11907","test_not_nullify_09_633","tests","Mon Feb 17 14:00:19 UTC 2025","failed","Mon Feb 17 14:00:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19792","test_co_list_agent_preferred_phone_07_494","tests","Mon Feb 17 10:52:17 UTC 2025","passed","Mon Feb 17 10:52:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","12845","test_dashboard_source_number_09_633","tests","Mon Feb 17 11:17:32 UTC 2025","passed","Mon Feb 17 11:17:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","60152","test_currency_code_13_593","tests","Mon Feb 17 11:14:08 UTC 2025","passed","Mon Feb 17 11:15:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11336","test_list_agent_preferred_phone_04_170","tests","Mon Feb 17 13:20:34 UTC 2025","passed","Mon Feb 17 13:20:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4085","test_ph_category_03_92","tests","Mon Feb 17 14:07:19 UTC 2025","passed","Mon Feb 17 14:07:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","49025","test_co_list_agent_preferred_phone_08_200","tests","Mon Feb 17 10:52:36 UTC 2025","passed","Mon Feb 17 10:53:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","43263","test_list_dt_08_200","tests","Mon Feb 17 13:34:06 UTC 2025","passed","Mon Feb 17 13:34:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","9967","test_list_address_properties_country","tests","Tue Feb 18 12:54:37 UTC 2025","passed","Tue Feb 18 12:54:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","163040","test_currency_code_05_142","tests","Tue Feb 18 11:44:01 UTC 2025","passed","Tue Feb 18 11:46:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16128","test_list_address_01_629","tests","Tue Feb 18 12:08:38 UTC 2025","failed","Tue Feb 18 12:08:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","22102","test_list_dt_03_171","tests","Tue Feb 18 13:41:05 UTC 2025","passed","Tue Feb 18 13:41:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19919","test_list_address_06_156","tests","Tue Feb 18 12:19:33 UTC 2025","failed","Tue Feb 18 12:19:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18937","test_raw_properties_list_status_01_629","tests","Tue Feb 18 14:29:59 UTC 2025","passed","Tue Feb 18 14:30:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","13489","test_ph_category_08_263","tests","Tue Feb 18 14:14:50 UTC 2025","failed","Tue Feb 18 14:15:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19490","test_price_history_02_644","tests","Tue Feb 18 14:18:31 UTC 2025","passed","Tue Feb 18 14:18:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","48634","test_co_list_agent_preferred_phone_07_463","tests","Tue Feb 18 11:35:23 UTC 2025","passed","Tue Feb 18 11:36:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21437","test_mls_id_sa_id_08_263","tests","Tue Feb 18 13:59:52 UTC 2025","passed","Tue Feb 18 14:00:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","302562","test_schools_items_00_84","tests","Tue Feb 18 14:39:01 UTC 2025","passed","Tue Feb 18 14:44:04 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20879","test_price_history_10_455","tests","Tue Feb 18 14:26:49 UTC 2025","passed","Tue Feb 18 14:27:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","12529","test_dashboard_source_number_01_629","tests","Tue Feb 18 11:49:38 UTC 2025","passed","Tue Feb 18 11:49:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","46504","test_list_address_nullifier_const_09_647","tests","Tue Feb 18 12:53:33 UTC 2025","failed","Tue Feb 18 12:54:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17932","test_price_history_03_171","tests","Tue Feb 18 14:18:51 UTC 2025","passed","Tue Feb 18 14:19:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17044","test_list_agent_preferred_phone_01_629","tests","Tue Feb 18 13:28:50 UTC 2025","passed","Tue Feb 18 13:29:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","163590","test_raw_properties_list_status_04_13","tests","Tue Feb 18 14:30:56 UTC 2025","passed","Tue Feb 18 14:33:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","50948","test_not_nullify_07_463","tests","Tue Feb 18 14:10:52 UTC 2025","passed","Tue Feb 18 14:11:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -371,32 +338,33 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","1682","test_ph_category","tests","Mon Feb 17 14:06:44 UTC 2025","passed","Mon Feb 17 14:06:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_raw_properties_list_status_06_635","tests","Mon Feb 17 14:13:20 UTC 2025","broken","Mon Feb 17 14:13:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_price_history_12_377","tests","Mon Feb 17 14:13:07 UTC 2025","broken","Mon Feb 17 14:13:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17509","test_list_address_nullifier_const_05_418","tests","Mon Feb 17 12:28:10 UTC 2025","failed","Mon Feb 17 12:28:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19531","test_currency_code_05_418","tests","Mon Feb 17 11:06:17 UTC 2025","passed","Mon Feb 17 11:06:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","41752","test_list_agent_preferred_phone_08_200","tests","Mon Feb 17 13:21:19 UTC 2025","passed","Mon Feb 17 13:22:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19656","test_list_address_coordinates_07_494","tests","Mon Feb 17 12:08:17 UTC 2025","passed","Mon Feb 17 12:08:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_year_built_01_485","tests","Mon Feb 17 14:13:29 UTC 2025","broken","Mon Feb 17 14:13:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","59174","test_kww_region_13_593","tests","Mon Feb 17 11:32:25 UTC 2025","passed","Mon Feb 17 11:33:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","90218","test_kww_region_02_551","tests","Mon Feb 17 11:21:56 UTC 2025","passed","Mon Feb 17 11:23:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20907","test_list_address_06_635","tests","Mon Feb 17 11:43:35 UTC 2025","failed","Mon Feb 17 11:43:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","50894","test_currency_code_03_92","tests","Mon Feb 17 11:05:08 UTC 2025","passed","Mon Feb 17 11:05:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_year_built_11_28","tests","Mon Feb 17 14:13:32 UTC 2025","broken","Mon Feb 17 14:13:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154901","test_list_agent_preferred_phone_01_485","tests","Mon Feb 17 13:15:53 UTC 2025","passed","Mon Feb 17 13:18:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21083","test_list_address_07_494","tests","Mon Feb 17 11:43:56 UTC 2025","passed","Mon Feb 17 11:44:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11480","test_not_nullify_06_635","tests","Mon Feb 17 13:59:14 UTC 2025","passed","Mon Feb 17 13:59:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_raw_properties_list_status_11_28","tests","Mon Feb 17 14:13:21 UTC 2025","broken","Mon Feb 17 14:13:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","41910","test_list_dt_03_92","tests","Mon Feb 17 13:32:38 UTC 2025","passed","Mon Feb 17 13:33:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11054","test_list_agent_preferred_phone_06_635","tests","Mon Feb 17 13:20:57 UTC 2025","failed","Mon Feb 17 13:21:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","49311","test_co_list_agent_preferred_phone_03_92","tests","Mon Feb 17 10:50:30 UTC 2025","failed","Mon Feb 17 10:51:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19508","test_list_address_properties_country_00_176","tests","Mon Feb 17 12:37:02 UTC 2025","passed","Mon Feb 17 12:37:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","52127","test_list_agent_preferred_phone_13_593","tests","Mon Feb 17 13:27:34 UTC 2025","failed","Mon Feb 17 13:28:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11735","test_mls_id_sa_id_09_633","tests","Mon Feb 17 13:47:34 UTC 2025","passed","Mon Feb 17 13:47:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","24091","test_ph_category_02_551","tests","Mon Feb 17 14:06:55 UTC 2025","passed","Mon Feb 17 14:07:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18145","test_list_address_09_633","tests","Mon Feb 17 11:45:36 UTC 2025","failed","Mon Feb 17 11:45:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154917","test_list_agent_preferred_phone_10_459","tests","Mon Feb 17 13:22:13 UTC 2025","passed","Mon Feb 17 13:24:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","10041","test_list_address","tests","Tue Feb 18 12:03:27 UTC 2025","passed","Tue Feb 18 12:03:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15862","test_raw_properties_list_status_10_455","tests","Tue Feb 18 14:38:36 UTC 2025","passed","Tue Feb 18 14:38:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","79304","test_list_address_07_463","tests","Tue Feb 18 12:19:53 UTC 2025","passed","Tue Feb 18 12:21:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162685","test_currency_code_04_13","tests","Tue Feb 18 11:41:19 UTC 2025","passed","Tue Feb 18 11:44:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16646","test_state_prov_05_142","tests","Tue Feb 18 14:59:58 UTC 2025","passed","Tue Feb 18 15:00:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19760","test_price_history_06_156","tests","Tue Feb 18 14:24:31 UTC 2025","passed","Tue Feb 18 14:24:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","47933","test_not_nullify_09_647","tests","Tue Feb 18 14:12:03 UTC 2025","failed","Tue Feb 18 14:12:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18058","test_list_address_nullifier_const_10_455","tests","Tue Feb 18 12:54:19 UTC 2025","failed","Tue Feb 18 12:54:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160894","test_price_history_00_84","tests","Tue Feb 18 14:15:31 UTC 2025","failed","Tue Feb 18 14:18:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","50725","test_price_history_07_463","tests","Tue Feb 18 14:24:51 UTC 2025","passed","Tue Feb 18 14:25:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","45667","test_co_list_agent_preferred_phone_09_647","tests","Tue Feb 18 11:36:28 UTC 2025","passed","Tue Feb 18 11:37:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","302730","test_schools_items_04_13","tests","Tue Feb 18 14:44:58 UTC 2025","passed","Tue Feb 18 14:50:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","47081","test_list_agent_preferred_phone_09_647","tests","Tue Feb 18 13:36:38 UTC 2025","passed","Tue Feb 18 13:37:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20694","test_list_address_properties_country_03_171","tests","Tue Feb 18 13:00:25 UTC 2025","passed","Tue Feb 18 13:00:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","303164","test_list_address_properties_country_05_142","tests","Tue Feb 18 13:05:46 UTC 2025","failed","Tue Feb 18 13:10:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","48193","test_co_list_agent_office_phone_09_647","tests","Tue Feb 18 11:24:58 UTC 2025","passed","Tue Feb 18 11:25:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21074","test_year_built_03_171","tests","Tue Feb 18 15:07:12 UTC 2025","passed","Tue Feb 18 15:07:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","49343","test_co_list_agent_office_phone_07_463","tests","Tue Feb 18 11:23:50 UTC 2025","passed","Tue Feb 18 11:24:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","12427","test_dashboard_source_number_05_142","tests","Tue Feb 18 11:50:31 UTC 2025","passed","Tue Feb 18 11:50:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162922","test_kww_region_00_84","tests","Tue Feb 18 11:51:59 UTC 2025","passed","Tue Feb 18 11:54:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","10382","test_ph_category_06_156","tests","Tue Feb 18 14:14:27 UTC 2025","passed","Tue Feb 18 14:14:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16271","test_schools_items_01_629","tests","Tue Feb 18 14:44:04 UTC 2025","passed","Tue Feb 18 14:44:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","302722","test_list_address_coordinates_00_84","tests","Tue Feb 18 12:23:11 UTC 2025","failed","Tue Feb 18 12:28:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19300","test_list_address_08_263","tests","Tue Feb 18 12:21:12 UTC 2025","passed","Tue Feb 18 12:21:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161201","test_list_address_nullifier_const_00_84","tests","Tue Feb 18 12:42:52 UTC 2025","failed","Tue Feb 18 12:45:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18084","test_co_list_agent_office_phone_01_629","tests","Tue Feb 18 11:17:10 UTC 2025","passed","Tue Feb 18 11:17:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15147","test_dashboard_source_number_02_644","tests","Tue Feb 18 11:49:51 UTC 2025","passed","Tue Feb 18 11:50:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -429,17 +397,16 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","11790","test_co_list_agent_office_phone","tests","Mon Feb 17 10:30:54 UTC 2025","passed","Mon Feb 17 10:31:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19141","test_list_agent_office_phone_09_633","tests","Mon Feb 17 13:09:02 UTC 2025","passed","Mon Feb 17 13:09:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","164252","test_kww_region_01_485","tests","Mon Feb 17 11:19:11 UTC 2025","passed","Mon Feb 17 11:21:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","3989","test_ph_category_05_418","tests","Mon Feb 17 14:07:27 UTC 2025","passed","Mon Feb 17 14:07:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","51251","test_list_agent_office_phone_08_200","tests","Mon Feb 17 13:08:11 UTC 2025","passed","Mon Feb 17 13:09:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19289","test_co_list_agent_preferred_phone_06_635","tests","Mon Feb 17 10:51:57 UTC 2025","failed","Mon Feb 17 10:52:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_state_prov_11_28","tests","Mon Feb 17 14:13:28 UTC 2025","broken","Mon Feb 17 14:13:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","100227","test_list_address_properties_country_13_593","tests","Mon Feb 17 12:59:38 UTC 2025","passed","Mon Feb 17 13:01:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","94094","test_co_list_agent_office_phone_02_551","tests","Mon Feb 17 10:34:08 UTC 2025","passed","Mon Feb 17 10:35:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","10886","test_not_nullify_05_418","tests","Mon Feb 17 13:59:03 UTC 2025","failed","Mon Feb 17 13:59:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_schools_items_07_494","tests","Mon Feb 17 14:13:24 UTC 2025","broken","Mon Feb 17 14:13:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","8249","test_list_agent_office_phone","tests","Tue Feb 18 13:14:25 UTC 2025","passed","Tue Feb 18 13:14:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","47566","test_mls_id_sa_id_07_463","tests","Tue Feb 18 13:59:04 UTC 2025","passed","Tue Feb 18 13:59:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","300210","test_list_address_properties_country_04_13","tests","Tue Feb 18 13:00:46 UTC 2025","passed","Tue Feb 18 13:05:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17830","test_list_address_nullifier_const_06_156","tests","Tue Feb 18 12:52:02 UTC 2025","failed","Tue Feb 18 12:52:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19283","test_currency_code_02_644","tests","Tue Feb 18 11:40:42 UTC 2025","passed","Tue Feb 18 11:41:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17887","test_list_address_properties_country_10_455","tests","Tue Feb 18 13:14:07 UTC 2025","passed","Tue Feb 18 13:14:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19478","test_co_list_agent_preferred_phone_10_455","tests","Tue Feb 18 11:37:14 UTC 2025","failed","Tue Feb 18 11:37:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21539","test_schools_items_03_171","tests","Tue Feb 18 14:44:37 UTC 2025","passed","Tue Feb 18 14:44:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17793","test_list_agent_office_phone_02_644","tests","Tue Feb 18 13:17:32 UTC 2025","passed","Tue Feb 18 13:17:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20976","test_list_address_properties_country_06_156","tests","Tue Feb 18 13:10:49 UTC 2025","passed","Tue Feb 18 13:11:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -472,13 +439,38 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","11429","test_kww_region","tests","Mon Feb 17 11:18:42 UTC 2025","passed","Mon Feb 17 11:18:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17989","test_list_address_nullifier_const_07_494","tests","Mon Feb 17 12:28:48 UTC 2025","failed","Mon Feb 17 12:29:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","78106","test_list_address_properties_country_03_92","tests","Mon Feb 17 12:45:02 UTC 2025","passed","Mon Feb 17 12:46:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18193","test_list_address_properties_country_12_377","tests","Mon Feb 17 12:59:20 UTC 2025","passed","Mon Feb 17 12:59:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_price_history_13_593","tests","Mon Feb 17 14:13:07 UTC 2025","broken","Mon Feb 17 14:13:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","161179","test_kww_region_10_459","tests","Mon Feb 17 11:26:38 UTC 2025","passed","Mon Feb 17 11:29:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11042","test_price_history_00_176","tests","Mon Feb 17 14:08:26 UTC 2025","passed","Mon Feb 17 14:08:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","7862","test_list_address_coordinates","tests","Tue Feb 18 12:23:03 UTC 2025","passed","Tue Feb 18 12:23:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17042","test_kww_region_03_171","tests","Tue Feb 18 11:55:25 UTC 2025","passed","Tue Feb 18 11:55:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","159062","test_raw_properties_list_status_05_142","tests","Tue Feb 18 14:33:39 UTC 2025","passed","Tue Feb 18 14:36:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19272","test_year_built_02_644","tests","Tue Feb 18 15:06:52 UTC 2025","passed","Tue Feb 18 15:07:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161196","test_list_agent_office_phone_04_13","tests","Tue Feb 18 13:18:09 UTC 2025","passed","Tue Feb 18 13:20:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","301197","test_list_address_coordinates_04_13","tests","Tue Feb 18 12:29:13 UTC 2025","passed","Tue Feb 18 12:34:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","163473","test_list_dt_04_13","tests","Tue Feb 18 13:41:27 UTC 2025","passed","Tue Feb 18 13:44:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","11491","test_dashboard_source_number_04_13","tests","Tue Feb 18 11:50:20 UTC 2025","passed","Tue Feb 18 11:50:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14333","test_state_prov_00_84","tests","Tue Feb 18 14:58:48 UTC 2025","passed","Tue Feb 18 14:59:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20694","test_raw_properties_list_status_08_263","tests","Tue Feb 18 14:37:26 UTC 2025","passed","Tue Feb 18 14:37:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20701","test_list_dt_08_263","tests","Tue Feb 18 13:48:00 UTC 2025","passed","Tue Feb 18 13:48:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14898","test_state_prov_03_171","tests","Tue Feb 18 14:59:31 UTC 2025","passed","Tue Feb 18 14:59:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16821","test_list_dt_02_644","tests","Tue Feb 18 13:40:48 UTC 2025","passed","Tue Feb 18 13:41:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161653","test_price_history_05_142","tests","Tue Feb 18 14:21:49 UTC 2025","passed","Tue Feb 18 14:24:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","10766","test_ph_category_09_647","tests","Tue Feb 18 14:15:04 UTC 2025","passed","Tue Feb 18 14:15:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","46165","test_kww_region_07_463","tests","Tue Feb 18 12:01:20 UTC 2025","passed","Tue Feb 18 12:02:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17684","test_currency_code_03_171","tests","Tue Feb 18 11:41:01 UTC 2025","passed","Tue Feb 18 11:41:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160984","test_co_list_agent_preferred_phone_00_84","tests","Tue Feb 18 11:26:09 UTC 2025","passed","Tue Feb 18 11:28:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160219","test_not_nullify_04_13","tests","Tue Feb 18 14:05:10 UTC 2025","failed","Tue Feb 18 14:07:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162101","test_co_list_agent_office_phone_05_142","tests","Tue Feb 18 11:20:48 UTC 2025","passed","Tue Feb 18 11:23:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","9093","test_ph_category_10_455","tests","Tue Feb 18 14:15:15 UTC 2025","passed","Tue Feb 18 14:15:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16923","test_kww_region_10_455","tests","Tue Feb 18 12:03:10 UTC 2025","passed","Tue Feb 18 12:03:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17639","test_list_address_properties_country_01_629","tests","Tue Feb 18 12:59:51 UTC 2025","passed","Tue Feb 18 13:00:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20318","test_co_list_agent_office_phone_06_156","tests","Tue Feb 18 11:23:30 UTC 2025","passed","Tue Feb 18 11:23:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161153","test_co_list_agent_preferred_phone_04_13","tests","Tue Feb 18 11:29:44 UTC 2025","passed","Tue Feb 18 11:32:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17115","test_list_agent_office_phone_06_156","tests","Tue Feb 18 13:23:30 UTC 2025","passed","Tue Feb 18 13:23:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","50021","test_list_dt_07_463","tests","Tue Feb 18 13:47:09 UTC 2025","passed","Tue Feb 18 13:48:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19756","test_list_agent_office_phone_10_455","tests","Tue Feb 18 13:25:41 UTC 2025","passed","Tue Feb 18 13:26:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","85243","test_schools_items_09_647","tests","Tue Feb 18 14:56:56 UTC 2025","passed","Tue Feb 18 14:58:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19129","test_kww_region_06_156","tests","Tue Feb 18 12:01:01 UTC 2025","passed","Tue Feb 18 12:01:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","49599","test_raw_properties_list_status_09_647","tests","Tue Feb 18 14:37:47 UTC 2025","passed","Tue Feb 18 14:38:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","9402","test_ph_category_01_629","tests","Tue Feb 18 14:13:32 UTC 2025","passed","Tue Feb 18 14:13:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -511,13 +503,9 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","10805","test_list_agent_office_phone","tests","Mon Feb 17 13:01:18 UTC 2025","passed","Mon Feb 17 13:01:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","51751","test_mls_id_sa_id_13_593","tests","Mon Feb 17 13:53:07 UTC 2025","passed","Mon Feb 17 13:53:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11517","test_list_agent_preferred_phone_12_377","tests","Mon Feb 17 13:27:23 UTC 2025","passed","Mon Feb 17 13:27:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","159161","test_list_address_coordinates_02_551","tests","Mon Feb 17 12:03:19 UTC 2025","failed","Mon Feb 17 12:05:58 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","14096","test_dashboard_source_number_01_485","tests","Mon Feb 17 11:15:34 UTC 2025","passed","Mon Feb 17 11:15:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17847","test_list_address_nullifier_const_04_170","tests","Mon Feb 17 12:27:52 UTC 2025","passed","Mon Feb 17 12:28:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21201","test_list_address_properties_country_05_418","tests","Mon Feb 17 12:46:41 UTC 2025","passed","Mon Feb 17 12:47:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","9614","test_mls_id_sa_id","tests","Tue Feb 18 13:49:35 UTC 2025","passed","Tue Feb 18 13:49:45 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20891","test_list_agent_preferred_phone_08_263","tests","Tue Feb 18 13:36:18 UTC 2025","passed","Tue Feb 18 13:36:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14747","test_dashboard_source_number_08_263","tests","Tue Feb 18 11:51:13 UTC 2025","passed","Tue Feb 18 11:51:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -550,19 +538,9 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","9984","test_list_address","tests","Mon Feb 17 11:33:24 UTC 2025","passed","Mon Feb 17 11:33:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_raw_properties_list_status_07_494","tests","Mon Feb 17 14:13:20 UTC 2025","broken","Mon Feb 17 14:13:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_schools_items_02_551","tests","Mon Feb 17 14:13:22 UTC 2025","broken","Mon Feb 17 14:13:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17519","test_kww_region_07_494","tests","Mon Feb 17 11:25:17 UTC 2025","passed","Mon Feb 17 11:25:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","300027","test_list_address_coordinates_01_485","tests","Mon Feb 17 11:58:19 UTC 2025","passed","Mon Feb 17 12:03:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17817","test_list_address_nullifier_const_12_377","tests","Mon Feb 17 12:35:37 UTC 2025","passed","Mon Feb 17 12:35:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_schools_items_03_92","tests","Mon Feb 17 14:13:23 UTC 2025","broken","Mon Feb 17 14:13:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","160295","test_co_list_agent_office_phone_01_485","tests","Mon Feb 17 10:31:28 UTC 2025","passed","Mon Feb 17 10:34:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","155174","test_list_dt_01_485","tests","Mon Feb 17 13:28:40 UTC 2025","passed","Mon Feb 17 13:31:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20369","test_currency_code_06_635","tests","Mon Feb 17 11:06:37 UTC 2025","passed","Mon Feb 17 11:06:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","301616","test_list_address_11_28","tests","Mon Feb 17 11:50:53 UTC 2025","passed","Mon Feb 17 11:55:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","159259","test_list_address_properties_country_02_551","tests","Mon Feb 17 12:42:23 UTC 2025","passed","Mon Feb 17 12:45:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","89488","test_co_list_agent_preferred_phone_02_551","tests","Mon Feb 17 10:49:01 UTC 2025","passed","Mon Feb 17 10:50:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","6992","test_list_agent_preferred_phone","tests","Tue Feb 18 13:26:01 UTC 2025","passed","Tue Feb 18 13:26:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16359","test_co_list_agent_preferred_phone_06_156","tests","Tue Feb 18 11:35:06 UTC 2025","passed","Tue Feb 18 11:35:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21090","test_list_address_nullifier_const_08_263","tests","Tue Feb 18 12:53:12 UTC 2025","failed","Tue Feb 18 12:53:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -595,20 +573,29 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","1679","test_list_agent_preferred_phone","tests","Mon Feb 17 13:15:40 UTC 2025","passed","Mon Feb 17 13:15:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154237","test_not_nullify_01_485","tests","Mon Feb 17 13:54:13 UTC 2025","failed","Mon Feb 17 13:56:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154800","test_list_agent_preferred_phone_11_28","tests","Mon Feb 17 13:24:48 UTC 2025","passed","Mon Feb 17 13:27:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11353","test_not_nullify_04_170","tests","Mon Feb 17 13:58:52 UTC 2025","passed","Mon Feb 17 13:59:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18100","test_currency_code_04_170","tests","Mon Feb 17 11:05:59 UTC 2025","passed","Mon Feb 17 11:06:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","163282","test_list_address_nullifier_const_01_485","tests","Mon Feb 17 12:22:50 UTC 2025","failed","Mon Feb 17 12:25:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19004","test_list_address_properties_country_07_494","tests","Mon Feb 17 12:47:20 UTC 2025","passed","Mon Feb 17 12:47:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20583","test_list_address_nullifier_const_00_176","tests","Mon Feb 17 12:22:29 UTC 2025","failed","Mon Feb 17 12:22:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","15651","test_dashboard_source_number_02_551","tests","Mon Feb 17 11:15:48 UTC 2025","passed","Mon Feb 17 11:16:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_raw_properties_list_status_10_459","tests","Mon Feb 17 14:13:21 UTC 2025","broken","Mon Feb 17 14:13:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_price_history_10_459","tests","Mon Feb 17 14:13:06 UTC 2025","broken","Mon Feb 17 14:13:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","16875","test_list_address_00_176","tests","Mon Feb 17 11:33:34 UTC 2025","failed","Mon Feb 17 11:33:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17631","test_dashboard_source_number_10_459","tests","Mon Feb 17 11:17:44 UTC 2025","passed","Mon Feb 17 11:18:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","88477","test_list_agent_office_phone_02_551","tests","Mon Feb 17 13:04:31 UTC 2025","passed","Mon Feb 17 13:06:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","6736","test_raw_properties_list_status","tests","Tue Feb 18 14:27:10 UTC 2025","passed","Tue Feb 18 14:27:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19106","test_list_address_coordinates_08_263","tests","Tue Feb 18 12:40:47 UTC 2025","passed","Tue Feb 18 12:41:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","78369","test_schools_items_07_463","tests","Tue Feb 18 14:55:22 UTC 2025","passed","Tue Feb 18 14:56:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","300147","test_year_built_04_13","tests","Tue Feb 18 15:07:33 UTC 2025","failed","Tue Feb 18 15:12:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19387","test_not_nullify_10_455","tests","Tue Feb 18 14:12:51 UTC 2025","failed","Tue Feb 18 14:13:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160360","test_mls_id_sa_id_05_142","tests","Tue Feb 18 13:56:06 UTC 2025","passed","Tue Feb 18 13:58:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","298784","test_list_address_coordinates_05_142","tests","Tue Feb 18 12:34:14 UTC 2025","passed","Tue Feb 18 12:39:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162905","test_list_address_nullifier_const_05_142","tests","Tue Feb 18 12:49:19 UTC 2025","failed","Tue Feb 18 12:52:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17818","test_co_list_agent_office_phone_08_263","tests","Tue Feb 18 11:24:40 UTC 2025","passed","Tue Feb 18 11:24:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18987","test_co_list_agent_preferred_phone_01_629","tests","Tue Feb 18 11:28:50 UTC 2025","passed","Tue Feb 18 11:29:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161294","test_not_nullify_00_84","tests","Tue Feb 18 14:01:26 UTC 2025","failed","Tue Feb 18 14:04:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","163281","test_not_nullify_05_142","tests","Tue Feb 18 14:07:50 UTC 2025","failed","Tue Feb 18 14:10:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16012","test_schools_items_08_263","tests","Tue Feb 18 14:56:40 UTC 2025","passed","Tue Feb 18 14:56:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","77343","test_list_address_coordinates_07_463","tests","Tue Feb 18 12:39:29 UTC 2025","failed","Tue Feb 18 12:40:47 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20462","test_list_address_coordinates_03_171","tests","Tue Feb 18 12:28:52 UTC 2025","failed","Tue Feb 18 12:29:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17608","test_list_agent_office_phone_08_263","tests","Tue Feb 18 13:24:37 UTC 2025","passed","Tue Feb 18 13:24:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21243","test_kww_region_02_644","tests","Tue Feb 18 11:55:04 UTC 2025","passed","Tue Feb 18 11:55:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16481","test_schools_items_10_455","tests","Tue Feb 18 14:58:22 UTC 2025","passed","Tue Feb 18 14:58:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","12633","test_ph_category_07_463","tests","Tue Feb 18 14:14:38 UTC 2025","passed","Tue Feb 18 14:14:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19435","test_list_agent_preferred_phone_02_644","tests","Tue Feb 18 13:29:07 UTC 2025","passed","Tue Feb 18 13:29:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16152","test_kww_region_08_263","tests","Tue Feb 18 12:02:07 UTC 2025","passed","Tue Feb 18 12:02:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16756","test_list_dt_06_156","tests","Tue Feb 18 13:46:53 UTC 2025","passed","Tue Feb 18 13:47:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","159394","test_list_agent_office_phone_05_142","tests","Tue Feb 18 13:20:50 UTC 2025","passed","Tue Feb 18 13:23:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -641,7 +628,14 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","1683","test_mls_id_sa_id","tests","Mon Feb 17 13:41:14 UTC 2025","passed","Mon Feb 17 13:41:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","10948","test_ph_category","tests","Tue Feb 18 14:13:10 UTC 2025","passed","Tue Feb 18 14:13:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17297","test_list_agent_preferred_phone_10_455","tests","Tue Feb 18 13:37:26 UTC 2025","passed","Tue Feb 18 13:37:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20704","test_raw_properties_list_status_03_171","tests","Tue Feb 18 14:30:35 UTC 2025","passed","Tue Feb 18 14:30:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17312","test_schools_items_06_156","tests","Tue Feb 18 14:55:05 UTC 2025","passed","Tue Feb 18 14:55:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","303304","test_list_address_properties_country_00_84","tests","Tue Feb 18 12:54:47 UTC 2025","passed","Tue Feb 18 12:59:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19808","test_not_nullify_03_171","tests","Tue Feb 18 14:04:50 UTC 2025","passed","Tue Feb 18 14:05:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","11020","test_ph_category_02_644","tests","Tue Feb 18 14:13:42 UTC 2025","passed","Tue Feb 18 14:13:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","50972","test_raw_properties_list_status_07_463","tests","Tue Feb 18 14:36:35 UTC 2025","passed","Tue Feb 18 14:37:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -674,18 +668,21 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","208","test_schools_items","tests","Mon Feb 17 14:13:22 UTC 2025","broken","Mon Feb 17 14:13:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","160493","test_list_agent_office_phone_10_459","tests","Mon Feb 17 13:09:21 UTC 2025","passed","Mon Feb 17 13:12:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","10853","test_mls_id_sa_id_07_494","tests","Mon Feb 17 13:46:41 UTC 2025","passed","Mon Feb 17 13:46:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4184","test_ph_category_08_200","tests","Mon Feb 17 14:07:40 UTC 2025","passed","Mon Feb 17 14:07:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21086","test_list_address_properties_country_04_170","tests","Mon Feb 17 12:46:20 UTC 2025","failed","Mon Feb 17 12:46:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","10704","test_list_dt_06_635","tests","Mon Feb 17 13:33:43 UTC 2025","failed","Mon Feb 17 13:33:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154183","test_list_dt_11_28","tests","Mon Feb 17 13:37:36 UTC 2025","passed","Mon Feb 17 13:40:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_schools_items_10_459","tests","Mon Feb 17 14:13:24 UTC 2025","broken","Mon Feb 17 14:13:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154978","test_mls_id_sa_id_11_28","tests","Mon Feb 17 13:50:20 UTC 2025","passed","Mon Feb 17 13:52:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_state_prov_02_551","tests","Mon Feb 17 14:13:26 UTC 2025","broken","Mon Feb 17 14:13:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","49601","test_list_address_nullifier_const_03_92","tests","Mon Feb 17 12:27:03 UTC 2025","passed","Mon Feb 17 12:27:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","42143","test_mls_id_sa_id_03_92","tests","Mon Feb 17 13:45:25 UTC 2025","passed","Mon Feb 17 13:46:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","8861","test_year_built","tests","Tue Feb 18 15:01:26 UTC 2025","passed","Tue Feb 18 15:01:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","159682","test_currency_code_00_84","tests","Tue Feb 18 11:37:43 UTC 2025","passed","Tue Feb 18 11:40:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","21402","test_list_dt_10_455","tests","Tue Feb 18 13:49:14 UTC 2025","passed","Tue Feb 18 13:49:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160981","test_list_agent_preferred_phone_05_142","tests","Tue Feb 18 13:32:27 UTC 2025","passed","Tue Feb 18 13:35:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","14235","test_state_prov_10_455","tests","Tue Feb 18 15:01:12 UTC 2025","passed","Tue Feb 18 15:01:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162588","test_list_address_nullifier_const_04_13","tests","Tue Feb 18 12:46:37 UTC 2025","failed","Tue Feb 18 12:49:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16805","test_schools_items_02_644","tests","Tue Feb 18 14:44:20 UTC 2025","passed","Tue Feb 18 14:44:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","159297","test_list_agent_preferred_phone_04_13","tests","Tue Feb 18 13:29:47 UTC 2025","passed","Tue Feb 18 13:32:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","11392","test_dashboard_source_number_09_647","tests","Tue Feb 18 11:51:27 UTC 2025","passed","Tue Feb 18 11:51:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20357","test_year_built_08_263","tests","Tue Feb 18 15:19:13 UTC 2025","passed","Tue Feb 18 15:19:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162520","test_mls_id_sa_id_04_13","tests","Tue Feb 18 13:53:24 UTC 2025","passed","Tue Feb 18 13:56:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","11001","test_ph_category_04_13","tests","Tue Feb 18 14:14:03 UTC 2025","failed","Tue Feb 18 14:14:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","49679","test_mls_id_sa_id_09_647","tests","Tue Feb 18 14:00:13 UTC 2025","passed","Tue Feb 18 14:01:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20980","test_co_list_agent_office_phone_03_171","tests","Tue Feb 18 11:17:47 UTC 2025","passed","Tue Feb 18 11:18:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","51859","test_list_address_nullifier_const_07_463","tests","Tue Feb 18 12:52:20 UTC 2025","failed","Tue Feb 18 12:53:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -718,30 +715,12 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","10486","test_co_list_agent_preferred_phone","tests","Mon Feb 17 10:45:49 UTC 2025","passed","Mon Feb 17 10:46:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4428","test_ph_category_07_494","tests","Mon Feb 17 14:07:35 UTC 2025","passed","Mon Feb 17 14:07:40 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_price_history_06_635","tests","Mon Feb 17 14:13:05 UTC 2025","broken","Mon Feb 17 14:13:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","300988","test_list_address_properties_country_11_28","tests","Mon Feb 17 12:54:19 UTC 2025","passed","Mon Feb 17 12:59:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","77689","test_list_address_coordinates_08_200","tests","Mon Feb 17 12:08:37 UTC 2025","passed","Mon Feb 17 12:09:54 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","164545","test_co_list_agent_office_phone_11_28","tests","Mon Feb 17 10:41:46 UTC 2025","passed","Mon Feb 17 10:44:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","59019","test_list_address_nullifier_const_13_593","tests","Mon Feb 17 12:35:54 UTC 2025","passed","Mon Feb 17 12:36:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","160265","test_currency_code_01_485","tests","Mon Feb 17 11:00:57 UTC 2025","passed","Mon Feb 17 11:03:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","57592","test_co_list_agent_preferred_phone_13_593","tests","Mon Feb 17 10:59:29 UTC 2025","failed","Mon Feb 17 11:00:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18755","test_currency_code_12_377","tests","Mon Feb 17 11:13:49 UTC 2025","passed","Mon Feb 17 11:14:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20789","test_list_address_coordinates_06_635","tests","Mon Feb 17 12:07:56 UTC 2025","failed","Mon Feb 17 12:08:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20350","test_list_agent_office_phone_07_494","tests","Mon Feb 17 13:07:51 UTC 2025","passed","Mon Feb 17 13:08:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17139","test_list_address_coordinates_00_176","tests","Mon Feb 17 11:58:02 UTC 2025","failed","Mon Feb 17 11:58:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","50863","test_co_list_agent_office_phone_03_92","tests","Mon Feb 17 10:35:42 UTC 2025","failed","Mon Feb 17 10:36:33 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_price_history_11_28","tests","Mon Feb 17 14:13:07 UTC 2025","broken","Mon Feb 17 14:13:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","42517","test_mls_id_sa_id_08_200","tests","Mon Feb 17 13:46:52 UTC 2025","passed","Mon Feb 17 13:47:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","12859","test_dashboard_source_number_04_170","tests","Mon Feb 17 11:16:17 UTC 2025","passed","Mon Feb 17 11:16:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","301859","test_list_address_properties_country_01_485","tests","Mon Feb 17 12:37:21 UTC 2025","failed","Mon Feb 17 12:42:23 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","10728","test_raw_properties_list_status_02_551","tests","Mon Feb 17 14:13:08 UTC 2025","broken","Mon Feb 17 14:13:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4059","test_ph_category_06_635","tests","Mon Feb 17 14:07:31 UTC 2025","failed","Mon Feb 17 14:07:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_year_built_05_418","tests","Mon Feb 17 14:13:30 UTC 2025","broken","Mon Feb 17 14:13:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","159755","test_co_list_agent_preferred_phone_10_459","tests","Mon Feb 17 10:53:45 UTC 2025","passed","Mon Feb 17 10:56:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11133","test_list_agent_preferred_phone_07_494","tests","Mon Feb 17 13:21:08 UTC 2025","passed","Mon Feb 17 13:21:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","12053","test_list_dt_12_377","tests","Mon Feb 17 13:40:10 UTC 2025","passed","Mon Feb 17 13:40:22 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","8785","test_schools_items","tests","Tue Feb 18 14:38:52 UTC 2025","passed","Tue Feb 18 14:39:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","10990","test_ph_category_00_84","tests","Tue Feb 18 14:13:21 UTC 2025","failed","Tue Feb 18 14:13:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","159746","test_co_list_agent_office_phone_04_13","tests","Tue Feb 18 11:18:08 UTC 2025","passed","Tue Feb 18 11:20:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","303764","test_schools_items_05_142","tests","Tue Feb 18 14:50:01 UTC 2025","passed","Tue Feb 18 14:55:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17086","test_co_list_agent_preferred_phone_02_644","tests","Tue Feb 18 11:29:09 UTC 2025","passed","Tue Feb 18 11:29:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16855","test_co_list_agent_preferred_phone_08_263","tests","Tue Feb 18 11:36:11 UTC 2025","passed","Tue Feb 18 11:36:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -774,51 +753,10 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","209","test_state_prov","tests","Mon Feb 17 14:13:25 UTC 2025","broken","Mon Feb 17 14:13:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","81611","test_list_address_coordinates_03_92","tests","Mon Feb 17 12:05:58 UTC 2025","failed","Mon Feb 17 12:07:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","160753","test_co_list_agent_preferred_phone_01_485","tests","Mon Feb 17 10:46:20 UTC 2025","passed","Mon Feb 17 10:49:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","163145","test_co_list_agent_preferred_phone_11_28","tests","Mon Feb 17 10:56:25 UTC 2025","passed","Mon Feb 17 10:59:08 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20849","test_list_agent_office_phone_05_418","tests","Mon Feb 17 13:07:11 UTC 2025","passed","Mon Feb 17 13:07:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20262","test_list_address_04_170","tests","Mon Feb 17 11:42:56 UTC 2025","passed","Mon Feb 17 11:43:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","80348","test_list_address_properties_country_08_200","tests","Mon Feb 17 12:47:39 UTC 2025","passed","Mon Feb 17 12:49:00 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20140","test_currency_code_00_176","tests","Mon Feb 17 11:00:37 UTC 2025","passed","Mon Feb 17 11:00:57 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11779","test_list_agent_office_phone_12_377","tests","Mon Feb 17 13:14:36 UTC 2025","passed","Mon Feb 17 13:14:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","10712","test_mls_id_sa_id_06_635","tests","Mon Feb 17 13:46:30 UTC 2025","passed","Mon Feb 17 13:46:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","15738","test_dashboard_source_number_05_418","tests","Mon Feb 17 11:16:30 UTC 2025","passed","Mon Feb 17 11:16:46 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18407","test_list_agent_office_phone_06_635","tests","Mon Feb 17 13:07:32 UTC 2025","passed","Mon Feb 17 13:07:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","211","test_state_prov_06_635","tests","Mon Feb 17 14:13:27 UTC 2025","broken","Mon Feb 17 14:13:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","161699","test_list_address_nullifier_const_11_28","tests","Mon Feb 17 12:32:55 UTC 2025","failed","Mon Feb 17 12:35:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","4048","test_ph_category_12_377","tests","Mon Feb 17 14:08:16 UTC 2025","passed","Mon Feb 17 14:08:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154559","test_mls_id_sa_id_01_485","tests","Mon Feb 17 13:41:28 UTC 2025","passed","Mon Feb 17 13:44:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_raw_properties_list_status_03_92","tests","Mon Feb 17 14:13:19 UTC 2025","broken","Mon Feb 17 14:13:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","14854","test_dashboard_source_number_06_635","tests","Mon Feb 17 11:16:46 UTC 2025","passed","Mon Feb 17 11:17:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_raw_properties_list_status_08_200","tests","Mon Feb 17 14:13:20 UTC 2025","broken","Mon Feb 17 14:13:20 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21522","test_kww_region_04_170","tests","Mon Feb 17 11:24:18 UTC 2025","passed","Mon Feb 17 11:24:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","89598","test_list_address_nullifier_const_02_551","tests","Mon Feb 17 12:25:33 UTC 2025","passed","Mon Feb 17 12:27:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_state_prov_08_200","tests","Mon Feb 17 14:13:27 UTC 2025","broken","Mon Feb 17 14:13:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18369","test_currency_code_07_494","tests","Mon Feb 17 11:06:57 UTC 2025","passed","Mon Feb 17 11:07:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11432","test_mls_id_sa_id_04_170","tests","Mon Feb 17 13:46:07 UTC 2025","passed","Mon Feb 17 13:46:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18192","test_co_list_agent_office_phone_06_635","tests","Mon Feb 17 10:37:14 UTC 2025","passed","Mon Feb 17 10:37:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17106","test_co_list_agent_office_phone_12_377","tests","Mon Feb 17 10:44:31 UTC 2025","passed","Mon Feb 17 10:44:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","42435","test_list_agent_preferred_phone_03_92","tests","Mon Feb 17 13:19:51 UTC 2025","passed","Mon Feb 17 13:20:34 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","18409","test_list_address_05_418","tests","Mon Feb 17 11:43:16 UTC 2025","failed","Mon Feb 17 11:43:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19339","test_co_list_agent_office_phone_04_170","tests","Mon Feb 17 10:36:33 UTC 2025","passed","Mon Feb 17 10:36:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_raw_properties_list_status_09_633","tests","Mon Feb 17 14:13:20 UTC 2025","broken","Mon Feb 17 14:13:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19683","test_list_address_coordinates_05_418","tests","Mon Feb 17 12:07:37 UTC 2025","passed","Mon Feb 17 12:07:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","305194","test_list_address_coordinates_10_459","tests","Mon Feb 17 12:10:16 UTC 2025","passed","Mon Feb 17 12:15:21 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_price_history_08_200","tests","Mon Feb 17 14:13:06 UTC 2025","broken","Mon Feb 17 14:13:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_state_prov_10_459","tests","Mon Feb 17 14:13:28 UTC 2025","broken","Mon Feb 17 14:13:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","299237","test_list_address_10_459","tests","Mon Feb 17 11:45:54 UTC 2025","passed","Mon Feb 17 11:50:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19247","test_co_list_agent_preferred_phone_04_170","tests","Mon Feb 17 10:51:19 UTC 2025","passed","Mon Feb 17 10:51:39 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_state_prov_01_485","tests","Mon Feb 17 14:13:26 UTC 2025","broken","Mon Feb 17 14:13:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","98849","test_list_address_13_593","tests","Mon Feb 17 11:56:13 UTC 2025","failed","Mon Feb 17 11:57:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","210","test_year_built_13_593","tests","Mon Feb 17 14:13:32 UTC 2025","broken","Mon Feb 17 14:13:32 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","51712","test_co_list_agent_office_phone_08_200","tests","Mon Feb 17 10:37:52 UTC 2025","passed","Mon Feb 17 10:38:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11889","test_list_dt_05_418","tests","Mon Feb 17 13:33:31 UTC 2025","passed","Mon Feb 17 13:33:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_raw_properties_list_status_04_170","tests","Mon Feb 17 14:13:19 UTC 2025","broken","Mon Feb 17 14:13:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","155253","test_not_nullify_11_28","tests","Mon Feb 17 14:03:06 UTC 2025","failed","Mon Feb 17 14:05:41 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","163230","test_currency_code_10_459","tests","Mon Feb 17 11:08:24 UTC 2025","passed","Mon Feb 17 11:11:07 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","14118","test_dashboard_source_number_13_593","tests","Mon Feb 17 11:18:28 UTC 2025","passed","Mon Feb 17 11:18:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","6962","test_not_nullify","tests","Tue Feb 18 14:01:19 UTC 2025","passed","Tue Feb 18 14:01:26 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","162069","test_list_agent_preferred_phone_00_84","tests","Tue Feb 18 13:26:08 UTC 2025","passed","Tue Feb 18 13:28:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20167","test_currency_code_10_455","tests","Tue Feb 18 11:48:55 UTC 2025","passed","Tue Feb 18 11:49:15 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","159570","test_list_dt_00_84","tests","Tue Feb 18 13:37:50 UTC 2025","passed","Tue Feb 18 13:40:30 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -851,8 +789,16 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","11598","test_dashboard_source_number","tests","Mon Feb 17 11:15:08 UTC 2025","passed","Mon Feb 17 11:15:19 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","52221","test_not_nullify_13_593","tests","Mon Feb 17 14:05:52 UTC 2025","failed","Mon Feb 17 14:06:44 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","9077","test_dashboard_source_number","tests","Tue Feb 18 11:49:15 UTC 2025","passed","Tue Feb 18 11:49:24 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","81507","test_year_built_09_647","tests","Tue Feb 18 15:19:33 UTC 2025","passed","Tue Feb 18 15:20:55 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","17376","test_raw_properties_list_status_02_644","tests","Tue Feb 18 14:30:18 UTC 2025","passed","Tue Feb 18 14:30:35 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18700","test_list_dt_01_629","tests","Tue Feb 18 13:40:30 UTC 2025","passed","Tue Feb 18 13:40:48 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15987","test_list_address_02_644","tests","Tue Feb 18 12:08:54 UTC 2025","passed","Tue Feb 18 12:09:10 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","49453","test_currency_code_07_463","tests","Tue Feb 18 11:47:01 UTC 2025","passed","Tue Feb 18 11:47:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16704","test_list_address_coordinates_06_156","tests","Tue Feb 18 12:39:13 UTC 2025","failed","Tue Feb 18 12:39:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18447","test_list_address_properties_country_08_263","tests","Tue Feb 18 13:12:31 UTC 2025","passed","Tue Feb 18 13:12:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160641","test_price_history_04_13","tests","Tue Feb 18 14:19:08 UTC 2025","failed","Tue Feb 18 14:21:49 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","300402","test_year_built_00_84","tests","Tue Feb 18 15:01:35 UTC 2025","failed","Tue Feb 18 15:06:36 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -885,20 +831,15 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","10677","test_currency_code","tests","Mon Feb 17 11:00:27 UTC 2025","passed","Mon Feb 17 11:00:37 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","21794","test_list_address_coordinates_09_633","tests","Mon Feb 17 12:09:54 UTC 2025","failed","Mon Feb 17 12:10:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","22173","test_co_list_agent_office_phone_00_176","tests","Mon Feb 17 10:31:06 UTC 2025","passed","Mon Feb 17 10:31:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","10710","test_price_history_04_170","tests","Mon Feb 17 14:12:54 UTC 2025","broken","Mon Feb 17 14:13:05 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","304313","test_list_address_01_485","tests","Mon Feb 17 11:33:51 UTC 2025","passed","Mon Feb 17 11:38:56 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20459","test_list_address_coordinates_12_377","tests","Mon Feb 17 12:20:21 UTC 2025","passed","Mon Feb 17 12:20:42 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","210","test_year_built_00_176","tests","Mon Feb 17 14:13:29 UTC 2025","broken","Mon Feb 17 14:13:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","52028","test_kww_region_03_92","tests","Mon Feb 17 11:23:26 UTC 2025","passed","Mon Feb 17 11:24:18 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","207","test_state_prov_04_170","tests","Mon Feb 17 14:13:26 UTC 2025","broken","Mon Feb 17 14:13:27 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","11909","test_not_nullify_00_176","tests","Mon Feb 17 13:54:01 UTC 2025","failed","Mon Feb 17 13:54:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","51067","test_list_agent_office_phone_03_92","tests","Mon Feb 17 13:06:00 UTC 2025","passed","Mon Feb 17 13:06:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","20468","test_co_list_agent_office_phone_07_494","tests","Mon Feb 17 10:37:32 UTC 2025","passed","Mon Feb 17 10:37:52 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","154496","test_price_history_01_485","tests","Mon Feb 17 14:08:37 UTC 2025","failed","Mon Feb 17 14:11:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","13665","test_dashboard_source_number_03_92","tests","Mon Feb 17 11:16:03 UTC 2025","passed","Mon Feb 17 11:16:17 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","8778","test_co_list_agent_office_phone","tests","Tue Feb 18 11:14:20 UTC 2025","passed","Tue Feb 18 11:14:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","18053","test_list_address_coordinates_10_455","tests","Tue Feb 18 12:42:25 UTC 2025","failed","Tue Feb 18 12:42:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20471","test_not_nullify_01_629","tests","Tue Feb 18 14:04:08 UTC 2025","failed","Tue Feb 18 14:04:28 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","15309","test_state_prov_09_647","tests","Tue Feb 18 15:00:57 UTC 2025","passed","Tue Feb 18 15:01:12 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16044","test_co_list_agent_office_phone_10_455","tests","Tue Feb 18 11:25:46 UTC 2025","failed","Tue Feb 18 11:26:02 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","11845","test_dashboard_source_number_10_455","tests","Tue Feb 18 11:51:39 UTC 2025","passed","Tue Feb 18 11:51:51 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","20006","test_not_nullify_08_263","tests","Tue Feb 18 14:11:43 UTC 2025","failed","Tue Feb 18 14:12:03 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","80489","test_list_address_properties_country_07_463","tests","Tue Feb 18 13:11:10 UTC 2025","passed","Tue Feb 18 13:12:31 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","160869","test_list_agent_office_phone_00_84","tests","Tue Feb 18 13:14:33 UTC 2025","passed","Tue Feb 18 13:17:14 UTC 2025","TestPromotionChecklist","test_checklist","",""
 "A decorator for applying a mark on test functions and classes.
 
 ``MarkDecorators`` are created with ``pytest.mark``::
@@ -931,11 +872,10 @@ Note: The rules above prevent a ``MarkDecorator`` from storing only a
 single function or class reference as its positional argument with no
 additional keyword or positional arguments. You can work around this by
 using `with_args()`.
-","207","test_year_built","tests","Mon Feb 17 14:13:29 UTC 2025","broken","Mon Feb 17 14:13:29 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","209","test_schools_items_13_593","tests","Mon Feb 17 14:13:25 UTC 2025","broken","Mon Feb 17 14:13:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17924","test_list_address_12_377","tests","Mon Feb 17 11:55:55 UTC 2025","failed","Mon Feb 17 11:56:13 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","17619","test_kww_region_00_176","tests","Mon Feb 17 11:18:54 UTC 2025","passed","Mon Feb 17 11:19:11 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","19639","test_kww_region_05_418","tests","Mon Feb 17 11:24:39 UTC 2025","passed","Mon Feb 17 11:24:59 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","15724","test_dashboard_source_number_07_494","tests","Mon Feb 17 11:17:01 UTC 2025","passed","Mon Feb 17 11:17:16 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","208","test_price_history_09_633","tests","Mon Feb 17 14:13:06 UTC 2025","broken","Mon Feb 17 14:13:06 UTC 2025","TestPromotionChecklist","test_checklist","",""
-"","210","test_schools_items_12_377","tests","Mon Feb 17 14:13:25 UTC 2025","broken","Mon Feb 17 14:13:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
+","7390","test_list_dt","tests","Tue Feb 18 13:37:43 UTC 2025","passed","Tue Feb 18 13:37:50 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","13126","test_state_prov_07_463","tests","Tue Feb 18 15:00:30 UTC 2025","passed","Tue Feb 18 15:00:43 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","19176","test_list_agent_office_phone_03_171","tests","Tue Feb 18 13:17:50 UTC 2025","passed","Tue Feb 18 13:18:09 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16990","test_currency_code_06_156","tests","Tue Feb 18 11:46:44 UTC 2025","passed","Tue Feb 18 11:47:01 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","13505","test_dashboard_source_number_00_84","tests","Tue Feb 18 11:49:24 UTC 2025","passed","Tue Feb 18 11:49:38 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","161852","test_list_dt_05_142","tests","Tue Feb 18 13:44:11 UTC 2025","passed","Tue Feb 18 13:46:53 UTC 2025","TestPromotionChecklist","test_checklist","",""
+"","16823","test_list_address_properties_country_02_644","tests","Tue Feb 18 13:00:08 UTC 2025","passed","Tue Feb 18 13:00:25 UTC 2025","TestPromotionChecklist","test_checklist","",""
