@@ -71,7 +71,6 @@ class BaseTestRunner(unittest.TestCase):
         self.driver.save_screenshot(screenshot_path)
         with open("page_source.html", "w", encoding="utf-8") as f:
             f.write(self.driver.page_source)
-        self.driver.maximize_window()
         time.sleep(5)
 
     def tearDown(self):
